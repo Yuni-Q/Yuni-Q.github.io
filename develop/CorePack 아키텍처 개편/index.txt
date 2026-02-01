@@ -1,0 +1,1039 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","CorePack%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EA%B0%9C%ED%8E%B8","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","CorePack%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EA%B0%9C%ED%8E%B8","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"CorePack 아키텍처 개편\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","CorePack%20%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98%20%EA%B0%9C%ED%8E%B8","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T4527,
+> Next.js 기반의 대규모 모노레포에서 CorePack 아키텍처를 전면 개편한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, AuthStore 초기화 문제, 빌더 패턴 적용 등 다양한 기술적 도전을 해결했습니다.
+
+## 📊 프로젝트 개요
+
+### 영향 범위
+
+- **프레임워크**: Next.js 14, React 18
+- **주요 목표**: React Strict Mode 지원 및 초기화 로직 체계화
+- **성과**: 메모리 사용량 30% 감소, 상태 관리 코드 중복 35% 감소
+
+### 핵심 성과
+
+- ✅ React Strict Mode 환경 안정성 확보
+- ✅ 첫 실행 시 auth 데이터 누락 문제 근본 해결
+- ✅ store 인스턴스 단일화로 메모리 최적화 (30% 감소)
+- ✅ 빌더 패턴 적용으로 초기화 순서 체계화
+- ✅ 상태 업데이트 로직 통합으로 코드 중복 감소 (35%)
+- ✅ 로그인 상태 기반 자동 재빌드 메커니즘 구현
+- ✅ 모듈 통합: 컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합 구현
+
+---
+
+## 🔴 문제 상황
+
+### 1. 첫 실행 시 auth 데이터 누락 문제
+
+**문제**:
+
+- React Strict Mode 환경에서 첫 실행 시 auth 데이터가 누락됨
+- 로그인 상태인데도 auth 관련 store가 초기화되지 않음
+
+**원인 분석**:
+
+```typescript
+// isLogin() 함수가 document.cookie를 체크
+export const isLogin = (cookie?: string) =>
+  isBrowser ? document.cookie.includes('NID_SES') : cookie?.includes('NID_SES')
+```
+
+**React Strict Mode 환경에서의 실행 흐름**:
+
+```
+T0: 첫 번째 렌더링
+    └─ commonPageProps 생성
+       └─ isLogin() 호출
+       └─ document.cookie에 'NID_SES' 체크
+       └─ 결과: false (쿠키 로드 전 또는 타이밍 이슈)
+
+T1: useEffect 첫 번째 실행
+    └─ buildInitData({ commonPageProps }) 호출
+       └─ builder.setUserData() 호출
+       └─ 내부에서 isLogin = false 체크 ❌
+       └─ auth 데이터 빌드 건너뜀!
+       └─ 결과: { commonPageProps, nexusCore }
+
+T2: 두 번째 렌더링 (Strict Mode)
+    └─ commonPageProps 다시 생성
+       └─ isLogin() 재호출
+       └─ document.cookie에 'NID_SES' 확인 ✅
+       └─ 결과: true
+
+T3: useEffect 두 번째 실행 (Strict Mode)
+    └─ buildInitData({ commonPageProps }) 호출
+       └─ builder.setUserData() 호출
+       └─ 내부에서 isLogin = true 체크 ✅
+       └─ auth 데이터 빌드 성공!
+       └─ 결과: { commonPageProps, nexusCore, auth, ... }
+
+// 하지만 렌더링 시 initState는 첫 번째 값만 사용
+// → auth 데이터 누락!
+```
+
+**핵심 문제**:
+
+- `useEffect`의 의존성 배열이 빈 배열(`[]`)이어서 마운트 시 1회만 실행
+- React Strict Mode가 useEffect를 2번 실행하지만, 첫 번째 실행의 결과만 사용됨
+- 쿠키 로드 타이밍과 비동기 실행 타이밍 불일치
+
+---
+
+### 2. AuthStore가 매 렌더링마다 재생성되는 문제
+
+**문제**:
+
+- `AuthStoreProvider`가 매 렌더링마다 새로운 store 인스턴스를 생성
+- 기존 store의 상태가 손실됨
+
+**Before (문제 코드)**:
+
+```typescript
+export const AuthStoreProvider = ({
+  initState,
+  children,
+}: AuthStoreProviderProps) => {
+  const storeRef = useRef<AuthStoreApi>()
+  // ❌ 매 렌더링마다 실행됨!
+  storeRef.current = createAuthStore(initAuthStore(initState))
+
+  return (
+    <AuthStoreContext.Provider value={storeRef.current}>
+      {children}
+    </AuthStoreContext.Provider>
+  )
+}
+```
+
+**문제 발생 메커니즘**:
+
+```
+T0: 첫 번째 렌더링
+    └─ storeRef.current = createAuthStore(...)
+       └─ 새로운 store 인스턴스 생성
+       └─ 초기 상태: { naverMember: null }
+
+T1: 사용자 로그인 (initState 변경)
+    └─ AuthStoreProvider 리렌더링
+       └─ storeRef.current = createAuthStore(...)  ❌
+       └─ 또 다른 새로운 store 인스턴스 생성!
+       └─ 기존 store의 모든 상태 손실!
+
+T2: 컴포넌트가 store 구독 중
+    └─ 새로운 store 인스턴스로 교체됨
+       └─ 하위 컴포넌트들의 불필요한 리렌더링 발생
+```
+
+**영향**:
+
+- 메모리 사용량 증가 (여러 store 인스턴스 존재)
+- 상태 손실로 인한 버그 발생
+- 불필요한 리렌더링으로 성능 저하
+
+---
+
+### 3. 초기화 로직의 복잡성과 중복
+
+**문제**:
+
+- 초기화 로직이 여러 곳에 분산되어 있음
+- 상태 업데이트 순서가 보장되지 않음
+- 코드 중복이 많음
+
+**Before (분리된 구조)**:
+
+```typescript
+// buildInitData 함수
+const buildInitData = async (params) => {
+  const newData = await fetchMissingData(params)
+  setInitData(newData) // ← 여기서 Context 업데이트
+  return newData
+}
+
+// fetchMissingData 함수 (별도)
+const fetchMissingData = async (params) => {
+  const newData = await builder.build()
+  setInitialized(newlyInitialized) // ← false 값도 덮어씀
+  return newData
+}
+```
+
+**문제점**:
+
+- `setInitData`와 `setInitialized`가 분리되어 있어 순서 보장 어려움
+- `false` 값도 덮어써서 초기화 상태 손실 가능
+- 코드가 여러 곳에 분산되어 유지보수 어려움
+
+---
+
+## ✅ 해결 방법
+
+### 1. useEffect 의존성 배열을 naverFrontMember로 변경
+
+**변경 전**:
+
+```typescript
+const [initState, setInitState] = useState<CorePackInitData>()
+
+useEffect(() => {
+  const commonPageProps = { ... }
+
+  async function fetchCorePackData() {
+    const initData = await buildInitData?.({ commonPageProps })
+    setInitState(initData)  // ← 첫 번째 값만 저장될 수 있음
+  }
+
+  fetchCorePackData()
+}, [])  // ← 빈 배열: Strict Mode에서 2번 실행
+```
+
+**변경 후**:
+
+```typescript
+const [initState, setInitState] = useState<CorePackInitData>()
+
+useEffect(() => {
+  const commonPageProps = {
+    ...
+    isLogin: isLogin(),  // naverFrontMember 변경 시 재평가
+    naverMember: {
+      ...naverFrontMember,
+      nicknameUtf8: naverFrontMember?.nickname ?? '',
+    },
+    ...
+  }
+
+  async function fetchCorePackData() {
+    const initData = await buildInitData?.({ commonPageProps, targetVertical, targetSubVertical })
+    if (initData) {
+      setInitState({
+        ...initData,
+        commonPageProps,
+      })
+    }
+  }
+
+  fetchCorePackData()
+}, [naverFrontMember])  // ← naverFrontMember 의존성: 로그인 상태 변경 시 재실행
+```
+
+**효과**:
+
+- ✅ `naverFrontMember`가 변경되면 useEffect 재실행
+- ✅ 로그인 후 회원 정보가 로드되면 자동으로 auth 데이터 빌드
+- ✅ Strict Mode 중복 실행보다는 실제 데이터 변경에 반응
+- ✅ 쿠키 타이밍 이슈와 무관하게 실제 데이터 기반으로 동작
+
+---
+
+### 2. AuthStore 인스턴스 단일화
+
+**변경 후**:
+
+```typescript
+export const AuthStoreProvider = ({
+  initState,
+  children,
+}: AuthStoreProviderProps) => {
+  const storeRef = useRef<AuthStoreApi>()
+
+  // ✅ 초기화는 한 번만 수행
+  if (!storeRef.current) {
+    storeRef.current = createAuthStore(initAuthStore(initState))
+  }
+
+  // ✅ initState 변경 시에만 store 업데이트
+  useEffect(() => {
+    if (storeRef.current && initState) {
+      storeRef.current.getState().setAuthStoreInitState(initState)
+    }
+  }, [initState])
+
+  return (
+    <AuthStoreContext.Provider value={storeRef.current}>
+      {children}
+    </AuthStoreContext.Provider>
+  )
+}
+```
+
+**효과**:
+
+- ✅ store 인스턴스가 한 번만 생성되어 메모리 사용량 30% 감소
+- ✅ 상태 손실 없이 안정적인 store 관리
+- ✅ 불필요한 리렌더링 방지
+
+---
+
+### 3. 빌더 패턴 적용으로 초기화 순서 체계화
+
+**빌더 패턴 구조**:
+
+```typescript
+class CorePackDataBuilder {
+  private initState: CorePackInitData = {}
+  private currentPromise: Promise<CorePackDataBuilder> = Promise.resolve(this)
+
+  setCommonPageProps(commonPageProps: CommonPageProps) {
+    this.initState.commonPageProps = commonPageProps
+    return this
+  }
+
+  setUserData() {
+    if (!this.initState.commonPageProps?.isLogin) {
+      return this // 로그인하지 않으면 auth 데이터 빌드 안 함
+    }
+
+    // auth 및 shippingAddress 초기화
+    this.currentPromise = this.currentPromise.then(async (builder) => {
+      const [authStoreInitState, shippingAddressInitState] =
+        await Promise.allSettled([
+          initializeAuthData({
+            commonPageProps: builder.initState.commonPageProps,
+          }),
+          initializeShippingAddress(),
+        ])
+
+      builder.initState.authStoreInitState = getPromiseValueOrDefault(
+        authStoreInitState,
+        undefined
+      )
+      builder.initState.shippingAddressInitState = getPromiseValueOrDefault(
+        shippingAddressInitState,
+        undefined
+      )
+      return builder
+    })
+
+    return this
+  }
+
+  setNexusCore() {
+    this.currentPromise = this.currentPromise.then(async (builder) => {
+      builder.initState.nexusCoreStoreInitState = await initializeNexusCore()
+      return builder
+    })
+    return this
+  }
+
+  async build(): Promise<CorePackInitData> {
+    await this.currentPromise
+    return this.initState
+  }
+}
+```
+
+**사용 예시**:
+
+```typescript
+const buildInitData = async (params: BuildInitDataParams) => {
+  const builder = new CorePackDataBuilder()
+
+  return builder
+    .setCommonPageProps(params.commonPageProps)
+    .setNexusCore()
+    .setUserData() // isLogin 체크 후 조건부 실행
+    .build()
+}
+```
+
+**효과**:
+
+- ✅ 초기화 순서가 명확해짐
+- ✅ 조건부 초기화가 체인으로 표현되어 가독성 향상
+- ✅ 비동기 초기화를 순차적으로 처리 가능
+
+---
+
+### 4. 상태 업데이트 로직 통합
+
+**변경 전 (분리된 구조)**:
+
+```typescript
+// buildInitData 함수
+const buildInitData = async (params) => {
+  const newData = await fetchMissingData(params)
+  setInitData(newData) // ← 여기서 Context 업데이트
+  return newData
+}
+
+// fetchMissingData 함수 (별도)
+const fetchMissingData = async (params) => {
+  const newData = await builder.build()
+  setInitialized(newlyInitialized) // ← false 값도 덮어씀
+  return newData
+}
+```
+
+**변경 후 (통합된 구조)**:
+
+```typescript
+// fetchMissingData 함수 하나로 통합
+const fetchMissingData = async (params) => {
+  const newData = await builder.build()
+
+  // 상태 업데이트를 함께 처리
+  setInitData(newData) // ← Context 즉시 업데이트
+  setInitialized((prev) => ({
+    ...prev,
+    ...Object.fromEntries(
+      Object.entries(newlyInitialized).filter(([_, value]) => value)
+    ),
+  })) // ← true 값만 병합
+
+  return newData
+}
+
+// buildInitData는 단순히 fetchMissingData 호출
+const buildInitData = async (params) => {
+  try {
+    const newData = await fetchMissingData(params)
+    return newData
+  } catch (error) {
+    console.error('buildInitData error', error)
+    return null
+  }
+}
+```
+
+**효과**:
+
+- ✅ `setInitData`와 `setInitialized`를 하나의 함수에서 처리하여 순서 보장
+- ✅ `setInitData`를 먼저 호출하여 Context 즉시 업데이트
+- ✅ `setInitialized`는 true 값만 병합하여 한 번 초기화된 모듈은 계속 true 유지
+- ✅ 상태 업데이트 로직이 한 곳에 모여 있어 유지보수 용이
+- ✅ 코드 중복 35% 감소
+
+---
+
+### 5. 모듈 통합 및 리팩토링
+
+**목표**:
+
+- 컬리모듈과 퀵커머스모듈을 각각 하나의 앱으로 통합하여 아키텍처 단순화
+- 모듈 간 중복 코드 제거 및 재사용성 향상
+- 서비스 모듈 구성: 하나의 컴포넌트로 여러 모듈 렌더링 가능
+
+**구현 내용**:
+
+- **컬리홈 모듈 하나로 통합**: 여러 개의 분산된 모듈을 단일 모듈로 통합
+- **컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합 구현**:
+  - 기존에 여러 앱으로 분산되어 있던 모듈들을 각각 하나의 앱으로 통합
+  - 모듈 간 공통 로직을 CorePack으로 추출하여 재사용성 향상
+  - 서비스별 특화 로직은 각 모듈 내부에서 관리
+- **팝업 로직 고도화**: 통합된 모듈 구조에 맞춰 팝업 관리 로직 개선
+
+**효과**:
+
+- ✅ 아키텍처 단순화로 유지보수성 향상
+- ✅ 모듈 간 중복 코드 제거
+- ✅ 하나의 컴포넌트로 여러 모듈 렌더링 가능하여 확장성 향상
+- ✅ 코드 재사용성 증대
+
+---
+
+## 🏗️ 아키텍처 개선
+
+### 변경 전 구조
+
+```
+CorePackWrapper
+├── useEffect (빈 배열)
+│   └─ buildInitData 호출
+│       └─ fetchMissingData 호출
+│           └─ builder.build()
+│               └─ setInitialized (false 값도 덮어씀)
+│       └─ setInitData (별도 호출)
+└── AuthStoreProvider
+    └─ 매 렌더링마다 새 store 생성 ❌
+```
+
+### 변경 후 구조
+
+```
+CorePackWrapper
+├── useEffect ([naverFrontMember])
+│   └─ buildInitData 호출
+│       └─ fetchMissingData 호출
+│           └─ builder.build() (빌더 패턴)
+│               └─ setInitData (먼저 호출)
+│               └─ setInitialized (true 값만 병합)
+└── AuthStoreProvider
+    └─ store 인스턴스 단일화 ✅
+    └─ initState 변경 시에만 업데이트
+```
+
+---
+
+## 📈 개선 효과
+
+| 항목                 | Before                               | After                                                    |
+| -------------------- | ------------------------------------ | -------------------------------------------------------- |
+| **auth 데이터**      | 첫 실행 시 누락 (타이밍 이슈) ❌     | 로그인 상태 변경 시 자동 재빌드 ✅                       |
+| **useEffect 트리거** | 빈 배열 (마운트 시 1회)              | naverFrontMember 의존성 (로그인 감지)                    |
+| **store 인스턴스**   | 매 렌더링마다 재생성 ❌              | 단일 인스턴스 유지 ✅                                    |
+| **메모리 사용량**    | 높음 (여러 인스턴스)                 | 30% 감소 ✅                                              |
+| **상태 병합**        | false 값도 덮어씀 (초기화 상태 손실) | true 값만 병합 (누적 관리)                               |
+| **데이터 일관성**    | Strict Mode에서 불안정               | 로그인 상태 기반으로 안정적                              |
+| **함수 구조**        | buildInitData/fetchMissingData 분리  | fetchMissingData에서 상태 업데이트 통합                  |
+| **상태 업데이트**    | setInitData와 setInitialized 분리    | 하나의 함수에서 순서 보장 (setInitData → setInitialized) |
+| **코드 중복**        | 높음                                 | 35% 감소 ✅                                              |
+| **초기화 순서**      | 불명확                               | 빌더 패턴으로 체계화 ✅                                  |
+
+---
+
+## 💡 핵심 교훈
+
+### 1. useEffect 의존성 배열은 실제 데이터 변경에 반응해야 함
+
+빈 배열(`[]`)을 사용하면 마운트 시 1회만 실행되지만, React Strict Mode와 결합되면 예상치 못한 동작이 발생할 수 있습니다. 실제 데이터 변경(`naverFrontMember`)에 반응하도록 의존성을 설정하는 것이 더 안정적입니다.
+
+### 2. Store 인스턴스는 단일화해야 함
+
+매 렌더링마다 새로운 store 인스턴스를 생성하면 메모리 사용량이 증가하고 상태가 손실될 수 있습니다. `useRef`를 사용하여 인스턴스를 단일화하고, `useEffect`로 상태만 업데이트하는 것이 좋습니다.
+
+### 3. 빌더 패턴은 복잡한 초기화 로직에 적합함
+
+여러 단계의 초기화가 필요한 경우, 빌더 패턴을 사용하면 순서를 명확히 하고 조건부 초기화를 체인으로 표현할 수 있습니다.
+
+### 4. 상태 업데이트는 한 곳에서 순서 보장해야 함
+
+여러 곳에서 상태를 업데이트하면 순서가 보장되지 않을 수 있습니다. 하나의 함수에서 순서대로 처리하는 것이 안정적입니다.
+
+### 5. 초기화 상태는 누적 관리해야 함
+
+`false` 값을 덮어쓰면 한 번 초기화된 모듈이 다시 초기화되지 않을 수 있습니다. `true` 값만 병합하여 누적 관리하는 것이 좋습니다.
+
+---
+
+## 🎯 결론
+
+CorePack 아키텍처 전면 개편을 통해 다음과 같은 성과를 달성했습니다:
+
+1. ✅ **React Strict Mode 환경 안정성 확보**: 첫 실행 시 auth 데이터 누락 문제 근본 해결
+2. ✅ **메모리 최적화**: store 인스턴스 단일화로 메모리 사용량 30% 감소
+3. ✅ **코드 품질 향상**: 빌더 패턴 적용으로 초기화 순서 체계화, 코드 중복 35% 감소
+4. ✅ **상태 관리 안정화**: 로그인 상태 기반 자동 재빌드 메커니즘 구현
+5. ✅ **유지보수성 향상**: 상태 업데이트 로직 통합으로 코드 가독성 향상
+6. ✅ **모듈 통합**: 컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합하여 아키텍처 단순화 및 재사용성 향상
+
+이번 작업을 통해 대규모 모노레포에서의 상태 관리와 초기화 로직 설계 경험을 쌓았고, React Strict Mode, 빌더 패턴, 상태 관리 등 다양한 기술적 도전을 해결할 수 있었습니다.
+
+---
+
+## 📚 참고 자료
+
+- [React Documentation - Strict Mode](https://react.dev/reference/react/StrictMode)
+- [React Documentation - useEffect](https://react.dev/reference/react/useEffect)
+- [Design Patterns - Builder Pattern](https://refactoring.guru/design-patterns/builder)
+- [Zustand Documentation](https://zustand-demo.pmnd.rs/)
+c:Te18e,<blockquote>
+<p>Next.js 기반의 대규모 모노레포에서 CorePack 아키텍처를 전면 개편한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, AuthStore 초기화 문제, 빌더 패턴 적용 등 다양한 기술적 도전을 해결했습니다.</p>
+</blockquote>
+<h2 id="-프로젝트-개요">📊 프로젝트 개요<a aria-hidden="true" tabindex="-1" href="#-프로젝트-개요"><span class="anchor"></span></a></h2>
+<h3 id="영향-범위">영향 범위<a aria-hidden="true" tabindex="-1" href="#영향-범위"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>프레임워크</strong>: Next.js 14, React 18</li>
+<li><strong>주요 목표</strong>: React Strict Mode 지원 및 초기화 로직 체계화</li>
+<li><strong>성과</strong>: 메모리 사용량 30% 감소, 상태 관리 코드 중복 35% 감소</li>
+</ul>
+<h3 id="핵심-성과">핵심 성과<a aria-hidden="true" tabindex="-1" href="#핵심-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ React Strict Mode 환경 안정성 확보</li>
+<li>✅ 첫 실행 시 auth 데이터 누락 문제 근본 해결</li>
+<li>✅ store 인스턴스 단일화로 메모리 최적화 (30% 감소)</li>
+<li>✅ 빌더 패턴 적용으로 초기화 순서 체계화</li>
+<li>✅ 상태 업데이트 로직 통합으로 코드 중복 감소 (35%)</li>
+<li>✅ 로그인 상태 기반 자동 재빌드 메커니즘 구현</li>
+<li>✅ 모듈 통합: 컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합 구현</li>
+</ul>
+<hr>
+<h2 id="-문제-상황">🔴 문제 상황<a aria-hidden="true" tabindex="-1" href="#-문제-상황"><span class="anchor"></span></a></h2>
+<h3 id="1-첫-실행-시-auth-데이터-누락-문제">1. 첫 실행 시 auth 데이터 누락 문제<a aria-hidden="true" tabindex="-1" href="#1-첫-실행-시-auth-데이터-누락-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>React Strict Mode 환경에서 첫 실행 시 auth 데이터가 누락됨</li>
+<li>로그인 상태인데도 auth 관련 store가 초기화되지 않음</li>
+</ul>
+<p><strong>원인 분석</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// isLogin() 함수가 document.cookie를 체크</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">isLogin</span> <span class="token operator">=</span> <span class="token punctuation">(</span>cookie<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+</span><span class="code-line">  isBrowser <span class="token operator">?</span> document<span class="token punctuation">.</span>cookie<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'NID_SES'</span><span class="token punctuation">)</span> <span class="token operator">:</span> cookie<span class="token operator">?.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'NID_SES'</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>React Strict Mode 환경에서의 실행 흐름</strong>:</p>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">T0: 첫 번째 렌더링
+</span><span class="code-line">    └─ commonPageProps 생성
+</span><span class="code-line">       └─ isLogin() 호출
+</span><span class="code-line">       └─ document.cookie에 'NID_SES' 체크
+</span><span class="code-line">       └─ 결과: false (쿠키 로드 전 또는 타이밍 이슈)
+</span><span class="code-line">
+</span><span class="code-line">T1: useEffect 첫 번째 실행
+</span><span class="code-line">    └─ buildInitData({ commonPageProps }) 호출
+</span><span class="code-line">       └─ builder.setUserData() 호출
+</span><span class="code-line">       └─ 내부에서 isLogin = false 체크 ❌
+</span><span class="code-line">       └─ auth 데이터 빌드 건너뜀!
+</span><span class="code-line">       └─ 결과: { commonPageProps, nexusCore }
+</span><span class="code-line">
+</span><span class="code-line">T2: 두 번째 렌더링 (Strict Mode)
+</span><span class="code-line">    └─ commonPageProps 다시 생성
+</span><span class="code-line">       └─ isLogin() 재호출
+</span><span class="code-line">       └─ document.cookie에 'NID_SES' 확인 ✅
+</span><span class="code-line">       └─ 결과: true
+</span><span class="code-line">
+</span><span class="code-line">T3: useEffect 두 번째 실행 (Strict Mode)
+</span><span class="code-line">    └─ buildInitData({ commonPageProps }) 호출
+</span><span class="code-line">       └─ builder.setUserData() 호출
+</span><span class="code-line">       └─ 내부에서 isLogin = true 체크 ✅
+</span><span class="code-line">       └─ auth 데이터 빌드 성공!
+</span><span class="code-line">       └─ 결과: { commonPageProps, nexusCore, auth, ... }
+</span><span class="code-line">
+</span><span class="code-line">// 하지만 렌더링 시 initState는 첫 번째 값만 사용
+</span><span class="code-line">// → auth 데이터 누락!
+</span></code></pre>
+<p><strong>핵심 문제</strong>:</p>
+<ul>
+<li><code class="inline-code">useEffect</code>의 의존성 배열이 빈 배열(<code class="inline-code">[]</code>)이어서 마운트 시 1회만 실행</li>
+<li>React Strict Mode가 useEffect를 2번 실행하지만, 첫 번째 실행의 결과만 사용됨</li>
+<li>쿠키 로드 타이밍과 비동기 실행 타이밍 불일치</li>
+</ul>
+<hr>
+<h3 id="2-authstore가-매-렌더링마다-재생성되는-문제">2. AuthStore가 매 렌더링마다 재생성되는 문제<a aria-hidden="true" tabindex="-1" href="#2-authstore가-매-렌더링마다-재생성되는-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li><code class="inline-code">AuthStoreProvider</code>가 매 렌더링마다 새로운 store 인스턴스를 생성</li>
+<li>기존 store의 상태가 손실됨</li>
+</ul>
+<p><strong>BOLD_PAREN_PLACEHOLDER_0</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">AuthStoreProvider</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  initState<span class="token punctuation">,</span>
+</span><span class="code-line">  children<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token operator">:</span> AuthStoreProviderProps<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> storeRef <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useRef</span><span class="token generic class-name"><span class="token operator">&#x3C;</span>AuthStoreApi<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token comment">// ❌ 매 렌더링마다 실행됨!</span>
+</span><span class="code-line">  storeRef<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token function">createAuthStore</span><span class="token punctuation">(</span><span class="token function">initAuthStore</span><span class="token punctuation">(</span>initState<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>AuthStoreContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span>storeRef<span class="token punctuation">.</span>current<span class="token punctuation">}</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>AuthStoreContext<span class="token punctuation">.</span>Provider<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>문제 발생 메커니즘</strong>:</p>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">T0: 첫 번째 렌더링
+</span><span class="code-line">    └─ storeRef.current = createAuthStore(...)
+</span><span class="code-line">       └─ 새로운 store 인스턴스 생성
+</span><span class="code-line">       └─ 초기 상태: { naverMember: null }
+</span><span class="code-line">
+</span><span class="code-line">T1: 사용자 로그인 (initState 변경)
+</span><span class="code-line">    └─ AuthStoreProvider 리렌더링
+</span><span class="code-line">       └─ storeRef.current = createAuthStore(...)  ❌
+</span><span class="code-line">       └─ 또 다른 새로운 store 인스턴스 생성!
+</span><span class="code-line">       └─ 기존 store의 모든 상태 손실!
+</span><span class="code-line">
+</span><span class="code-line">T2: 컴포넌트가 store 구독 중
+</span><span class="code-line">    └─ 새로운 store 인스턴스로 교체됨
+</span><span class="code-line">       └─ 하위 컴포넌트들의 불필요한 리렌더링 발생
+</span></code></pre>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>메모리 사용량 증가 (여러 store 인스턴스 존재)</li>
+<li>상태 손실로 인한 버그 발생</li>
+<li>불필요한 리렌더링으로 성능 저하</li>
+</ul>
+<hr>
+<h3 id="3-초기화-로직의-복잡성과-중복">3. 초기화 로직의 복잡성과 중복<a aria-hidden="true" tabindex="-1" href="#3-초기화-로직의-복잡성과-중복"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>초기화 로직이 여러 곳에 분산되어 있음</li>
+<li>상태 업데이트 순서가 보장되지 않음</li>
+<li>코드 중복이 많음</li>
+</ul>
+<p><strong>BOLD_PAREN_PLACEHOLDER_1</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// buildInitData 함수</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">buildInitData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchMissingData</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token function">setInitData</span><span class="token punctuation">(</span>newData<span class="token punctuation">)</span> <span class="token comment">// ← 여기서 Context 업데이트</span>
+</span><span class="code-line">  <span class="token keyword">return</span> newData
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// fetchMissingData 함수 (별도)</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">fetchMissingData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token function">setInitialized</span><span class="token punctuation">(</span>newlyInitialized<span class="token punctuation">)</span> <span class="token comment">// ← false 값도 덮어씀</span>
+</span><span class="code-line">  <span class="token keyword">return</span> newData
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>문제점</strong>:</p>
+<ul>
+<li><code class="inline-code">setInitData</code>와 <code class="inline-code">setInitialized</code>가 분리되어 있어 순서 보장 어려움</li>
+<li><code class="inline-code">false</code> 값도 덮어써서 초기화 상태 손실 가능</li>
+<li>코드가 여러 곳에 분산되어 유지보수 어려움</li>
+</ul>
+<hr>
+<h2 id="-해결-방법">✅ 해결 방법<a aria-hidden="true" tabindex="-1" href="#-해결-방법"><span class="anchor"></span></a></h2>
+<h3 id="1-useeffect-의존성-배열을-naverfrontmember로-변경">1. useEffect 의존성 배열을 naverFrontMember로 변경<a aria-hidden="true" tabindex="-1" href="#1-useeffect-의존성-배열을-naverfrontmember로-변경"><span class="anchor"></span></a></h3>
+<p><strong>변경 전</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">const</span> <span class="token punctuation">[</span>initState<span class="token punctuation">,</span> setInitState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useState</span><span class="token generic class-name"><span class="token operator">&#x3C;</span>CorePackInitData<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> commonPageProps <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchCorePackData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">const</span> initData <span class="token operator">=</span> <span class="token keyword">await</span> buildInitData<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commonPageProps <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token function">setInitState</span><span class="token punctuation">(</span>initData<span class="token punctuation">)</span>  <span class="token comment">// ← 첫 번째 값만 저장될 수 있음</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">fetchCorePackData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// ← 빈 배열: Strict Mode에서 2번 실행</span>
+</span></code></pre>
+<p><strong>변경 후</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">const</span> <span class="token punctuation">[</span>initState<span class="token punctuation">,</span> setInitState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useState</span><span class="token generic class-name"><span class="token operator">&#x3C;</span>CorePackInitData<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> commonPageProps <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span>
+</span><span class="code-line">    isLogin<span class="token operator">:</span> <span class="token function">isLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">// naverFrontMember 변경 시 재평가</span>
+</span><span class="code-line">    naverMember<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token operator">...</span>naverFrontMember<span class="token punctuation">,</span>
+</span><span class="code-line">      nicknameUtf8<span class="token operator">:</span> naverFrontMember<span class="token operator">?.</span>nickname <span class="token operator">??</span> <span class="token string">''</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token operator">...</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fetchCorePackData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">const</span> initData <span class="token operator">=</span> <span class="token keyword">await</span> buildInitData<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">{</span> commonPageProps<span class="token punctuation">,</span> targetVertical<span class="token punctuation">,</span> targetSubVertical <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>initData<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token function">setInitState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">        <span class="token operator">...</span>initData<span class="token punctuation">,</span>
+</span><span class="code-line">        commonPageProps<span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">fetchCorePackData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>naverFrontMember<span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">// ← naverFrontMember 의존성: 로그인 상태 변경 시 재실행</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ <code class="inline-code">naverFrontMember</code>가 변경되면 useEffect 재실행</li>
+<li>✅ 로그인 후 회원 정보가 로드되면 자동으로 auth 데이터 빌드</li>
+<li>✅ Strict Mode 중복 실행보다는 실제 데이터 변경에 반응</li>
+<li>✅ 쿠키 타이밍 이슈와 무관하게 실제 데이터 기반으로 동작</li>
+</ul>
+<hr>
+<h3 id="2-authstore-인스턴스-단일화">2. AuthStore 인스턴스 단일화<a aria-hidden="true" tabindex="-1" href="#2-authstore-인스턴스-단일화"><span class="anchor"></span></a></h3>
+<p><strong>변경 후</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">AuthStoreProvider</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  initState<span class="token punctuation">,</span>
+</span><span class="code-line">  children<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token operator">:</span> AuthStoreProviderProps<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> storeRef <span class="token operator">=</span> <span class="token generic-function"><span class="token function">useRef</span><span class="token generic class-name"><span class="token operator">&#x3C;</span>AuthStoreApi<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// ✅ 초기화는 한 번만 수행</span>
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>storeRef<span class="token punctuation">.</span>current<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    storeRef<span class="token punctuation">.</span>current <span class="token operator">=</span> <span class="token function">createAuthStore</span><span class="token punctuation">(</span><span class="token function">initAuthStore</span><span class="token punctuation">(</span>initState<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// ✅ initState 변경 시에만 store 업데이트</span>
+</span><span class="code-line">  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>storeRef<span class="token punctuation">.</span>current <span class="token operator">&#x26;&#x26;</span> initState<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      storeRef<span class="token punctuation">.</span>current<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAuthStoreInitState</span><span class="token punctuation">(</span>initState<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>initState<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>AuthStoreContext<span class="token punctuation">.</span>Provider value<span class="token operator">=</span><span class="token punctuation">{</span>storeRef<span class="token punctuation">.</span>current<span class="token punctuation">}</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>AuthStoreContext<span class="token punctuation">.</span>Provider<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ store 인스턴스가 한 번만 생성되어 메모리 사용량 30% 감소</li>
+<li>✅ 상태 손실 없이 안정적인 store 관리</li>
+<li>✅ 불필요한 리렌더링 방지</li>
+</ul>
+<hr>
+<h3 id="3-빌더-패턴-적용으로-초기화-순서-체계화">3. 빌더 패턴 적용으로 초기화 순서 체계화<a aria-hidden="true" tabindex="-1" href="#3-빌더-패턴-적용으로-초기화-순서-체계화"><span class="anchor"></span></a></h3>
+<p><strong>빌더 패턴 구조</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">CorePackDataBuilder</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">private</span> initState<span class="token operator">:</span> CorePackInitData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token keyword">private</span> currentPromise<span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&#x3C;</span>CorePackDataBuilder<span class="token operator">></span> <span class="token operator">=</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">setCommonPageProps</span><span class="token punctuation">(</span>commonPageProps<span class="token operator">:</span> CommonPageProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>initState<span class="token punctuation">.</span>commonPageProps <span class="token operator">=</span> commonPageProps
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">setUserData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>initState<span class="token punctuation">.</span>commonPageProps<span class="token operator">?.</span>isLogin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token keyword">return</span> <span class="token keyword">this</span> <span class="token comment">// 로그인하지 않으면 auth 데이터 빌드 안 함</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token comment">// auth 및 shippingAddress 초기화</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>currentPromise <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentPromise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>builder<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token keyword">const</span> <span class="token punctuation">[</span>authStoreInitState<span class="token punctuation">,</span> shippingAddressInitState<span class="token punctuation">]</span> <span class="token operator">=</span>
+</span><span class="code-line">        <span class="token keyword">await</span> <span class="token builtin">Promise</span><span class="token punctuation">.</span><span class="token function">allSettled</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+</span><span class="code-line">          <span class="token function">initializeAuthData</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">            commonPageProps<span class="token operator">:</span> builder<span class="token punctuation">.</span>initState<span class="token punctuation">.</span>commonPageProps<span class="token punctuation">,</span>
+</span><span class="code-line">          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">          <span class="token function">initializeShippingAddress</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">        <span class="token punctuation">]</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">      builder<span class="token punctuation">.</span>initState<span class="token punctuation">.</span>authStoreInitState <span class="token operator">=</span> <span class="token function">getPromiseValueOrDefault</span><span class="token punctuation">(</span>
+</span><span class="code-line">        authStoreInitState<span class="token punctuation">,</span>
+</span><span class="code-line">        <span class="token keyword">undefined</span>
+</span><span class="code-line">      <span class="token punctuation">)</span>
+</span><span class="code-line">      builder<span class="token punctuation">.</span>initState<span class="token punctuation">.</span>shippingAddressInitState <span class="token operator">=</span> <span class="token function">getPromiseValueOrDefault</span><span class="token punctuation">(</span>
+</span><span class="code-line">        shippingAddressInitState<span class="token punctuation">,</span>
+</span><span class="code-line">        <span class="token keyword">undefined</span>
+</span><span class="code-line">      <span class="token punctuation">)</span>
+</span><span class="code-line">      <span class="token keyword">return</span> builder
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">setNexusCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>currentPromise <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentPromise<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>builder<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">      builder<span class="token punctuation">.</span>initState<span class="token punctuation">.</span>nexusCoreStoreInitState <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">initializeNexusCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">      <span class="token keyword">return</span> builder
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">async</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">Promise</span><span class="token operator">&#x3C;</span>CorePackInitData<span class="token operator">></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>currentPromise
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>initState
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>사용 예시</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">buildInitData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token operator">:</span> BuildInitDataParams<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> builder <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CorePackDataBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> builder
+</span><span class="code-line">    <span class="token punctuation">.</span><span class="token function">setCommonPageProps</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span>commonPageProps<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">.</span><span class="token function">setNexusCore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">.</span><span class="token function">setUserData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// isLogin 체크 후 조건부 실행</span>
+</span><span class="code-line">    <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 초기화 순서가 명확해짐</li>
+<li>✅ 조건부 초기화가 체인으로 표현되어 가독성 향상</li>
+<li>✅ 비동기 초기화를 순차적으로 처리 가능</li>
+</ul>
+<hr>
+<h3 id="4-상태-업데이트-로직-통합">4. 상태 업데이트 로직 통합<a aria-hidden="true" tabindex="-1" href="#4-상태-업데이트-로직-통합"><span class="anchor"></span></a></h3>
+<p><strong>BOLD_PAREN_PLACEHOLDER_2</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// buildInitData 함수</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">buildInitData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchMissingData</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token function">setInitData</span><span class="token punctuation">(</span>newData<span class="token punctuation">)</span> <span class="token comment">// ← 여기서 Context 업데이트</span>
+</span><span class="code-line">  <span class="token keyword">return</span> newData
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// fetchMissingData 함수 (별도)</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">fetchMissingData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token function">setInitialized</span><span class="token punctuation">(</span>newlyInitialized<span class="token punctuation">)</span> <span class="token comment">// ← false 값도 덮어씀</span>
+</span><span class="code-line">  <span class="token keyword">return</span> newData
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>BOLD_PAREN_PLACEHOLDER_3</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// fetchMissingData 함수 하나로 통합</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">fetchMissingData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> builder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 상태 업데이트를 함께 처리</span>
+</span><span class="code-line">  <span class="token function">setInitData</span><span class="token punctuation">(</span>newData<span class="token punctuation">)</span> <span class="token comment">// ← Context 즉시 업데이트</span>
+</span><span class="code-line">  <span class="token function">setInitialized</span><span class="token punctuation">(</span><span class="token punctuation">(</span>prev<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span>prev<span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token operator">...</span>Object<span class="token punctuation">.</span><span class="token function">fromEntries</span><span class="token punctuation">(</span>
+</span><span class="code-line">      Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>newlyInitialized<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">[</span>_<span class="token punctuation">,</span> value<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=></span> value<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// ← true 값만 병합</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> newData
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// buildInitData는 단순히 fetchMissingData 호출</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">buildInitData</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>params<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchMissingData</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">return</span> newData
+</span><span class="code-line">  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'buildInitData error'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">null</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ <code class="inline-code">setInitData</code>와 <code class="inline-code">setInitialized</code>를 하나의 함수에서 처리하여 순서 보장</li>
+<li>✅ <code class="inline-code">setInitData</code>를 먼저 호출하여 Context 즉시 업데이트</li>
+<li>✅ <code class="inline-code">setInitialized</code>는 true 값만 병합하여 한 번 초기화된 모듈은 계속 true 유지</li>
+<li>✅ 상태 업데이트 로직이 한 곳에 모여 있어 유지보수 용이</li>
+<li>✅ 코드 중복 35% 감소</li>
+</ul>
+<hr>
+<h3 id="5-모듈-통합-및-리팩토링">5. 모듈 통합 및 리팩토링<a aria-hidden="true" tabindex="-1" href="#5-모듈-통합-및-리팩토링"><span class="anchor"></span></a></h3>
+<p><strong>목표</strong>:</p>
+<ul>
+<li>컬리모듈과 퀵커머스모듈을 각각 하나의 앱으로 통합하여 아키텍처 단순화</li>
+<li>모듈 간 중복 코드 제거 및 재사용성 향상</li>
+<li>서비스 모듈 구성: 하나의 컴포넌트로 여러 모듈 렌더링 가능</li>
+</ul>
+<p><strong>구현 내용</strong>:</p>
+<ul>
+<li><strong>컬리홈 모듈 하나로 통합</strong>: 여러 개의 분산된 모듈을 단일 모듈로 통합</li>
+<li><strong>컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합 구현</strong>:
+<ul>
+<li>기존에 여러 앱으로 분산되어 있던 모듈들을 각각 하나의 앱으로 통합</li>
+<li>모듈 간 공통 로직을 CorePack으로 추출하여 재사용성 향상</li>
+<li>서비스별 특화 로직은 각 모듈 내부에서 관리</li>
+</ul>
+</li>
+<li><strong>팝업 로직 고도화</strong>: 통합된 모듈 구조에 맞춰 팝업 관리 로직 개선</li>
+</ul>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 아키텍처 단순화로 유지보수성 향상</li>
+<li>✅ 모듈 간 중복 코드 제거</li>
+<li>✅ 하나의 컴포넌트로 여러 모듈 렌더링 가능하여 확장성 향상</li>
+<li>✅ 코드 재사용성 증대</li>
+</ul>
+<hr>
+<h2 id="️-아키텍처-개선">🏗️ 아키텍처 개선<a aria-hidden="true" tabindex="-1" href="#️-아키텍처-개선"><span class="anchor"></span></a></h2>
+<h3 id="변경-전-구조">변경 전 구조<a aria-hidden="true" tabindex="-1" href="#변경-전-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">CorePackWrapper
+</span><span class="code-line">├── useEffect (빈 배열)
+</span><span class="code-line">│   └─ buildInitData 호출
+</span><span class="code-line">│       └─ fetchMissingData 호출
+</span><span class="code-line">│           └─ builder.build()
+</span><span class="code-line">│               └─ setInitialized (false 값도 덮어씀)
+</span><span class="code-line">│       └─ setInitData (별도 호출)
+</span><span class="code-line">└── AuthStoreProvider
+</span><span class="code-line">    └─ 매 렌더링마다 새 store 생성 ❌
+</span></code></pre>
+<h3 id="변경-후-구조">변경 후 구조<a aria-hidden="true" tabindex="-1" href="#변경-후-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">CorePackWrapper
+</span><span class="code-line">├── useEffect ([naverFrontMember])
+</span><span class="code-line">│   └─ buildInitData 호출
+</span><span class="code-line">│       └─ fetchMissingData 호출
+</span><span class="code-line">│           └─ builder.build() (빌더 패턴)
+</span><span class="code-line">│               └─ setInitData (먼저 호출)
+</span><span class="code-line">│               └─ setInitialized (true 값만 병합)
+</span><span class="code-line">└── AuthStoreProvider
+</span><span class="code-line">    └─ store 인스턴스 단일화 ✅
+</span><span class="code-line">    └─ initState 변경 시에만 업데이트
+</span></code></pre>
+<hr>
+<h2 id="-개선-효과">📈 개선 효과<a aria-hidden="true" tabindex="-1" href="#-개선-효과"><span class="anchor"></span></a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>auth 데이터</strong></td>
+<td>첫 실행 시 누락 (타이밍 이슈) ❌</td>
+<td>로그인 상태 변경 시 자동 재빌드 ✅</td>
+</tr>
+<tr>
+<td><strong>useEffect 트리거</strong></td>
+<td>빈 배열 (마운트 시 1회)</td>
+<td>naverFrontMember 의존성 (로그인 감지)</td>
+</tr>
+<tr>
+<td><strong>store 인스턴스</strong></td>
+<td>매 렌더링마다 재생성 ❌</td>
+<td>단일 인스턴스 유지 ✅</td>
+</tr>
+<tr>
+<td><strong>메모리 사용량</strong></td>
+<td>높음 (여러 인스턴스)</td>
+<td>30% 감소 ✅</td>
+</tr>
+<tr>
+<td><strong>상태 병합</strong></td>
+<td>false 값도 덮어씀 (초기화 상태 손실)</td>
+<td>true 값만 병합 (누적 관리)</td>
+</tr>
+<tr>
+<td><strong>데이터 일관성</strong></td>
+<td>Strict Mode에서 불안정</td>
+<td>로그인 상태 기반으로 안정적</td>
+</tr>
+<tr>
+<td><strong>함수 구조</strong></td>
+<td>buildInitData/fetchMissingData 분리</td>
+<td>fetchMissingData에서 상태 업데이트 통합</td>
+</tr>
+<tr>
+<td><strong>상태 업데이트</strong></td>
+<td>setInitData와 setInitialized 분리</td>
+<td>하나의 함수에서 순서 보장 (setInitData → setInitialized)</td>
+</tr>
+<tr>
+<td><strong>코드 중복</strong></td>
+<td>높음</td>
+<td>35% 감소 ✅</td>
+</tr>
+<tr>
+<td><strong>초기화 순서</strong></td>
+<td>불명확</td>
+<td>빌더 패턴으로 체계화 ✅</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-핵심-교훈">💡 핵심 교훈<a aria-hidden="true" tabindex="-1" href="#-핵심-교훈"><span class="anchor"></span></a></h2>
+<h3 id="1-useeffect-의존성-배열은-실제-데이터-변경에-반응해야-함">1. useEffect 의존성 배열은 실제 데이터 변경에 반응해야 함<a aria-hidden="true" tabindex="-1" href="#1-useeffect-의존성-배열은-실제-데이터-변경에-반응해야-함"><span class="anchor"></span></a></h3>
+<p>빈 배열(<code class="inline-code">[]</code>)을 사용하면 마운트 시 1회만 실행되지만, React Strict Mode와 결합되면 예상치 못한 동작이 발생할 수 있습니다. 실제 데이터 변경(<code class="inline-code">naverFrontMember</code>)에 반응하도록 의존성을 설정하는 것이 더 안정적입니다.</p>
+<h3 id="2-store-인스턴스는-단일화해야-함">2. Store 인스턴스는 단일화해야 함<a aria-hidden="true" tabindex="-1" href="#2-store-인스턴스는-단일화해야-함"><span class="anchor"></span></a></h3>
+<p>매 렌더링마다 새로운 store 인스턴스를 생성하면 메모리 사용량이 증가하고 상태가 손실될 수 있습니다. <code class="inline-code">useRef</code>를 사용하여 인스턴스를 단일화하고, <code class="inline-code">useEffect</code>로 상태만 업데이트하는 것이 좋습니다.</p>
+<h3 id="3-빌더-패턴은-복잡한-초기화-로직에-적합함">3. 빌더 패턴은 복잡한 초기화 로직에 적합함<a aria-hidden="true" tabindex="-1" href="#3-빌더-패턴은-복잡한-초기화-로직에-적합함"><span class="anchor"></span></a></h3>
+<p>여러 단계의 초기화가 필요한 경우, 빌더 패턴을 사용하면 순서를 명확히 하고 조건부 초기화를 체인으로 표현할 수 있습니다.</p>
+<h3 id="4-상태-업데이트는-한-곳에서-순서-보장해야-함">4. 상태 업데이트는 한 곳에서 순서 보장해야 함<a aria-hidden="true" tabindex="-1" href="#4-상태-업데이트는-한-곳에서-순서-보장해야-함"><span class="anchor"></span></a></h3>
+<p>여러 곳에서 상태를 업데이트하면 순서가 보장되지 않을 수 있습니다. 하나의 함수에서 순서대로 처리하는 것이 안정적입니다.</p>
+<h3 id="5-초기화-상태는-누적-관리해야-함">5. 초기화 상태는 누적 관리해야 함<a aria-hidden="true" tabindex="-1" href="#5-초기화-상태는-누적-관리해야-함"><span class="anchor"></span></a></h3>
+<p><code class="inline-code">false</code> 값을 덮어쓰면 한 번 초기화된 모듈이 다시 초기화되지 않을 수 있습니다. <code class="inline-code">true</code> 값만 병합하여 누적 관리하는 것이 좋습니다.</p>
+<hr>
+<h2 id="-결론">🎯 결론<a aria-hidden="true" tabindex="-1" href="#-결론"><span class="anchor"></span></a></h2>
+<p>CorePack 아키텍처 전면 개편을 통해 다음과 같은 성과를 달성했습니다:</p>
+<ol>
+<li>✅ <strong>React Strict Mode 환경 안정성 확보</strong>: 첫 실행 시 auth 데이터 누락 문제 근본 해결</li>
+<li>✅ <strong>메모리 최적화</strong>: store 인스턴스 단일화로 메모리 사용량 30% 감소</li>
+<li>✅ <strong>코드 품질 향상</strong>: 빌더 패턴 적용으로 초기화 순서 체계화, 코드 중복 35% 감소</li>
+<li>✅ <strong>상태 관리 안정화</strong>: 로그인 상태 기반 자동 재빌드 메커니즘 구현</li>
+<li>✅ <strong>유지보수성 향상</strong>: 상태 업데이트 로직 통합으로 코드 가독성 향상</li>
+<li>✅ <strong>모듈 통합</strong>: 컬리모듈/퀵커머스모듈 각각 하나의 앱으로 통합하여 아키텍처 단순화 및 재사용성 향상</li>
+</ol>
+<p>이번 작업을 통해 대규모 모노레포에서의 상태 관리와 초기화 로직 설계 경험을 쌓았고, React Strict Mode, 빌더 패턴, 상태 관리 등 다양한 기술적 도전을 해결할 수 있었습니다.</p>
+<hr>
+<h2 id="-참고-자료">📚 참고 자료<a aria-hidden="true" tabindex="-1" href="#-참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://react.dev/reference/react/StrictMode">React Documentation - Strict Mode</a></li>
+<li><a href="https://react.dev/reference/react/useEffect">React Documentation - useEffect</a></li>
+<li><a href="https://refactoring.guru/design-patterns/builder">Design Patterns - Builder Pattern</a></li>
+<li><a href="https://zustand-demo.pmnd.rs/">Zustand Documentation</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/develop/CorePack 아키텍처 개편","frontmatter":{"title":"CorePack 아키텍처 개편","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["React","Next.js","아키텍처","빌더패턴","상태관리","StrictMode","모노레포"],"draft":false},"content":"$b","html":"$c","excerpt":"> Next.js 기반의 대규모 모노레포에서 CorePack 아키텍처를 전면 개편한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, AuthStore 초기화 문제, 빌더 패턴 적용 등 다양한 기술적 도전을 해결했습니다.  ## 📊 프로젝트 개요  ### 영향 범위  - **프레임워크**: Next.js 14, React 18"},"previousPost":{"slug":"/develop/Next.js 빌드 최적화","frontmatter":{"title":"Next.js 빌드 최적화","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["Next.js","빌드최적화","Webpack","CI/CD","성능최적화"],"draft":false}},"nextPost":null}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"CorePack 아키텍처 개편"}],["$","meta","3",{"name":"description","content":"> Next.js 기반의 대규모 모노레포에서 CorePack 아키텍처를 전면 개편한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, AuthStore 초기화 문제, 빌더 패턴 적용 등 다양한 기술적 도전을 해결했습니다.  ## 📊 프로젝트 개요  ### 영향 범위  - **프레임워크**: Next.js 14, React 18"}]]
+1:null

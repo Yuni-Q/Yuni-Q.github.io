@@ -1,0 +1,431 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","studyFront","d"]
+5:["slug","day2","c"]
+0:["static-build-id",[[["",{"children":[["category","studyFront","d"],{"children":[["slug","day2","c"],{"children":["__PAGE__?{\"category\":\"studyFront\",\"slug\":[\"day2\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","studyFront","d"],{"children":[["slug","day2","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T1c26,
+## github 활용하기
+
+### github 가입
+
+- [github](https://github.com/)에 가입합니다.
+- 우측 상단에 동그라미를 눌러 Your repositories
+- 우측 상단에 New라는 녹색 버튼을 클릭합니다.
+- Repository name에 자신의 계정이름 + github.io로 repository를 생성합니다. - 저는 Yuni-Q.github.io 입니다.
+- 이곳에 파일을 넣으면 github애서 정적 파일을 호스팅해 줍니다.
+
+### git 사용하기
+
+- vscode에서 control + `을 통해 터미널을 열어줍니다.
+  - `(백티)은 영어 일 때만 입력이 되고 한글 일 경우 ₩이 입력이 됩니다.
+- git을 사용하고자 하는 폴더에서 'git init'을 합니다. 그러면 .git 폴더가 만들어집니다.
+- 'git remote add \[별칭] \[repository 주소]'을 통해 원격 저장소를 연결합니다.
+  - 별칭은 origin을 많이 사용합니다.
+  - 저는 'git remote add origin https://github.com/Yuni-Q/Yuni-Q.github.io' 입니다.
+- git add \[파일명]을 통해 파일을 STAGED CHANGE 상태로 만듭니다. git에 저장할 파일들을 고르는 상태입니다.
+  - 'git add .' 을 통해 현재 폴더의 모든 파일을 저장 할 수 있습니다.
+- 'git commit -m '\[메시지]''를 통해 git에 저장합니다.
+  - -m은 메시지를 작성하겠다는 옵션입니다. 이를 작성하지 않을 경우 vim과 같은 에디터로 작성해야 해서 어려움이 있을 수 있습니다.
+- 'git push \[별칭] \[브랜치명]'을 통해 원격 저장소로 현재 git 상태를 올립니다.
+  - 브랜치명은 기본적으로 master가 생성 됩니다.
+  - 저는 'git push origin master'입니다.
+  - -u 옵션을 사용하면 이 후부터는 'git push'만 작성해도 됩니다.
+
+### vscode 기능 사용하기
+
+- vscode 좌측 active bar에 있는 Source Control 버튼을 누릅니다.
+  - ![](./images/sourceControl.png)
+- CHANGES에 있는 파일들에 +(플러스) 버튼을 눌러 STAGED CHANGES로 옮깁니다.
+  - git add와 같은 행위입니다.
+- 파일 상단에 Message라는 곳에 메시지를 입력후 command + enter 키를 누릅니다.
+  - git commit -m와 같은 행위입니다.
+- 그 위에 ... 버튼을 클릭 후 push를 클릭합니다.
+  - git push와 같은 행위입니다.
+- vscode를 활용해서 터미널 없이도 git을 사용할 수 있습니다.
+
+## a 태그 스타일
+
+### 텍스트 색
+
+- href 속성이 없는 단순한 a 태그의 색
+
+```css
+a {
+	color: red;
+}
+```
+
+- href 속성이 있고 아직 클릭하지 않은 a 태그의 색
+
+```css
+a:link {
+	color: red;
+}
+```
+
+- href 속성이 없는 단순한 a 태그의 색
+
+```css
+a:visited {
+	color: red;
+}
+```
+
+### 밑줄
+
+#### 기본적인 밑줄
+
+- underline
+- underline wavy
+- underline double
+
+```css
+a:link {
+	text-decoration: underline;
+}
+```
+
+#### box-shadow를 이용한 밑줄
+
+```css
+a:link {
+	text-decoration: none;
+	box-shadow: 0 -6px rgba(75, 112, 253, 0.3) inset;
+}
+a {
+	display: inline;
+}s
+```
+
+- 하지만 가상 선택자(visited)에 대해서 다른 속성을 줄 수 없습니다. 대부분의 스타일이 visited 가상 선택에 사용할 수 없습니다.
+- currentColor을 사용할 수 있지만 투명도를 조정할 수 없습니다.
+
+#### border를 이용한 밑줄
+
+```css
+a:link {
+	text-decoration: none;
+	border: rgba(75, 112, 253, 0.3) solid;
+	border-width: 0 0 6px 0;
+}
+
+a:linkl:visited {
+	text-decoration: none;
+	border: rgba(140, 89, 185, 0.3) solid;
+	border-width: 0 0 6px 0;
+}
+a {
+	display: inline;
+}
+```
+
+- border를 이용하면 밑줄은 방문한 링크의 색을 다르게 지정할 수 있지만 텍스트와 겹치게 만들 수 없습니다.
+
+#### :befor 의사 클래스를 이용한 밑줄
+
+```css
+a {
+	text-decoration: none;
+	position: relative;
+}
+a:link:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 1em;
+	border: rgba(75, 112, 253, 0.3) solid;
+	border-width: 0 0 6px 0;
+}
+a:visited:before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 1em;
+	border: rgba(140, 89, 185, 0.3) solid;
+	border-width: 0 0 6px 0;
+}
+```
+
+- :before 의사 클래스를 이용해서 밑줄을 만드는 방법은 밑줄과 텍스트를 겹치게 만들 수도 있고 방문한 링크와 그렇지 않은 링크의 밑줄 색을 다르게 할 수도 있습니다.
+- 하지만 줄 바꿈이 될 경우 올바르게 나타지 않습니다.
+
+#### 백그라운드-이미지를 이용한 밑줄
+
+```css
+a:link {
+	background-image: linear-gradient(rgba(0, 195, 6, 0.2) 100% transparent 0);
+	background-position: 0 0.85em;
+	background-repeat: repeat-x;
+	background-size: 1px 0.5em;
+}
+```
+
+- background-image를 이용한 밑줄은 위치 조정이 가능하고 줄 바꿈 시 밑줄이 유지됩니다.
+- 단점은 링크 상태가 visited일 때는 적용되지 않아 visited 링크의 색상을 다르게 지정할 수 없다는 것입니다.
+
+#### 밑줄 대신 그림자가 생기게 하는 방법
+
+```css
+a:link {
+	text-decoration: none;
+	text-shadow: 0 0 24px;
+}
+a:visited {
+	text-decoration: none;
+	text-shadow: 0 0 24px;
+}
+```
+
+- text-shadow 속성 역시 :visited 클래스에 적용할 수 없지만 그림자 색을 지정하지 않으면 기본적으로 텍스트 자신의 색을 따르므로 적용되는 것처럼 보입니다.
+
+## line-height
+
+- line-height는 줄 높이를 정하는 속성입니다.
+  - 기본값 : normal
+  - 상속 : Yes
+  - 애니메이션 : Yes
+  - 버전 : CSS Level 1
+
+### 문법
+
+- line-height: normal | length | number | percentage | initial | inherit
+  - normal : 웹브라우저에서 정한 기본값입니다. 보통 1.2입니다.
+  - length : 길이로 줄 높이를 정합니다.
+  - number : 글자 크기의 몇 배인지로 줄 높이를 정합니다.
+  - percentage : 글자 크기의 몇 %로 줄 높이로 정합니다.
+  - initial : 기본값으로 설정합니다.
+  - inherit : 부모 요소의 속성값을 상속받습니다.
+- 예를 들어 글자크기가 40px일 때 line-height의 값을 1.5로 하면, 줄 높이는 40의 1.5배인 60px가 됩니다. 줄 높이는 60px인데 글자 크기는 40px이므로, 글자 위와 아래에 각각 10px의 여백이 생깁니다. 줄 높이가 글자 크기보다 작으면 세로 방향으로 글자가 겹치게 됩니다.
+- 숫자(number)와 숫자 이외의 값은 상속에서 차이가 납니다. 부모 요소의 line-height 값이 숫자라면 자식 요소의 줄 높이는 자식 요소의 글자 크기에 비례해서 높이가 조정됩니다.
+  - 부모 요소의 line-height 값이 1.5, 글자 크기가 30px, 자식 요소의 글자 크기가 20px라면 부모 요소의 줄 높이는 30의 1.5배인 45px 자식 요소의 줄 높이는 20의 1.5배인 30px가 됩니다.
+  - 부모 요소의 line-height 값이 150%라면 부모 요소의 줄 높이는 30의 150%인 45px 자식 요소의 줄 높이는 부모 요소의 값을 상속 받아 45px가 됩니다.
+  - 부모 요소와 자식 요소 간 글자 크기의 차이가 크다면 숫자를 속성값으로 하는 것이 좋습니다.
+
+## 참고
+
+- [[CSS] A태그를 스타일링하는 네 가지 방법.](https://bssow.tistory.com/242)
+- [CSS / line-height / 줄 높이 정하는 속성](https://www.codingfactory.net/10639)
+c:T5e5c,<h2 id="github-활용하기">github 활용하기<a aria-hidden="true" tabindex="-1" href="#github-활용하기"><span class="anchor"></span></a></h2>
+<h3 id="github-가입">github 가입<a aria-hidden="true" tabindex="-1" href="#github-가입"><span class="anchor"></span></a></h3>
+<ul>
+<li><a href="https://github.com/">github</a>에 가입합니다.</li>
+<li>우측 상단에 동그라미를 눌러 Your repositories</li>
+<li>우측 상단에 New라는 녹색 버튼을 클릭합니다.</li>
+<li>Repository name에 자신의 계정이름 + github.io로 repository를 생성합니다. - 저는 Yuni-Q.github.io 입니다.</li>
+<li>이곳에 파일을 넣으면 github애서 정적 파일을 호스팅해 줍니다.</li>
+</ul>
+<h3 id="git-사용하기">git 사용하기<a aria-hidden="true" tabindex="-1" href="#git-사용하기"><span class="anchor"></span></a></h3>
+<ul>
+<li>vscode에서 control + `을 통해 터미널을 열어줍니다.
+<ul>
+<li>`(백티)은 영어 일 때만 입력이 되고 한글 일 경우 ₩이 입력이 됩니다.</li>
+</ul>
+</li>
+<li>git을 사용하고자 하는 폴더에서 'git init'을 합니다. 그러면 .git 폴더가 만들어집니다.</li>
+<li>'git remote add [별칭] [repository 주소]'을 통해 원격 저장소를 연결합니다.
+<ul>
+<li>별칭은 origin을 많이 사용합니다.</li>
+<li>저는 'git remote add origin <a href="https://github.com/Yuni-Q/Yuni-Q.github.io">https://github.com/Yuni-Q/Yuni-Q.github.io</a>' 입니다.</li>
+</ul>
+</li>
+<li>git add [파일명]을 통해 파일을 STAGED CHANGE 상태로 만듭니다. git에 저장할 파일들을 고르는 상태입니다.
+<ul>
+<li>'git add .' 을 통해 현재 폴더의 모든 파일을 저장 할 수 있습니다.</li>
+</ul>
+</li>
+<li>'git commit -m '[메시지]''를 통해 git에 저장합니다.
+<ul>
+<li>-m은 메시지를 작성하겠다는 옵션입니다. 이를 작성하지 않을 경우 vim과 같은 에디터로 작성해야 해서 어려움이 있을 수 있습니다.</li>
+</ul>
+</li>
+<li>'git push [별칭] [브랜치명]'을 통해 원격 저장소로 현재 git 상태를 올립니다.
+<ul>
+<li>브랜치명은 기본적으로 master가 생성 됩니다.</li>
+<li>저는 'git push origin master'입니다.</li>
+<li>-u 옵션을 사용하면 이 후부터는 'git push'만 작성해도 됩니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="vscode-기능-사용하기">vscode 기능 사용하기<a aria-hidden="true" tabindex="-1" href="#vscode-기능-사용하기"><span class="anchor"></span></a></h3>
+<ul>
+<li>vscode 좌측 active bar에 있는 Source Control 버튼을 누릅니다.
+<ul>
+<li><img src="./images/sourceControl.png" alt="" loading="lazy" decoding="async" style="max-width: 100%; height: auto;"></li>
+</ul>
+</li>
+<li>CHANGES에 있는 파일들에 +(플러스) 버튼을 눌러 STAGED CHANGES로 옮깁니다.
+<ul>
+<li>git add와 같은 행위입니다.</li>
+</ul>
+</li>
+<li>파일 상단에 Message라는 곳에 메시지를 입력후 command + enter 키를 누릅니다.
+<ul>
+<li>git commit -m와 같은 행위입니다.</li>
+</ul>
+</li>
+<li>그 위에 ... 버튼을 클릭 후 push를 클릭합니다.
+<ul>
+<li>git push와 같은 행위입니다.</li>
+</ul>
+</li>
+<li>vscode를 활용해서 터미널 없이도 git을 사용할 수 있습니다.</li>
+</ul>
+<h2 id="a-태그-스타일">a 태그 스타일<a aria-hidden="true" tabindex="-1" href="#a-태그-스타일"><span class="anchor"></span></a></h2>
+<h3 id="텍스트-색">텍스트 색<a aria-hidden="true" tabindex="-1" href="#텍스트-색"><span class="anchor"></span></a></h3>
+<ul>
+<li>href 속성이 없는 단순한 a 태그의 색</li>
+</ul>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>href 속성이 있고 아직 클릭하지 않은 a 태그의 색</li>
+</ul>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>href 속성이 없는 단순한 a 태그의 색</li>
+</ul>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:visited</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="밑줄">밑줄<a aria-hidden="true" tabindex="-1" href="#밑줄"><span class="anchor"></span></a></h3>
+<h4 id="기본적인-밑줄">기본적인 밑줄<a aria-hidden="true" tabindex="-1" href="#기본적인-밑줄"><span class="anchor"></span></a></h4>
+<ul>
+<li>underline</li>
+<li>underline wavy</li>
+<li>underline double</li>
+</ul>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> underline<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="box-shadow를-이용한-밑줄">box-shadow를 이용한 밑줄<a aria-hidden="true" tabindex="-1" href="#box-shadow를-이용한-밑줄"><span class="anchor"></span></a></h4>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">-6</span><span class="token unit">px</span> <span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">75</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">253</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span></span> inset<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token selector">a</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>s
+</span></code></pre>
+<ul>
+<li>하지만 가상 선택자(visited)에 대해서 다른 속성을 줄 수 없습니다. 대부분의 스타일이 visited 가상 선택에 사용할 수 없습니다.</li>
+<li>currentColor을 사용할 수 있지만 투명도를 조정할 수 없습니다.</li>
+</ul>
+<h4 id="border를-이용한-밑줄">border를 이용한 밑줄<a aria-hidden="true" tabindex="-1" href="#border를-이용한-밑줄"><span class="anchor"></span></a></h4>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border</span><span class="token punctuation">:</span> <span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">75</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">253</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span></span> solid<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span><span class="token unit">px</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:linkl</span><span class="token pseudo-class">:visited</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border</span><span class="token punctuation">:</span> <span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">185</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span></span> solid<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span><span class="token unit">px</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token selector">a</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>border를 이용하면 밑줄은 방문한 링크의 색을 다르게 지정할 수 있지만 텍스트와 겹치게 만들 수 없습니다.</li>
+</ul>
+<h4 id="befor-의사-클래스를-이용한-밑줄">:befor 의사 클래스를 이용한 밑줄<a aria-hidden="true" tabindex="-1" href="#befor-의사-클래스를-이용한-밑줄"><span class="anchor"></span></a></h4>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span><span class="token pseudo-element">:before</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">em</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border</span><span class="token punctuation">:</span> <span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">75</span><span class="token punctuation">,</span> <span class="token number">112</span><span class="token punctuation">,</span> <span class="token number">253</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span></span> solid<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span><span class="token unit">px</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:visited</span><span class="token pseudo-element">:before</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">em</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border</span><span class="token punctuation">:</span> <span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">140</span><span class="token punctuation">,</span> <span class="token number">89</span><span class="token punctuation">,</span> <span class="token number">185</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">)</span></span> solid<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">border-width</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">6</span><span class="token unit">px</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>:before 의사 클래스를 이용해서 밑줄을 만드는 방법은 밑줄과 텍스트를 겹치게 만들 수도 있고 방문한 링크와 그렇지 않은 링크의 밑줄 색을 다르게 할 수도 있습니다.</li>
+<li>하지만 줄 바꿈이 될 경우 올바르게 나타지 않습니다.</li>
+</ul>
+<h4 id="백그라운드-이미지를-이용한-밑줄">백그라운드-이미지를 이용한 밑줄<a aria-hidden="true" tabindex="-1" href="#백그라운드-이미지를-이용한-밑줄"><span class="anchor"></span></a></h4>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token color"><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">195</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span></span> <span class="token number">100</span><span class="token unit">%</span> <span class="token color">transparent</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">background-position</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0.85</span><span class="token unit">em</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">background-repeat</span><span class="token punctuation">:</span> repeat-x<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">px</span> <span class="token number">0.5</span><span class="token unit">em</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>background-image를 이용한 밑줄은 위치 조정이 가능하고 줄 바꿈 시 밑줄이 유지됩니다.</li>
+<li>단점은 링크 상태가 visited일 때는 적용되지 않아 visited 링크의 색상을 다르게 지정할 수 없다는 것입니다.</li>
+</ul>
+<h4 id="밑줄-대신-그림자가-생기게-하는-방법">밑줄 대신 그림자가 생기게 하는 방법<a aria-hidden="true" tabindex="-1" href="#밑줄-대신-그림자가-생기게-하는-방법"><span class="anchor"></span></a></h4>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:link</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">24</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token selector">a<span class="token pseudo-class">:visited</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">text-decoration</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token property">text-shadow</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">24</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>text-shadow 속성 역시 :visited 클래스에 적용할 수 없지만 그림자 색을 지정하지 않으면 기본적으로 텍스트 자신의 색을 따르므로 적용되는 것처럼 보입니다.</li>
+</ul>
+<h2 id="line-height">line-height<a aria-hidden="true" tabindex="-1" href="#line-height"><span class="anchor"></span></a></h2>
+<ul>
+<li>line-height는 줄 높이를 정하는 속성입니다.
+<ul>
+<li>기본값 : normal</li>
+<li>상속 : Yes</li>
+<li>애니메이션 : Yes</li>
+<li>버전 : CSS Level 1</li>
+</ul>
+</li>
+</ul>
+<h3 id="문법">문법<a aria-hidden="true" tabindex="-1" href="#문법"><span class="anchor"></span></a></h3>
+<ul>
+<li>line-height: normal | length | number | percentage | initial | inherit
+<ul>
+<li>normal : 웹브라우저에서 정한 기본값입니다. 보통 1.2입니다.</li>
+<li>length : 길이로 줄 높이를 정합니다.</li>
+<li>number : 글자 크기의 몇 배인지로 줄 높이를 정합니다.</li>
+<li>percentage : 글자 크기의 몇 %로 줄 높이로 정합니다.</li>
+<li>initial : 기본값으로 설정합니다.</li>
+<li>inherit : 부모 요소의 속성값을 상속받습니다.</li>
+</ul>
+</li>
+<li>예를 들어 글자크기가 40px일 때 line-height의 값을 1.5로 하면, 줄 높이는 40의 1.5배인 60px가 됩니다. 줄 높이는 60px인데 글자 크기는 40px이므로, 글자 위와 아래에 각각 10px의 여백이 생깁니다. 줄 높이가 글자 크기보다 작으면 세로 방향으로 글자가 겹치게 됩니다.</li>
+<li>숫자(number)와 숫자 이외의 값은 상속에서 차이가 납니다. 부모 요소의 line-height 값이 숫자라면 자식 요소의 줄 높이는 자식 요소의 글자 크기에 비례해서 높이가 조정됩니다.
+<ul>
+<li>부모 요소의 line-height 값이 1.5, 글자 크기가 30px, 자식 요소의 글자 크기가 20px라면 부모 요소의 줄 높이는 30의 1.5배인 45px 자식 요소의 줄 높이는 20의 1.5배인 30px가 됩니다.</li>
+<li>부모 요소의 line-height 값이 150%라면 부모 요소의 줄 높이는 30의 150%인 45px 자식 요소의 줄 높이는 부모 요소의 값을 상속 받아 45px가 됩니다.</li>
+<li>부모 요소와 자식 요소 간 글자 크기의 차이가 크다면 숫자를 속성값으로 하는 것이 좋습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://bssow.tistory.com/242">[CSS] A태그를 스타일링하는 네 가지 방법.</a></li>
+<li><a href="https://www.codingfactory.net/10639">CSS / line-height / 줄 높이 정하는 속성</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/studyFront/day2","frontmatter":{"title":"day2","date":"2020-07-08T17:07:31.000Z","category":"studyFront","draft":false},"content":"$b","html":"$c","excerpt":"## github 활용하기  ### github 가입  - [github](https://github.com/)에 가입합니다. - 우측 상단에 동그라미를 눌러 Your repositories - 우측 상단에 New라는 녹색 버튼을 클릭합니다. - Repository name에 자신의 계정이름 + github.io로 repository를 생성합니다. - 저"},"previousPost":{"slug":"/studyFront/day1","frontmatter":{"title":"day1","date":"2020-07-08T15:08:00.000Z","category":"studyFront","draft":false}},"nextPost":{"slug":"/studyFront/day3","frontmatter":{"title":"day3","date":"2020-07-12T13:07:30.000Z","category":"studyFront","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"day2"}],["$","meta","3",{"name":"description","content":"## github 활용하기  ### github 가입  - [github](https://github.com/)에 가입합니다. - 우측 상단에 동그라미를 눌러 Your repositories - 우측 상단에 New라는 녹색 버튼을 클릭합니다. - Repository name에 자신의 계정이름 + github.io로 repository를 생성합니다. - 저"}]]
+1:null

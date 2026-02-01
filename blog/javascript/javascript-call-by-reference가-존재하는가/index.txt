@@ -1,0 +1,78 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","javascript/javascript-call-by-reference%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94%EA%B0%80","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","javascript/javascript-call-by-reference%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94%EA%B0%80","c"],{"children":["__PAGE__?{\"slug\":[\"javascript\",\"javascript-call-by-reference가-존재하는가\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","javascript/javascript-call-by-reference%EA%B0%80-%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94%EA%B0%80","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:Ta24,
+## Call by reference란 무엇인가?
+
+### Call by reference를 알기 위해 평가 전략(컴퓨터 프로그래밍)을 먼저 보겠습니다.
+
+- 평가 전략(Evaluation Strategy)은 프로그래밍 언어에서 함수 호출의 아규먼트(argument)의 순서를 언제 결정하고 함수에 어떤 종류의 값을 통과시킬지 결정하는 것입니다.
+- 람다 대수에서 축소 전략(reduction strategy)과 유사하지만 다릅니다.
+- 근래의 대부분의 프로그래밍 언어들은 값에 의한 호출(call-by-value)과 참조에 의한 전달(pass-by-reference)가 통합되고 있습니다.
+
+### call-by-value에 대해서도 짚어보고 가겠습니다.
+
+- 값이 넘어올 때 복사된 값이 넘어옵니다.
+- caller(호출하는 녀석)가 인자를 복사해서 넘겨줬으므로 callee(호출당한 녀석)에서 해당 인자를 지지고 볶아도 caller는 영향을 받지 않습니다.
+- 기본적으로 자바스크립트는 원시값을 arguments로 넘겨주면 call by value의 형태로 작동합니다.
+
+### 이제 본격적으로 call by reference에 대해 알아보겠습니다.
+
+- arguments로 `reference(값에 대한 참조 주소, 메모리 주소를 담고있는 변수)`를 넘겨줍니다.
+- reference를 넘기다 보니 해당 reference가 가리기는 값을 복사하지는 않습니다.
+- caller(호출하는 녀석)가 인자를 복사해서 넘기지 않았으므로 callee(호출당한 녀석)에서 해당 인자를 지지고 볶으면 caller는 영향을 받습니다.
+- `자바스크립트는 참조 타입을 arguments로 넘겨주면 call by reference의 형태로 작동한다라고 오해를 많이합니다.`
+
+## 자바스크립트에서 참조값을 넘기면 어떻게 되는가?
+
+### call by sharing이란?
+
+- 자바스크립트에서는 무조건 call by value로 작동합니다.
+- 자바스크립트(자바, 루비, 파이썬 등등도 마찬가지)에서는 참조 타입을 인자로 넘기면 참조값에 대한 복사본을 만들어서 넘깁니다.
+- C++을 배웠던 사람이라면 알고있던 call by value와는 다르단 느낌에 매우 혼동을 하게 됩니다. 따라서 이런 혼동을 줄이고자 call by sharing이 등장한 것 같습니다.
+
+---
+
+## 참고
+
+- [(자알쓰) call by value vs call by reference](https://perfectacle.github.io/2017/10/30/js-014-call-by-value-vs-call-by-reference/)
+- [평가 전략 (컴퓨터 프로그래밍)](<https://ko.wikipedia.org/wiki/%ED%8F%89%EA%B0%80_%EC%A0%84%EB%9E%B5_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)>)
+b:T103c,<h2 id="call-by-reference란-무엇인가">Call by reference란 무엇인가?<a aria-hidden="true" tabindex="-1" href="#call-by-reference란-무엇인가"><span class="anchor"></span></a></h2>
+<h3 id="call-by-reference를-알기-위해-평가-전략컴퓨터-프로그래밍을-먼저-보겠습니다">Call by reference를 알기 위해 평가 전략(컴퓨터 프로그래밍)을 먼저 보겠습니다.<a aria-hidden="true" tabindex="-1" href="#call-by-reference를-알기-위해-평가-전략컴퓨터-프로그래밍을-먼저-보겠습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>평가 전략(Evaluation Strategy)은 프로그래밍 언어에서 함수 호출의 아규먼트(argument)의 순서를 언제 결정하고 함수에 어떤 종류의 값을 통과시킬지 결정하는 것입니다.</li>
+<li>람다 대수에서 축소 전략(reduction strategy)과 유사하지만 다릅니다.</li>
+<li>근래의 대부분의 프로그래밍 언어들은 값에 의한 호출(call-by-value)과 참조에 의한 전달(pass-by-reference)가 통합되고 있습니다.</li>
+</ul>
+<h3 id="call-by-value에-대해서도-짚어보고-가겠습니다">call-by-value에 대해서도 짚어보고 가겠습니다.<a aria-hidden="true" tabindex="-1" href="#call-by-value에-대해서도-짚어보고-가겠습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>값이 넘어올 때 복사된 값이 넘어옵니다.</li>
+<li>caller(호출하는 녀석)가 인자를 복사해서 넘겨줬으므로 callee(호출당한 녀석)에서 해당 인자를 지지고 볶아도 caller는 영향을 받지 않습니다.</li>
+<li>기본적으로 자바스크립트는 원시값을 arguments로 넘겨주면 call by value의 형태로 작동합니다.</li>
+</ul>
+<h3 id="이제-본격적으로-call-by-reference에-대해-알아보겠습니다">이제 본격적으로 call by reference에 대해 알아보겠습니다.<a aria-hidden="true" tabindex="-1" href="#이제-본격적으로-call-by-reference에-대해-알아보겠습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>arguments로 <code class="inline-code">reference(값에 대한 참조 주소, 메모리 주소를 담고있는 변수)</code>를 넘겨줍니다.</li>
+<li>reference를 넘기다 보니 해당 reference가 가리기는 값을 복사하지는 않습니다.</li>
+<li>caller(호출하는 녀석)가 인자를 복사해서 넘기지 않았으므로 callee(호출당한 녀석)에서 해당 인자를 지지고 볶으면 caller는 영향을 받습니다.</li>
+<li><code class="inline-code">자바스크립트는 참조 타입을 arguments로 넘겨주면 call by reference의 형태로 작동한다라고 오해를 많이합니다.</code></li>
+</ul>
+<h2 id="자바스크립트에서-참조값을-넘기면-어떻게-되는가">자바스크립트에서 참조값을 넘기면 어떻게 되는가?<a aria-hidden="true" tabindex="-1" href="#자바스크립트에서-참조값을-넘기면-어떻게-되는가"><span class="anchor"></span></a></h2>
+<h3 id="call-by-sharing이란">call by sharing이란?<a aria-hidden="true" tabindex="-1" href="#call-by-sharing이란"><span class="anchor"></span></a></h3>
+<ul>
+<li>자바스크립트에서는 무조건 call by value로 작동합니다.</li>
+<li>자바스크립트(자바, 루비, 파이썬 등등도 마찬가지)에서는 참조 타입을 인자로 넘기면 참조값에 대한 복사본을 만들어서 넘깁니다.</li>
+<li>C++을 배웠던 사람이라면 알고있던 call by value와는 다르단 느낌에 매우 혼동을 하게 됩니다. 따라서 이런 혼동을 줄이고자 call by sharing이 등장한 것 같습니다.</li>
+</ul>
+<hr>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://perfectacle.github.io/2017/10/30/js-014-call-by-value-vs-call-by-reference/">(자알쓰) call by value vs call by reference</a></li>
+<li><a href="https://ko.wikipedia.org/wiki/%ED%8F%89%EA%B0%80_%EC%A0%84%EB%9E%B5_(%EC%BB%B4%ED%93%A8%ED%84%B0_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)">평가 전략 (컴퓨터 프로그래밍)</a></li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/javascript/javascript-call-by-reference가-존재하는가","frontmatter":{"title":"javascript call by reference가 존재하는가","date":"2021-07-26T00:08:23.000Z","category":"javascript","tags":[],"draft":false},"content":"$a","html":"$b","excerpt":"## Call by reference란 무엇인가?  ### Call by reference를 알기 위해 평가 전략(컴퓨터 프로그래밍)을 먼저 보겠습니다.  - 평가 전략(Evaluation Strategy)은 프로그래밍 언어에서 함수 호출의 아규먼트(argument)의 순서를 언제 결정하고 함수에 어떤 종류의 값을 통과시킬지 결정하는 것입니다. - 람다"},"previousPost":{"slug":"/design-pattern/dependency-injection-pattern","frontmatter":{"title":"dependency injection pattern","date":"2021-04-15T10:05:33.000Z","category":"design pattern","tags":["design pattern"],"draft":false}},"nextPost":{"slug":"/javascript/타입스크립트의-오버로드","frontmatter":{"title":"타입스크립트의 오버로드","date":"2021-08-14T01:08:02.000Z","category":"javascript","tags":[],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"javascript call by reference가 존재하는가"}],["$","meta","3",{"name":"description","content":"## Call by reference란 무엇인가?  ### Call by reference를 알기 위해 평가 전략(컴퓨터 프로그래밍)을 먼저 보겠습니다.  - 평가 전략(Evaluation Strategy)은 프로그래밍 언어에서 함수 호출의 아규먼트(argument)의 순서를 언제 결정하고 함수에 어떤 종류의 값을 통과시킬지 결정하는 것입니다. - 람다"}]]
+1:null

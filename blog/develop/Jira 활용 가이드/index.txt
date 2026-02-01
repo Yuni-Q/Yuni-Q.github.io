@@ -1,0 +1,496 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","develop/Jira%20%ED%99%9C%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","develop/Jira%20%ED%99%9C%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C","c"],{"children":["__PAGE__?{\"slug\":[\"develop\",\"Jira 활용 가이드\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","develop/Jira%20%ED%99%9C%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T2907,
+Jira는 애자일 프로젝트 관리의 핵심 도구입니다. 하지만 제대로 활용하지 못하면 오히려 업무 효율을 떨어뜨릴 수 있습니다. 이 글에서는 실제 프로젝트에서 사용한 Jira 활용 방법을 정리했습니다.
+
+## 대시보드 설정
+
+대시보드는 프로젝트의 전체적인 상황을 한눈에 파악할 수 있는 핵심 화면입니다. 다음과 같은 가젯을 활용하여 구성합니다.
+
+### Configure Rich Filter Smart Counters Gadget
+
+- **상태별 이슈 카운트**: 각 상태(TODO, DOING, DONE 등)별로 티켓 수를 한눈에 확인
+
+### Configure Rich Filter Results Gadget
+
+- **작업 티켓 목록**: 현재 진행 중인 작업 티켓들을 표시
+- **Smart filters, Views 활용**: 커스텀 필터와 뷰를 활용하여 필요한 정보만 표시
+
+### Rich Filter Simple Gauge
+
+- **스토리 포인트 진행률**: 스프린트 내 스토리 포인트 완료율을 시각적으로 확인
+
+### Rich Filter Simple Counter
+
+- **스토리 포인트 수**: 전체 또는 스프린트별 스토리 포인트 합계
+
+### Issues Calendar
+
+- **배포 일정**: 배포 예정일을 캘린더 형식으로 확인
+
+### Assigned to Me
+
+- **나에게 배정된 모든 티켓**: 개인 작업 목록을 한눈에 확인
+
+## 칸반 보드 설정
+
+칸반 보드는 작업 흐름을 시각적으로 관리할 수 있는 핵심 도구입니다.
+
+### 기본 설정
+
+- **Filter Query**: 보드에 표시할 티켓 필터 설정
+- **Column management**: 워크플로우에 맞는 컬럼 구성
+- **Quick Filters**: 자주 사용하는 필터를 빠르게 적용
+
+### Swimlanes (수영 레인) 설정
+
+티켓 타입별로 구분하여 표시:
+
+- **Story**: `assignee is not EMPTY AND type = Story`
+- **Task**: `assignee is not EMPTY and type != Epic and type != Story`
+- **Epic**: `type = Epic`
+- **백로그**: `assignee is EMPTY and type != Epic`
+
+### Card Layout
+
+카드에 표시할 정보 설정:
+
+- Story Points (스토리 포인트)
+- Component/s (컴포넌트)
+- Sprint (스프린트)
+
+## BigPicture 활용
+
+BigPicture는 프로젝트 전체를 한눈에 볼 수 있는 도구입니다.
+
+**설정 경로**: Configuration -> Tasks -> Scope definition -> Filter
+
+프로젝트의 전체 구조와 의존성을 시각적으로 파악할 수 있습니다.
+
+## 티켓 타입 및 구조
+
+Jira의 티켓은 계층적으로 구성됩니다. 각 티켓 타입의 역할을 명확히 이해하는 것이 중요합니다.
+
+### 티켓 타입
+
+- **에픽 (Epic)**: 프로젝트 단위의 작업을 관리하기 위한 티켓
+- **스토리 (Story)**: 한 지면/작업 단위의 목적을 묶어서 관리하기 위한 티켓
+- **작업 (Task)**: 간단한 작업을 위해 생성
+  - Task는 스프린트 단위에 들어갈 수 있게 세분화합니다
+- **부작업 (Sub Task)**: 실제 작업 상세 내역 티켓
+  - Sub Task는 백로그에서 관리되지 않습니다
+
+### 1Pager 작성 가이드
+
+- **에픽을 필수로 생성**: 모든 작업은 에픽 하위에 구성
+- **각 작업을 스토리로 생성**: 기능 단위로 스토리 티켓 생성
+- **구분이 필요한 작업은 Task로 생성**: 스토리 하위에 세부 작업을 Task로 분리
+- **TODO LIST는 Sub Task로 생성**: 개인 작업 리스트는 Sub Task로 관리
+
+### 티켓 관계 예시
+
+반드시 모든 티켓이 관계를 가질 필요는 없지만, 명확한 구조는 유지하는 것이 좋습니다:
+
+- **에픽**: FEOPS 어드민 구현
+- **스토리**: 그룹관리 페이지 구현
+- **Task**: 그룹관리를 위한 컴포넌트 개발/API 연동
+- **Sub Task**: 작업을 개인적으로 나누는 경우에 활용
+
+### 티켓 작성 원칙
+
+- **모든 작업은 티켓을 기반으로 합니다**
+- **기본적으로 스토리 티켓을 생성합니다**:
+  - 스토리 포인트도 작성해 주세요
+  - 스토리 티켓은 적절한 에픽 티켓에 연결합니다
+  - 하위 작업은 작업 티켓으로 만듭니다
+- **스토리 티켓과 작업 티켓은 적절한 에픽 티켓에 연결합니다**
+
+## 워크플로우
+
+워크플로우는 작업의 진행 상태를 관리하는 핵심입니다. 다음과 같은 상태를 사용합니다:
+
+- **TODO**: 작업 시작 전
+- **DOING**: 작업 중
+- **IN REVIEW**: 코드 리뷰 중
+- **CONFIRMED**: 코드 리뷰 완료 및 배포 브랜치 머지
+- **IN TEST**: 테스트 환경에 배포 완료
+- **DONE**: 확인 완료 또는 개발 완료
+
+### CONFIRMED 상태 사용 이유
+
+CONFIRMED를 베타 테스트 완료로 하지 않는 이유:
+
+- 베타 테스트 완료 상태를 별도로 두면서 얻을 수 있는 이점이 크지 않음
+- 릴리즈 완료로 충분히 대체 가능
+- 작업 완료를 DONE으로 두지 않으면 릴리즈 대상을 별도의 과정에서 추가로 확인해야 함
+
+## Jira 티켓 작성 가이드
+
+효과적인 티켓 작성을 위해 다음 항목들을 포함해야 합니다.
+
+### 목적
+
+- 티켓의 목적을 명확히 작성 (예: 외부 요청 해결)
+- 관련 링크가 있다면 함께 작성 (Slack 링크, Jira 링크 등)
+
+### 문제 상황
+
+- 운영 개선을 진행하게 된 문제 상황을 상세히 기술
+- 개발 타당성을 설명할 수 있도록 작성
+
+### 요구사항
+
+- 개발 구현 사항을 상세하게 작성
+- 기능 명세, API 스펙, UI/UX 요구사항 등 구체적으로 기술
+
+### 작업 계획
+
+- 구현 계획을 작성 (Jira 티켓 작성 시 또는 Sprint Planning 때 작성)
+- 실제 작업 시에는 달라질 수 있지만, 계획에서 변경된 사항이 있으면 댓글로 작성
+
+### 작업 사항
+
+- MR Link, 스크립트 등 실제 작업 결과물 링크
+- 실제 작업 과정은 댓글로 작성하고, 작업 완료 또는 스프린트 회고 시 본문에 정리
+
+### 댓글 작성 시 주의사항
+
+**가능한 한 많이 작성하는 것이 좋습니다**:
+
+- 많이 적을수록 Jira에서 검색도 잘 되고 나중에 도움이 될 가능성이 높습니다
+- 가급적 사소한 것이라도 적어주세요
+- 작업 과정, 결정 사항, 이슈 해결 방법 등을 상세히 기록
+
+## 실전 팁 및 주의사항
+
+### Jira의 핵심 개념
+
+- **워크플로우와 스크린**: Jira에는 워크플로우와 스크린이라는 개념이 별도로 존재합니다
+- **타입이 최우선**: Jira는 타입이 최우선 순위입니다. 티켓 타입을 올바르게 설정하는 것이 중요합니다
+- **BigPicture 활용**: BigPicture로 작업을 한눈에 볼 수 있습니다
+
+### 팀별 커스터마이징
+
+- **Jira Align**: 대규모 조직에서는 Jira Align이라는 도구도 존재합니다
+- **타입은 팀별로 다름**: 각 팀별로 티켓 타입이 다를 수 있습니다. 프로덕트별로 볼 것인지 팀으로 볼 것인지 결정해야 합니다
+- **스토리와 Task는 같은 레벨**: 스토리와 Task는 같은 레벨로 관리할 수 있습니다
+- **버그와 Defect**: 버그와 defect이 존재하는데, 버그는 운영 배포 후로 봅니다
+
+### Jira의 장점
+
+- **커스터마이징 자유도**: Jira는 커스터마이징이 자유로운 것이 장점입니다
+- **디폴트 설정 부족**: 디폴트로 가는 것은 거의 없으므로, 팀에 맞게 설정해야 합니다
+
+### 백로그 관리
+
+**가독성이 가장 중요합니다**:
+
+- 백로그도 한눈에 보여야 합니다
+- 백로그에서 하위 티켓이 보이는 것은 좋지 않습니다
+- 스크롤이 길어지면 제 역할을 못합니다
+- **오래된 백로그는 별도 관리**: 최대 30개 정도로 유지하고, 오래된 것은 엑셀에 관리하거나 따로 관리합니다
+
+### 플래닝 준비
+
+- **플래닝 때마다 볼 수 있어야 합니다**:
+  - 디폴트 화면(스태틱) 설정
+  - 우선순위 조절이 가장 중요합니다
+  - 시비리티(긴급도)를 함께 도입하면 좋습니다
+    - 우선순위가 높은 것이 반드시 빨리 해야 하는 것은 아닙니다
+- **빨리 끝낼 수 있는 것은 빨리 처리**: 작은 작업부터 처리하는 것이 효율적입니다
+
+### 차트 분석의 중요성
+
+**차트를 보는 것이 매우 중요합니다**:
+
+- **TODO에 쌓이는 것은 일을 못 쳐내고 있다는 신호**: TODO 상태의 티켓이 계속 쌓이면 작업 속도에 문제가 있을 수 있습니다
+- **컨트롤 차트 시간 분석**: 각 컬럼에서 티켓이 머무는 시간을 분석하여 병목 지점을 파악합니다
+- **백로그에서 오래 걸리는 티켓**: 백로그에 오래 머무는 티켓은 우선순위를 재검토해야 합니다
+
+### 스토리 포인트 관리
+
+- **스토리 포인트 40 정도 되면 쪼개야 합니다**:
+  - 1개 끝나는데 2주 걸린다는 지표일 수 있습니다
+  - 5일짜리도 쪼개야 합니다
+  - 첫 주에 시작하지 않았을 때 못 끝낼 확률이 높습니다
+  - 큰 것보다 작은 것을 먼저 하는 심리가 있어, 큰 티켓은 수행하지 못할 수도 있습니다
+
+### 벨로시티 차트
+
+- **에스티메이션을 다 하고 일을 해라**: 정확한 추정이 중요합니다
+- **못 끝낸 것 리뷰**:
+  - 왜 늘어났는지 분석
+  - 하기로 한 약속을 잘 지켰는지 확인
+
+### 추가 팁
+
+- **데일리 스크럼**: 정기적인 소통이 중요합니다
+- **스킴에 워크플로우 2개**: 필요에 따라 워크플로우를 분리할 수 있습니다
+- **컨트롤 차트에서 컬럼별 확인**: 각 컬럼별로 티켓 현황을 확인할 수 있습니다
+- **스프린트에서 티켓 보고, 칸반에서 에픽 보기**: 상황에 맞는 뷰를 활용합니다
+
+### BigPicture 활용
+
+- **포트폴리오 관리**: BigPicture는 포트폴리오를 위한 도구입니다
+- **PI (Program Increment) 개념**: 대규모 프로젝트에서는 PI 개념도 알아야 합니다
+- **포트폴리오 개념 이해**: 포트폴리오 개념을 이해하면 더 효과적으로 활용할 수 있습니다
+
+## 마무리
+
+Jira는 강력한 프로젝트 관리 도구이지만, 제대로 활용하려면 팀에 맞는 커스터마이징이 필요합니다. 가장 중요한 것은 **가독성**과 **일관성**입니다.
+
+- 백로그는 한눈에 보여야 합니다
+- 티켓 작성은 상세하게, 댓글은 많이 작성합니다
+- 차트를 통해 지속적으로 개선합니다
+- 스토리 포인트가 크면 쪼개고, 작은 것부터 처리합니다
+
+Jira를 단순한 티켓 관리 도구가 아닌, 팀의 협업과 소통을 강화하는 도구로 활용하세요.
+b:T447a,<p>Jira는 애자일 프로젝트 관리의 핵심 도구입니다. 하지만 제대로 활용하지 못하면 오히려 업무 효율을 떨어뜨릴 수 있습니다. 이 글에서는 실제 프로젝트에서 사용한 Jira 활용 방법을 정리했습니다.</p>
+<h2 id="대시보드-설정">대시보드 설정<a aria-hidden="true" tabindex="-1" href="#대시보드-설정"><span class="anchor"></span></a></h2>
+<p>대시보드는 프로젝트의 전체적인 상황을 한눈에 파악할 수 있는 핵심 화면입니다. 다음과 같은 가젯을 활용하여 구성합니다.</p>
+<h3 id="configure-rich-filter-smart-counters-gadget">Configure Rich Filter Smart Counters Gadget<a aria-hidden="true" tabindex="-1" href="#configure-rich-filter-smart-counters-gadget"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>상태별 이슈 카운트</strong>: 각 상태(TODO, DOING, DONE 등)별로 티켓 수를 한눈에 확인</li>
+</ul>
+<h3 id="configure-rich-filter-results-gadget">Configure Rich Filter Results Gadget<a aria-hidden="true" tabindex="-1" href="#configure-rich-filter-results-gadget"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>작업 티켓 목록</strong>: 현재 진행 중인 작업 티켓들을 표시</li>
+<li><strong>Smart filters, Views 활용</strong>: 커스텀 필터와 뷰를 활용하여 필요한 정보만 표시</li>
+</ul>
+<h3 id="rich-filter-simple-gauge">Rich Filter Simple Gauge<a aria-hidden="true" tabindex="-1" href="#rich-filter-simple-gauge"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>스토리 포인트 진행률</strong>: 스프린트 내 스토리 포인트 완료율을 시각적으로 확인</li>
+</ul>
+<h3 id="rich-filter-simple-counter">Rich Filter Simple Counter<a aria-hidden="true" tabindex="-1" href="#rich-filter-simple-counter"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>스토리 포인트 수</strong>: 전체 또는 스프린트별 스토리 포인트 합계</li>
+</ul>
+<h3 id="issues-calendar">Issues Calendar<a aria-hidden="true" tabindex="-1" href="#issues-calendar"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>배포 일정</strong>: 배포 예정일을 캘린더 형식으로 확인</li>
+</ul>
+<h3 id="assigned-to-me">Assigned to Me<a aria-hidden="true" tabindex="-1" href="#assigned-to-me"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>나에게 배정된 모든 티켓</strong>: 개인 작업 목록을 한눈에 확인</li>
+</ul>
+<h2 id="칸반-보드-설정">칸반 보드 설정<a aria-hidden="true" tabindex="-1" href="#칸반-보드-설정"><span class="anchor"></span></a></h2>
+<p>칸반 보드는 작업 흐름을 시각적으로 관리할 수 있는 핵심 도구입니다.</p>
+<h3 id="기본-설정">기본 설정<a aria-hidden="true" tabindex="-1" href="#기본-설정"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>Filter Query</strong>: 보드에 표시할 티켓 필터 설정</li>
+<li><strong>Column management</strong>: 워크플로우에 맞는 컬럼 구성</li>
+<li><strong>Quick Filters</strong>: 자주 사용하는 필터를 빠르게 적용</li>
+</ul>
+<h3 id="swimlanes-수영-레인-설정">Swimlanes (수영 레인) 설정<a aria-hidden="true" tabindex="-1" href="#swimlanes-수영-레인-설정"><span class="anchor"></span></a></h3>
+<p>티켓 타입별로 구분하여 표시:</p>
+<ul>
+<li><strong>Story</strong>: <code class="inline-code">assignee is not EMPTY AND type = Story</code></li>
+<li><strong>Task</strong>: <code class="inline-code">assignee is not EMPTY and type != Epic and type != Story</code></li>
+<li><strong>Epic</strong>: <code class="inline-code">type = Epic</code></li>
+<li><strong>백로그</strong>: <code class="inline-code">assignee is EMPTY and type != Epic</code></li>
+</ul>
+<h3 id="card-layout">Card Layout<a aria-hidden="true" tabindex="-1" href="#card-layout"><span class="anchor"></span></a></h3>
+<p>카드에 표시할 정보 설정:</p>
+<ul>
+<li>Story Points (스토리 포인트)</li>
+<li>Component/s (컴포넌트)</li>
+<li>Sprint (스프린트)</li>
+</ul>
+<h2 id="bigpicture-활용">BigPicture 활용<a aria-hidden="true" tabindex="-1" href="#bigpicture-활용"><span class="anchor"></span></a></h2>
+<p>BigPicture는 프로젝트 전체를 한눈에 볼 수 있는 도구입니다.</p>
+<p><strong>설정 경로</strong>: Configuration -> Tasks -> Scope definition -> Filter</p>
+<p>프로젝트의 전체 구조와 의존성을 시각적으로 파악할 수 있습니다.</p>
+<h2 id="티켓-타입-및-구조">티켓 타입 및 구조<a aria-hidden="true" tabindex="-1" href="#티켓-타입-및-구조"><span class="anchor"></span></a></h2>
+<p>Jira의 티켓은 계층적으로 구성됩니다. 각 티켓 타입의 역할을 명확히 이해하는 것이 중요합니다.</p>
+<h3 id="티켓-타입">티켓 타입<a aria-hidden="true" tabindex="-1" href="#티켓-타입"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>BOLD_PAREN_PLACEHOLDER_0</strong>: 프로젝트 단위의 작업을 관리하기 위한 티켓</li>
+<li><strong>BOLD_PAREN_PLACEHOLDER_1</strong>: 한 지면/작업 단위의 목적을 묶어서 관리하기 위한 티켓</li>
+<li><strong>BOLD_PAREN_PLACEHOLDER_2</strong>: 간단한 작업을 위해 생성
+<ul>
+<li>Task는 스프린트 단위에 들어갈 수 있게 세분화합니다</li>
+</ul>
+</li>
+<li><strong>BOLD_PAREN_PLACEHOLDER_3</strong>: 실제 작업 상세 내역 티켓
+<ul>
+<li>Sub Task는 백로그에서 관리되지 않습니다</li>
+</ul>
+</li>
+</ul>
+<h3 id="1pager-작성-가이드">1Pager 작성 가이드<a aria-hidden="true" tabindex="-1" href="#1pager-작성-가이드"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>에픽을 필수로 생성</strong>: 모든 작업은 에픽 하위에 구성</li>
+<li><strong>각 작업을 스토리로 생성</strong>: 기능 단위로 스토리 티켓 생성</li>
+<li><strong>구분이 필요한 작업은 Task로 생성</strong>: 스토리 하위에 세부 작업을 Task로 분리</li>
+<li><strong>TODO LIST는 Sub Task로 생성</strong>: 개인 작업 리스트는 Sub Task로 관리</li>
+</ul>
+<h3 id="티켓-관계-예시">티켓 관계 예시<a aria-hidden="true" tabindex="-1" href="#티켓-관계-예시"><span class="anchor"></span></a></h3>
+<p>반드시 모든 티켓이 관계를 가질 필요는 없지만, 명확한 구조는 유지하는 것이 좋습니다:</p>
+<ul>
+<li><strong>에픽</strong>: FEOPS 어드민 구현</li>
+<li><strong>스토리</strong>: 그룹관리 페이지 구현</li>
+<li><strong>Task</strong>: 그룹관리를 위한 컴포넌트 개발/API 연동</li>
+<li><strong>Sub Task</strong>: 작업을 개인적으로 나누는 경우에 활용</li>
+</ul>
+<h3 id="티켓-작성-원칙">티켓 작성 원칙<a aria-hidden="true" tabindex="-1" href="#티켓-작성-원칙"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>모든 작업은 티켓을 기반으로 합니다</strong></li>
+<li><strong>기본적으로 스토리 티켓을 생성합니다</strong>:
+<ul>
+<li>스토리 포인트도 작성해 주세요</li>
+<li>스토리 티켓은 적절한 에픽 티켓에 연결합니다</li>
+<li>하위 작업은 작업 티켓으로 만듭니다</li>
+</ul>
+</li>
+<li><strong>스토리 티켓과 작업 티켓은 적절한 에픽 티켓에 연결합니다</strong></li>
+</ul>
+<h2 id="워크플로우">워크플로우<a aria-hidden="true" tabindex="-1" href="#워크플로우"><span class="anchor"></span></a></h2>
+<p>워크플로우는 작업의 진행 상태를 관리하는 핵심입니다. 다음과 같은 상태를 사용합니다:</p>
+<ul>
+<li><strong>TODO</strong>: 작업 시작 전</li>
+<li><strong>DOING</strong>: 작업 중</li>
+<li><strong>IN REVIEW</strong>: 코드 리뷰 중</li>
+<li><strong>CONFIRMED</strong>: 코드 리뷰 완료 및 배포 브랜치 머지</li>
+<li><strong>IN TEST</strong>: 테스트 환경에 배포 완료</li>
+<li><strong>DONE</strong>: 확인 완료 또는 개발 완료</li>
+</ul>
+<h3 id="confirmed-상태-사용-이유">CONFIRMED 상태 사용 이유<a aria-hidden="true" tabindex="-1" href="#confirmed-상태-사용-이유"><span class="anchor"></span></a></h3>
+<p>CONFIRMED를 베타 테스트 완료로 하지 않는 이유:</p>
+<ul>
+<li>베타 테스트 완료 상태를 별도로 두면서 얻을 수 있는 이점이 크지 않음</li>
+<li>릴리즈 완료로 충분히 대체 가능</li>
+<li>작업 완료를 DONE으로 두지 않으면 릴리즈 대상을 별도의 과정에서 추가로 확인해야 함</li>
+</ul>
+<h2 id="jira-티켓-작성-가이드">Jira 티켓 작성 가이드<a aria-hidden="true" tabindex="-1" href="#jira-티켓-작성-가이드"><span class="anchor"></span></a></h2>
+<p>효과적인 티켓 작성을 위해 다음 항목들을 포함해야 합니다.</p>
+<h3 id="목적">목적<a aria-hidden="true" tabindex="-1" href="#목적"><span class="anchor"></span></a></h3>
+<ul>
+<li>티켓의 목적을 명확히 작성 (예: 외부 요청 해결)</li>
+<li>관련 링크가 있다면 함께 작성 (Slack 링크, Jira 링크 등)</li>
+</ul>
+<h3 id="문제-상황">문제 상황<a aria-hidden="true" tabindex="-1" href="#문제-상황"><span class="anchor"></span></a></h3>
+<ul>
+<li>운영 개선을 진행하게 된 문제 상황을 상세히 기술</li>
+<li>개발 타당성을 설명할 수 있도록 작성</li>
+</ul>
+<h3 id="요구사항">요구사항<a aria-hidden="true" tabindex="-1" href="#요구사항"><span class="anchor"></span></a></h3>
+<ul>
+<li>개발 구현 사항을 상세하게 작성</li>
+<li>기능 명세, API 스펙, UI/UX 요구사항 등 구체적으로 기술</li>
+</ul>
+<h3 id="작업-계획">작업 계획<a aria-hidden="true" tabindex="-1" href="#작업-계획"><span class="anchor"></span></a></h3>
+<ul>
+<li>구현 계획을 작성 (Jira 티켓 작성 시 또는 Sprint Planning 때 작성)</li>
+<li>실제 작업 시에는 달라질 수 있지만, 계획에서 변경된 사항이 있으면 댓글로 작성</li>
+</ul>
+<h3 id="작업-사항">작업 사항<a aria-hidden="true" tabindex="-1" href="#작업-사항"><span class="anchor"></span></a></h3>
+<ul>
+<li>MR Link, 스크립트 등 실제 작업 결과물 링크</li>
+<li>실제 작업 과정은 댓글로 작성하고, 작업 완료 또는 스프린트 회고 시 본문에 정리</li>
+</ul>
+<h3 id="댓글-작성-시-주의사항">댓글 작성 시 주의사항<a aria-hidden="true" tabindex="-1" href="#댓글-작성-시-주의사항"><span class="anchor"></span></a></h3>
+<p><strong>가능한 한 많이 작성하는 것이 좋습니다</strong>:</p>
+<ul>
+<li>많이 적을수록 Jira에서 검색도 잘 되고 나중에 도움이 될 가능성이 높습니다</li>
+<li>가급적 사소한 것이라도 적어주세요</li>
+<li>작업 과정, 결정 사항, 이슈 해결 방법 등을 상세히 기록</li>
+</ul>
+<h2 id="실전-팁-및-주의사항">실전 팁 및 주의사항<a aria-hidden="true" tabindex="-1" href="#실전-팁-및-주의사항"><span class="anchor"></span></a></h2>
+<h3 id="jira의-핵심-개념">Jira의 핵심 개념<a aria-hidden="true" tabindex="-1" href="#jira의-핵심-개념"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>워크플로우와 스크린</strong>: Jira에는 워크플로우와 스크린이라는 개념이 별도로 존재합니다</li>
+<li><strong>타입이 최우선</strong>: Jira는 타입이 최우선 순위입니다. 티켓 타입을 올바르게 설정하는 것이 중요합니다</li>
+<li><strong>BigPicture 활용</strong>: BigPicture로 작업을 한눈에 볼 수 있습니다</li>
+</ul>
+<h3 id="팀별-커스터마이징">팀별 커스터마이징<a aria-hidden="true" tabindex="-1" href="#팀별-커스터마이징"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>Jira Align</strong>: 대규모 조직에서는 Jira Align이라는 도구도 존재합니다</li>
+<li><strong>타입은 팀별로 다름</strong>: 각 팀별로 티켓 타입이 다를 수 있습니다. 프로덕트별로 볼 것인지 팀으로 볼 것인지 결정해야 합니다</li>
+<li><strong>스토리와 Task는 같은 레벨</strong>: 스토리와 Task는 같은 레벨로 관리할 수 있습니다</li>
+<li><strong>버그와 Defect</strong>: 버그와 defect이 존재하는데, 버그는 운영 배포 후로 봅니다</li>
+</ul>
+<h3 id="jira의-장점">Jira의 장점<a aria-hidden="true" tabindex="-1" href="#jira의-장점"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>커스터마이징 자유도</strong>: Jira는 커스터마이징이 자유로운 것이 장점입니다</li>
+<li><strong>디폴트 설정 부족</strong>: 디폴트로 가는 것은 거의 없으므로, 팀에 맞게 설정해야 합니다</li>
+</ul>
+<h3 id="백로그-관리">백로그 관리<a aria-hidden="true" tabindex="-1" href="#백로그-관리"><span class="anchor"></span></a></h3>
+<p><strong>가독성이 가장 중요합니다</strong>:</p>
+<ul>
+<li>백로그도 한눈에 보여야 합니다</li>
+<li>백로그에서 하위 티켓이 보이는 것은 좋지 않습니다</li>
+<li>스크롤이 길어지면 제 역할을 못합니다</li>
+<li><strong>오래된 백로그는 별도 관리</strong>: 최대 30개 정도로 유지하고, 오래된 것은 엑셀에 관리하거나 따로 관리합니다</li>
+</ul>
+<h3 id="플래닝-준비">플래닝 준비<a aria-hidden="true" tabindex="-1" href="#플래닝-준비"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>플래닝 때마다 볼 수 있어야 합니다</strong>:
+<ul>
+<li>디폴트 화면(스태틱) 설정</li>
+<li>우선순위 조절이 가장 중요합니다</li>
+<li>시비리티(긴급도)를 함께 도입하면 좋습니다
+<ul>
+<li>우선순위가 높은 것이 반드시 빨리 해야 하는 것은 아닙니다</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>빨리 끝낼 수 있는 것은 빨리 처리</strong>: 작은 작업부터 처리하는 것이 효율적입니다</li>
+</ul>
+<h3 id="차트-분석의-중요성">차트 분석의 중요성<a aria-hidden="true" tabindex="-1" href="#차트-분석의-중요성"><span class="anchor"></span></a></h3>
+<p><strong>차트를 보는 것이 매우 중요합니다</strong>:</p>
+<ul>
+<li><strong>TODO에 쌓이는 것은 일을 못 쳐내고 있다는 신호</strong>: TODO 상태의 티켓이 계속 쌓이면 작업 속도에 문제가 있을 수 있습니다</li>
+<li><strong>컨트롤 차트 시간 분석</strong>: 각 컬럼에서 티켓이 머무는 시간을 분석하여 병목 지점을 파악합니다</li>
+<li><strong>백로그에서 오래 걸리는 티켓</strong>: 백로그에 오래 머무는 티켓은 우선순위를 재검토해야 합니다</li>
+</ul>
+<h3 id="스토리-포인트-관리">스토리 포인트 관리<a aria-hidden="true" tabindex="-1" href="#스토리-포인트-관리"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>스토리 포인트 40 정도 되면 쪼개야 합니다</strong>:
+<ul>
+<li>1개 끝나는데 2주 걸린다는 지표일 수 있습니다</li>
+<li>5일짜리도 쪼개야 합니다</li>
+<li>첫 주에 시작하지 않았을 때 못 끝낼 확률이 높습니다</li>
+<li>큰 것보다 작은 것을 먼저 하는 심리가 있어, 큰 티켓은 수행하지 못할 수도 있습니다</li>
+</ul>
+</li>
+</ul>
+<h3 id="벨로시티-차트">벨로시티 차트<a aria-hidden="true" tabindex="-1" href="#벨로시티-차트"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>에스티메이션을 다 하고 일을 해라</strong>: 정확한 추정이 중요합니다</li>
+<li><strong>못 끝낸 것 리뷰</strong>:
+<ul>
+<li>왜 늘어났는지 분석</li>
+<li>하기로 한 약속을 잘 지켰는지 확인</li>
+</ul>
+</li>
+</ul>
+<h3 id="추가-팁">추가 팁<a aria-hidden="true" tabindex="-1" href="#추가-팁"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>데일리 스크럼</strong>: 정기적인 소통이 중요합니다</li>
+<li><strong>스킴에 워크플로우 2개</strong>: 필요에 따라 워크플로우를 분리할 수 있습니다</li>
+<li><strong>컨트롤 차트에서 컬럼별 확인</strong>: 각 컬럼별로 티켓 현황을 확인할 수 있습니다</li>
+<li><strong>스프린트에서 티켓 보고, 칸반에서 에픽 보기</strong>: 상황에 맞는 뷰를 활용합니다</li>
+</ul>
+<h3 id="bigpicture-활용-1">BigPicture 활용<a aria-hidden="true" tabindex="-1" href="#bigpicture-활용-1"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>포트폴리오 관리</strong>: BigPicture는 포트폴리오를 위한 도구입니다</li>
+<li><strong>PI (Program Increment) 개념</strong>: 대규모 프로젝트에서는 PI 개념도 알아야 합니다</li>
+<li><strong>포트폴리오 개념 이해</strong>: 포트폴리오 개념을 이해하면 더 효과적으로 활용할 수 있습니다</li>
+</ul>
+<h2 id="마무리">마무리<a aria-hidden="true" tabindex="-1" href="#마무리"><span class="anchor"></span></a></h2>
+<p>Jira는 강력한 프로젝트 관리 도구이지만, 제대로 활용하려면 팀에 맞는 커스터마이징이 필요합니다. 가장 중요한 것은 <strong>가독성</strong>과 <strong>일관성</strong>입니다.</p>
+<ul>
+<li>백로그는 한눈에 보여야 합니다</li>
+<li>티켓 작성은 상세하게, 댓글은 많이 작성합니다</li>
+<li>차트를 통해 지속적으로 개선합니다</li>
+<li>스토리 포인트가 크면 쪼개고, 작은 것부터 처리합니다</li>
+</ul>
+<p>Jira를 단순한 티켓 관리 도구가 아닌, 팀의 협업과 소통을 강화하는 도구로 활용하세요.</p>2:["$","$L9",null,{"post":{"slug":"/develop/Jira 활용 가이드","frontmatter":{"title":"Jira 활용 가이드 - 효율적인 프로젝트 관리 방법","date":"2024-02-05T15:30:00.000Z","category":"develop","tags":["Jira","프로젝트관리","지라","애자일","티켓관리"],"excerpt":"Jira를 활용한 효율적인 프로젝트 관리 방법을 정리했습니다. 대시보드 설정부터 티켓 작성, 워크플로우 관리까지 실전 경험을 바탕으로 정리했습니다.","draft":false},"content":"$a","html":"$b","excerpt":"Jira는 애자일 프로젝트 관리의 핵심 도구입니다. 하지만 제대로 활용하지 못하면 오히려 업무 효율을 떨어뜨릴 수 있습니다. 이 글에서는 실제 프로젝트에서 사용한 Jira 활용 방법을 정리했습니다.  ## 대시보드 설정  대시보드는 프로젝트의 전체적인 상황을 한눈에 파악할 수 있는 핵심 화면입니다. 다음과 같은 가젯을 활용하여 구성합니다.  ### Con"},"previousPost":{"slug":"/book/이펙티브 엔지니어/0장-글","frontmatter":{"title":"0장 글","date":"2024-01-17T22:09:37.000Z","category":"이펙티브 엔지니어","tags":["이펙티브"],"draft":false}},"nextPost":{"slug":"/docs/내향인도-발표-고수로-만드는-직장인의-발표-스킬-10가지","frontmatter":{"title":"내향인도 발표 고수로 만드는 직장인의 발표 스킬 10가지","date":"2024-04-15T00:04:46.000Z","category":"docs","tags":[],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Jira 활용 가이드 - 효율적인 프로젝트 관리 방법"}],["$","meta","3",{"name":"description","content":"Jira는 애자일 프로젝트 관리의 핵심 도구입니다. 하지만 제대로 활용하지 못하면 오히려 업무 효율을 떨어뜨릴 수 있습니다. 이 글에서는 실제 프로젝트에서 사용한 Jira 활용 방법을 정리했습니다.  ## 대시보드 설정  대시보드는 프로젝트의 전체적인 상황을 한눈에 파악할 수 있는 핵심 화면입니다. 다음과 같은 가젯을 활용하여 구성합니다.  ### Con"}]]
+1:null

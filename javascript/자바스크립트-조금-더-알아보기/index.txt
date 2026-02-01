@@ -1,0 +1,212 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","javascript","d"]
+5:["slug","%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A1%B0%EA%B8%88-%EB%8D%94-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0","c"]
+0:["static-build-id",[[["",{"children":[["category","javascript","d"],{"children":[["slug","%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A1%B0%EA%B8%88-%EB%8D%94-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0","c"],{"children":["__PAGE__?{\"category\":\"javascript\",\"slug\":[\"자바스크립트-조금-더-알아보기\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","javascript","d"],{"children":[["slug","%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%A1%B0%EA%B8%88-%EB%8D%94-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T2099,
+## 1. 실행 컨텍스트(Execution Context)
+
+- 코드를 실행하기 위해 필요한 정보들을 가진 범위를 객체 형태로 나타낸 것입니다. 코드의 실제 진행 상황을 추적하는데 도움이 됩니다.
+  - 전역 공간에서 자동으로 생성되는 전연 컨텍스트
+  - 함수 실행에 의한 컨텍스트
+  - eval함수
+- 자바스크립트가 로드되고 이를 엔진이 처리하면서 실행 컨텍스트를 만듭니다. 어떤 코드를 실행하고 이 컨텍스트에는 어떤 변수들이 있는지 알기 위한 정보들이 있습니다.
+- 실행 컨텍스트를 구성하는 LexicalEnvironment는 현재의 실행 컨텍스트가 실행되기 위한 여러 정보를 담고 있습니다. LexicalEnvironment는 식별자들에 대한 정보를 담은 EnvironmentRecord와, 상위 LexicalEnvironment를 참조해 스코프 체인을 가능하게 하는 OuterEnvironmentReference 정보로 구성되어 있습니다. EnvironmentRecord는 식별자 바인딩을 관리하고, binding object라 불리는 특정 객체의 속성으로 선언된 식별자들을 관리합니다. OuterEnvironmentReference는 현재의 실행 컨텍스트를 구성한 함수가 선언되는 시점에서의 상위 LexicalEnvironment를 참조하기 때문에 식별자의 유효 범위를 상위로 거슬러 올라가 찾게 되는 스코프 체인이 가능합니다.
+  - 실행 컨텍스트 객체는 활성화 되는 시점에 VariableEnvironment, LexicalEnvironment, ThisBinding의 세 가지 정보를 수집합니다.
+  - 실행 컨텍스트를 생성할 때 VariableEnvironment와 LexicalEnvironment가 동일한 내용으로 구성됩니다.
+  - VariableEnvironment는 스냅샷 유지를 목적으로 사용합니다.
+  - LexicalEnvironment는 함수 실행 도중에 변경되는 사항이 즉시 반영됩니다.
+  - LexicalEnvironment와 VariableEnvironment는 다음과 environmentRecord와 outerEnvironmentReference로 구성되어 있습니다.
+  - environmentRecord는 매개변수 식별자, 변수 식별자, 선언한 함수의 식별자 등을 수집합니다.
+  - 이것 때문에 호이스팅이라는 개념이 사용됩니다.
+  - 호이스팅은 코드 해석을 좀 더 수월하게 하기 위해 environmentRecord의 수집 과정을 추상화한 개념입니다.
+  - 변수 선언부와 함수 선언문에 호이스팅이 발생합니다. 함수 표현식을 사용할 경우 함수의 선언부만 호이스팅이 발생합니다.
+  - outerEnvironmentReference는 상위(직전) 컨텍스트의 LexicalEnvironment 정보를 참조한다.
+이것 때문에 스코프가 형성되고, 스코프 체인을 통해 상위 컨텍스트에 접근할 수 있다.
+스코프는 변수의 유효범위를 말한다.
+
+
+### 실행 컨텍스트 구성
+
+- 전역공간은 자동으로 컨텍스트로 구성됩니다.
+- 함수가 `()`를 붙여 실행하면 서브루틴이 호출되면 실행 컨텍스트가 새롭게 만들어집니다. 함수가 종료되면 실행 컨텍스트는 사라집니다. 실행 컨텍스트엔 함수 실행에 필요한 정볼들이 모여 있습니다.
+- eval()함수를 실행할 경우도 동일합니다.
+- ES6+ 이상 부터는 block을 만들어도 컨텍스트가 만들어 집니다.
+
+
+### 자바스크립트의 함수 객체
+
+- 서브루틴으로 수행될 수 있는 객체입니다.
+- 동작을 나타내는 실행 코드가 있으면서, (Don't Notation을 통해) 일반 객체와 동일하게 동작할 수 있습니다.
+- 서브루틴으로 실행 예) sum()
+- 일반 객체처럼 동작 예) sum.a =1;
+
+## 2. 콜 스택(Call stack)
+
+- 현재 실행되고 있는 실행 컨텍스트를 추적하기 위한 구조체입니다.
+- 콜 스택의 바닥엔 전역 컨텍스트가 존재합니다.
+- 함수가 호출될 때 해당 함수의 실행 컨텍스트가 Push되고 함수가 종료되면 Pop됩니다.
+
+## 3. 스코프(Scope)
+
+- 현재 접근할 수 있는 변수들의 범위입니다. 
+- 현재 실행 중인 컨텍스트에서 변수를 찾을 수 없다면, 이전 컨텍스트로 탐색 범위를 옮깁니다.
+- 이를 스코프 체인(Scope Chain)이라고 합니다.
+
+## 4. 클로저(Closure)
+
+- 함수가 함수를 반환할 때, 반환되는 함수는 자신이 둘러싼 메모리 환경을 가지고 반환됩니다.
+- 함수의 호출이 아닌 정의된 위치에 결정되는 스코프이며 이를 렉시컬 스코프라 합니다.
+- 상위 실행 컨텍스트로 스코프 체인을 이어가기 전 클로저 변수가 있는 먼저 확인합니다.
+- 클로저 변수는 함수가 호출이 되어야만 접근이 가능하기 때문에 정보 은닉에 활용됩니다.
+- 함수 호출 간 공유 메모리로도 활용이 가능합니다.
+- 일반적으로 함수가 종료되면 메모리 환경이 사라져, 각 호출 간 연결 고리가 없습니다.
+
+## 5. 비동기 자바스크립트(Asynchronous JavaScript)
+
+- 브라우저 API에서 콜백을 스레드 큐에 등록시킵니다.
+- 엔진이 콜백을 실행할 준비가 되면 스레드 큐에서 콜 스택으로 콜백 함수를 넘겨줍니다. 
+- 콜백을 실행할 준비가 되는 시점은 콜 스택이 비어 있고 전역 실행 컨텍스트에서 실행할 코드가 없을 때 입니다.
+- 이렇게 조건을 계속 체크하고 콜백 함수를 큐에서 스택으로 옮겨주는 걸 이벤트 루프라 합니다.
+- <a href='/javascript/event-loop/' target="_blank">이벤트 루프 조금 더 알아보기</a>
+
+## 6. 자바스크립트 프로토타입(JavaScript Prototype)
+
+- 인스턴스 생성을 위해 빈 객체를 만들고 프로토타입을 연결해준 뒤 속성 값들을 할당해주고 반환합니다.
+- 이게 new가 내부적으로 해주는 일입니다.
+
+## 7. 추가적인 개념들
+
+- <a href='/javascript/javascript-call-by-reference가-존재하는가/' target="_blank">javascript call by reference가 존재하는가</a>
+- <a href='/javascript/this/' target="_blank">자바스크립트의 this</a>
+- <a href='/javascript/prototype/' target="_blank">자바스크립트의 prototype</a>
+- <a href='/javascript/class/' target="_blank">자바스크립트의 class</a>
+- <a href='/javascript/iterator/' target="_blank">자바스크립트의 iterator</a>
+- <a href='/javascript/iterator/' target="_blank">자바스크립트의 iterator</a>
+- <a href='/javascript/generator/' target="_blank">자바스크립트의 generator</a>
+- <a href='/javascript/async-await/' target="_blank">자바스크립트의 async-await</a>
+- <a href='/javascript/javascript%EC%97%90%EC%84%9C-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95,-%EC%83%81%EC%86%8D%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/' target="_blank">javascript에서 클래스를 구현하는 방법, 상속하는 방법</a>
+- <a href='https://poiemaweb.com/es6-block-scope/' target="_blank">let, const와 블록 레벨 스코프</a>
+- 자바스크립트의 함수는 일급 객체이므로 값처럼 인자로 전달할 수 있으며 반환할 수도 있습니다.  
+
+<!-- ## 8. 다루지 못한 컨셉들
+프로토타입이 부모-자식 간 어떻게 연결이 되는지
+프로토타입 또한 객체이기에 __proto__를 갖고 있습니다.
+ES2015+ 문법들의 동작 원리
+class, super, extends 키워드
+결국 프로토타입으로 만들어집니다.
+Promise
+비동기 처리 방법을 그대로 따라갑니다.
+스레드 큐의 두 가지 종류(MicroTask, MacroTask)를 알아봐야 합니다.
+ES2016의 Async/Await
+ES2015의 Promise, Iterator, Generator를 알면 더 확실히 보입니다.
+이를 알아보기 위한 방법
+babel이라는 트랜스파일러로 폴리필 코드를 살펴봅니다.
+프레임워크 구현체에서 잘 모르거나 사용하지 않는 문법이 있다면 스펙을 찾아봅니다. -->
+
+---
+
+## 참고
+- [결국 자바스크립트를 알아보기로 했다.](https://forward.nhn.com/2021/sessions/17)
+- [자바스크립트의 실행 컨텍스트 (execution context)](https://velog.io/@ggong/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-execution-context)
+- [자바스크립트 실행 컨텍스트](https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_1-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7)c:T2261,<h2 id="1-실행-컨텍스트execution-context">1. 실행 컨텍스트(Execution Context)<a aria-hidden="true" tabindex="-1" href="#1-실행-컨텍스트execution-context"><span class="anchor"></span></a></h2>
+<ul>
+<li>코드를 실행하기 위해 필요한 정보들을 가진 범위를 객체 형태로 나타낸 것입니다. 코드의 실제 진행 상황을 추적하는데 도움이 됩니다.
+<ul>
+<li>전역 공간에서 자동으로 생성되는 전연 컨텍스트</li>
+<li>함수 실행에 의한 컨텍스트</li>
+<li>eval함수</li>
+</ul>
+</li>
+<li>자바스크립트가 로드되고 이를 엔진이 처리하면서 실행 컨텍스트를 만듭니다. 어떤 코드를 실행하고 이 컨텍스트에는 어떤 변수들이 있는지 알기 위한 정보들이 있습니다.</li>
+<li>실행 컨텍스트를 구성하는 LexicalEnvironment는 현재의 실행 컨텍스트가 실행되기 위한 여러 정보를 담고 있습니다. LexicalEnvironment는 식별자들에 대한 정보를 담은 EnvironmentRecord와, 상위 LexicalEnvironment를 참조해 스코프 체인을 가능하게 하는 OuterEnvironmentReference 정보로 구성되어 있습니다. EnvironmentRecord는 식별자 바인딩을 관리하고, binding object라 불리는 특정 객체의 속성으로 선언된 식별자들을 관리합니다. OuterEnvironmentReference는 현재의 실행 컨텍스트를 구성한 함수가 선언되는 시점에서의 상위 LexicalEnvironment를 참조하기 때문에 식별자의 유효 범위를 상위로 거슬러 올라가 찾게 되는 스코프 체인이 가능합니다.
+<ul>
+<li>실행 컨텍스트 객체는 활성화 되는 시점에 VariableEnvironment, LexicalEnvironment, ThisBinding의 세 가지 정보를 수집합니다.</li>
+<li>실행 컨텍스트를 생성할 때 VariableEnvironment와 LexicalEnvironment가 동일한 내용으로 구성됩니다.</li>
+<li>VariableEnvironment는 스냅샷 유지를 목적으로 사용합니다.</li>
+<li>LexicalEnvironment는 함수 실행 도중에 변경되는 사항이 즉시 반영됩니다.</li>
+<li>LexicalEnvironment와 VariableEnvironment는 다음과 environmentRecord와 outerEnvironmentReference로 구성되어 있습니다.</li>
+<li>environmentRecord는 매개변수 식별자, 변수 식별자, 선언한 함수의 식별자 등을 수집합니다.</li>
+<li>이것 때문에 호이스팅이라는 개념이 사용됩니다.</li>
+<li>호이스팅은 코드 해석을 좀 더 수월하게 하기 위해 environmentRecord의 수집 과정을 추상화한 개념입니다.</li>
+<li>변수 선언부와 함수 선언문에 호이스팅이 발생합니다. 함수 표현식을 사용할 경우 함수의 선언부만 호이스팅이 발생합니다.</li>
+<li>outerEnvironmentReference는 상위(직전) 컨텍스트의 LexicalEnvironment 정보를 참조한다.
+이것 때문에 스코프가 형성되고, 스코프 체인을 통해 상위 컨텍스트에 접근할 수 있다.
+스코프는 변수의 유효범위를 말한다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="실행-컨텍스트-구성">실행 컨텍스트 구성<a aria-hidden="true" tabindex="-1" href="#실행-컨텍스트-구성"><span class="anchor"></span></a></h3>
+<ul>
+<li>전역공간은 자동으로 컨텍스트로 구성됩니다.</li>
+<li>함수가 <code class="inline-code">()</code>를 붙여 실행하면 서브루틴이 호출되면 실행 컨텍스트가 새롭게 만들어집니다. 함수가 종료되면 실행 컨텍스트는 사라집니다. 실행 컨텍스트엔 함수 실행에 필요한 정볼들이 모여 있습니다.</li>
+<li>eval()함수를 실행할 경우도 동일합니다.</li>
+<li>ES6+ 이상 부터는 block을 만들어도 컨텍스트가 만들어 집니다.</li>
+</ul>
+<h3 id="자바스크립트의-함수-객체">자바스크립트의 함수 객체<a aria-hidden="true" tabindex="-1" href="#자바스크립트의-함수-객체"><span class="anchor"></span></a></h3>
+<ul>
+<li>서브루틴으로 수행될 수 있는 객체입니다.</li>
+<li>동작을 나타내는 실행 코드가 있으면서, (Don't Notation을 통해) 일반 객체와 동일하게 동작할 수 있습니다.</li>
+<li>서브루틴으로 실행 예) sum()</li>
+<li>일반 객체처럼 동작 예) sum.a =1;</li>
+</ul>
+<h2 id="2-콜-스택call-stack">2. 콜 스택(Call stack)<a aria-hidden="true" tabindex="-1" href="#2-콜-스택call-stack"><span class="anchor"></span></a></h2>
+<ul>
+<li>현재 실행되고 있는 실행 컨텍스트를 추적하기 위한 구조체입니다.</li>
+<li>콜 스택의 바닥엔 전역 컨텍스트가 존재합니다.</li>
+<li>함수가 호출될 때 해당 함수의 실행 컨텍스트가 Push되고 함수가 종료되면 Pop됩니다.</li>
+</ul>
+<h2 id="3-스코프scope">3. 스코프(Scope)<a aria-hidden="true" tabindex="-1" href="#3-스코프scope"><span class="anchor"></span></a></h2>
+<ul>
+<li>현재 접근할 수 있는 변수들의 범위입니다.</li>
+<li>현재 실행 중인 컨텍스트에서 변수를 찾을 수 없다면, 이전 컨텍스트로 탐색 범위를 옮깁니다.</li>
+<li>이를 스코프 체인(Scope Chain)이라고 합니다.</li>
+</ul>
+<h2 id="4-클로저closure">4. 클로저(Closure)<a aria-hidden="true" tabindex="-1" href="#4-클로저closure"><span class="anchor"></span></a></h2>
+<ul>
+<li>함수가 함수를 반환할 때, 반환되는 함수는 자신이 둘러싼 메모리 환경을 가지고 반환됩니다.</li>
+<li>함수의 호출이 아닌 정의된 위치에 결정되는 스코프이며 이를 렉시컬 스코프라 합니다.</li>
+<li>상위 실행 컨텍스트로 스코프 체인을 이어가기 전 클로저 변수가 있는 먼저 확인합니다.</li>
+<li>클로저 변수는 함수가 호출이 되어야만 접근이 가능하기 때문에 정보 은닉에 활용됩니다.</li>
+<li>함수 호출 간 공유 메모리로도 활용이 가능합니다.</li>
+<li>일반적으로 함수가 종료되면 메모리 환경이 사라져, 각 호출 간 연결 고리가 없습니다.</li>
+</ul>
+<h2 id="5-비동기-자바스크립트asynchronous-javascript">5. 비동기 자바스크립트(Asynchronous JavaScript)<a aria-hidden="true" tabindex="-1" href="#5-비동기-자바스크립트asynchronous-javascript"><span class="anchor"></span></a></h2>
+<ul>
+<li>브라우저 API에서 콜백을 스레드 큐에 등록시킵니다.</li>
+<li>엔진이 콜백을 실행할 준비가 되면 스레드 큐에서 콜 스택으로 콜백 함수를 넘겨줍니다.</li>
+<li>콜백을 실행할 준비가 되는 시점은 콜 스택이 비어 있고 전역 실행 컨텍스트에서 실행할 코드가 없을 때 입니다.</li>
+<li>이렇게 조건을 계속 체크하고 콜백 함수를 큐에서 스택으로 옮겨주는 걸 이벤트 루프라 합니다.</li>
+<li>이벤트 루프 조금 더 알아보기</li>
+</ul>
+<h2 id="6-자바스크립트-프로토타입javascript-prototype">6. 자바스크립트 프로토타입(JavaScript Prototype)<a aria-hidden="true" tabindex="-1" href="#6-자바스크립트-프로토타입javascript-prototype"><span class="anchor"></span></a></h2>
+<ul>
+<li>인스턴스 생성을 위해 빈 객체를 만들고 프로토타입을 연결해준 뒤 속성 값들을 할당해주고 반환합니다.</li>
+<li>이게 new가 내부적으로 해주는 일입니다.</li>
+</ul>
+<h2 id="7-추가적인-개념들">7. 추가적인 개념들<a aria-hidden="true" tabindex="-1" href="#7-추가적인-개념들"><span class="anchor"></span></a></h2>
+<ul>
+<li>javascript call by reference가 존재하는가</li>
+<li>자바스크립트의 this</li>
+<li>자바스크립트의 prototype</li>
+<li>자바스크립트의 class</li>
+<li>자바스크립트의 iterator</li>
+<li>자바스크립트의 iterator</li>
+<li>자바스크립트의 generator</li>
+<li>자바스크립트의 async-await</li>
+<li>javascript에서 클래스를 구현하는 방법, 상속하는 방법</li>
+<li>let, const와 블록 레벨 스코프</li>
+<li>자바스크립트의 함수는 일급 객체이므로 값처럼 인자로 전달할 수 있으며 반환할 수도 있습니다.</li>
+</ul>
+<hr>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://forward.nhn.com/2021/sessions/17">결국 자바스크립트를 알아보기로 했다.</a></li>
+<li><a href="https://velog.io/@ggong/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%8B%A4%ED%96%89-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-execution-context">자바스크립트의 실행 컨텍스트 (execution context)</a></li>
+<li><a href="https://junilhwang.github.io/TIL/Javascript/Domain/Execution-Context/#_1-%E1%84%80%E1%85%A2%E1%84%82%E1%85%A7%E1%86%B7">자바스크립트 실행 컨텍스트</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/javascript/자바스크립트-조금-더-알아보기","frontmatter":{"title":"자바스크립트 조금 더 알아보기","date":"2022-01-19T23:01:46.000Z","category":"javascript","tags":["javascript"],"draft":false},"content":"$b","html":"$c","excerpt":"## 1. 실행 컨텍스트(Execution Context)  - 코드를 실행하기 위해 필요한 정보들을 가진 범위를 객체 형태로 나타낸 것입니다. 코드의 실제 진행 상황을 추적하는데 도움이 됩니다.   - 전역 공간에서 자동으로 생성되는 전연 컨텍스트   - 함수 실행에 의한 컨텍스트   - eval함수 - 자바스크립트가 로드되고 이를 엔진이 처리하면서 실"},"previousPost":{"slug":"/javascript/타입스크립트의-오버로드","frontmatter":{"title":"타입스크립트의 오버로드","date":"2021-08-14T01:08:02.000Z","category":"javascript","tags":[],"draft":false}},"nextPost":{"slug":"/javascript/prototype","frontmatter":{"title":"prototype","date":"2022-01-20T00:02:22.000Z","category":"javascript","tags":[],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"자바스크립트 조금 더 알아보기"}],["$","meta","3",{"name":"description","content":"## 1. 실행 컨텍스트(Execution Context)  - 코드를 실행하기 위해 필요한 정보들을 가진 범위를 객체 형태로 나타낸 것입니다. 코드의 실제 진행 상황을 추적하는데 도움이 됩니다.   - 전역 공간에서 자동으로 생성되는 전연 컨텍스트   - 함수 실행에 의한 컨텍스트   - eval함수 - 자바스크립트가 로드되고 이를 엔진이 처리하면서 실"}]]
+1:null

@@ -1,0 +1,786 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","develop/%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC%20%EB%B3%B5%EC%9B%90%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%9E%AC%EC%84%A4%EA%B3%84","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","develop/%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC%20%EB%B3%B5%EC%9B%90%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%9E%AC%EC%84%A4%EA%B3%84","c"],{"children":["__PAGE__?{\"slug\":[\"develop\",\"히스토리 복원 시스템 재설계\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","develop/%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC%20%EB%B3%B5%EC%9B%90%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%9E%AC%EC%84%A4%EA%B3%84","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T2d07,
+> Next.js 기반의 히스토리 복원 시스템을 재설계한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, Next.js의 history.state 덮어쓰기 문제, BF Cache 대응 등 다양한 기술적 도전을 해결했습니다.
+
+## 📊 프로젝트 개요
+
+- **주요 목표**: 완벽한 히스토리 복원 지원
+- **기술 스택**: Next.js 14, React 18, TypeScript
+
+### 핵심 성과
+
+- ✅ 명시적 클릭 이벤트 기반 저장 시스템 구축
+- ✅ React Strict Mode로 인한 상태 관리 문제 완벽 해결
+- ✅ Next.js의 history.state 덮어쓰기 문제 해결
+- ✅ BF Cache 대응 및 CSR/SSR 환경 통합 처리
+- ✅ Safari/Chrome 등 모든 브라우저 호환
+- ✅ API 호출 최적화 (204 응답 캐싱 처리로 레이아웃 시프트 해결)
+
+---
+
+## 🔴 문제 상황
+
+### 1. 히스토리 복원 키 불일치
+
+**문제**:
+
+- 네플스홈과 전시허브의 히스토리 복원 관리 키 값이 다름
+- 각 모듈마다 다른 키 체계를 사용하여 일관성 부족
+
+**영향**:
+
+- 모듈 간 히스토리 복원이 제대로 동작하지 않음
+- 스크롤 위치 복원이 정확하지 않음
+
+### 2. 스크롤 복원 위치 오차
+
+**문제**:
+
+- 스크롤이 긴 경우 스크롤 복원 위치가 조금 틀어짐
+- 동적 콘텐츠 로딩으로 인한 높이 변화 미반영
+
+**영향**:
+
+- 사용자가 이전에 보던 위치로 정확히 돌아가지 못함
+- 사용자 경험 저하
+
+### 3. React Strict Mode로 인한 상태 관리 문제
+
+**문제**:
+
+- React Strict Mode에서 컴포넌트가 두 번 렌더링됨
+- 히스토리 저장/복원 타이밍이 꼬임
+- `pagehide` 이벤트 기반 저장이 불안정함
+
+**영향**:
+
+- 히스토리 저장이 중복되거나 누락됨
+- 뒤로가기 시 상태가 제대로 복원되지 않음
+
+### 4. Next.js의 history.state 덮어쓰기 문제
+
+**문제**:
+
+- Next.js가 자신들의 데이터로 `history.state`를 덮어씀
+- 사용자가 저장한 커스텀 state가 삭제됨
+
+**영향**:
+
+- 히스토리 복원 정보가 손실됨
+- CSR 환경에서 특히 문제 발생
+
+### 5. 이미지 과다 요청 문제
+
+**문제**:
+
+- "컬리홈 -> 새로고침 -> 베스트 이동 -> 새로고침 -> 뒤로가기" 시나리오에서 이미지를 엄청 많이 요청
+- 기존의 5~10배 이미지 요청 발생
+
+**원인**:
+
+- `StateRestorationUtil.clearOptionsState()`가 무수히 호출됨
+- 히스토리 삭제 로직이 잘못된 타이밍에 실행됨
+
+---
+
+## ✅ 해결 방법
+
+### 1. 명시적 클릭 이벤트 기반 저장 시스템
+
+**변경 전**:
+
+```typescript
+// pagehide 이벤트 기반 저장
+window.addEventListener('pagehide', () => {
+  StateRestorationUtil.saveOptionsState()
+})
+```
+
+**문제점**:
+
+- `pagehide` 이벤트는 예측하기 어려운 타이밍에 발생
+- React Strict Mode에서 중복 실행 가능
+- 새로고침 후 뒤로가기 시 문제 발생
+
+**변경 후**:
+
+```typescript
+// 명시적 클릭 이벤트 기반 저장
+const handleLinkClick = (href: string) => {
+  // 스크롤 위치 저장
+  const scrollY = window.scrollY
+  StateRestorationUtil.saveOptionsState({
+    scrollY,
+    pathname: window.location.pathname,
+  })
+
+  // Next.js Link로 이동
+  router.push(href)
+}
+```
+
+**효과**:
+
+- ✅ 저장 타이밍이 명확해짐
+- ✅ React Strict Mode 문제 해결
+- ✅ 이미지 과다 요청 문제 해결
+
+---
+
+### 2. pathname 기반 키 체계 구축
+
+**변경 전**:
+
+```typescript
+// 모듈별로 다른 키 사용
+const key = `__USER_STATE__` // 네플스홈
+const key = `container-${id}` // 전시허브
+```
+
+**변경 후**:
+
+```typescript
+// pathname 기반 통일된 키 체계
+const getHistoryKey = (pathname: string) => {
+  return `history-${pathname}`
+}
+
+// SCROLL_POS 복원을 위한 추가 키
+const getScrollPosKey = () => {
+  return `scroll-pos` // pathname 없는 키도 필요
+}
+```
+
+**효과**:
+
+- ✅ 모듈 간 일관성 확보
+- ✅ Safari에서 히스토리 꼬임 이슈 해결
+- ✅ 키 충돌 방지
+
+---
+
+### 3. Next.js history.state 덮어쓰기 문제 해결
+
+**문제**:
+
+```typescript
+// Next.js가 history.state를 덮어씀
+router.push('/page')
+// 사용자가 저장한 커스텀 state가 사라짐
+```
+
+**해결 방법**:
+
+```typescript
+// patchHistoryReplaceState 함수로 해결
+const patchHistoryReplaceState = () => {
+  const originalReplaceState = window.history.replaceState
+
+  window.history.replaceState = function (state, title, url) {
+    // 사용자 정의 state 보존
+    const userState = window.history.state?.__USER_STATE__
+    const mergedState = {
+      ...state,
+      __USER_STATE__: userState,
+    }
+
+    return originalReplaceState.call(this, mergedState, title, url)
+  }
+}
+
+// VerticalLayoutWrapper에서 초기화
+useEffect(() => {
+  patchHistoryReplaceState()
+}, [])
+```
+
+**효과**:
+
+- ✅ Next.js가 state를 덮어써도 사용자 정의 state 보존
+- ✅ CSR 환경에서 안정적인 히스토리 복원
+
+---
+
+### 4. BF Cache 대응
+
+**문제**:
+
+- Safari의 Back-Forward Cache (bfcache)로 인한 복원 문제
+- Dev 모드와 Production 모드의 동작 차이
+
+**해결 방법**:
+
+```typescript
+// Safari bfcache 대응
+if (typeof window !== 'undefined' && 'safari' in window) {
+  const safariVersion = parseFloat(
+    navigator.userAgent.match(/Version\/(\d+\.\d+)/)?.[1] || '0'
+  )
+
+  if (safariVersion >= 13.4) {
+    window.history.scrollRestoration = 'auto'
+  }
+}
+
+// bfcache 복원 시 처리
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    // bfcache에서 복원된 경우
+    restoreHistoryState()
+  }
+})
+```
+
+**효과**:
+
+- ✅ Safari에서도 정상적인 히스토리 복원
+- ✅ 모든 브라우저 호환성 확보
+
+---
+
+### 5. 스크롤 복원 위치 보정
+
+**문제**:
+
+- 동적 콘텐츠 로딩으로 인한 높이 변화
+- 스크롤 복원 위치가 정확하지 않음
+
+**해결 방법**:
+
+```typescript
+const restoreScrollPosition = (savedScrollY: number) => {
+  // 즉시 스크롤 복원
+  window.scrollTo(0, savedScrollY)
+
+  // 높이 변화 감지 및 재조정
+  let checkCount = 0
+  const maxChecks = 20 // 최대 1초 (20 * 50ms)
+
+  const checkAndAdjust = () => {
+    const currentHeight = document.documentElement.scrollHeight
+    const expectedHeight = savedScrollY + window.innerHeight
+
+    if (currentHeight < expectedHeight && checkCount < maxChecks) {
+      // 높이가 아직 충분하지 않음
+      checkCount++
+      setTimeout(checkAndAdjust, 50)
+    } else {
+      // 최종 스크롤 위치 조정
+      window.scrollTo(0, savedScrollY)
+    }
+  }
+
+  checkAndAdjust()
+}
+```
+
+**효과**:
+
+- ✅ 동적 콘텐츠 로딩 후에도 정확한 스크롤 위치 복원
+- ✅ 최대 1초 내 높이 변화 감지 및 보정
+
+---
+
+### 6. 히스토리 삭제 로직 개선
+
+**문제**:
+
+- 새로고침 후 뒤로가기 시 히스토리 삭제 로직이 잘못 실행됨
+- `GlobalPersistManager.getPersistSavingStatus` 값이 초기화되지 않음
+
+**변경 전**:
+
+```typescript
+// pagehide에서 히스토리 삭제 시도
+window.addEventListener('pagehide', () => {
+  if (shouldClearHistory()) {
+    StateRestorationUtil.clearOptionsState()
+  }
+})
+```
+
+**변경 후**:
+
+```typescript
+// 명시적 클릭 시에만 저장하므로 삭제 로직 불필요
+// 히스토리는 사용 후 자동으로 관리됨
+// pathname 기반 키로 충돌 방지
+```
+
+**효과**:
+
+- ✅ 이미지 과다 요청 문제 해결 (5~10배 → 정상)
+- ✅ 히스토리 삭제 플래그 제거로 복잡도 감소
+
+---
+
+### 7. 페이지 레벨 스크롤 복원 책임 이전
+
+**변경 전**:
+
+- CorePack에서 페이지 레벨 스크롤 복원 처리
+- 모듈 간 일관성 부족
+
+**변경 후**:
+
+- 버티컬레이아웃(VerticalLayoutWrapper)에서 스크롤 복원 처리
+- CorePack은 모듈 단위로만 제공
+
+**효과**:
+
+- ✅ 책임 분리로 코드 가독성 향상
+- ✅ 모듈 간 일관성 확보
+- ✅ 불필요한 플래그 값 제거
+
+---
+
+## 🏗️ 아키텍처 개선
+
+### 변경 전 구조
+
+```
+CorePack
+├── 페이지 레벨 스크롤 복원 (pagehide 이벤트)
+├── 모듈별 다른 키 체계
+└── 히스토리 삭제 플래그 관리
+```
+
+### 변경 후 구조
+
+```
+VerticalLayoutWrapper (버티컬레이아웃)
+├── 명시적 클릭 이벤트 기반 저장
+├── pathname 기반 통일된 키 체계
+├── Next.js history.state 덮어쓰기 패치
+└── BF Cache 대응
+
+CorePack
+└── 모듈 단위 스크롤 복원만 제공
+```
+
+---
+
+## 💡 핵심 교훈
+
+### 1. 명시적 이벤트가 암묵적 이벤트보다 안정적
+
+`pagehide` 이벤트는 예측하기 어려운 타이밍에 발생하지만, 명시적 클릭 이벤트는 개발자가 완전히 제어할 수 있습니다. React Strict Mode와 같은 환경에서도 안정적으로 동작합니다.
+
+### 2. 프레임워크의 기본 동작을 이해해야 함
+
+Next.js가 `history.state`를 덮어쓰는 동작을 이해하지 못하면, 사용자 정의 state가 손실될 수 있습니다. 프레임워크의 내부 동작을 이해하고 적절히 패치하는 것이 중요합니다.
+
+### 3. BF Cache는 브라우저마다 다르게 동작함
+
+Safari와 Chrome의 BF Cache 동작이 다르며, Dev 모드와 Production 모드에서도 차이가 있습니다. 모든 환경에서 테스트하는 것이 중요합니다.
+
+### 4. 키 체계의 일관성이 중요함
+
+모듈마다 다른 키를 사용하면 히스토리 복원이 제대로 동작하지 않습니다. 통일된 키 체계를 구축하는 것이 중요합니다.
+
+### 5. 점진적 마이그레이션이 필요함
+
+7개 모듈에 걸친 대규모 변경은 한 번에 적용하기 어렵습니다. 단계적으로 마이그레이션하고 각 단계마다 검증하는 것이 중요합니다.
+
+---
+
+## 📈 최종 결과
+
+### 성능 개선
+
+- ✅ 이미지 요청 횟수: 5~10배 → 정상 수준
+- ✅ API 호출 최적화: 204 응답 캐싱 처리로 레이아웃 시프트 해결
+- ✅ 히스토리 복원 정확도: 100% 달성
+
+### 코드 품질 개선
+
+- ✅ 히스토리 삭제 플래그 제거로 복잡도 감소
+- ✅ 책임 분리로 코드 가독성 향상
+- ✅ 통일된 키 체계로 유지보수성 향상
+
+### 사용자 경험 개선
+
+- ✅ 스크롤 위치 정확도 향상
+- ✅ 뒤로가기 시 상태 완벽 복원
+- ✅ 모든 브라우저에서 일관된 동작
+
+---
+
+## 🎯 결론
+
+7개 모듈에 걸친 히스토리 복원 시스템 재설계를 통해 다음과 같은 성과를 달성했습니다:
+
+1. ✅ **명시적 클릭 이벤트 기반 저장 시스템**으로 React Strict Mode 문제 해결
+2. ✅ **pathname 기반 통일된 키 체계**로 모듈 간 일관성 확보
+3. ✅ **Next.js history.state 덮어쓰기 패치**로 CSR 환경 안정성 확보
+4. ✅ **BF Cache 대응**으로 모든 브라우저 호환성 확보
+5. ✅ **스크롤 복원 위치 보정**으로 사용자 경험 향상
+
+이번 작업을 통해 대규모 모노레포에서의 히스토리 복원 시스템 설계 경험을 쌓았고, React Strict Mode, Next.js 내부 동작, BF Cache 등 다양한 기술적 도전을 해결할 수 있었습니다.
+
+---
+
+## 📚 참고 자료
+
+- [Next.js Documentation - Routing](https://nextjs.org/docs/app/building-your-application/routing)
+- [MDN Web Docs - History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
+- [MDN Web Docs - Back/Forward Cache](https://web.dev/bfcache/)
+- [React Documentation - Strict Mode](https://react.dev/reference/react/StrictMode)
+b:T8dac,<blockquote>
+<p>Next.js 기반의 히스토리 복원 시스템을 재설계한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, Next.js의 history.state 덮어쓰기 문제, BF Cache 대응 등 다양한 기술적 도전을 해결했습니다.</p>
+</blockquote>
+<h2 id="-프로젝트-개요">📊 프로젝트 개요<a aria-hidden="true" tabindex="-1" href="#-프로젝트-개요"><span class="anchor"></span></a></h2>
+<ul>
+<li><strong>주요 목표</strong>: 완벽한 히스토리 복원 지원</li>
+<li><strong>기술 스택</strong>: Next.js 14, React 18, TypeScript</li>
+</ul>
+<h3 id="핵심-성과">핵심 성과<a aria-hidden="true" tabindex="-1" href="#핵심-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 명시적 클릭 이벤트 기반 저장 시스템 구축</li>
+<li>✅ React Strict Mode로 인한 상태 관리 문제 완벽 해결</li>
+<li>✅ Next.js의 history.state 덮어쓰기 문제 해결</li>
+<li>✅ BF Cache 대응 및 CSR/SSR 환경 통합 처리</li>
+<li>✅ Safari/Chrome 등 모든 브라우저 호환</li>
+<li>✅ API 호출 최적화 (204 응답 캐싱 처리로 레이아웃 시프트 해결)</li>
+</ul>
+<hr>
+<h2 id="-문제-상황">🔴 문제 상황<a aria-hidden="true" tabindex="-1" href="#-문제-상황"><span class="anchor"></span></a></h2>
+<h3 id="1-히스토리-복원-키-불일치">1. 히스토리 복원 키 불일치<a aria-hidden="true" tabindex="-1" href="#1-히스토리-복원-키-불일치"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>네플스홈과 전시허브의 히스토리 복원 관리 키 값이 다름</li>
+<li>각 모듈마다 다른 키 체계를 사용하여 일관성 부족</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>모듈 간 히스토리 복원이 제대로 동작하지 않음</li>
+<li>스크롤 위치 복원이 정확하지 않음</li>
+</ul>
+<h3 id="2-스크롤-복원-위치-오차">2. 스크롤 복원 위치 오차<a aria-hidden="true" tabindex="-1" href="#2-스크롤-복원-위치-오차"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>스크롤이 긴 경우 스크롤 복원 위치가 조금 틀어짐</li>
+<li>동적 콘텐츠 로딩으로 인한 높이 변화 미반영</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>사용자가 이전에 보던 위치로 정확히 돌아가지 못함</li>
+<li>사용자 경험 저하</li>
+</ul>
+<h3 id="3-react-strict-mode로-인한-상태-관리-문제">3. React Strict Mode로 인한 상태 관리 문제<a aria-hidden="true" tabindex="-1" href="#3-react-strict-mode로-인한-상태-관리-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>React Strict Mode에서 컴포넌트가 두 번 렌더링됨</li>
+<li>히스토리 저장/복원 타이밍이 꼬임</li>
+<li><code class="inline-code">pagehide</code> 이벤트 기반 저장이 불안정함</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>히스토리 저장이 중복되거나 누락됨</li>
+<li>뒤로가기 시 상태가 제대로 복원되지 않음</li>
+</ul>
+<h3 id="4-nextjs의-historystate-덮어쓰기-문제">4. Next.js의 history.state 덮어쓰기 문제<a aria-hidden="true" tabindex="-1" href="#4-nextjs의-historystate-덮어쓰기-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>Next.js가 자신들의 데이터로 <code class="inline-code">history.state</code>를 덮어씀</li>
+<li>사용자가 저장한 커스텀 state가 삭제됨</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>히스토리 복원 정보가 손실됨</li>
+<li>CSR 환경에서 특히 문제 발생</li>
+</ul>
+<h3 id="5-이미지-과다-요청-문제">5. 이미지 과다 요청 문제<a aria-hidden="true" tabindex="-1" href="#5-이미지-과다-요청-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>"컬리홈 -> 새로고침 -> 베스트 이동 -> 새로고침 -> 뒤로가기" 시나리오에서 이미지를 엄청 많이 요청</li>
+<li>기존의 5~10배 이미지 요청 발생</li>
+</ul>
+<p><strong>원인</strong>:</p>
+<ul>
+<li><code class="inline-code">StateRestorationUtil.clearOptionsState()</code>가 무수히 호출됨</li>
+<li>히스토리 삭제 로직이 잘못된 타이밍에 실행됨</li>
+</ul>
+<hr>
+<h2 id="-해결-방법">✅ 해결 방법<a aria-hidden="true" tabindex="-1" href="#-해결-방법"><span class="anchor"></span></a></h2>
+<h3 id="1-명시적-클릭-이벤트-기반-저장-시스템">1. 명시적 클릭 이벤트 기반 저장 시스템<a aria-hidden="true" tabindex="-1" href="#1-명시적-클릭-이벤트-기반-저장-시스템"><span class="anchor"></span></a></h3>
+<p><strong>변경 전</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// pagehide 이벤트 기반 저장</span>
+</span><span class="code-line">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pagehide'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  StateRestorationUtil<span class="token punctuation">.</span><span class="token function">saveOptionsState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>문제점</strong>:</p>
+<ul>
+<li><code class="inline-code">pagehide</code> 이벤트는 예측하기 어려운 타이밍에 발생</li>
+<li>React Strict Mode에서 중복 실행 가능</li>
+<li>새로고침 후 뒤로가기 시 문제 발생</li>
+</ul>
+<p><strong>변경 후</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 명시적 클릭 이벤트 기반 저장</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">handleLinkClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span>href<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// 스크롤 위치 저장</span>
+</span><span class="code-line">  <span class="token keyword">const</span> scrollY <span class="token operator">=</span> window<span class="token punctuation">.</span>scrollY
+</span><span class="code-line">  StateRestorationUtil<span class="token punctuation">.</span><span class="token function">saveOptionsState</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    scrollY<span class="token punctuation">,</span>
+</span><span class="code-line">    pathname<span class="token operator">:</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// Next.js Link로 이동</span>
+</span><span class="code-line">  router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 저장 타이밍이 명확해짐</li>
+<li>✅ React Strict Mode 문제 해결</li>
+<li>✅ 이미지 과다 요청 문제 해결</li>
+</ul>
+<hr>
+<h3 id="2-pathname-기반-키-체계-구축">2. pathname 기반 키 체계 구축<a aria-hidden="true" tabindex="-1" href="#2-pathname-기반-키-체계-구축"><span class="anchor"></span></a></h3>
+<p><strong>변경 전</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 모듈별로 다른 키 사용</span>
+</span><span class="code-line"><span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">__USER_STATE__</span><span class="token template-punctuation string">`</span></span> <span class="token comment">// 네플스홈</span>
+</span><span class="code-line"><span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">container-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span> <span class="token comment">// 전시허브</span>
+</span></code></pre>
+<p><strong>변경 후</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// pathname 기반 통일된 키 체계</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">getHistoryKey</span> <span class="token operator">=</span> <span class="token punctuation">(</span>pathname<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">history-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pathname<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// SCROLL_POS 복원을 위한 추가 키</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">getScrollPosKey</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">scroll-pos</span><span class="token template-punctuation string">`</span></span> <span class="token comment">// pathname 없는 키도 필요</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 모듈 간 일관성 확보</li>
+<li>✅ Safari에서 히스토리 꼬임 이슈 해결</li>
+<li>✅ 키 충돌 방지</li>
+</ul>
+<hr>
+<h3 id="3-nextjs-historystate-덮어쓰기-문제-해결">3. Next.js history.state 덮어쓰기 문제 해결<a aria-hidden="true" tabindex="-1" href="#3-nextjs-historystate-덮어쓰기-문제-해결"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// Next.js가 history.state를 덮어씀</span>
+</span><span class="code-line">router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/page'</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token comment">// 사용자가 저장한 커스텀 state가 사라짐</span>
+</span></code></pre>
+<p><strong>해결 방법</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// patchHistoryReplaceState 함수로 해결</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">patchHistoryReplaceState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> originalReplaceState <span class="token operator">=</span> window<span class="token punctuation">.</span>history<span class="token punctuation">.</span>replaceState
+</span><span class="code-line">
+</span><span class="code-line">  window<span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function-variable function">replaceState</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>state<span class="token punctuation">,</span> title<span class="token punctuation">,</span> url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// 사용자 정의 state 보존</span>
+</span><span class="code-line">    <span class="token keyword">const</span> userState <span class="token operator">=</span> window<span class="token punctuation">.</span>history<span class="token punctuation">.</span>state<span class="token operator">?.</span>__USER_STATE__
+</span><span class="code-line">    <span class="token keyword">const</span> mergedState <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token operator">...</span>state<span class="token punctuation">,</span>
+</span><span class="code-line">      __USER_STATE__<span class="token operator">:</span> userState<span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token function">originalReplaceState</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> mergedState<span class="token punctuation">,</span> title<span class="token punctuation">,</span> url<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// VerticalLayoutWrapper에서 초기화</span>
+</span><span class="code-line"><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">patchHistoryReplaceState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ Next.js가 state를 덮어써도 사용자 정의 state 보존</li>
+<li>✅ CSR 환경에서 안정적인 히스토리 복원</li>
+</ul>
+<hr>
+<h3 id="4-bf-cache-대응">4. BF Cache 대응<a aria-hidden="true" tabindex="-1" href="#4-bf-cache-대응"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>Safari의 Back-Forward Cache (bfcache)로 인한 복원 문제</li>
+<li>Dev 모드와 Production 모드의 동작 차이</li>
+</ul>
+<p><strong>해결 방법</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// Safari bfcache 대응</span>
+</span><span class="code-line"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span> <span class="token operator">&#x26;&#x26;</span> <span class="token string">'safari'</span> <span class="token keyword">in</span> window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> safariVersion <span class="token operator">=</span> <span class="token function">parseFloat</span><span class="token punctuation">(</span>
+</span><span class="code-line">    navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">Version<span class="token escape">\/</span><span class="token group punctuation">(</span><span class="token char-set class-name">\d</span><span class="token quantifier number">+</span><span class="token special-escape escape">\.</span><span class="token char-set class-name">\d</span><span class="token quantifier number">+</span><span class="token group punctuation">)</span></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token operator">?.</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">'0'</span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>safariVersion <span class="token operator">>=</span> <span class="token number">13.4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    window<span class="token punctuation">.</span>history<span class="token punctuation">.</span>scrollRestoration <span class="token operator">=</span> <span class="token string">'auto'</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// bfcache 복원 시 처리</span>
+</span><span class="code-line">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pageshow'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>event<span class="token punctuation">.</span>persisted<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// bfcache에서 복원된 경우</span>
+</span><span class="code-line">    <span class="token function">restoreHistoryState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ Safari에서도 정상적인 히스토리 복원</li>
+<li>✅ 모든 브라우저 호환성 확보</li>
+</ul>
+<hr>
+<h3 id="5-스크롤-복원-위치-보정">5. 스크롤 복원 위치 보정<a aria-hidden="true" tabindex="-1" href="#5-스크롤-복원-위치-보정"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>동적 콘텐츠 로딩으로 인한 높이 변화</li>
+<li>스크롤 복원 위치가 정확하지 않음</li>
+</ul>
+<p><strong>해결 방법</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">restoreScrollPosition</span> <span class="token operator">=</span> <span class="token punctuation">(</span>savedScrollY<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// 즉시 스크롤 복원</span>
+</span><span class="code-line">  window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> savedScrollY<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 높이 변화 감지 및 재조정</span>
+</span><span class="code-line">  <span class="token keyword">let</span> checkCount <span class="token operator">=</span> <span class="token number">0</span>
+</span><span class="code-line">  <span class="token keyword">const</span> maxChecks <span class="token operator">=</span> <span class="token number">20</span> <span class="token comment">// 최대 1초 (20 * 50ms)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token function-variable function">checkAndAdjust</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">const</span> currentHeight <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>scrollHeight
+</span><span class="code-line">    <span class="token keyword">const</span> expectedHeight <span class="token operator">=</span> savedScrollY <span class="token operator">+</span> window<span class="token punctuation">.</span>innerHeight
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>currentHeight <span class="token operator">&#x3C;</span> expectedHeight <span class="token operator">&#x26;&#x26;</span> checkCount <span class="token operator">&#x3C;</span> maxChecks<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 높이가 아직 충분하지 않음</span>
+</span><span class="code-line">      checkCount<span class="token operator">++</span>
+</span><span class="code-line">      <span class="token function">setTimeout</span><span class="token punctuation">(</span>checkAndAdjust<span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 최종 스크롤 위치 조정</span>
+</span><span class="code-line">      window<span class="token punctuation">.</span><span class="token function">scrollTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> savedScrollY<span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">checkAndAdjust</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 동적 콘텐츠 로딩 후에도 정확한 스크롤 위치 복원</li>
+<li>✅ 최대 1초 내 높이 변화 감지 및 보정</li>
+</ul>
+<hr>
+<h3 id="6-히스토리-삭제-로직-개선">6. 히스토리 삭제 로직 개선<a aria-hidden="true" tabindex="-1" href="#6-히스토리-삭제-로직-개선"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>새로고침 후 뒤로가기 시 히스토리 삭제 로직이 잘못 실행됨</li>
+<li><code class="inline-code">GlobalPersistManager.getPersistSavingStatus</code> 값이 초기화되지 않음</li>
+</ul>
+<p><strong>변경 전</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// pagehide에서 히스토리 삭제 시도</span>
+</span><span class="code-line">window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pagehide'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">shouldClearHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    StateRestorationUtil<span class="token punctuation">.</span><span class="token function">clearOptionsState</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>변경 후</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 명시적 클릭 시에만 저장하므로 삭제 로직 불필요</span>
+</span><span class="code-line"><span class="token comment">// 히스토리는 사용 후 자동으로 관리됨</span>
+</span><span class="code-line"><span class="token comment">// pathname 기반 키로 충돌 방지</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 이미지 과다 요청 문제 해결 (5~10배 → 정상)</li>
+<li>✅ 히스토리 삭제 플래그 제거로 복잡도 감소</li>
+</ul>
+<hr>
+<h3 id="7-페이지-레벨-스크롤-복원-책임-이전">7. 페이지 레벨 스크롤 복원 책임 이전<a aria-hidden="true" tabindex="-1" href="#7-페이지-레벨-스크롤-복원-책임-이전"><span class="anchor"></span></a></h3>
+<p><strong>변경 전</strong>:</p>
+<ul>
+<li>CorePack에서 페이지 레벨 스크롤 복원 처리</li>
+<li>모듈 간 일관성 부족</li>
+</ul>
+<p><strong>변경 후</strong>:</p>
+<ul>
+<li>버티컬레이아웃(VerticalLayoutWrapper)에서 스크롤 복원 처리</li>
+<li>CorePack은 모듈 단위로만 제공</li>
+</ul>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 책임 분리로 코드 가독성 향상</li>
+<li>✅ 모듈 간 일관성 확보</li>
+<li>✅ 불필요한 플래그 값 제거</li>
+</ul>
+<hr>
+<h2 id="️-아키텍처-개선">🏗️ 아키텍처 개선<a aria-hidden="true" tabindex="-1" href="#️-아키텍처-개선"><span class="anchor"></span></a></h2>
+<h3 id="변경-전-구조">변경 전 구조<a aria-hidden="true" tabindex="-1" href="#변경-전-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">CorePack
+</span><span class="code-line">├── 페이지 레벨 스크롤 복원 (pagehide 이벤트)
+</span><span class="code-line">├── 모듈별 다른 키 체계
+</span><span class="code-line">└── 히스토리 삭제 플래그 관리
+</span></code></pre>
+<h3 id="변경-후-구조">변경 후 구조<a aria-hidden="true" tabindex="-1" href="#변경-후-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">VerticalLayoutWrapper (버티컬레이아웃)
+</span><span class="code-line">├── 명시적 클릭 이벤트 기반 저장
+</span><span class="code-line">├── pathname 기반 통일된 키 체계
+</span><span class="code-line">├── Next.js history.state 덮어쓰기 패치
+</span><span class="code-line">└── BF Cache 대응
+</span><span class="code-line">
+</span><span class="code-line">CorePack
+</span><span class="code-line">└── 모듈 단위 스크롤 복원만 제공
+</span></code></pre>
+<hr>
+<h2 id="-핵심-교훈">💡 핵심 교훈<a aria-hidden="true" tabindex="-1" href="#-핵심-교훈"><span class="anchor"></span></a></h2>
+<h3 id="1-명시적-이벤트가-암묵적-이벤트보다-안정적">1. 명시적 이벤트가 암묵적 이벤트보다 안정적<a aria-hidden="true" tabindex="-1" href="#1-명시적-이벤트가-암묵적-이벤트보다-안정적"><span class="anchor"></span></a></h3>
+<p><code class="inline-code">pagehide</code> 이벤트는 예측하기 어려운 타이밍에 발생하지만, 명시적 클릭 이벤트는 개발자가 완전히 제어할 수 있습니다. React Strict Mode와 같은 환경에서도 안정적으로 동작합니다.</p>
+<h3 id="2-프레임워크의-기본-동작을-이해해야-함">2. 프레임워크의 기본 동작을 이해해야 함<a aria-hidden="true" tabindex="-1" href="#2-프레임워크의-기본-동작을-이해해야-함"><span class="anchor"></span></a></h3>
+<p>Next.js가 <code class="inline-code">history.state</code>를 덮어쓰는 동작을 이해하지 못하면, 사용자 정의 state가 손실될 수 있습니다. 프레임워크의 내부 동작을 이해하고 적절히 패치하는 것이 중요합니다.</p>
+<h3 id="3-bf-cache는-브라우저마다-다르게-동작함">3. BF Cache는 브라우저마다 다르게 동작함<a aria-hidden="true" tabindex="-1" href="#3-bf-cache는-브라우저마다-다르게-동작함"><span class="anchor"></span></a></h3>
+<p>Safari와 Chrome의 BF Cache 동작이 다르며, Dev 모드와 Production 모드에서도 차이가 있습니다. 모든 환경에서 테스트하는 것이 중요합니다.</p>
+<h3 id="4-키-체계의-일관성이-중요함">4. 키 체계의 일관성이 중요함<a aria-hidden="true" tabindex="-1" href="#4-키-체계의-일관성이-중요함"><span class="anchor"></span></a></h3>
+<p>모듈마다 다른 키를 사용하면 히스토리 복원이 제대로 동작하지 않습니다. 통일된 키 체계를 구축하는 것이 중요합니다.</p>
+<h3 id="5-점진적-마이그레이션이-필요함">5. 점진적 마이그레이션이 필요함<a aria-hidden="true" tabindex="-1" href="#5-점진적-마이그레이션이-필요함"><span class="anchor"></span></a></h3>
+<p>7개 모듈에 걸친 대규모 변경은 한 번에 적용하기 어렵습니다. 단계적으로 마이그레이션하고 각 단계마다 검증하는 것이 중요합니다.</p>
+<hr>
+<h2 id="-최종-결과">📈 최종 결과<a aria-hidden="true" tabindex="-1" href="#-최종-결과"><span class="anchor"></span></a></h2>
+<h3 id="성능-개선">성능 개선<a aria-hidden="true" tabindex="-1" href="#성능-개선"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 이미지 요청 횟수: 5~10배 → 정상 수준</li>
+<li>✅ API 호출 최적화: 204 응답 캐싱 처리로 레이아웃 시프트 해결</li>
+<li>✅ 히스토리 복원 정확도: 100% 달성</li>
+</ul>
+<h3 id="코드-품질-개선">코드 품질 개선<a aria-hidden="true" tabindex="-1" href="#코드-품질-개선"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 히스토리 삭제 플래그 제거로 복잡도 감소</li>
+<li>✅ 책임 분리로 코드 가독성 향상</li>
+<li>✅ 통일된 키 체계로 유지보수성 향상</li>
+</ul>
+<h3 id="사용자-경험-개선">사용자 경험 개선<a aria-hidden="true" tabindex="-1" href="#사용자-경험-개선"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 스크롤 위치 정확도 향상</li>
+<li>✅ 뒤로가기 시 상태 완벽 복원</li>
+<li>✅ 모든 브라우저에서 일관된 동작</li>
+</ul>
+<hr>
+<h2 id="-결론">🎯 결론<a aria-hidden="true" tabindex="-1" href="#-결론"><span class="anchor"></span></a></h2>
+<p>7개 모듈에 걸친 히스토리 복원 시스템 재설계를 통해 다음과 같은 성과를 달성했습니다:</p>
+<ol>
+<li>✅ <strong>명시적 클릭 이벤트 기반 저장 시스템</strong>으로 React Strict Mode 문제 해결</li>
+<li>✅ <strong>pathname 기반 통일된 키 체계</strong>로 모듈 간 일관성 확보</li>
+<li>✅ <strong>Next.js history.state 덮어쓰기 패치</strong>로 CSR 환경 안정성 확보</li>
+<li>✅ <strong>BF Cache 대응</strong>으로 모든 브라우저 호환성 확보</li>
+<li>✅ <strong>스크롤 복원 위치 보정</strong>으로 사용자 경험 향상</li>
+</ol>
+<p>이번 작업을 통해 대규모 모노레포에서의 히스토리 복원 시스템 설계 경험을 쌓았고, React Strict Mode, Next.js 내부 동작, BF Cache 등 다양한 기술적 도전을 해결할 수 있었습니다.</p>
+<hr>
+<h2 id="-참고-자료">📚 참고 자료<a aria-hidden="true" tabindex="-1" href="#-참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://nextjs.org/docs/app/building-your-application/routing">Next.js Documentation - Routing</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API">MDN Web Docs - History API</a></li>
+<li><a href="https://web.dev/bfcache/">MDN Web Docs - Back/Forward Cache</a></li>
+<li><a href="https://react.dev/reference/react/StrictMode">React Documentation - Strict Mode</a></li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/develop/히스토리 복원 시스템 재설계","frontmatter":{"title":"히스토리 복원 시스템 재설계","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["Next.js","React","히스토리복원","BF-Cache","CSR","SSR","모노레포"],"draft":false},"content":"$a","html":"$b","excerpt":"> Next.js 기반의 히스토리 복원 시스템을 재설계한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, Next.js의 history.state 덮어쓰기 문제, BF Cache 대응 등 다양한 기술적 도전을 해결했습니다.  ## 📊 프로젝트 개요  - **주요 목표**: 완벽한 히스토리 복원 지원 - **기술 스택**: N"},"previousPost":{"slug":"/book/업무시각화","frontmatter":{"title":"업무 시각화: 시간 도둑을 잡고 효율적인 업무 흐름 만들기","date":"2025-12-27T21:00:00.000Z","category":"book","tags":["업무시각화","칸반","생산성","시간관리","프로젝트관리"],"draft":false}},"nextPost":{"slug":"/develop/우아한웤플로","frontmatter":{"title":"우아한웤플로","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["자동화","Slack","JIRA","GitLab","워크플로우","협업","프로덕트","DevOps"],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"히스토리 복원 시스템 재설계"}],["$","meta","3",{"name":"description","content":"> Next.js 기반의 히스토리 복원 시스템을 재설계한 경험을 공유합니다. React Strict Mode로 인한 상태 관리 문제, Next.js의 history.state 덮어쓰기 문제, BF Cache 대응 등 다양한 기술적 도전을 해결했습니다.  ## 📊 프로젝트 개요  - **주요 목표**: 완벽한 히스토리 복원 지원 - **기술 스택**: N"}]]
+1:null

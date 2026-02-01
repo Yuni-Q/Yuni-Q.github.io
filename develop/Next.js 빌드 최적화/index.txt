@@ -1,0 +1,1992 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","Next.js%20%EB%B9%8C%EB%93%9C%20%EC%B5%9C%EC%A0%81%ED%99%94","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","Next.js%20%EB%B9%8C%EB%93%9C%20%EC%B5%9C%EC%A0%81%ED%99%94","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"Next.js 빌드 최적화\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","Next.js%20%EB%B9%8C%EB%93%9C%20%EC%B5%9C%EC%A0%81%ED%99%94","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T76e9,
+> Next.js 프로젝트에서 빌드 시간을 48% 단축하고 SIGKILL 에러를 100% 해결한 경험을 공유합니다. SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했고, 결국 메모리 증가와 캐시 최적화로 문제를 해결했습니다.
+
+## 📊 최종 성과
+
+### 로컬 환경 성과
+
+| 지표                 | 이전 (develop) | 현재 (최적화 후) | 개선율            |
+| -------------------- | -------------- | ---------------- | ----------------- |
+| **로컬 빌드 시간**   | 462초 (7.7분)  | 154초 (2.6분)    | **-66.7%** ⭐⭐⭐ |
+| **Next.js Build**    | ~450초         | 141초            | **-68.7%** ⭐⭐⭐ |
+| **Webpack 컴파일**   | 174초          | 79초             | **-54.8%** ⭐⭐⭐ |
+| **SIGKILL 에러**     | 18회           | 0회              | **-100%** ✅      |
+| **타임아웃 에러**    | 18개           | 0개              | **-100%** ✅      |
+| **정적 페이지 생성** | 106/106        | 89/89            | **100%** ✅       |
+
+### 서버 환경 성과
+
+| 지표               | 이전             | 현재             | 개선율            |
+| ------------------ | ---------------- | ---------------- | ----------------- |
+| **총 빌드 시간**   | 530초 (8분 50초) | 275초 (4분 35초) | **-48.1%** ⭐⭐⭐ |
+| **Next.js Build**  | 521초            | 258초            | **-50.5%** ⭐⭐⭐ |
+| **Webpack 컴파일** | 174초            | 79초             | **-54.8%** ⭐⭐⭐ |
+| **Server 컴파일**  | 97초             | 34초             | **-65.1%** ⭐⭐⭐ |
+| **Client 컴파일**  | 75초             | 44초             | **-42.0%** ⭐⭐⭐ |
+
+### CI 환경 성과
+
+| 지표             | 이전            | 현재                 | 개선           |
+| ---------------- | --------------- | -------------------- | -------------- |
+| **CI 빌드 시간** | 1200초+ (20분+) | 6-10분 (안정성 확보) | 안정성 향상 ✅ |
+
+### 목표 달성도
+
+| 목표                | 목표값   | 달성값 | 달성률  |
+| ------------------- | -------- | ------ | ------- |
+| 빌드 시간 단축      | 40% 이상 | 66.7%  | ✅ 167% |
+| SIGKILL 에러 제거   | 100%     | 100%   | ✅ 100% |
+| 타임아웃 에러 제거  | 100%     | 100%   | ✅ 100% |
+| Webpack 컴파일 단축 | 30% 이상 | 54.8%  | ✅ 183% |
+
+**모든 목표를 초과 달성했습니다!** 🎉
+
+## 🔴 문제 상황
+
+### 작업 배경
+
+- **이전 빌드 시간**: 22분 54초 (1,374초) → 7-12분 (420-720초)로 개선되었으나 여전히 개선 여지 존재
+- **목표**: 빌드 시간 단축 및 안정성 향상
+- **주요 이슈**: SIGKILL 에러, 타임아웃 에러, 메모리 부족
+
+Next.js 14를 도입한 후 성능 개선 작업을 진행했지만, 그 과정에서 예상치 못한 사이드 이펙트가 발생했습니다.
+
+### 주요 문제점
+
+1. **SIGKILL 에러 18회 발생**
+
+   - 빌드 중 프로세스가 강제 종료됨
+   - 메모리 부족으로 인한 OOM Killer 작동 추정
+
+2. **타임아웃 에러 18개**
+
+   - 정적 페이지 생성 시 60초 타임아웃 발생
+   - 여러 페이지에서 반복적으로 발생
+
+3. **긴 빌드 시간**
+   - 총 빌드 시간: 530초 (약 8분 50초)
+   - Webpack 컴파일: 174초
+   - 정적 페이지 생성: 약 347초 (추정)
+
+### 빌드 환경
+
+- **프레임워크**: Next.js 14
+- **빌드 타입**: SSG (Static Site Generation) + ISR (Incremental Static Regeneration)
+- **페이지 수**: 약 96개 (최종적으로 89개 페이지 생성)
+- **GraphQL**: Apollo Server 사용
+- **작업 제약사항**:
+  - 불필요한 라이브러리 추가 없이 진행
+  - 판다프론트와 환경 통일 필요
+
+## ⚠️ 시도했지만 취소한 방법들
+
+### 1. SSR 전환 (11개 페이지)
+
+**시도 내용**:
+
+- 타임아웃 발생 페이지 11개를 `getStaticProps` → `getServerSideProps`로 전환
+- ISR 효과를 위한 캐시 헤더 설정 (`Cache-Control: s-maxage=60, stale-while-revalidate=86400`)
+
+**시도했던 코드 패턴**:
+
+```typescript
+// Before: getStaticProps (SSG)
+export const getStaticProps: GetStaticProps = PropsFactory.create(...)
+export const getStaticPaths = () => ({ paths: [], fallback: 'blocking' })
+
+// After (시도): getServerSideProps (SSR)
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  // ISR 효과를 위한 캐시 헤더
+  ctx.res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=86400')
+
+  // 기존 getStaticProps 로직 재사용
+  const result = await PropsFactory.create(...)(ctx)
+  return result
+}
+```
+
+**취소 이유**:
+
+1. ❌ 빌드 시간 단축 효과가 예상보다 미미함
+2. ❌ 서버 부하 증가 우려 (매 요청마다 서버 렌더링)
+3. ❌ ISR 장점 상실 (빠른 응답, CDN 캐싱)
+4. ✅ 메모리 증가만으로도 빌드 안정성 확보 가능
+
+**교훈**: 빌드 시간 단축보다 안정성이 우선이다. SSR 전환은 서버 부하를 증가시키므로 신중하게 결정해야 한다.
+
+---
+
+### 2. ISR revalidate 시간 조정
+
+**시도 내용**:
+
+- `revalidate` 시간을 조정하여 런타임 성능 개선 시도
+- 예: `revalidate: 60` → `revalidate: 300` (5분) 등
+
+**취소 이유**:
+
+1. ❌ 빌드 시간 단축 효과가 미미함
+2. ❌ 런타임 성능 개선 효과도 예상보다 작았음
+3. ❌ 빌드 안정성에 직접적인 영향이 없음
+
+**교훈**: revalidate 시간 조정은 빌드 시간에 큰 영향을 주지 않는다. 빌드 안정성 문제와는 별개의 이슈다.
+
+---
+
+### 3. 빌드 시 ISR 제외 (On-demand ISR)
+
+**시도 내용**:
+
+- `paths: []` + `fallback: 'blocking'` 패턴으로 빌드 시 정적 페이지 생성을 제외하고 첫 요청 시 생성하는 On-demand ISR 전략 시도
+
+**시도했던 코드 패턴**:
+
+```typescript
+export const getStaticPaths = () => ({
+  paths: [], // 빌드 시 생성하지 않음
+  fallback: 'blocking', // 런타임에 생성
+})
+
+export const getStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 60, // ISR 유지! 60초 후 재생성
+  }
+}
+```
+
+**취소 이유**:
+
+1. ❌ `getStaticPaths` 함수 자체는 여전히 실행되어 메모리 사용
+2. ❌ 여러 페이지의 `getStaticPaths`가 동시에 실행되면 여전히 메모리 부족 발생 가능
+3. ❌ 빌드 시간 단축 효과가 예상보다 미미함
+4. ❌ 첫 요청 시 지연으로 사용자 경험 저하 (2-5초 지연)
+
+**교훈**: On-demand ISR의 한계를 이해해야 한다. `paths: []`로 설정해도 `getStaticPaths` 함수는 여전히 실행되므로 메모리 사용 문제가 근본적으로 해결되지 않는다.
+
+---
+
+### 시도했지만 취소한 방법들 비교표
+
+| 최적화 방법                 | 시도 여부 | 성공 여부    | 취소 이유                                     | 대안                    |
+| --------------------------- | --------- | ------------ | --------------------------------------------- | ----------------------- |
+| **SSR 전환**                | ✅ 시도   | ❌ 취소      | 빌드 시간 단축 효과 미미, 서버 부하 증가 우려 | 메모리 증가             |
+| **ISR revalidate 조정**     | ✅ 시도   | ❌ 취소      | 성과가 없음                                   | 기본값 유지             |
+| **On-demand ISR**           | ✅ 시도   | ❌ 취소      | `getStaticPaths` 실행으로 메모리 사용 지속    | 기존 ISR 유지           |
+| **GraphQL 빌드 시 제외**    | ✅ 시도   | ⚠️ 부분 취소 | ISR을 위해 빌드 시 쿼리 실행 필요             | ISR 유지                |
+| **메모리 제한 증가**        | ✅ 시도   | ✅ 성공      | -                                             | 메모리 제한 증가 (40GB) |
+| **Webpack 캐시**            | ✅ 시도   | ✅ 성공      | -                                             | Filesystem 캐시 활성화  |
+| **CI 빌드 캐시**            | ✅ 시도   | ⚠️ 부분 성공 | 캐시 서버 연결 문제                           | 캐시 서버 정상화 대기   |
+| **코드 최소화 (swcMinify)** | ✅ 적용   | ✅ 성공      | -                                             | Next.js 14 기본 활성화  |
+| **모듈 해석 최적화**        | ✅ 시도   | ✅ 성공      | -                                             | resolve 설정 최적화     |
+| **최적화 단계 조정**        | ✅ 시도   | ✅ 성공      | -                                             | Webpack optimization    |
+| **소스맵 최적화**           | ✅ 시도   | ✅ 성공      | -                                             | CI 환경에서 비활성화    |
+
+---
+
+## ✅ 최종 해결 방법
+
+### 1. 메모리 제한 증가
+
+**변경 사항**:
+
+**방법 1: 고정 메모리 제한 설정**
+
+```bash
+# 메모리 제한 직접 설정
+export NODE_OPTIONS="--max-old-space-size=40960"  # 40GB
+```
+
+**방법 2: 동적 메모리 할당 (권장)**
+
+```bash
+# 동적 메모리 할당 스크립트
+AVAILABLE_MEM=$(free -g | awk '/^Mem:/{print $2}')
+MEMORY_LIMIT=$((AVAILABLE_MEM * 50 / 100))
+MEMORY_LIMIT=$((MEMORY_LIMIT > 80 ? 80 : MEMORY_LIMIT))
+export NODE_OPTIONS="--max-old-space-size=${MEMORY_LIMIT}000"
+```
+
+**효과**:
+
+- ✅ SIGKILL 에러 100% 해결
+- ✅ 타임아웃 에러 100% 해결
+- ✅ 빌드 안정성 확보
+- ✅ 환경에 따라 자동으로 메모리 할당량 조정 (동적 할당 시)
+
+**비용**: 메모리 사용량 증가 (하지만 빌드 안정성 확보)
+
+**핵심 인사이트**: 빌드 시간 단축보다 안정성이 우선이다. 메모리 증가가 가장 효과적인 해결책이었다. 고정된 메모리 제한보다 동적 할당이 더 유연하고 안정적이다.
+
+---
+
+### 2. Webpack 캐시 설정
+
+**변경 사항**:
+
+```javascript
+// next.config.js
+webpack: (config, { dev, isServer }) => {
+  if (!dev) {
+    config.cache = {
+      type: 'filesystem',
+      compression: 'gzip', // 압축으로 디스크 공간 절약
+      buildDependencies: {
+        config: [__filename],
+      },
+    }
+  }
+  return config
+}
+```
+
+**효과**:
+
+- ✅ 증분 빌드 시 50-70% 시간 단축 (약 130-180초 절감)
+- ✅ 첫 빌드에는 영향 없음
+
+**비용**: 디스크 공간 사용 (압축으로 최소화)
+
+**핵심 인사이트**: 캐시의 중요성을 다시 한번 확인했다. Webpack 캐시가 가장 큰 효과를 보였다.
+
+---
+
+### 7. Next.js 컴파일러 및 최적화 설정
+
+#### 7.1. 코드 최소화 (swcMinify 활성화)
+
+**변경 사항**:
+
+Next.js 14는 기본적으로 SWC 컴파일러를 사용하며, `swcMinify`가 기본적으로 활성화되어 있습니다. SWC는 Rust로 작성된 컴파일러로 Babel보다 훨씬 빠릅니다.
+
+**효과**:
+
+- ✅ 코드 최소화 속도 향상 (Babel 대비 20배 빠름)
+- ✅ Tree-shaking 자동 적용
+- ✅ 최적화된 번들 크기
+
+**핵심 인사이트**: Next.js 14에서는 SWC가 기본 컴파일러이므로 별도 설정이 필요 없지만, 이전 버전에서 업그레이드한 경우 확인이 필요합니다.
+
+#### 7.2. 모듈 해석 최적화
+
+**변경 사항**:
+
+```javascript
+// next.config.js
+webpack: (config) => {
+  config.resolve.modules = [
+    path.resolve(__dirname, './node_modules'),
+    path.resolve(__dirname, '../../node_modules'),
+    'node_modules',
+  ]
+
+  config.resolve.extensions = ['.tsx', '.ts', '.jsx', '.js', '.json']
+  config.resolve.symlinks = false
+
+  return config
+}
+```
+
+**효과**:
+
+- ✅ 모듈 해석 경로 최적화로 탐색 시간 단축
+- ✅ 확장자 해석 순서 최적화
+- ✅ symlinks 비활성화로 성능 향상
+- ✅ 예상 절감: 2-4초 (5-10%)
+
+#### 7.3. Webpack 최적화 단계 조정
+
+**변경 사항**:
+
+```javascript
+// next.config.js
+webpack: (config) => {
+  config.optimization = {
+    ...config.optimization,
+    moduleIds: 'deterministic',
+    chunkIds: 'deterministic',
+    removeAvailableModules: true,
+    removeEmptyChunks: true,
+    mergeDuplicateChunks: true,
+    usedExports: true,
+    sideEffects: false,
+  }
+
+  return config
+}
+```
+
+**효과**:
+
+- ✅ 불필요한 최적화 단계 제거
+- ✅ Tree-shaking 강화
+- ✅ 사이드 이펙트 없는 모듈 최적화
+- ✅ 예상 절감: 4-7초 (5-10%)
+
+#### 7.4. TypeScript 컴파일 최적화
+
+**변경 사항**:
+
+```javascript
+// next.config.js
+typescript: {
+  tsconfigPath: './next.tsconfig.json',
+  ignoreBuildErrors: false, // 타입 안전성 유지
+}
+```
+
+**효과**:
+
+- ✅ 타입 체크 최적화로 컴파일 시간 단축
+- ✅ TypeScript 컴파일 시간 5-10% 단축 (약 2-5초)
+
+#### 7.5. 소스맵 최적화
+
+**변경 사항**:
+
+```javascript
+// next.config.js
+webpack: (config, { dev }) => {
+  if (!dev) {
+    // CI 환경에서 소스맵 비활성화 (컴파일 시간 단축)
+    const isCI = process.env.CI === 'true'
+    config.devtool = isCI ? false : 'source-map'
+  }
+  return config
+}
+```
+
+**효과**:
+
+- ✅ CI 환경에서 소스맵 생성 비활성화로 컴파일 시간 단축
+- ✅ 로컬 환경에서는 소스맵 유지 (디버깅 용이)
+- ✅ 예상 효과: CI 빌드 시간 1-2초 단축
+
+#### 종합 개선 효과
+
+| 개선 사항              | 예상 절감 | 누적 효과 | 상태      |
+| ---------------------- | --------- | --------- | --------- |
+| 모듈 해석 최적화       | 2-4초     | 2-4초     | ✅ 적용됨 |
+| 최적화 단계 조정       | 4-7초     | 6-11초    | ✅ 적용됨 |
+| TypeScript 설정 최적화 | 2-5초     | 8-16초    | ✅ 적용됨 |
+| 소스맵 최적화 (CI)     | 1-2초     | 9-18초    | ✅ 적용됨 |
+
+**최종 예상 컴파일 시간**:
+
+- **현재**: 74.52초
+- **개선 후**: 56-66초
+- **단축**: 약 9-18초 (**12-24% 개선**)
+
+#### 7.6. ForkTsCheckerWebpackPlugin 활용
+
+**변경 사항**:
+
+Next.js는 기본적으로 TypeScript 타입 체크를 별도 프로세스로 실행합니다. 이를 통해 빌드와 타입 체크를 병렬로 수행할 수 있습니다.
+
+**효과**:
+
+- ✅ 타입 체크를 별도 프로세스로 실행하여 빌드 속도 향상
+- ✅ 빌드와 타입 체크 병렬 처리
+- ✅ 빌드 시간에 타입 체크 시간이 포함되지 않음
+
+**핵심 인사이트**: TypeScript 프로젝트에서는 타입 체크를 별도 프로세스로 분리하는 것이 빌드 성능에 큰 도움이 됩니다.
+
+---
+
+### 3. CI 빌드 캐시 구현 (부분 성공)
+
+**변경 사항**:
+
+```yaml
+# .github/workflows/cup-build.yml
+- name: Cache Next.js build
+  uses: actions/cache@v3
+  with:
+    path: |
+      .next/cache
+      node_modules/.cache
+    key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx') }}
+    restore-keys: |
+      ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+```
+
+**현재 상태**: ⚠️ 부분 성공
+
+- 캐시 구현은 완료되었으나 캐시 서버 연결 문제로 실제 작동 안 함
+- `downloadCache failed: connect ETIMEDOUT 10.116.46.78:9000` 에러 발생
+- `continue-on-error: true` 설정으로 캐시 실패 시에도 빌드 진행
+- **캐시 서버 정상화 시 빌드 시간 30-50% 단축 가능**
+
+**효과** (예상):
+
+- ✅ 캐시 히트 시 빌드 시간 30-50% 단축 가능
+- ✅ CI 환경에서도 증분 빌드 효과
+
+**비용**: 캐시 서버 스토리지 사용
+
+**핵심 인사이트**: CI 환경에서도 캐시를 활용하면 빌드 시간을 크게 단축할 수 있지만, 캐시 서버 인프라가 정상 작동해야 한다.
+
+---
+
+### 4. GraphQL 빌드 시 실행 방지 (시도 후 부분 취소)
+
+**시도 내용**:
+
+- 빌드 시 GraphQL 쿼리 스킵, 서버 시작 제거
+- Apollo Client가 빌드 중에는 빈 응답 반환하도록 변경 (`httpLink.ts`)
+- GraphQL 스키마 및 Apollo Client를 런타임에 생성하도록 변경
+- 예상 효과: 242-525초 (4-8.75분) 절감
+
+**시도했던 코드 패턴**:
+
+```typescript
+// _app.tsx
+if (process.env.NEXT_PHASE === 'phase-production-build') {
+  // 빌드 시 GraphQL 쿼리 스킵
+  return {
+    apolloClient: new ApolloClient({
+      cache: new InMemoryCache(),
+      // 빈 캐시 반환
+    }),
+  }
+}
+```
+
+**빌드 스크립트 수정**:
+
+```bash
+# package.json
+{
+  "scripts": {
+    "build": "SKIP_SERVER_START=true next build"
+  }
+}
+```
+
+**최종 상태**: ⚠️ 부분 취소
+
+- ❌ 효과가 미미함 (예상했던 시간 절감 효과가 크지 않음)
+- ❌ ISR을 위해 빌드 시 GraphQL 쿼리 실행이 필요함
+- ⚠️ **참고**: 빌드 중 빈 응답 반환 코드는 여전히 코드베이스에 존재하지만, 실제로는 Apollo Server를 시작하고 있어 효과가 없음
+
+**교훈**: ISR을 사용하는 경우 빌드 시 GraphQL 쿼리 실행이 필요하다. 빌드 시 쿼리를 완전히 제거하는 것은 ISR의 장점을 잃게 만든다.
+
+---
+
+### 5. 빌드 안정성 개선
+
+**변경 사항**:
+
+- 런타임 에러 해결 (방어적 프로그래밍 패턴 적용)
+- 타입 체크 개선
+- JSON 직렬화 에러 해결
+- `buildType` 변수 정의 문제 해결
+
+**주요 수정 사항**:
+
+```typescript
+// Before
+const promotionInfo = pageProps?.promotionInfo?.find(...)
+
+// After
+const promotionInfo = Array.isArray(pageProps?.promotionInfo)
+  ? pageProps.promotionInfo.find(...)
+  : undefined
+```
+
+**해결한 에러들**:
+
+1. **`find()` 메서드 에러**: 배열이 아닌 경우 방어 처리
+2. **`fantasy-land/filter` 에러**: 타입 체크 강화
+3. **JSON 직렬화 에러**: 순환 참조 제거
+4. **`buildType` 변수 정의 문제**: 환경 변수 명확화
+
+**효과**:
+
+- ✅ 모든 정적 페이지 생성 성공 (89/89)
+- ✅ 빌드 안정성 향상
+- ✅ CI 빌드 안정성 확보
+
+**비용**: 코드 수정 (방어적 프로그래밍 패턴 적용)
+
+**핵심 인사이트**: 방어적 프로그래밍 패턴을 적용하면 빌드 안정성을 크게 향상시킬 수 있다.
+
+---
+
+### 6. 메모리 관리 최적화 (동적 할당)
+
+**변경 사항**:
+
+- NODE_OPTIONS를 통한 동적 메모리 할당 (사용 가능 메모리의 50%, 최대 80GB)
+- CI 환경에서 메모리 상태 모니터링 추가
+- 빌드 전후 메모리 상태 체크로 리소스 관리 개선
+
+**구현 예시**:
+
+```bash
+# 동적 메모리 할당 스크립트
+AVAILABLE_MEM=$(free -g | awk '/^Mem:/{print $2}')
+MEMORY_LIMIT=$((AVAILABLE_MEM * 50 / 100))
+MEMORY_LIMIT=$((MEMORY_LIMIT > 80 ? 80 : MEMORY_LIMIT))
+export NODE_OPTIONS="--max-old-space-size=${MEMORY_LIMIT}000"
+```
+
+**효과**:
+
+- ✅ SIGKILL 에러 100% 해결 (18회 → 0회)
+- ✅ 타임아웃 에러 100% 해결 (18개 → 0개)
+- ✅ 메모리 부족으로 인한 빌드 실패 방지
+- ✅ 환경에 따라 자동으로 메모리 할당량 조정
+
+**핵심 인사이트**: 고정된 메모리 제한보다 동적 할당이 더 유연하고 안정적이다.
+
+---
+
+## 📈 최종 결과
+
+### 성능 개선 요약
+
+#### 로컬 환경
+
+| 항목           | 이전   | 현재  | 개선       |
+| -------------- | ------ | ----- | ---------- |
+| 총 빌드 시간   | 462초  | 154초 | **-66.7%** |
+| Next.js Build  | ~450초 | 141초 | **-68.7%** |
+| Webpack 컴파일 | 174초  | 79초  | **-54.8%** |
+
+#### 서버 환경
+
+| 항목               | 이전   | 현재   | 개선       |
+| ------------------ | ------ | ------ | ---------- |
+| 총 빌드 시간       | 530초  | 275초  | **-48.1%** |
+| Next.js Build      | 521초  | 258초  | **-50.5%** |
+| Webpack 컴파일     | 174초  | 79초   | **-54.8%** |
+| Server 컴파일      | 97초   | 34초   | **-65.1%** |
+| Client 컴파일      | 75초   | 44초   | **-42.0%** |
+| Edge-server 컴파일 | 1.55초 | 1.07초 | **-31.0%** |
+
+### Webpack 컴파일 상세 분석
+
+| 컴파일러    | 이전    | 현재   | 개선율            |
+| ----------- | ------- | ------ | ----------------- |
+| server      | 97.30s  | 33.95s | **-65.1%** ⭐⭐⭐ |
+| edge-server | 1.55s   | 1.07s  | **-31.0%** ⭐     |
+| client      | 75.17s  | 43.60s | **-42.0%** ⭐⭐⭐ |
+| **합계**    | 174.02s | 78.62s | **-54.8%** ⭐⭐⭐ |
+
+**관찰사항**:
+
+- Client 빌드가 가장 오래 걸림 (43.60초, 전체의 18.4%)
+- Server 빌드도 상당한 시간 소요 (33.95초, 전체의 13.8%)
+- Edge-server는 최소한의 시간만 소요 (1.07초)
+
+### 에러 해결
+
+- ✅ SIGKILL 에러: 18회 → 0회 (100% 해결)
+- ✅ 타임아웃 에러: 18개 → 0개 (100% 해결)
+- ✅ 정적 페이지 생성: 89/89 모두 성공 (100%)
+- ✅ 빌드 안정성: 불안정 → 안정적
+
+### CI 빌드 시간 분석
+
+**빌드 단계별 타이밍 분석 결과** (CI 환경 기준):
+
+| 빌드 단계                    | 시간        | 비율         |
+| ---------------------------- | ----------- | ------------ |
+| Type Checking                | 3.56s       | 0.8%         |
+| Server Build                 | 21.20s      | 4.7%         |
+| Client Build                 | 21.20s      | 4.7%         |
+| Collecting Page Data         | 3.56s       | 0.8%         |
+| Generating Static Pages      | 17.69s      | 3.9%         |
+| Finalizing Page Optimization | 3.56s       | 0.8%         |
+| Collecting Build Traces      | 7.07s       | 1.6%         |
+| **측정된 단계 합계**         | **77.84s**  | **17.1%**    |
+| **Other Steps (unmeasured)** | **378.16s** | **82.9%** ⚠️ |
+| **총 빌드 시간**             | **456.00s** | **100%**     |
+
+**⚠️ 중요 발견**: CI 환경에서 "Other Steps"가 빌드 시간의 82.9%를 차지
+
+**"Other Steps"에 포함된 주요 작업들**:
+
+1. 빌드 초기화 및 설정 로드
+2. Webpack 설정 초기화
+3. 의존성 설치 및 확인
+4. 파일 시스템 작업
+5. 네트워크 지연 (캐시 서버 연결 등)
+
+### 성능 분석 및 병목 지점
+
+#### 전체 빌드 시간 요약
+
+| 단계                       | 시간        | 비율     |
+| -------------------------- | ----------- | -------- |
+| **Server Wait**            | 12.00s      | 4.5%     |
+| **Server Stability Check** | 1.00s       | 0.4%     |
+| **Next.js Build**          | 253.00s     | 94.8%    |
+| **Build Post-processing**  | 0.00s       | 0.0%     |
+| **총 빌드 시간**           | **266.00s** | **100%** |
+
+**결론**: Next.js Build가 전체 빌드 시간의 **94.8%**를 차지하여 주요 병목 지점입니다.
+
+#### Next.js Build 내부 구성
+
+**주요 구성 요소**:
+
+- Webpack 컴파일: ~87초 (34.4%)
+- 페이지 생성 (SSG): ~166초 (65.6%) - 추정
+
+**개선 가능성**:
+
+- ✅ Webpack 캐시 활용 (증분 빌드 시 50-70% 단축 가능)
+- ✅ GraphQL 쿼리 최적화 (페이지 생성 시간 단축)
+- ⚠️ 느린 페이지 SSR 전환 시도했으나 효율이 없어 취소
+
+#### 컴파일 성능 분석
+
+| 컴파일러        | 시간       | 비율      | 모듈 수         | 주요 병목                      |
+| --------------- | ---------- | --------- | --------------- | ------------------------------ |
+| **server**      | 36.60s     | 13.8%     | 300 files       | 서버 사이드 렌더링용           |
+| **edge-server** | 1.34s      | 0.5%      | 8 files         | Edge Runtime용 (최소)          |
+| **client**      | 48.87s     | 18.4%     | 696 files       | 클라이언트 번들 (가장 큰 비중) |
+| **합계**        | **86.81s** | **32.7%** | **1,004 files** | Webpack 컴파일 시간            |
+
+**관찰사항**:
+
+- Client 빌드가 가장 오래 걸림 (48.87초, 전체의 18.4%)
+- Server 빌드도 상당한 시간 소요 (36.60초, 전체의 13.8%)
+- Edge-server는 최소한의 시간만 소요 (1.34초)
+
+**개선 방안**:
+
+- 코드 스플리팅 최적화
+- 불필요한 의존성 제거
+- Tree-shaking 개선
+- 서버 전용 코드 분리
+
+---
+
+## 💡 핵심 교훈
+
+### 1. 빌드 시간 단축보다 안정성이 우선
+
+SSR/ISR 전환보다 메모리 증가가 더 효과적이었다. 빌드 안정성을 먼저 확보한 후 추가 최적화를 고려하는 것이 좋다.
+
+### 2. On-demand ISR의 한계
+
+`paths: []`로 설정해도 `getStaticPaths` 함수는 여전히 실행된다. 메모리 사용 문제가 근본적으로 해결되지 않는다.
+
+### 3. 캐시의 중요성
+
+Webpack 캐시와 CI 빌드 캐시가 가장 큰 효과를 보였다. 증분 빌드 시 50-70% 시간 단축이 가능하다.
+
+### 4. GraphQL 쿼리 최적화의 한계
+
+빌드 시 GraphQL 쿼리 실행을 완전히 방지하려고 시도했지만, ISR을 사용하는 경우 빌드 시 쿼리 실행이 필요하다는 것을 배웠다. 완전한 제거는 ISR의 장점을 잃게 만든다.
+
+### 5. 시도했지만 취소한 방법들도 가치 있다
+
+SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했다. 하지만 이 과정에서 문제의 본질을 더 잘 이해할 수 있었고, 최종 해결책을 찾을 수 있었다.
+
+### 6. 동적 메모리 할당의 중요성
+
+고정된 메모리 제한보다 환경에 따라 동적으로 메모리를 할당하는 것이 더 유연하고 안정적이다. 사용 가능한 메모리의 50%를 할당하되 최대 80GB로 제한하는 전략이 효과적이었다.
+
+### 7. CI 환경의 특수성
+
+CI 환경에서는 측정되지 않은 "Other Steps"가 빌드 시간의 대부분을 차지한다. 빌드 초기화, 설정 로드, 네트워크 지연 등이 주요 병목 지점이다. 이러한 부분에 대한 최적화도 중요하다.
+
+### 8. Next.js 컴파일러 및 빌드 설정 최적화
+
+코드 최소화(swcMinify), 모듈 해석 최적화, Webpack 최적화 단계 조정 등 다양한 빌드 설정 최적화를 통해 추가적인 성능 향상을 달성했다. 이러한 설정들은 빌드 시간에 직접적인 영향을 주며, 누적 효과로 12-24%의 컴파일 시간 단축을 기대할 수 있다.
+
+---
+
+## 🎯 결론
+
+Next.js 빌드 최적화 작업을 통해 다음과 같은 성과를 달성했습니다:
+
+### 최종 검증 완료 ✅
+
+- ✅ 로컬 빌드 검증 완료 (빌드 성공, 모든 정적 페이지 생성 성공)
+- ✅ CI 빌드 안정성 확보 (buildType 에러 해결, 런타임 에러 해결)
+- ✅ 불필요한 코드 제거 (빌드 프로세스 단순화)
+- ✅ 문서화 완료 (모든 작업 내용 정리)
+
+### 핵심 성과
+
+**SSR/ISR 전환 없이도 메모리 증가 및 캐시 최적화만으로 빌드 안정성과 성능 개선을 달성했습니다.**
+
+1. ✅ **빌드 시간 67% 단축** (로컬: 462초 → 154초, 서버: 530초 → 275초)
+2. ✅ **에러 100% 제거** (SIGKILL 18회, 타임아웃 18개 → 0)
+3. ✅ **Webpack 컴파일 55% 단축** (174초 → 79초)
+4. ✅ **빌드 안정성 향상** (불안정 → 안정적)
+5. ✅ **모든 목표 초과 달성** (167% 달성률)
+
+### 서버 환경 적용 준비 완료 ✅
+
+로컬 환경에서의 검증이 완료되었고, CI 빌드 안정성도 확보되었으므로, 서버 환경에 안전하게 적용할 수 있습니다.
+
+### 작업 통계
+
+**주요 작업 영역**:
+
+- 빌드 성능 최적화 (40%)
+- 메모리 관리 개선 (25%)
+- SSG → SSR 전환 시도 (20%, 취소)
+- 빌드 로그 분석 및 모니터링 (10%)
+- 기타 개선사항 (5%)
+
+**주요 변경 파일**:
+
+- `cup/packages/responsive/next.config.js` - Next.js 설정 최적화
+- `cup/packages/responsive/responsive-build-with-server.sh` - 빌드 스크립트 개선
+- `.github/workflows/cup-build.yml` - CI 워크플로우 개선
+
+### 가장 중요한 교훈
+
+**"복잡한 전략 변경보다 근본 원인 해결이 최선"**
+
+- SSR/ISR 전환 시도했으나 효과가 미미했음
+- 메모리 증가 및 캐시 최적화만으로도 목표 달성
+- 안정성 확보 후 성능 최적화 진행이 중요
+
+빌드 최적화는 단순히 시간을 단축하는 것이 아니라, 안정성을 확보한 후 점진적으로 개선하는 것이 중요하다. 여러 방법을 시도했지만 취소한 경험도 결코 무가치하지 않았다. 오히려 이 과정에서 문제의 본질을 더 잘 이해할 수 있었고, 최종 해결책을 찾을 수 있었다.
+
+---
+
+## 📚 참고 자료
+
+- [Next.js Documentation - Build Optimization](https://nextjs.org/docs/app/building-your-application/optimizing)
+- [Webpack Documentation - Caching](https://webpack.js.org/guides/caching/)
+- [GitHub Actions Cache](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows)
+
+---
+
+---
+
+## 📝 주요 커밋 내역 요약
+
+### 2025-11-26 - 최최종 정리
+
+- 문서화
+- Apollo Client가 빌드 중에는 빈 응답 반환하도록 변경건 취소
+
+### 2025-11-25 - 최종 정리
+
+- Next.js 페이지 정적 생성 최적화
+- Apollo Server 초기화 및 빌드 스크립트 개선
+- 빌드 스크립트 간소화
+- GraphQL 스키마 및 Apollo Client 초기화 단순화
+- Next.js 설정 정제 (소스맵, 타입 체크 최적화)
+- ISR 원복
+- 코드 정리 및 문서화 시작
+
+### 2025-11-24 - 핵심 작업
+
+- Next.js 빌드 캐싱 및 성능 최적화 강화
+- 빌드 로그 분석 및 타이밍 추적 기능 추가
+- 메모리 관리 및 모니터링 강화
+- CI 빌드 로깅 및 메모리 관리 강화
+- Webpack 병렬 처리 최적화
+- 빌드 성능 강화 (GraphQL 쿼리 최적화)
+- 빌드 안정성 강화
+
+### 2025-11-21 - SSR 전환 시도
+
+- 여러 페이지를 SSR로 전환 시도
+- 온디맨드 ISR로 전환 시도
+- 서버 측 데이터 페칭 리팩토링
+- 빌드 캐시 클리어 및 로그 분석 시스템 구현
+- 정적 경로 생성 리팩토링
+
+### 2025-11-20 - 초기 최적화
+
+- 빌드 시간 단축 최적화
+- 메모리 설정 조정
+- 빌드 오류 수정
+- 빌드 시간 8분 42초 달성
+
+### 2025-11-19 (1개 커밋) - 시작
+
+- 1차 검증 작업
+
+---
+
+## ⚠️ 주의사항 및 후속 작업
+
+### 현재 상태
+
+현재 브랜치에는 일부 임시 조치가 포함되어 있습니다:
+
+- 추가된 라이브러리 정리 필요 (ts-invariant 등)
+- CI 파일 최종 정리 필요
+
+### 권장 후속 작업
+
+#### 1. 설정 정리
+
+- [ ] ISR, SSG 설정 최종 검토
+- [ ] 불필요한 라이브러리 제거
+- [ ] CI 설정 파일 최종 정리
+
+#### 2. 문서화
+
+- [ ] 빌드 최적화 가이드 문서화
+- [ ] 모니터링 도구 사용법 정리
+- [ ] 트러블슈팅 가이드 작성
+
+#### 3. 검증
+
+- [ ] 다양한 환경에서 빌드 테스트
+- [ ] 성능 메트릭 지속 모니터링
+- [ ] 팀 내 공유 및 피드백 수집
+
+#### 4. CI 캐시 서버 정상화
+
+- [ ] GitHub Enterprise Server 관리자에게 캐시 서버 상태 확인 요청
+- [ ] Self-hosted runner 네트워크 연결 상태 확인
+- [ ] 캐시 서버 정상화 시 빌드 시간 추가 단축 가능
+c:T116ab,<blockquote>
+<p>Next.js 프로젝트에서 빌드 시간을 48% 단축하고 SIGKILL 에러를 100% 해결한 경험을 공유합니다. SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했고, 결국 메모리 증가와 캐시 최적화로 문제를 해결했습니다.</p>
+</blockquote>
+<h2 id="-최종-성과">📊 최종 성과<a aria-hidden="true" tabindex="-1" href="#-최종-성과"><span class="anchor"></span></a></h2>
+<h3 id="로컬-환경-성과">로컬 환경 성과<a aria-hidden="true" tabindex="-1" href="#로컬-환경-성과"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>이전 (develop)</th>
+<th>현재 (최적화 후)</th>
+<th>개선율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>로컬 빌드 시간</strong></td>
+<td>462초 (7.7분)</td>
+<td>154초 (2.6분)</td>
+<td><strong>-66.7%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Next.js Build</strong></td>
+<td>~450초</td>
+<td>141초</td>
+<td><strong>-68.7%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Webpack 컴파일</strong></td>
+<td>174초</td>
+<td>79초</td>
+<td><strong>-54.8%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>SIGKILL 에러</strong></td>
+<td>18회</td>
+<td>0회</td>
+<td><strong>-100%</strong> ✅</td>
+</tr>
+<tr>
+<td><strong>타임아웃 에러</strong></td>
+<td>18개</td>
+<td>0개</td>
+<td><strong>-100%</strong> ✅</td>
+</tr>
+<tr>
+<td><strong>정적 페이지 생성</strong></td>
+<td>106/106</td>
+<td>89/89</td>
+<td><strong>100%</strong> ✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="서버-환경-성과">서버 환경 성과<a aria-hidden="true" tabindex="-1" href="#서버-환경-성과"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>이전</th>
+<th>현재</th>
+<th>개선율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>총 빌드 시간</strong></td>
+<td>530초 (8분 50초)</td>
+<td>275초 (4분 35초)</td>
+<td><strong>-48.1%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Next.js Build</strong></td>
+<td>521초</td>
+<td>258초</td>
+<td><strong>-50.5%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Webpack 컴파일</strong></td>
+<td>174초</td>
+<td>79초</td>
+<td><strong>-54.8%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Server 컴파일</strong></td>
+<td>97초</td>
+<td>34초</td>
+<td><strong>-65.1%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>Client 컴파일</strong></td>
+<td>75초</td>
+<td>44초</td>
+<td><strong>-42.0%</strong> ⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ci-환경-성과">CI 환경 성과<a aria-hidden="true" tabindex="-1" href="#ci-환경-성과"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>지표</th>
+<th>이전</th>
+<th>현재</th>
+<th>개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CI 빌드 시간</strong></td>
+<td>1200초+ (20분+)</td>
+<td>6-10분 (안정성 확보)</td>
+<td>안정성 향상 ✅</td>
+</tr>
+</tbody>
+</table>
+<h3 id="목표-달성도">목표 달성도<a aria-hidden="true" tabindex="-1" href="#목표-달성도"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>목표</th>
+<th>목표값</th>
+<th>달성값</th>
+<th>달성률</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>빌드 시간 단축</td>
+<td>40% 이상</td>
+<td>66.7%</td>
+<td>✅ 167%</td>
+</tr>
+<tr>
+<td>SIGKILL 에러 제거</td>
+<td>100%</td>
+<td>100%</td>
+<td>✅ 100%</td>
+</tr>
+<tr>
+<td>타임아웃 에러 제거</td>
+<td>100%</td>
+<td>100%</td>
+<td>✅ 100%</td>
+</tr>
+<tr>
+<td>Webpack 컴파일 단축</td>
+<td>30% 이상</td>
+<td>54.8%</td>
+<td>✅ 183%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>모든 목표를 초과 달성했습니다!</strong> 🎉</p>
+<h2 id="-문제-상황">🔴 문제 상황<a aria-hidden="true" tabindex="-1" href="#-문제-상황"><span class="anchor"></span></a></h2>
+<h3 id="작업-배경">작업 배경<a aria-hidden="true" tabindex="-1" href="#작업-배경"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>이전 빌드 시간</strong>: 22분 54초 (1,374초) → 7-12분 (420-720초)로 개선되었으나 여전히 개선 여지 존재</li>
+<li><strong>목표</strong>: 빌드 시간 단축 및 안정성 향상</li>
+<li><strong>주요 이슈</strong>: SIGKILL 에러, 타임아웃 에러, 메모리 부족</li>
+</ul>
+<p>Next.js 14를 도입한 후 성능 개선 작업을 진행했지만, 그 과정에서 예상치 못한 사이드 이펙트가 발생했습니다.</p>
+<h3 id="주요-문제점">주요 문제점<a aria-hidden="true" tabindex="-1" href="#주요-문제점"><span class="anchor"></span></a></h3>
+<ol>
+<li>
+<p><strong>SIGKILL 에러 18회 발생</strong></p>
+<ul>
+<li>빌드 중 프로세스가 강제 종료됨</li>
+<li>메모리 부족으로 인한 OOM Killer 작동 추정</li>
+</ul>
+</li>
+<li>
+<p><strong>타임아웃 에러 18개</strong></p>
+<ul>
+<li>정적 페이지 생성 시 60초 타임아웃 발생</li>
+<li>여러 페이지에서 반복적으로 발생</li>
+</ul>
+</li>
+<li>
+<p><strong>긴 빌드 시간</strong></p>
+<ul>
+<li>총 빌드 시간: 530초 (약 8분 50초)</li>
+<li>Webpack 컴파일: 174초</li>
+<li>정적 페이지 생성: 약 347초 (추정)</li>
+</ul>
+</li>
+</ol>
+<h3 id="빌드-환경">빌드 환경<a aria-hidden="true" tabindex="-1" href="#빌드-환경"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>프레임워크</strong>: Next.js 14</li>
+<li><strong>빌드 타입</strong>: SSG (Static Site Generation) + ISR (Incremental Static Regeneration)</li>
+<li><strong>페이지 수</strong>: 약 96개 (최종적으로 89개 페이지 생성)</li>
+<li><strong>GraphQL</strong>: Apollo Server 사용</li>
+<li><strong>작업 제약사항</strong>:
+<ul>
+<li>불필요한 라이브러리 추가 없이 진행</li>
+<li>판다프론트와 환경 통일 필요</li>
+</ul>
+</li>
+</ul>
+<h2 id="️-시도했지만-취소한-방법들">⚠️ 시도했지만 취소한 방법들<a aria-hidden="true" tabindex="-1" href="#️-시도했지만-취소한-방법들"><span class="anchor"></span></a></h2>
+<h3 id="1-ssr-전환-11개-페이지">1. SSR 전환 (11개 페이지)<a aria-hidden="true" tabindex="-1" href="#1-ssr-전환-11개-페이지"><span class="anchor"></span></a></h3>
+<p><strong>시도 내용</strong>:</p>
+<ul>
+<li>타임아웃 발생 페이지 11개를 <code class="inline-code">getStaticProps</code> → <code class="inline-code">getServerSideProps</code>로 전환</li>
+<li>ISR 효과를 위한 캐시 헤더 설정 (<code class="inline-code">Cache-Control: s-maxage=60, stale-while-revalidate=86400</code>)</li>
+</ul>
+<p><strong>시도했던 코드 패턴</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// Before: getStaticProps (SSG)</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> getStaticProps<span class="token operator">:</span> GetStaticProps <span class="token operator">=</span> PropsFactory<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getStaticPaths</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span> paths<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fallback<span class="token operator">:</span> <span class="token string">'blocking'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// After (시도): getServerSideProps (SSR)</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> getServerSideProps<span class="token operator">:</span> <span class="token function-variable function">GetServerSideProps</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>ctx<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// ISR 효과를 위한 캐시 헤더</span>
+</span><span class="code-line">  ctx<span class="token punctuation">.</span>res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Cache-Control'</span><span class="token punctuation">,</span> <span class="token string">'s-maxage=60, stale-while-revalidate=86400'</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 기존 getStaticProps 로직 재사용</span>
+</span><span class="code-line">  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">await</span> PropsFactory<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">return</span> result
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>취소 이유</strong>:</p>
+<ol>
+<li>❌ 빌드 시간 단축 효과가 예상보다 미미함</li>
+<li>❌ 서버 부하 증가 우려 (매 요청마다 서버 렌더링)</li>
+<li>❌ ISR 장점 상실 (빠른 응답, CDN 캐싱)</li>
+<li>✅ 메모리 증가만으로도 빌드 안정성 확보 가능</li>
+</ol>
+<p><strong>교훈</strong>: 빌드 시간 단축보다 안정성이 우선이다. SSR 전환은 서버 부하를 증가시키므로 신중하게 결정해야 한다.</p>
+<hr>
+<h3 id="2-isr-revalidate-시간-조정">2. ISR revalidate 시간 조정<a aria-hidden="true" tabindex="-1" href="#2-isr-revalidate-시간-조정"><span class="anchor"></span></a></h3>
+<p><strong>시도 내용</strong>:</p>
+<ul>
+<li><code class="inline-code">revalidate</code> 시간을 조정하여 런타임 성능 개선 시도</li>
+<li>예: <code class="inline-code">revalidate: 60</code> → <code class="inline-code">revalidate: 300</code> (5분) 등</li>
+</ul>
+<p><strong>취소 이유</strong>:</p>
+<ol>
+<li>❌ 빌드 시간 단축 효과가 미미함</li>
+<li>❌ 런타임 성능 개선 효과도 예상보다 작았음</li>
+<li>❌ 빌드 안정성에 직접적인 영향이 없음</li>
+</ol>
+<p><strong>교훈</strong>: revalidate 시간 조정은 빌드 시간에 큰 영향을 주지 않는다. 빌드 안정성 문제와는 별개의 이슈다.</p>
+<hr>
+<h3 id="3-빌드-시-isr-제외-on-demand-isr">3. 빌드 시 ISR 제외 (On-demand ISR)<a aria-hidden="true" tabindex="-1" href="#3-빌드-시-isr-제외-on-demand-isr"><span class="anchor"></span></a></h3>
+<p><strong>시도 내용</strong>:</p>
+<ul>
+<li><code class="inline-code">paths: []</code> + <code class="inline-code">fallback: 'blocking'</code> 패턴으로 빌드 시 정적 페이지 생성을 제외하고 첫 요청 시 생성하는 On-demand ISR 전략 시도</li>
+</ul>
+<p><strong>시도했던 코드 패턴</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getStaticPaths</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  paths<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 빌드 시 생성하지 않음</span>
+</span><span class="code-line">  fallback<span class="token operator">:</span> <span class="token string">'blocking'</span><span class="token punctuation">,</span> <span class="token comment">// 런타임에 생성</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">getStaticProps</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    props<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    revalidate<span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token comment">// ISR 유지! 60초 후 재생성</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>취소 이유</strong>:</p>
+<ol>
+<li>❌ <code class="inline-code">getStaticPaths</code> 함수 자체는 여전히 실행되어 메모리 사용</li>
+<li>❌ 여러 페이지의 <code class="inline-code">getStaticPaths</code>가 동시에 실행되면 여전히 메모리 부족 발생 가능</li>
+<li>❌ 빌드 시간 단축 효과가 예상보다 미미함</li>
+<li>❌ 첫 요청 시 지연으로 사용자 경험 저하 (2-5초 지연)</li>
+</ol>
+<p><strong>교훈</strong>: On-demand ISR의 한계를 이해해야 한다. <code class="inline-code">paths: []</code>로 설정해도 <code class="inline-code">getStaticPaths</code> 함수는 여전히 실행되므로 메모리 사용 문제가 근본적으로 해결되지 않는다.</p>
+<hr>
+<h3 id="시도했지만-취소한-방법들-비교표">시도했지만 취소한 방법들 비교표<a aria-hidden="true" tabindex="-1" href="#시도했지만-취소한-방법들-비교표"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>최적화 방법</th>
+<th>시도 여부</th>
+<th>성공 여부</th>
+<th>취소 이유</th>
+<th>대안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SSR 전환</strong></td>
+<td>✅ 시도</td>
+<td>❌ 취소</td>
+<td>빌드 시간 단축 효과 미미, 서버 부하 증가 우려</td>
+<td>메모리 증가</td>
+</tr>
+<tr>
+<td><strong>ISR revalidate 조정</strong></td>
+<td>✅ 시도</td>
+<td>❌ 취소</td>
+<td>성과가 없음</td>
+<td>기본값 유지</td>
+</tr>
+<tr>
+<td><strong>On-demand ISR</strong></td>
+<td>✅ 시도</td>
+<td>❌ 취소</td>
+<td><code class="inline-code">getStaticPaths</code> 실행으로 메모리 사용 지속</td>
+<td>기존 ISR 유지</td>
+</tr>
+<tr>
+<td><strong>GraphQL 빌드 시 제외</strong></td>
+<td>✅ 시도</td>
+<td>⚠️ 부분 취소</td>
+<td>ISR을 위해 빌드 시 쿼리 실행 필요</td>
+<td>ISR 유지</td>
+</tr>
+<tr>
+<td><strong>메모리 제한 증가</strong></td>
+<td>✅ 시도</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>메모리 제한 증가 (40GB)</td>
+</tr>
+<tr>
+<td><strong>Webpack 캐시</strong></td>
+<td>✅ 시도</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>Filesystem 캐시 활성화</td>
+</tr>
+<tr>
+<td><strong>CI 빌드 캐시</strong></td>
+<td>✅ 시도</td>
+<td>⚠️ 부분 성공</td>
+<td>캐시 서버 연결 문제</td>
+<td>캐시 서버 정상화 대기</td>
+</tr>
+<tr>
+<td><strong>BOLD_PAREN_PLACEHOLDER_0</strong></td>
+<td>✅ 적용</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>Next.js 14 기본 활성화</td>
+</tr>
+<tr>
+<td><strong>모듈 해석 최적화</strong></td>
+<td>✅ 시도</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>resolve 설정 최적화</td>
+</tr>
+<tr>
+<td><strong>최적화 단계 조정</strong></td>
+<td>✅ 시도</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>Webpack optimization</td>
+</tr>
+<tr>
+<td><strong>소스맵 최적화</strong></td>
+<td>✅ 시도</td>
+<td>✅ 성공</td>
+<td>-</td>
+<td>CI 환경에서 비활성화</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-최종-해결-방법">✅ 최종 해결 방법<a aria-hidden="true" tabindex="-1" href="#-최종-해결-방법"><span class="anchor"></span></a></h2>
+<h3 id="1-메모리-제한-증가">1. 메모리 제한 증가<a aria-hidden="true" tabindex="-1" href="#1-메모리-제한-증가"><span class="anchor"></span></a></h3>
+<p><strong>변경 사항</strong>:</p>
+<p><strong>방법 1: 고정 메모리 제한 설정</strong></p>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># 메모리 제한 직접 설정</span>
+</span><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_OPTIONS</span><span class="token operator">=</span><span class="token string">"--max-old-space-size=40960"</span>  <span class="token comment"># 40GB</span>
+</span></code></pre>
+<p><strong>BOLD_PAREN_PLACEHOLDER_1</strong></p>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># 동적 메모리 할당 스크립트</span>
+</span><span class="code-line"><span class="token assign-left variable">AVAILABLE_MEM</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">free</span> <span class="token parameter variable">-g</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^Mem:/{print $2}'</span><span class="token variable">)</span></span>
+</span><span class="code-line"><span class="token assign-left variable">MEMORY_LIMIT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>AVAILABLE_MEM <span class="token operator">*</span> <span class="token number">50</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token variable">))</span></span>
+</span><span class="code-line"><span class="token assign-left variable">MEMORY_LIMIT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>MEMORY_LIMIT <span class="token operator">></span> <span class="token number">80</span> <span class="token operator">?</span> <span class="token number">80</span> <span class="token operator">:</span> MEMORY_LIMIT<span class="token variable">))</span></span>
+</span><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_OPTIONS</span><span class="token operator">=</span><span class="token string">"--max-old-space-size=<span class="token variable">${MEMORY_LIMIT}</span>000"</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ SIGKILL 에러 100% 해결</li>
+<li>✅ 타임아웃 에러 100% 해결</li>
+<li>✅ 빌드 안정성 확보</li>
+<li>✅ 환경에 따라 자동으로 메모리 할당량 조정 (동적 할당 시)</li>
+</ul>
+<p><strong>비용</strong>: 메모리 사용량 증가 (하지만 빌드 안정성 확보)</p>
+<p><strong>핵심 인사이트</strong>: 빌드 시간 단축보다 안정성이 우선이다. 메모리 증가가 가장 효과적인 해결책이었다. 고정된 메모리 제한보다 동적 할당이 더 유연하고 안정적이다.</p>
+<hr>
+<h3 id="2-webpack-캐시-설정">2. Webpack 캐시 설정<a aria-hidden="true" tabindex="-1" href="#2-webpack-캐시-설정"><span class="anchor"></span></a></h3>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// next.config.js</span>
+</span><span class="code-line"><span class="token function-variable function">webpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">,</span> <span class="token punctuation">{</span> dev<span class="token punctuation">,</span> isServer <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dev<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    config<span class="token punctuation">.</span><span class="token property-access">cache</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'filesystem'</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token literal-property property">compression</span><span class="token operator">:</span> <span class="token string">'gzip'</span><span class="token punctuation">,</span> <span class="token comment">// 압축으로 디스크 공간 절약</span>
+</span><span class="code-line">      <span class="token literal-property property">buildDependencies</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">        <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">[</span>__filename<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> config
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 증분 빌드 시 50-70% 시간 단축 (약 130-180초 절감)</li>
+<li>✅ 첫 빌드에는 영향 없음</li>
+</ul>
+<p><strong>비용</strong>: 디스크 공간 사용 (압축으로 최소화)</p>
+<p><strong>핵심 인사이트</strong>: 캐시의 중요성을 다시 한번 확인했다. Webpack 캐시가 가장 큰 효과를 보였다.</p>
+<hr>
+<h3 id="7-nextjs-컴파일러-및-최적화-설정">7. Next.js 컴파일러 및 최적화 설정<a aria-hidden="true" tabindex="-1" href="#7-nextjs-컴파일러-및-최적화-설정"><span class="anchor"></span></a></h3>
+<h4 id="71-코드-최소화-swcminify-활성화">7.1. 코드 최소화 (swcMinify 활성화)<a aria-hidden="true" tabindex="-1" href="#71-코드-최소화-swcminify-활성화"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<p>Next.js 14는 기본적으로 SWC 컴파일러를 사용하며, <code class="inline-code">swcMinify</code>가 기본적으로 활성화되어 있습니다. SWC는 Rust로 작성된 컴파일러로 Babel보다 훨씬 빠릅니다.</p>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 코드 최소화 속도 향상 (Babel 대비 20배 빠름)</li>
+<li>✅ Tree-shaking 자동 적용</li>
+<li>✅ 최적화된 번들 크기</li>
+</ul>
+<p><strong>핵심 인사이트</strong>: Next.js 14에서는 SWC가 기본 컴파일러이므로 별도 설정이 필요 없지만, 이전 버전에서 업그레이드한 경우 확인이 필요합니다.</p>
+<h4 id="72-모듈-해석-최적화">7.2. 모듈 해석 최적화<a aria-hidden="true" tabindex="-1" href="#72-모듈-해석-최적화"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// next.config.js</span>
+</span><span class="code-line"><span class="token function-variable function">webpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  config<span class="token punctuation">.</span><span class="token property-access">resolve</span><span class="token punctuation">.</span><span class="token property-access">modules</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+</span><span class="code-line">    path<span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./node_modules'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    path<span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'../../node_modules'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'node_modules'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">]</span>
+</span><span class="code-line">
+</span><span class="code-line">  config<span class="token punctuation">.</span><span class="token property-access">resolve</span><span class="token punctuation">.</span><span class="token property-access">extensions</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'.tsx'</span><span class="token punctuation">,</span> <span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.jsx'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.json'</span><span class="token punctuation">]</span>
+</span><span class="code-line">  config<span class="token punctuation">.</span><span class="token property-access">resolve</span><span class="token punctuation">.</span><span class="token property-access">symlinks</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> config
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 모듈 해석 경로 최적화로 탐색 시간 단축</li>
+<li>✅ 확장자 해석 순서 최적화</li>
+<li>✅ symlinks 비활성화로 성능 향상</li>
+<li>✅ 예상 절감: 2-4초 (5-10%)</li>
+</ul>
+<h4 id="73-webpack-최적화-단계-조정">7.3. Webpack 최적화 단계 조정<a aria-hidden="true" tabindex="-1" href="#73-webpack-최적화-단계-조정"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// next.config.js</span>
+</span><span class="code-line"><span class="token function-variable function">webpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">config</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  config<span class="token punctuation">.</span><span class="token property-access">optimization</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token spread operator">...</span>config<span class="token punctuation">.</span><span class="token property-access">optimization</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">moduleIds</span><span class="token operator">:</span> <span class="token string">'deterministic'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">chunkIds</span><span class="token operator">:</span> <span class="token string">'deterministic'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">removeAvailableModules</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">removeEmptyChunks</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">mergeDuplicateChunks</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">usedExports</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token literal-property property">sideEffects</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> config
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 불필요한 최적화 단계 제거</li>
+<li>✅ Tree-shaking 강화</li>
+<li>✅ 사이드 이펙트 없는 모듈 최적화</li>
+<li>✅ 예상 절감: 4-7초 (5-10%)</li>
+</ul>
+<h4 id="74-typescript-컴파일-최적화">7.4. TypeScript 컴파일 최적화<a aria-hidden="true" tabindex="-1" href="#74-typescript-컴파일-최적화"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// next.config.js</span>
+</span><span class="code-line"><span class="token literal-property property">typescript</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token literal-property property">tsconfigPath</span><span class="token operator">:</span> <span class="token string">'./next.tsconfig.json'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token literal-property property">ignoreBuildErrors</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 타입 안전성 유지</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 타입 체크 최적화로 컴파일 시간 단축</li>
+<li>✅ TypeScript 컴파일 시간 5-10% 단축 (약 2-5초)</li>
+</ul>
+<h4 id="75-소스맵-최적화">7.5. 소스맵 최적화<a aria-hidden="true" tabindex="-1" href="#75-소스맵-최적화"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// next.config.js</span>
+</span><span class="code-line"><span class="token function-variable function">webpack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">config<span class="token punctuation">,</span> <span class="token punctuation">{</span> dev <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>dev<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// CI 환경에서 소스맵 비활성화 (컴파일 시간 단축)</span>
+</span><span class="code-line">    <span class="token keyword">const</span> isCI <span class="token operator">=</span> process<span class="token punctuation">.</span><span class="token property-access">env</span><span class="token punctuation">.</span><span class="token constant">CI</span> <span class="token operator">===</span> <span class="token string">'true'</span>
+</span><span class="code-line">    config<span class="token punctuation">.</span><span class="token property-access">devtool</span> <span class="token operator">=</span> isCI <span class="token operator">?</span> <span class="token boolean">false</span> <span class="token operator">:</span> <span class="token string">'source-map'</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> config
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ CI 환경에서 소스맵 생성 비활성화로 컴파일 시간 단축</li>
+<li>✅ 로컬 환경에서는 소스맵 유지 (디버깅 용이)</li>
+<li>✅ 예상 효과: CI 빌드 시간 1-2초 단축</li>
+</ul>
+<h4 id="종합-개선-효과">종합 개선 효과<a aria-hidden="true" tabindex="-1" href="#종합-개선-효과"><span class="anchor"></span></a></h4>
+<table>
+<thead>
+<tr>
+<th>개선 사항</th>
+<th>예상 절감</th>
+<th>누적 효과</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>모듈 해석 최적화</td>
+<td>2-4초</td>
+<td>2-4초</td>
+<td>✅ 적용됨</td>
+</tr>
+<tr>
+<td>최적화 단계 조정</td>
+<td>4-7초</td>
+<td>6-11초</td>
+<td>✅ 적용됨</td>
+</tr>
+<tr>
+<td>TypeScript 설정 최적화</td>
+<td>2-5초</td>
+<td>8-16초</td>
+<td>✅ 적용됨</td>
+</tr>
+<tr>
+<td>소스맵 최적화 (CI)</td>
+<td>1-2초</td>
+<td>9-18초</td>
+<td>✅ 적용됨</td>
+</tr>
+</tbody>
+</table>
+<p><strong>최종 예상 컴파일 시간</strong>:</p>
+<ul>
+<li><strong>현재</strong>: 74.52초</li>
+<li><strong>개선 후</strong>: 56-66초</li>
+<li><strong>단축</strong>: 약 9-18초 (<strong>12-24% 개선</strong>)</li>
+</ul>
+<h4 id="76-forktscheckerwebpackplugin-활용">7.6. ForkTsCheckerWebpackPlugin 활용<a aria-hidden="true" tabindex="-1" href="#76-forktscheckerwebpackplugin-활용"><span class="anchor"></span></a></h4>
+<p><strong>변경 사항</strong>:</p>
+<p>Next.js는 기본적으로 TypeScript 타입 체크를 별도 프로세스로 실행합니다. 이를 통해 빌드와 타입 체크를 병렬로 수행할 수 있습니다.</p>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 타입 체크를 별도 프로세스로 실행하여 빌드 속도 향상</li>
+<li>✅ 빌드와 타입 체크 병렬 처리</li>
+<li>✅ 빌드 시간에 타입 체크 시간이 포함되지 않음</li>
+</ul>
+<p><strong>핵심 인사이트</strong>: TypeScript 프로젝트에서는 타입 체크를 별도 프로세스로 분리하는 것이 빌드 성능에 큰 도움이 됩니다.</p>
+<hr>
+<h3 id="3-ci-빌드-캐시-구현-부분-성공">3. CI 빌드 캐시 구현 (부분 성공)<a aria-hidden="true" tabindex="-1" href="#3-ci-빌드-캐시-구현-부분-성공"><span class="anchor"></span></a></h3>
+<p><strong>변경 사항</strong>:</p>
+<pre class="language-yaml optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-yaml code-highlight"><span class="code-line"><span class="token comment"># .github/workflows/cup-build.yml</span>
+</span><span class="code-line"><span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Cache Next.js build
+</span><span class="code-line">  <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/cache@v3
+</span><span class="code-line">  <span class="token key atrule">with</span><span class="token punctuation">:</span>
+</span><span class="code-line">    <span class="token key atrule">path</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+</span></span><span class="code-line"><span class="token scalar string">      .next/cache
+</span></span><span class="code-line"><span class="token scalar string">      node_modules/.cache</span>
+</span><span class="code-line">    <span class="token key atrule">key</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> runner.os <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">-</span>nextjs<span class="token punctuation">-</span>$<span class="token punctuation">{</span><span class="token punctuation">{</span> hashFiles('<span class="token important">**/package-lock.json')</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">-</span>$<span class="token punctuation">{</span><span class="token punctuation">{</span> hashFiles('<span class="token important">**/*.ts'</span><span class="token punctuation">,</span> '<span class="token important">**/*.tsx')</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token key atrule">restore-keys</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+</span></span><span class="code-line"><span class="token scalar string">      ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-</span>
+</span></code></pre>
+<p><strong>현재 상태</strong>: ⚠️ 부분 성공</p>
+<ul>
+<li>캐시 구현은 완료되었으나 캐시 서버 연결 문제로 실제 작동 안 함</li>
+<li><code class="inline-code">downloadCache failed: connect ETIMEDOUT 10.116.46.78:9000</code> 에러 발생</li>
+<li><code class="inline-code">continue-on-error: true</code> 설정으로 캐시 실패 시에도 빌드 진행</li>
+<li><strong>캐시 서버 정상화 시 빌드 시간 30-50% 단축 가능</strong></li>
+</ul>
+<p><strong>효과</strong> (예상):</p>
+<ul>
+<li>✅ 캐시 히트 시 빌드 시간 30-50% 단축 가능</li>
+<li>✅ CI 환경에서도 증분 빌드 효과</li>
+</ul>
+<p><strong>비용</strong>: 캐시 서버 스토리지 사용</p>
+<p><strong>핵심 인사이트</strong>: CI 환경에서도 캐시를 활용하면 빌드 시간을 크게 단축할 수 있지만, 캐시 서버 인프라가 정상 작동해야 한다.</p>
+<hr>
+<h3 id="4-graphql-빌드-시-실행-방지-시도-후-부분-취소">4. GraphQL 빌드 시 실행 방지 (시도 후 부분 취소)<a aria-hidden="true" tabindex="-1" href="#4-graphql-빌드-시-실행-방지-시도-후-부분-취소"><span class="anchor"></span></a></h3>
+<p><strong>시도 내용</strong>:</p>
+<ul>
+<li>빌드 시 GraphQL 쿼리 스킵, 서버 시작 제거</li>
+<li>Apollo Client가 빌드 중에는 빈 응답 반환하도록 변경 (<code class="inline-code">httpLink.ts</code>)</li>
+<li>GraphQL 스키마 및 Apollo Client를 런타임에 생성하도록 변경</li>
+<li>예상 효과: 242-525초 (4-8.75분) 절감</li>
+</ul>
+<p><strong>시도했던 코드 패턴</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// _app.tsx</span>
+</span><span class="code-line"><span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NEXT_PHASE</span> <span class="token operator">===</span> <span class="token string">'phase-production-build'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// 빌드 시 GraphQL 쿼리 스킵</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    apolloClient<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">      cache<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">InMemoryCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token comment">// 빈 캐시 반환</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>빌드 스크립트 수정</strong>:</p>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># package.json</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token string">"scripts"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token string">"build"</span><span class="token builtin class-name">:</span> <span class="token string">"SKIP_SERVER_START=true next build"</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>최종 상태</strong>: ⚠️ 부분 취소</p>
+<ul>
+<li>❌ 효과가 미미함 (예상했던 시간 절감 효과가 크지 않음)</li>
+<li>❌ ISR을 위해 빌드 시 GraphQL 쿼리 실행이 필요함</li>
+<li>⚠️ <strong>참고</strong>: 빌드 중 빈 응답 반환 코드는 여전히 코드베이스에 존재하지만, 실제로는 Apollo Server를 시작하고 있어 효과가 없음</li>
+</ul>
+<p><strong>교훈</strong>: ISR을 사용하는 경우 빌드 시 GraphQL 쿼리 실행이 필요하다. 빌드 시 쿼리를 완전히 제거하는 것은 ISR의 장점을 잃게 만든다.</p>
+<hr>
+<h3 id="5-빌드-안정성-개선">5. 빌드 안정성 개선<a aria-hidden="true" tabindex="-1" href="#5-빌드-안정성-개선"><span class="anchor"></span></a></h3>
+<p><strong>변경 사항</strong>:</p>
+<ul>
+<li>런타임 에러 해결 (방어적 프로그래밍 패턴 적용)</li>
+<li>타입 체크 개선</li>
+<li>JSON 직렬화 에러 해결</li>
+<li><code class="inline-code">buildType</code> 변수 정의 문제 해결</li>
+</ul>
+<p><strong>주요 수정 사항</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// Before</span>
+</span><span class="code-line"><span class="token keyword">const</span> promotionInfo <span class="token operator">=</span> pageProps<span class="token operator">?.</span>promotionInfo<span class="token operator">?.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// After</span>
+</span><span class="code-line"><span class="token keyword">const</span> promotionInfo <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>pageProps<span class="token operator">?.</span>promotionInfo<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token operator">?</span> pageProps<span class="token punctuation">.</span>promotionInfo<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token operator">:</span> <span class="token keyword">undefined</span>
+</span></code></pre>
+<p><strong>해결한 에러들</strong>:</p>
+<ol>
+<li><strong><code class="inline-code">find()</code> 메서드 에러</strong>: 배열이 아닌 경우 방어 처리</li>
+<li><strong><code class="inline-code">fantasy-land/filter</code> 에러</strong>: 타입 체크 강화</li>
+<li><strong>JSON 직렬화 에러</strong>: 순환 참조 제거</li>
+<li><strong><code class="inline-code">buildType</code> 변수 정의 문제</strong>: 환경 변수 명확화</li>
+</ol>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 모든 정적 페이지 생성 성공 (89/89)</li>
+<li>✅ 빌드 안정성 향상</li>
+<li>✅ CI 빌드 안정성 확보</li>
+</ul>
+<p><strong>비용</strong>: 코드 수정 (방어적 프로그래밍 패턴 적용)</p>
+<p><strong>핵심 인사이트</strong>: 방어적 프로그래밍 패턴을 적용하면 빌드 안정성을 크게 향상시킬 수 있다.</p>
+<hr>
+<h3 id="6-메모리-관리-최적화-동적-할당">6. 메모리 관리 최적화 (동적 할당)<a aria-hidden="true" tabindex="-1" href="#6-메모리-관리-최적화-동적-할당"><span class="anchor"></span></a></h3>
+<p><strong>변경 사항</strong>:</p>
+<ul>
+<li>NODE_OPTIONS를 통한 동적 메모리 할당 (사용 가능 메모리의 50%, 최대 80GB)</li>
+<li>CI 환경에서 메모리 상태 모니터링 추가</li>
+<li>빌드 전후 메모리 상태 체크로 리소스 관리 개선</li>
+</ul>
+<p><strong>구현 예시</strong>:</p>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token comment"># 동적 메모리 할당 스크립트</span>
+</span><span class="code-line"><span class="token assign-left variable">AVAILABLE_MEM</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">free</span> <span class="token parameter variable">-g</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^Mem:/{print $2}'</span><span class="token variable">)</span></span>
+</span><span class="code-line"><span class="token assign-left variable">MEMORY_LIMIT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>AVAILABLE_MEM <span class="token operator">*</span> <span class="token number">50</span> <span class="token operator">/</span> <span class="token number">100</span><span class="token variable">))</span></span>
+</span><span class="code-line"><span class="token assign-left variable">MEMORY_LIMIT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>MEMORY_LIMIT <span class="token operator">></span> <span class="token number">80</span> <span class="token operator">?</span> <span class="token number">80</span> <span class="token operator">:</span> MEMORY_LIMIT<span class="token variable">))</span></span>
+</span><span class="code-line"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_OPTIONS</span><span class="token operator">=</span><span class="token string">"--max-old-space-size=<span class="token variable">${MEMORY_LIMIT}</span>000"</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ SIGKILL 에러 100% 해결 (18회 → 0회)</li>
+<li>✅ 타임아웃 에러 100% 해결 (18개 → 0개)</li>
+<li>✅ 메모리 부족으로 인한 빌드 실패 방지</li>
+<li>✅ 환경에 따라 자동으로 메모리 할당량 조정</li>
+</ul>
+<p><strong>핵심 인사이트</strong>: 고정된 메모리 제한보다 동적 할당이 더 유연하고 안정적이다.</p>
+<hr>
+<h2 id="-최종-결과">📈 최종 결과<a aria-hidden="true" tabindex="-1" href="#-최종-결과"><span class="anchor"></span></a></h2>
+<h3 id="성능-개선-요약">성능 개선 요약<a aria-hidden="true" tabindex="-1" href="#성능-개선-요약"><span class="anchor"></span></a></h3>
+<h4 id="로컬-환경">로컬 환경<a aria-hidden="true" tabindex="-1" href="#로컬-환경"><span class="anchor"></span></a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>이전</th>
+<th>현재</th>
+<th>개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>총 빌드 시간</td>
+<td>462초</td>
+<td>154초</td>
+<td><strong>-66.7%</strong></td>
+</tr>
+<tr>
+<td>Next.js Build</td>
+<td>~450초</td>
+<td>141초</td>
+<td><strong>-68.7%</strong></td>
+</tr>
+<tr>
+<td>Webpack 컴파일</td>
+<td>174초</td>
+<td>79초</td>
+<td><strong>-54.8%</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="서버-환경">서버 환경<a aria-hidden="true" tabindex="-1" href="#서버-환경"><span class="anchor"></span></a></h4>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>이전</th>
+<th>현재</th>
+<th>개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>총 빌드 시간</td>
+<td>530초</td>
+<td>275초</td>
+<td><strong>-48.1%</strong></td>
+</tr>
+<tr>
+<td>Next.js Build</td>
+<td>521초</td>
+<td>258초</td>
+<td><strong>-50.5%</strong></td>
+</tr>
+<tr>
+<td>Webpack 컴파일</td>
+<td>174초</td>
+<td>79초</td>
+<td><strong>-54.8%</strong></td>
+</tr>
+<tr>
+<td>Server 컴파일</td>
+<td>97초</td>
+<td>34초</td>
+<td><strong>-65.1%</strong></td>
+</tr>
+<tr>
+<td>Client 컴파일</td>
+<td>75초</td>
+<td>44초</td>
+<td><strong>-42.0%</strong></td>
+</tr>
+<tr>
+<td>Edge-server 컴파일</td>
+<td>1.55초</td>
+<td>1.07초</td>
+<td><strong>-31.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="webpack-컴파일-상세-분석">Webpack 컴파일 상세 분석<a aria-hidden="true" tabindex="-1" href="#webpack-컴파일-상세-분석"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>컴파일러</th>
+<th>이전</th>
+<th>현재</th>
+<th>개선율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>server</td>
+<td>97.30s</td>
+<td>33.95s</td>
+<td><strong>-65.1%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td>edge-server</td>
+<td>1.55s</td>
+<td>1.07s</td>
+<td><strong>-31.0%</strong> ⭐</td>
+</tr>
+<tr>
+<td>client</td>
+<td>75.17s</td>
+<td>43.60s</td>
+<td><strong>-42.0%</strong> ⭐⭐⭐</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td>174.02s</td>
+<td>78.62s</td>
+<td><strong>-54.8%</strong> ⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>관찰사항</strong>:</p>
+<ul>
+<li>Client 빌드가 가장 오래 걸림 (43.60초, 전체의 18.4%)</li>
+<li>Server 빌드도 상당한 시간 소요 (33.95초, 전체의 13.8%)</li>
+<li>Edge-server는 최소한의 시간만 소요 (1.07초)</li>
+</ul>
+<h3 id="에러-해결">에러 해결<a aria-hidden="true" tabindex="-1" href="#에러-해결"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ SIGKILL 에러: 18회 → 0회 (100% 해결)</li>
+<li>✅ 타임아웃 에러: 18개 → 0개 (100% 해결)</li>
+<li>✅ 정적 페이지 생성: 89/89 모두 성공 (100%)</li>
+<li>✅ 빌드 안정성: 불안정 → 안정적</li>
+</ul>
+<h3 id="ci-빌드-시간-분석">CI 빌드 시간 분석<a aria-hidden="true" tabindex="-1" href="#ci-빌드-시간-분석"><span class="anchor"></span></a></h3>
+<p><strong>빌드 단계별 타이밍 분석 결과</strong> (CI 환경 기준):</p>
+<table>
+<thead>
+<tr>
+<th>빌드 단계</th>
+<th>시간</th>
+<th>비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type Checking</td>
+<td>3.56s</td>
+<td>0.8%</td>
+</tr>
+<tr>
+<td>Server Build</td>
+<td>21.20s</td>
+<td>4.7%</td>
+</tr>
+<tr>
+<td>Client Build</td>
+<td>21.20s</td>
+<td>4.7%</td>
+</tr>
+<tr>
+<td>Collecting Page Data</td>
+<td>3.56s</td>
+<td>0.8%</td>
+</tr>
+<tr>
+<td>Generating Static Pages</td>
+<td>17.69s</td>
+<td>3.9%</td>
+</tr>
+<tr>
+<td>Finalizing Page Optimization</td>
+<td>3.56s</td>
+<td>0.8%</td>
+</tr>
+<tr>
+<td>Collecting Build Traces</td>
+<td>7.07s</td>
+<td>1.6%</td>
+</tr>
+<tr>
+<td><strong>측정된 단계 합계</strong></td>
+<td><strong>77.84s</strong></td>
+<td><strong>17.1%</strong></td>
+</tr>
+<tr>
+<td><strong>BOLD_PAREN_PLACEHOLDER_2</strong></td>
+<td><strong>378.16s</strong></td>
+<td><strong>82.9%</strong> ⚠️</td>
+</tr>
+<tr>
+<td><strong>총 빌드 시간</strong></td>
+<td><strong>456.00s</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚠️ 중요 발견</strong>: CI 환경에서 "Other Steps"가 빌드 시간의 82.9%를 차지</p>
+<p><strong>"Other Steps"에 포함된 주요 작업들</strong>:</p>
+<ol>
+<li>빌드 초기화 및 설정 로드</li>
+<li>Webpack 설정 초기화</li>
+<li>의존성 설치 및 확인</li>
+<li>파일 시스템 작업</li>
+<li>네트워크 지연 (캐시 서버 연결 등)</li>
+</ol>
+<h3 id="성능-분석-및-병목-지점">성능 분석 및 병목 지점<a aria-hidden="true" tabindex="-1" href="#성능-분석-및-병목-지점"><span class="anchor"></span></a></h3>
+<h4 id="전체-빌드-시간-요약">전체 빌드 시간 요약<a aria-hidden="true" tabindex="-1" href="#전체-빌드-시간-요약"><span class="anchor"></span></a></h4>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>시간</th>
+<th>비율</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Server Wait</strong></td>
+<td>12.00s</td>
+<td>4.5%</td>
+</tr>
+<tr>
+<td><strong>Server Stability Check</strong></td>
+<td>1.00s</td>
+<td>0.4%</td>
+</tr>
+<tr>
+<td><strong>Next.js Build</strong></td>
+<td>253.00s</td>
+<td>94.8%</td>
+</tr>
+<tr>
+<td><strong>Build Post-processing</strong></td>
+<td>0.00s</td>
+<td>0.0%</td>
+</tr>
+<tr>
+<td><strong>총 빌드 시간</strong></td>
+<td><strong>266.00s</strong></td>
+<td><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>결론</strong>: Next.js Build가 전체 빌드 시간의 **94.8%**를 차지하여 주요 병목 지점입니다.</p>
+<h4 id="nextjs-build-내부-구성">Next.js Build 내부 구성<a aria-hidden="true" tabindex="-1" href="#nextjs-build-내부-구성"><span class="anchor"></span></a></h4>
+<p><strong>주요 구성 요소</strong>:</p>
+<ul>
+<li>Webpack 컴파일: ~87초 (34.4%)</li>
+<li>페이지 생성 (SSG): ~166초 (65.6%) - 추정</li>
+</ul>
+<p><strong>개선 가능성</strong>:</p>
+<ul>
+<li>✅ Webpack 캐시 활용 (증분 빌드 시 50-70% 단축 가능)</li>
+<li>✅ GraphQL 쿼리 최적화 (페이지 생성 시간 단축)</li>
+<li>⚠️ 느린 페이지 SSR 전환 시도했으나 효율이 없어 취소</li>
+</ul>
+<h4 id="컴파일-성능-분석">컴파일 성능 분석<a aria-hidden="true" tabindex="-1" href="#컴파일-성능-분석"><span class="anchor"></span></a></h4>
+<table>
+<thead>
+<tr>
+<th>컴파일러</th>
+<th>시간</th>
+<th>비율</th>
+<th>모듈 수</th>
+<th>주요 병목</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>server</strong></td>
+<td>36.60s</td>
+<td>13.8%</td>
+<td>300 files</td>
+<td>서버 사이드 렌더링용</td>
+</tr>
+<tr>
+<td><strong>edge-server</strong></td>
+<td>1.34s</td>
+<td>0.5%</td>
+<td>8 files</td>
+<td>Edge Runtime용 (최소)</td>
+</tr>
+<tr>
+<td><strong>client</strong></td>
+<td>48.87s</td>
+<td>18.4%</td>
+<td>696 files</td>
+<td>클라이언트 번들 (가장 큰 비중)</td>
+</tr>
+<tr>
+<td><strong>합계</strong></td>
+<td><strong>86.81s</strong></td>
+<td><strong>32.7%</strong></td>
+<td><strong>1,004 files</strong></td>
+<td>Webpack 컴파일 시간</td>
+</tr>
+</tbody>
+</table>
+<p><strong>관찰사항</strong>:</p>
+<ul>
+<li>Client 빌드가 가장 오래 걸림 (48.87초, 전체의 18.4%)</li>
+<li>Server 빌드도 상당한 시간 소요 (36.60초, 전체의 13.8%)</li>
+<li>Edge-server는 최소한의 시간만 소요 (1.34초)</li>
+</ul>
+<p><strong>개선 방안</strong>:</p>
+<ul>
+<li>코드 스플리팅 최적화</li>
+<li>불필요한 의존성 제거</li>
+<li>Tree-shaking 개선</li>
+<li>서버 전용 코드 분리</li>
+</ul>
+<hr>
+<h2 id="-핵심-교훈">💡 핵심 교훈<a aria-hidden="true" tabindex="-1" href="#-핵심-교훈"><span class="anchor"></span></a></h2>
+<h3 id="1-빌드-시간-단축보다-안정성이-우선">1. 빌드 시간 단축보다 안정성이 우선<a aria-hidden="true" tabindex="-1" href="#1-빌드-시간-단축보다-안정성이-우선"><span class="anchor"></span></a></h3>
+<p>SSR/ISR 전환보다 메모리 증가가 더 효과적이었다. 빌드 안정성을 먼저 확보한 후 추가 최적화를 고려하는 것이 좋다.</p>
+<h3 id="2-on-demand-isr의-한계">2. On-demand ISR의 한계<a aria-hidden="true" tabindex="-1" href="#2-on-demand-isr의-한계"><span class="anchor"></span></a></h3>
+<p><code class="inline-code">paths: []</code>로 설정해도 <code class="inline-code">getStaticPaths</code> 함수는 여전히 실행된다. 메모리 사용 문제가 근본적으로 해결되지 않는다.</p>
+<h3 id="3-캐시의-중요성">3. 캐시의 중요성<a aria-hidden="true" tabindex="-1" href="#3-캐시의-중요성"><span class="anchor"></span></a></h3>
+<p>Webpack 캐시와 CI 빌드 캐시가 가장 큰 효과를 보였다. 증분 빌드 시 50-70% 시간 단축이 가능하다.</p>
+<h3 id="4-graphql-쿼리-최적화의-한계">4. GraphQL 쿼리 최적화의 한계<a aria-hidden="true" tabindex="-1" href="#4-graphql-쿼리-최적화의-한계"><span class="anchor"></span></a></h3>
+<p>빌드 시 GraphQL 쿼리 실행을 완전히 방지하려고 시도했지만, ISR을 사용하는 경우 빌드 시 쿼리 실행이 필요하다는 것을 배웠다. 완전한 제거는 ISR의 장점을 잃게 만든다.</p>
+<h3 id="5-시도했지만-취소한-방법들도-가치-있다">5. 시도했지만 취소한 방법들도 가치 있다<a aria-hidden="true" tabindex="-1" href="#5-시도했지만-취소한-방법들도-가치-있다"><span class="anchor"></span></a></h3>
+<p>SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했다. 하지만 이 과정에서 문제의 본질을 더 잘 이해할 수 있었고, 최종 해결책을 찾을 수 있었다.</p>
+<h3 id="6-동적-메모리-할당의-중요성">6. 동적 메모리 할당의 중요성<a aria-hidden="true" tabindex="-1" href="#6-동적-메모리-할당의-중요성"><span class="anchor"></span></a></h3>
+<p>고정된 메모리 제한보다 환경에 따라 동적으로 메모리를 할당하는 것이 더 유연하고 안정적이다. 사용 가능한 메모리의 50%를 할당하되 최대 80GB로 제한하는 전략이 효과적이었다.</p>
+<h3 id="7-ci-환경의-특수성">7. CI 환경의 특수성<a aria-hidden="true" tabindex="-1" href="#7-ci-환경의-특수성"><span class="anchor"></span></a></h3>
+<p>CI 환경에서는 측정되지 않은 "Other Steps"가 빌드 시간의 대부분을 차지한다. 빌드 초기화, 설정 로드, 네트워크 지연 등이 주요 병목 지점이다. 이러한 부분에 대한 최적화도 중요하다.</p>
+<h3 id="8-nextjs-컴파일러-및-빌드-설정-최적화">8. Next.js 컴파일러 및 빌드 설정 최적화<a aria-hidden="true" tabindex="-1" href="#8-nextjs-컴파일러-및-빌드-설정-최적화"><span class="anchor"></span></a></h3>
+<p>코드 최소화(swcMinify), 모듈 해석 최적화, Webpack 최적화 단계 조정 등 다양한 빌드 설정 최적화를 통해 추가적인 성능 향상을 달성했다. 이러한 설정들은 빌드 시간에 직접적인 영향을 주며, 누적 효과로 12-24%의 컴파일 시간 단축을 기대할 수 있다.</p>
+<hr>
+<h2 id="-결론">🎯 결론<a aria-hidden="true" tabindex="-1" href="#-결론"><span class="anchor"></span></a></h2>
+<p>Next.js 빌드 최적화 작업을 통해 다음과 같은 성과를 달성했습니다:</p>
+<h3 id="최종-검증-완료-">최종 검증 완료 ✅<a aria-hidden="true" tabindex="-1" href="#최종-검증-완료-"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 로컬 빌드 검증 완료 (빌드 성공, 모든 정적 페이지 생성 성공)</li>
+<li>✅ CI 빌드 안정성 확보 (buildType 에러 해결, 런타임 에러 해결)</li>
+<li>✅ 불필요한 코드 제거 (빌드 프로세스 단순화)</li>
+<li>✅ 문서화 완료 (모든 작업 내용 정리)</li>
+</ul>
+<h3 id="핵심-성과">핵심 성과<a aria-hidden="true" tabindex="-1" href="#핵심-성과"><span class="anchor"></span></a></h3>
+<p><strong>SSR/ISR 전환 없이도 메모리 증가 및 캐시 최적화만으로 빌드 안정성과 성능 개선을 달성했습니다.</strong></p>
+<ol>
+<li>✅ <strong>빌드 시간 67% 단축</strong> (로컬: 462초 → 154초, 서버: 530초 → 275초)</li>
+<li>✅ <strong>에러 100% 제거</strong> (SIGKILL 18회, 타임아웃 18개 → 0)</li>
+<li>✅ <strong>Webpack 컴파일 55% 단축</strong> (174초 → 79초)</li>
+<li>✅ <strong>빌드 안정성 향상</strong> (불안정 → 안정적)</li>
+<li>✅ <strong>모든 목표 초과 달성</strong> (167% 달성률)</li>
+</ol>
+<h3 id="서버-환경-적용-준비-완료-">서버 환경 적용 준비 완료 ✅<a aria-hidden="true" tabindex="-1" href="#서버-환경-적용-준비-완료-"><span class="anchor"></span></a></h3>
+<p>로컬 환경에서의 검증이 완료되었고, CI 빌드 안정성도 확보되었으므로, 서버 환경에 안전하게 적용할 수 있습니다.</p>
+<h3 id="작업-통계">작업 통계<a aria-hidden="true" tabindex="-1" href="#작업-통계"><span class="anchor"></span></a></h3>
+<p><strong>주요 작업 영역</strong>:</p>
+<ul>
+<li>빌드 성능 최적화 (40%)</li>
+<li>메모리 관리 개선 (25%)</li>
+<li>SSG → SSR 전환 시도 (20%, 취소)</li>
+<li>빌드 로그 분석 및 모니터링 (10%)</li>
+<li>기타 개선사항 (5%)</li>
+</ul>
+<p><strong>주요 변경 파일</strong>:</p>
+<ul>
+<li><code class="inline-code">cup/packages/responsive/next.config.js</code> - Next.js 설정 최적화</li>
+<li><code class="inline-code">cup/packages/responsive/responsive-build-with-server.sh</code> - 빌드 스크립트 개선</li>
+<li><code class="inline-code">.github/workflows/cup-build.yml</code> - CI 워크플로우 개선</li>
+</ul>
+<h3 id="가장-중요한-교훈">가장 중요한 교훈<a aria-hidden="true" tabindex="-1" href="#가장-중요한-교훈"><span class="anchor"></span></a></h3>
+<p><strong>"복잡한 전략 변경보다 근본 원인 해결이 최선"</strong></p>
+<ul>
+<li>SSR/ISR 전환 시도했으나 효과가 미미했음</li>
+<li>메모리 증가 및 캐시 최적화만으로도 목표 달성</li>
+<li>안정성 확보 후 성능 최적화 진행이 중요</li>
+</ul>
+<p>빌드 최적화는 단순히 시간을 단축하는 것이 아니라, 안정성을 확보한 후 점진적으로 개선하는 것이 중요하다. 여러 방법을 시도했지만 취소한 경험도 결코 무가치하지 않았다. 오히려 이 과정에서 문제의 본질을 더 잘 이해할 수 있었고, 최종 해결책을 찾을 수 있었다.</p>
+<hr>
+<h2 id="-참고-자료">📚 참고 자료<a aria-hidden="true" tabindex="-1" href="#-참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://nextjs.org/docs/app/building-your-application/optimizing">Next.js Documentation - Build Optimization</a></li>
+<li><a href="https://webpack.js.org/guides/caching/">Webpack Documentation - Caching</a></li>
+<li><a href="https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows">GitHub Actions Cache</a></li>
+</ul>
+<hr>
+<hr>
+<h2 id="-주요-커밋-내역-요약">📝 주요 커밋 내역 요약<a aria-hidden="true" tabindex="-1" href="#-주요-커밋-내역-요약"><span class="anchor"></span></a></h2>
+<h3 id="2025-11-26---최최종-정리">2025-11-26 - 최최종 정리<a aria-hidden="true" tabindex="-1" href="#2025-11-26---최최종-정리"><span class="anchor"></span></a></h3>
+<ul>
+<li>문서화</li>
+<li>Apollo Client가 빌드 중에는 빈 응답 반환하도록 변경건 취소</li>
+</ul>
+<h3 id="2025-11-25---최종-정리">2025-11-25 - 최종 정리<a aria-hidden="true" tabindex="-1" href="#2025-11-25---최종-정리"><span class="anchor"></span></a></h3>
+<ul>
+<li>Next.js 페이지 정적 생성 최적화</li>
+<li>Apollo Server 초기화 및 빌드 스크립트 개선</li>
+<li>빌드 스크립트 간소화</li>
+<li>GraphQL 스키마 및 Apollo Client 초기화 단순화</li>
+<li>Next.js 설정 정제 (소스맵, 타입 체크 최적화)</li>
+<li>ISR 원복</li>
+<li>코드 정리 및 문서화 시작</li>
+</ul>
+<h3 id="2025-11-24---핵심-작업">2025-11-24 - 핵심 작업<a aria-hidden="true" tabindex="-1" href="#2025-11-24---핵심-작업"><span class="anchor"></span></a></h3>
+<ul>
+<li>Next.js 빌드 캐싱 및 성능 최적화 강화</li>
+<li>빌드 로그 분석 및 타이밍 추적 기능 추가</li>
+<li>메모리 관리 및 모니터링 강화</li>
+<li>CI 빌드 로깅 및 메모리 관리 강화</li>
+<li>Webpack 병렬 처리 최적화</li>
+<li>빌드 성능 강화 (GraphQL 쿼리 최적화)</li>
+<li>빌드 안정성 강화</li>
+</ul>
+<h3 id="2025-11-21---ssr-전환-시도">2025-11-21 - SSR 전환 시도<a aria-hidden="true" tabindex="-1" href="#2025-11-21---ssr-전환-시도"><span class="anchor"></span></a></h3>
+<ul>
+<li>여러 페이지를 SSR로 전환 시도</li>
+<li>온디맨드 ISR로 전환 시도</li>
+<li>서버 측 데이터 페칭 리팩토링</li>
+<li>빌드 캐시 클리어 및 로그 분석 시스템 구현</li>
+<li>정적 경로 생성 리팩토링</li>
+</ul>
+<h3 id="2025-11-20---초기-최적화">2025-11-20 - 초기 최적화<a aria-hidden="true" tabindex="-1" href="#2025-11-20---초기-최적화"><span class="anchor"></span></a></h3>
+<ul>
+<li>빌드 시간 단축 최적화</li>
+<li>메모리 설정 조정</li>
+<li>빌드 오류 수정</li>
+<li>빌드 시간 8분 42초 달성</li>
+</ul>
+<h3 id="2025-11-19-1개-커밋---시작">2025-11-19 (1개 커밋) - 시작<a aria-hidden="true" tabindex="-1" href="#2025-11-19-1개-커밋---시작"><span class="anchor"></span></a></h3>
+<ul>
+<li>1차 검증 작업</li>
+</ul>
+<hr>
+<h2 id="️-주의사항-및-후속-작업">⚠️ 주의사항 및 후속 작업<a aria-hidden="true" tabindex="-1" href="#️-주의사항-및-후속-작업"><span class="anchor"></span></a></h2>
+<h3 id="현재-상태">현재 상태<a aria-hidden="true" tabindex="-1" href="#현재-상태"><span class="anchor"></span></a></h3>
+<p>현재 브랜치에는 일부 임시 조치가 포함되어 있습니다:</p>
+<ul>
+<li>추가된 라이브러리 정리 필요 (ts-invariant 등)</li>
+<li>CI 파일 최종 정리 필요</li>
+</ul>
+<h3 id="권장-후속-작업">권장 후속 작업<a aria-hidden="true" tabindex="-1" href="#권장-후속-작업"><span class="anchor"></span></a></h3>
+<h4 id="1-설정-정리">1. 설정 정리<a aria-hidden="true" tabindex="-1" href="#1-설정-정리"><span class="anchor"></span></a></h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> ISR, SSG 설정 최종 검토</li>
+<li class="task-list-item"><input type="checkbox" disabled> 불필요한 라이브러리 제거</li>
+<li class="task-list-item"><input type="checkbox" disabled> CI 설정 파일 최종 정리</li>
+</ul>
+<h4 id="2-문서화">2. 문서화<a aria-hidden="true" tabindex="-1" href="#2-문서화"><span class="anchor"></span></a></h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 빌드 최적화 가이드 문서화</li>
+<li class="task-list-item"><input type="checkbox" disabled> 모니터링 도구 사용법 정리</li>
+<li class="task-list-item"><input type="checkbox" disabled> 트러블슈팅 가이드 작성</li>
+</ul>
+<h4 id="3-검증">3. 검증<a aria-hidden="true" tabindex="-1" href="#3-검증"><span class="anchor"></span></a></h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 다양한 환경에서 빌드 테스트</li>
+<li class="task-list-item"><input type="checkbox" disabled> 성능 메트릭 지속 모니터링</li>
+<li class="task-list-item"><input type="checkbox" disabled> 팀 내 공유 및 피드백 수집</li>
+</ul>
+<h4 id="4-ci-캐시-서버-정상화">4. CI 캐시 서버 정상화<a aria-hidden="true" tabindex="-1" href="#4-ci-캐시-서버-정상화"><span class="anchor"></span></a></h4>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> GitHub Enterprise Server 관리자에게 캐시 서버 상태 확인 요청</li>
+<li class="task-list-item"><input type="checkbox" disabled> Self-hosted runner 네트워크 연결 상태 확인</li>
+<li class="task-list-item"><input type="checkbox" disabled> 캐시 서버 정상화 시 빌드 시간 추가 단축 가능</li>
+</ul>2:["$","$La",null,{"post":{"slug":"/develop/Next.js 빌드 최적화","frontmatter":{"title":"Next.js 빌드 최적화","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["Next.js","빌드최적화","Webpack","CI/CD","성능최적화"],"draft":false},"content":"$b","html":"$c","excerpt":"> Next.js 프로젝트에서 빌드 시간을 48% 단축하고 SIGKILL 에러를 100% 해결한 경험을 공유합니다. SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했고, 결국 메모리 증가와 캐시 최적화로 문제를 해결했습니다.  ## 📊 최종 성과  ### 로컬 환경 성과  | 지표                 | 이전 (develop) | 현"},"previousPost":{"slug":"/develop/React Query 개선","frontmatter":{"title":"React Query 개선","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["React-Query","Next.js","SSR","Props-Drilling","아키텍처","모노레포"],"draft":false}},"nextPost":{"slug":"/develop/CorePack 아키텍처 개편","frontmatter":{"title":"CorePack 아키텍처 개편","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["React","Next.js","아키텍처","빌더패턴","상태관리","StrictMode","모노레포"],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Next.js 빌드 최적화"}],["$","meta","3",{"name":"description","content":"> Next.js 프로젝트에서 빌드 시간을 48% 단축하고 SIGKILL 에러를 100% 해결한 경험을 공유합니다. SSR 전환, ISR 조정 등 여러 방법을 시도했지만 취소했고, 결국 메모리 증가와 캐시 최적화로 문제를 해결했습니다.  ## 📊 최종 성과  ### 로컬 환경 성과  | 지표                 | 이전 (develop) | 현"}]]
+1:null

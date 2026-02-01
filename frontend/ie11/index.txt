@@ -1,0 +1,66 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","frontend","d"]
+5:["slug","ie11","c"]
+0:["static-build-id",[[["",{"children":[["category","frontend","d"],{"children":[["slug","ie11","c"],{"children":["__PAGE__?{\"category\":\"frontend\",\"slug\":[\"ie11\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","frontend","d"],{"children":[["slug","ie11","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T1751,<h2 id="ie11-max-width">ie11 max-width<a aria-hidden="true" tabindex="-1" href="#ie11-max-width"><span class="anchor"></span></a></h2>
+<ul>
+<li>ie11에서 max-width가 동작하지 않습니다.</li>
+<li>position: absolute; left: 0;으로 해결했습니다.</li>
+</ul>
+<h2 id="ie11-text-align">ie11 text-align<a aria-hidden="true" tabindex="-1" href="#ie11-text-align"><span class="anchor"></span></a></h2>
+<ul>
+<li>start와 end 값이 동작하지 않아서 left와 right를 사용합니다.</li>
+</ul>
+<h2 id="ie11에서-web-font-로딩되지-않음">ie11에서 web font 로딩되지 않음<a aria-hidden="true" tabindex="-1" href="#ie11에서-web-font-로딩되지-않음"><span class="anchor"></span></a></h2>
+<ul>
+<li>web font를 캐싱 하지 않을 경우 새로 고침 시에 나타나지 않아 캐시 하지 않는 것에서 이미지와 폰트를 제외 하였습니다.</li>
+</ul>
+<h2 id="ie11-flex-축약형">ie11 flex 축약형<a aria-hidden="true" tabindex="-1" href="#ie11-flex-축약형"><span class="anchor"></span></a></h2>
+<h3 id="일반적인-축양형">일반적인 축양형<a aria-hidden="true" tabindex="-1" href="#일반적인-축양형"><span class="anchor"></span></a></h3>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"># 아무것도 안쓰면<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">0</span><span class="token unit">%</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span> <span class="token number">1</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">1</span> auto
+</span></code></pre>
+<h3 id="ie11에서-축약형">ie11에서 축약형<a aria-hidden="true" tabindex="-1" href="#ie11에서-축약형"><span class="anchor"></span></a></h3>
+<pre class="language-css optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-css code-highlight"><span class="code-line"># 아무것도 안쓰면<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">0</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">1</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"># <span class="token property">flex</span><span class="token punctuation">:</span> initial<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token property">flex</span><span class="token punctuation">:</span> <span class="token number">0</span> <span class="token number">0</span> auto
+</span></code></pre>
+<h2 id="cdn에서-리소스-캐쉬문제">cdn에서 리소스 캐쉬문제<a aria-hidden="true" tabindex="-1" href="#cdn에서-리소스-캐쉬문제"><span class="anchor"></span></a></h2>
+<ul>
+<li>cdn 캐쉬에서 리소스(이미지, 폰트 등)는 no-cache 설정하면 ie에서 새로고침 시 제대로 로딩되지 않아서 no-cache 설정 시 별도로 처리해야 합니다.
+<ul>
+<li>spa의 경우 페이지 이동 후 부터는 정상 동작합니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="남은-공간-차지하기">남은 공간 차지하기<a aria-hidden="true" tabindex="-1" href="#남은-공간-차지하기"><span class="anchor"></span></a></h2>
+<ul>
+<li>flex-grow 속성이 있어도 기본 width, height가 없다면 영역을 차지하지 못할 수 있습니다.</li>
+</ul>
+<h2 id="url에-한글">url에 한글<a aria-hidden="true" tabindex="-1" href="#url에-한글"><span class="anchor"></span></a></h2>
+<ul>
+<li>ie11은 url에 한글이 있다면 정상적으로 동작하지 않을 수 있습니다.</li>
+</ul>2:["$","$La",null,{"post":{"slug":"/frontend/ie11","frontmatter":{"title":"ie11","date":"2020-06-26T12:06:51.000Z","category":"frontend","draft":false},"content":"\n## ie11 max-width\n\n- ie11에서 max-width가 동작하지 않습니다.\n- position: absolute; left: 0;으로 해결했습니다.\n\n## ie11 text-align\n\n- start와 end 값이 동작하지 않아서 left와 right를 사용합니다.\n\n## ie11에서 web font 로딩되지 않음\n\n- web font를 캐싱 하지 않을 경우 새로 고침 시에 나타나지 않아 캐시 하지 않는 것에서 이미지와 폰트를 제외 하였습니다.\n\n## ie11 flex 축약형\n\n### 일반적인 축양형\n\n```css\n# 아무것도 안쓰면;\nflex: 0 1 auto;\n\n# flex: 1;\nflex: 1 1 0%;\n\n# flex: auto;\nflex: 1 1 auto;\n\n# flex: initial;\nflex: 0 1 auto\n```\n\n### ie11에서 축약형\n\n```css\n# 아무것도 안쓰면;\nflex: 0 0 auto;\n\n# flex: 1;\nflex: 1 0 0px;\n\n# flex: auto;\nflex: 1 0 auto;\n\n# flex: initial;\nflex: 0 0 auto\n```\n\n## cdn에서 리소스 캐쉬문제\n\n- cdn 캐쉬에서 리소스(이미지, 폰트 등)는 no-cache 설정하면 ie에서 새로고침 시 제대로 로딩되지 않아서 no-cache 설정 시 별도로 처리해야 합니다.\n  - spa의 경우 페이지 이동 후 부터는 정상 동작합니다.\n\n## 남은 공간 차지하기\n\n- flex-grow 속성이 있어도 기본 width, height가 없다면 영역을 차지하지 못할 수 있습니다.\n\n## url에 한글\n\n- ie11은 url에 한글이 있다면 정상적으로 동작하지 않을 수 있습니다.\n","html":"$b","excerpt":"## ie11 max-width  - ie11에서 max-width가 동작하지 않습니다. - position: absolute; left: 0;으로 해결했습니다.  ## ie11 text-align  - start와 end 값이 동작하지 않아서 left와 right를 사용합니다.  ## ie11에서 web font 로딩되지 않음  - web font를 캐"},"previousPost":{"slug":"/frontend/lh-and-rlh","frontmatter":{"title":"lh and rlh","date":"2020-05-08T09:06:27.000Z","category":"frontend","draft":false}},"nextPost":{"slug":"/frontend/close-event","frontmatter":{"title":"close event","date":"2020-06-29T14:06:45.000Z","category":"frontend","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"ie11"}],["$","meta","3",{"name":"description","content":"## ie11 max-width  - ie11에서 max-width가 동작하지 않습니다. - position: absolute; left: 0;으로 해결했습니다.  ## ie11 text-align  - start와 end 값이 동작하지 않아서 left와 right를 사용합니다.  ## ie11에서 web font 로딩되지 않음  - web font를 캐"}]]
+1:null

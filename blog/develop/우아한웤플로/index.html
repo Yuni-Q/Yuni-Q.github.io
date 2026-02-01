@@ -1,0 +1,529 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg"/><link rel="preload" as="image" href="/images/profile.png"/><link rel="stylesheet" href="/_next/static/css/bc8bb31cb71603b2.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-57fdca2934e5ae0a.js"/><script src="/_next/static/chunks/6217bb07-738e49d824771fea.js" async=""></script><script src="/_next/static/chunks/5647-b33901b11da845dc.js" async=""></script><script src="/_next/static/chunks/main-app-ec1611f00934714e.js" async=""></script><script src="/_next/static/chunks/app/layout-3ad8bb7cb2292578.js" async=""></script><script src="/_next/static/chunks/9243-972bdccd4ceb11ae.js" async=""></script><script src="/_next/static/chunks/5800-4312aed1aa8a4305.js" async=""></script><script src="/_next/static/chunks/549-2babc012700e23ed.js" async=""></script><script src="/_next/static/chunks/4853-73ca7990eb89674b.js" async=""></script><script src="/_next/static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js" async=""></script><script id="ads" async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><title>우아한웤플로</title><meta name="description" content="## 시작하며  &quot;매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요.&quot;  우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의 시간을 빼앗고 있었죠."/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="icon" type="image/png" href="/favicon2.png"/><link rel="shortcut icon" href="/favicon2.png"/><link rel="apple-touch-icon" href="/favicon2.png"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@800&amp;display=swap" rel="stylesheet"/><script>(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;</script><script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div class="top-header"><a class="top-link" href="/">Yuni-Q</a><div class="flex items-center"><button class="outline-0 bg-white mx-[5px] p-0 appearance-none items-center rounded-[5px] border-0 cursor-pointer inline-flex h-10 justify-center opacity-75 overflow-hidden relative scale-75 transition-opacity duration-300 ease-in-out w-10 flex-shrink-0 hover:bg-black max-[800px]:hover:bg-white"><a href="https://github.com/Yuni-Q/blog" class="github" aria-label="GitHub"><svg class="github transition-all duration-300 ease-in-out pt-1 text-[#78757a] w-8 hover:text-white max-[800px]:hover:text-[#78757a]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg></a></button><button class="outline-0 bg-white mx-[5px] p-0 appearance-none items-center rounded-[5px] border-0 cursor-pointer inline-flex h-10 justify-center opacity-75 overflow-hidden relative scale-75 transition-opacity duration-300 ease-in-out w-10 flex-shrink-0 hover:bg-black max-[800px]:hover:bg-white group"><div class="theme1 rounded-full h-6 relative w-6 transition-all duration-[450ms] ease-in-out bg-[#78757a]" style="border:none;overflow:visible;transform:scale(0.55)"><div class="absolute rounded-full h-6 w-6 transition-transform duration-[450ms] ease-in-out" style="border:none;opacity:0;right:-9px;top:-9px;transform:translate(14px, -14px);background:#78757a"></div><div class="absolute rounded-full h-2 w-2 left-1/2 top-1/2 transition-all duration-[350ms] ease-in-out" style="box-shadow:0 -23px 0 #78757a, 0 23px 0 #78757a, 23px 0 0 #78757a, -23px 0 0 #78757a, 15px 15px 0 #78757a, -15px 15px 0 #78757a, 15px -15px 0 #78757a, -15px -15px 0 #78757a;transform:scale(1);margin:-4px 0px 0px -4px"></div></div><div class="theme2 rounded-full border-0 h-6 absolute right-0 top-0 w-6 transition-all duration-[450ms] ease-in-out" style="background:none;opacity:0;transform:translate(14px, -14px)"></div></button><button class="outline-0 bg-white mx-[5px] p-0 appearance-none items-center rounded-[5px] border-0 cursor-pointer inline-flex h-10 justify-center opacity-75 overflow-hidden relative scale-75 transition-opacity duration-300 ease-in-out w-10 flex-shrink-0 hover:bg-black max-[800px]:hover:bg-white group"><svg class="snow transition-all duration-300 ease-in-out w-7 group-hover:fill-white max-[800px]:group-hover:fill-[#78757a]" style="fill:#78757a" version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 23.9 22.9"><path d="M23.9,10c0-0.3-0.2-0.5-0.4-0.6l-1.1-0.3C22.1,9.1,22,9,21.9,8.8c-0.1-0.2,0-0.4,0.1-0.6l0.8-0.9       c0.2-0.2,0.2-0.5,0-0.7c-1.2-1.4-3.1-2-5-1.4c-0.4,0.1-0.9,0.4-1.4,0.7c0.1-0.6,0.2-1.1,0.2-1.6c0-1.9-1.2-3.6-2.9-4.3       c-0.2-0.1-0.5,0-0.7,0.2l-0.6,1c-0.1,0.2-0.3,0.3-0.5,0.3c-0.2,0-0.4-0.1-0.5-0.3l-0.6-1C10.7,0,10.4-0.1,10.2,0       C8.5,0.7,7.3,2.4,7.3,4.3c0,0.5,0.1,1,0.2,1.6C7,5.6,6.5,5.4,6.1,5.2c-1.8-0.6-3.8,0-5,1.4c-0.2,0.2-0.2,0.5,0,0.7l0.8,0.9       C2,8.4,2.1,8.6,2,8.8c0,0.2-0.2,0.3-0.4,0.4L0.4,9.5C0.2,9.5,0,9.8,0,10c0.1,1.8,1.4,3.5,3.2,4c0.4,0.1,1,0.2,1.5,0.3       c-0.4,0.4-0.8,0.8-1.1,1.1c-1.1,1.6-1.2,3.6-0.2,5.2c0.1,0.2,0.4,0.3,0.7,0.2l1.1-0.4c0.2-0.1,0.4-0.1,0.6,0C6,20.6,6,20.8,6,21.1       l-0.1,1.2c0,0.3,0.2,0.5,0.4,0.6c1.8,0.4,3.7-0.2,4.8-1.8c0.3-0.4,0.5-0.8,0.8-1.4c0.2,0.5,0.5,1,0.8,1.4c1.1,1.6,3.1,2.2,4.8,1.8       c0.3-0.1,0.4-0.3,0.4-0.6l-0.1-1.2c0-0.3,0.1-0.4,0.2-0.5c0.1-0.1,0.3-0.1,0.6,0l1.1,0.4c0.2,0.1,0.5,0,0.7-0.2       c1-1.6,0.9-3.6-0.2-5.2c-0.3-0.4-0.6-0.8-1.1-1.1c0.6-0.1,1.1-0.2,1.5-0.3C22.6,13.5,23.8,11.8,23.9,10z M14.1,12.8       c0.3-0.2,0.7-0.3,1.1-0.1c0.4,0.3,0.6,0.8,0.3,1.3c-0.3,0.4-0.8,0.6-1.3,0.3c-0.3-0.2-0.5-0.6-0.4-1l-1.4-0.8v1.6       c0.4,0.1,0.6,0.5,0.6,0.9c0,0.5-0.4,0.9-0.9,0.9c-0.5,0-0.9-0.4-0.9-0.9c0-0.4,0.3-0.7,0.6-0.9v-1.6l-1.4,0.8c0.1,0.4-0.1,0.8-0.4,1       c-0.4,0.3-1,0.1-1.3-0.3c-0.3-0.4-0.1-1,0.3-1.3c0.3-0.2,0.8-0.1,1.1,0.1l1.4-0.8L10,11.1c-0.3,0.2-0.7,0.3-1.1,0.1       C8.5,11,8.3,10.4,8.6,10c0.3-0.4,0.8-0.6,1.3-0.3c0.3,0.2,0.5,0.6,0.4,1l1.4,0.8V9.8c-0.4-0.1-0.6-0.5-0.6-0.9C11.1,8.4,11.5,8,12,8       c0.5,0,0.9,0.4,0.9,0.9c0,0.4-0.3,0.7-0.6,0.9v1.6l1.4-0.8c-0.1-0.4,0.1-0.8,0.4-1c0.4-0.3,1-0.1,1.3,0.3c0.3,0.4,0.1,1-0.3,1.3       c-0.3,0.2-0.8,0.1-1.1-0.1l-1.4,0.8L14.1,12.8z"></path></svg></button><a class="w-[30px] h-[30px] leading-[30px] mx-[5px] text-black flex-shrink-0 flex items-center justify-center" href="/search/">검색</a></div></div><div class="layout-content" style="margin-right:0;max-width:none"><div class="mb-6 max-w-4xl mx-auto px-4 xl:pr-[220px]"><ins class="adsbygoogle block min-w-[320px] min-h-0 mx-auto bg-gray-300" data-ad-client="ca-pub-2667251850399676" data-ad-slot="9586629994" data-ad-format="auto" data-full-width-responsive="true"></ins></div><div class="relative"><div class="max-w-4xl mx-auto px-4 xl:pr-[220px]"><h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-gray-900 dark:text-gray-100">우아한웤플로</h1><div class="flex flex-col gap-4 mb-8"><div class="flex items-center gap-2 text-gray-600 dark:text-gray-400"><span class="text-sm font-medium">yuni-q</span><span class="text-gray-400 dark:text-gray-500">·</span><span class="text-sm">2025년 12월 28일</span></div><div class="flex flex-wrap gap-2"><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">자동화</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">Slack</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">JIRA</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">GitLab</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">워크플로우</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">협업</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">프로덕트</span><span class="px-3 py-1.5 text-sm rounded-md bg-green-50 dark:bg-green-900/20 text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors cursor-pointer">DevOps</span></div></div><div class="jsx-4115489982 post-content prose prose-lg max-w-none  prose-headings:font-semibold prose-p:leading-relaxed prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-strong:font-semibold prose-code:font-mono prose-code:text-sm prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-gray-900 dark:prose-pre:bg-gray-800 prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:my-6 prose-img:rounded-lg prose-img:shadow-md prose-table:w-full prose-ul:list-disc prose-ol:list-decimal prose-li:my-1"><h2 id="시작하며">시작하며<a aria-hidden="true" tabindex="-1" href="#시작하며"><span class="anchor"></span></a></h2>
+<p>"매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요."</p>
+<p>우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의 시간을 빼앗고 있었죠.</p>
+<p>이런 문제를 해결하기 위해 시작한 프로젝트가 바로 <strong>우아한웤플로</strong>입니다. 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼을 만들어가는 여정을 공유하고자 합니다.</p>
+<hr>
+<h2 id="문제-정의-파편화된-업무-프로세스">문제 정의: 파편화된 업무 프로세스<a aria-hidden="true" tabindex="-1" href="#문제-정의-파편화된-업무-프로세스"><span class="anchor"></span></a></h2>
+<h3 id="변화하는-업무-환경">변화하는 업무 환경<a aria-hidden="true" tabindex="-1" href="#변화하는-업무-환경"><span class="anchor"></span></a></h3>
+<p>제가 입사한 2019년, 우아한형제들의 구성원은 1,000명이 조금 넘었습니다. 하지만 시간이 지나면서 2,000명을 넘어 두 배 이상 늘어났고, 코로나를 지나며 매일 가던 오피스는 일주일에 한 번 가는 것으로 바뀌었습니다.</p>
+<p>이런 변화를 통해 <strong>비대면 커뮤니케이션의 중요성</strong>이 매우 높아졌습니다. 더 이상 옆자리, 뒷자리 동료와 쉽게 소통하기 어려워졌고, 모든 커뮤니케이션이 디지털 도구를 통해 이루어져야 했습니다.</p>
+<h3 id="파편화된-업무-방식">파편화된 업무 방식<a aria-hidden="true" tabindex="-1" href="#파편화된-업무-방식"><span class="anchor"></span></a></h3>
+<p>회사 내부에는 다양한 업무 도구들이 있었습니다. Slack, Jira, GitLab, Grafana, Opsgenie, Atlassian 위키... 각 도구는 나름의 역할을 하고 있었지만, 서로 연동되지 않아 개발자들은 매번 여러 도구를 오가며 반복적인 작업을 해야 했습니다.</p>
+<p>업무 생산성 향상을 위해 각 팀에서는 다양한 시도들이 있었고, 그 중 업무 요청에 관한 것이 가장 많았습니다. 하지만 비대면 커뮤니케이션 도구인 Slack의 활용 능력에 따라 업무 요청 방식은 다르게 적용되었습니다:</p>
+<ul>
+<li>누군가는 <strong>Slack 메시지</strong>를 통해</li>
+<li>누군가는 <strong>Slack 워크플로</strong>를 통해</li>
+<li>누군가는 (Slack을 통하지 않은) <strong>Jira</strong>를 통해</li>
+<li>누군가는 <strong>메일</strong>을 통해</li>
+</ul>
+<p>이렇게 각자의 노력으로 탄생한 좋은 해결책들이었지만, 부작용도 있었습니다:</p>
+<ul>
+<li>확인해야 할 채널이 늘어남</li>
+<li>답변을 남겼지만 알림을 받지 못하는 경우 발생</li>
+<li>업무 진행이 늦어지는 상황 발생</li>
+<li>일관성 없는 프로세스로 인한 혼란</li>
+</ul>
+<p>예를 들어, Slack에서 업무 요청이 들어오면:</p>
+<ol>
+<li>요청 내용을 확인하고</li>
+<li>Jira에 직접 접속해서</li>
+<li>이슈를 생성하고</li>
+<li>담당자를 할당하고</li>
+<li>Slack에 다시 알림을 보내는...</li>
+</ol>
+<p>이런 과정을 매번 반복해야 했습니다. 하루에 이런 요청이 수십 건씩 들어온다면? 생각만 해도 비효율적이었죠.</p>
+<h3 id="전수조사와-사용자-인터뷰">전수조사와 사용자 인터뷰<a aria-hidden="true" tabindex="-1" href="#전수조사와-사용자-인터뷰"><span class="anchor"></span></a></h3>
+<p>문제의 정도를 파악하기 위해 사내 업무 요청 채널을 <strong>전수조사</strong>했습니다. 생각보다 더 다양한 방법으로 사용하고 있었고, 워크플로 설정에 진입장벽을 느껴 원하는 기능을 충분히 사용하지 못하는 경우도 많았습니다.</p>
+<p>수많은 서포트 채널들을 조사하면서:</p>
+<ul>
+<li>어떤 절차로 사용하고 있는지</li>
+<li>어떤 요구사항이 있는지</li>
+<li>어느 특수 기능이 있는지</li>
+</ul>
+<p>이런 내용들을 종합 분석하고 사용자 인터뷰도 진행했습니다.</p>
+<hr>
+<h2 id="해결책-자동화-워크플로우-플랫폼-구축">해결책: 자동화 워크플로우 플랫폼 구축<a aria-hidden="true" tabindex="-1" href="#해결책-자동화-워크플로우-플랫폼-구축"><span class="anchor"></span></a></h2>
+<h3 id="핵심-아이디어">핵심 아이디어<a aria-hidden="true" tabindex="-1" href="#핵심-아이디어"><span class="anchor"></span></a></h3>
+<p>"도구들을 연결해서, 사람이 해야 할 일을 최소화하자."</p>
+<p>이런 생각에서 시작했습니다. 각 도구의 API를 활용해서 워크플로우를 자동화하면, 개발자들은 정말 중요한 일에만 집중할 수 있을 거라 생각했어요.</p>
+<h3 id="우아한웹플로란">우아한웹플로란?<a aria-hidden="true" tabindex="-1" href="#우아한웹플로란"><span class="anchor"></span></a></h3>
+<p><strong>우아한웹플로</strong>는 우아한형제들에서 일을 더 잘하기 위한 가이드라인이자, 이를 돕는 도구입니다. 사내 구성원의 자발적인 참여를 통해 다양한 기능들을 제공하고 있습니다.</p>
+<p>"우아하게 일하는 방식 가이드, 근데 이제 자동화 도구를 곁들인"이라고 표현할 수 있겠네요.</p>
+<h3 id="프로젝트의-목표">프로젝트의 목표<a aria-hidden="true" tabindex="-1" href="#프로젝트의-목표"><span class="anchor"></span></a></h3>
+<p>파편화된 업무 요청 프로세스를 통일하는 과정에서 우리가 세운 목표는 크게 두 가지였습니다:</p>
+<ol>
+<li>
+<p><strong>업무요청자와 업무담당자 간 질문·답변하는 방식 통일하기</strong></p>
+<ul>
+<li>업무 요청자의 학습 비용 절감</li>
+<li>일관된 프로세스로 혼란 최소화</li>
+</ul>
+</li>
+<li>
+<p><strong>업무 진행상황을 자동으로 추적하고 관리하기</strong></p>
+<ul>
+<li>수동 추적의 번거로움 제거</li>
+<li>투명한 업무 프로세스 구축</li>
+</ul>
+</li>
+</ol>
+<h3 id="주요-기능들">주요 기능들<a aria-hidden="true" tabindex="-1" href="#주요-기능들"><span class="anchor"></span></a></h3>
+<h4 id="1-서포트웤플로-slack과-jira의-완벽한-연동">1. 서포트웤플로: Slack과 Jira의 완벽한 연동<a aria-hidden="true" tabindex="-1" href="#1-서포트웤플로-slack과-jira의-완벽한-연동"><span class="anchor"></span></a></h4>
+<p>가장 먼저 해결한 문제가 바로 Slack과 Jira 연동이었습니다.</p>
+<p><strong>문제 상황:</strong></p>
+<p>기존에는 Slack에서 업무 요청이 들어오면, 담당자가 직접 Jira에 접속해서 이슈를 생성하고 담당자를 할당해야 했습니다. 이 과정에서:</p>
+<ul>
+<li>컨텍스트 스위칭으로 인한 집중력 저하</li>
+<li>수동 입력 과정에서 발생하는 실수 가능성</li>
+<li>요청 처리 상태를 추적하기 어려움</li>
+<li>여러 도구를 오가며 발생하는 시간 낭비</li>
+</ul>
+<p>이런 문제들이 있었습니다.</p>
+<p><strong>구현 방식:</strong></p>
+<p>Slack의 Slash Command와 Jira API를 활용하여 완전 자동화된 워크플로우를 구축했습니다.</p>
+<ol>
+<li>
+<p><strong>Slack 워크플로우 활용</strong></p>
+<ul>
+<li>워크플로를 통해 업무 요청 시, Event Subscriptions 기능을 통해 메시지를 읽어 지라 티켓을 생성</li>
+<li>사용자 친화적인 인터페이스로 접근성 향상</li>
+</ul>
+</li>
+<li>
+<p><strong>Jira API 연동</strong></p>
+<ul>
+<li>Slack에서 입력한 정보를 자동으로 Jira 이슈로 변환</li>
+<li>프로젝트, 이슈 타입, 우선순위, 담당자 등 자동 할당</li>
+<li>커스텀 필드 및 라벨 자동 설정</li>
+</ul>
+</li>
+<li>
+<p><strong>양방향 동기화</strong></p>
+<ul>
+<li>Jira에서 이슈 상태가 변경되면 Slack에 자동 알림</li>
+<li>Slack에서도 이슈 진행 상황을 실시간으로 확인 가능</li>
+<li>댓글 및 업데이트 정보 자동 동기화</li>
+</ul>
+</li>
+<li>
+<p><strong>워크플로우 템플릿화</strong></p>
+<ul>
+<li>각 팀별로 자주 사용하는 워크플로우를 템플릿으로 저장</li>
+<li>재사용 가능한 워크플로우로 일관성 확보</li>
+</ul>
+</li>
+</ol>
+<p><strong>기술적 구현 세부사항:</strong></p>
+<ul>
+<li><strong>Slack Events API</strong>: 실시간 이벤트 수신 및 처리</li>
+<li><strong>Jira REST API</strong>: 이슈 생성, 업데이트, 조회</li>
+<li><strong>Webhook 활용</strong>: 양방향 통신을 위한 Webhook 설정</li>
+<li><strong>에러 핸들링</strong>: API 실패 시 재시도 로직 및 알림 시스템</li>
+<li><strong>보안</strong>: OAuth 2.0을 통한 안전한 인증 및 권한 관리</li>
+</ul>
+<p><strong>사용자 경험 개선:</strong></p>
+<ul>
+<li><strong>간단한 커맨드</strong>: 복잡한 절차 없이 한 줄 명령으로 업무 요청</li>
+<li><strong>즉시 피드백</strong>: 요청 생성 즉시 Jira 링크와 함께 확인 가능</li>
+<li><strong>상태 추적</strong>: Slack에서 이슈 진행 상황을 실시간으로 확인</li>
+<li><strong>알림 최적화</strong>: 중요한 업데이트만 선별적으로 알림</li>
+</ul>
+<p><strong>주요 기능 상세:</strong></p>
+<ol>
+<li>
+<p><strong>이모지 기반 인터랙션</strong></p>
+<ul>
+<li>업무 요청을 받은 스레드에 이모지를 추가하여 Jira 티켓의 담당자를 배정</li>
+<li>완료 이모지를 추가하면 Jira 티켓 상태가 자동으로 완료로 변경</li>
+<li>직관적이고 빠른 인터랙션으로 사용자 경험 향상</li>
+</ul>
+</li>
+<li>
+<p><strong>버튼을 통한 빠른 대응</strong></p>
+<ul>
+<li>다양한 상황에 대해 버튼을 통해 빠르고 편리하게 대응 가능</li>
+<li>복잡한 절차 없이 원클릭으로 처리</li>
+</ul>
+</li>
+<li>
+<p><strong>기록 기능</strong></p>
+<ul>
+<li>업무 처리 중간에 '기록' 기능을 통해 중간 저장 가능</li>
+<li>기록 후 완료 처리 시 기록된 내용 이후부터 자동으로 기록</li>
+<li>업무 진행 과정의 투명성 확보</li>
+</ul>
+</li>
+</ol>
+<p><strong>결과:</strong></p>
+<p>2024년 6월 중순부터 9월까지의 성과:</p>
+<ul>
+<li><strong>136개 워크플로</strong>에 적용</li>
+<li><strong>55개 Jira 프로젝트</strong>에서 사용</li>
+<li><strong>62개 Slack 채널</strong>에서 활용</li>
+<li>Jira 메시지 5,000회 이상 자동 처리</li>
+<li>업무 요청 처리 시간 <strong>30% 단축</strong></li>
+<li>사용자 만족도 크게 향상</li>
+</ul>
+<p><strong>달성한 효과 5가지:</strong></p>
+<ol>
+<li>
+<p><strong>누구나 쉽게 일관된 방식으로 워크플로 설정 가능</strong></p>
+<ul>
+<li>워크플로 설정의 진입장벽 제거</li>
+<li>일관된 프로세스로 혼란 최소화</li>
+</ul>
+</li>
+<li>
+<p><strong>업무 요청의 분류별로 담당자를 자동 배정하고 Slack에서 멘션</strong></p>
+<ul>
+<li>수동 할당 과정 제거</li>
+<li>즉시 알림으로 빠른 대응 가능</li>
+</ul>
+</li>
+<li>
+<p><strong>이모지와 버튼을 통해 다양한 상황에 빠르고 편리하게 대응</strong></p>
+<ul>
+<li>직관적인 인터랙션</li>
+<li>복잡한 절차 없이 원클릭 처리</li>
+</ul>
+</li>
+<li>
+<p><strong>Jira 티켓 변경사항을 Slack에서 확인 가능하여 진행상황 빠르게 파악</strong></p>
+<ul>
+<li>여러 도구를 오갈 필요 없음</li>
+<li>실시간 상태 추적</li>
+</ul>
+</li>
+<li>
+<p><strong>업무 요청 관리 프로세스 통일</strong></p>
+<ul>
+<li>파편화된 프로세스 해결</li>
+<li>조직 전체의 업무 효율성 향상</li>
+</ul>
+</li>
+</ol>
+<p>이 기능은 나중에 <strong>Slack Tour Seoul 2024</strong>에서 "Slack x Jira 연동을 통한 업무요청 관리시스템 구축"이라는 제목으로 발표하게 되었고, 많은 관심을 받았습니다. 발표에서는 실제 구현 과정, 트러블슈팅 경험, 그리고 사용자 피드백을 바탕으로 한 개선 사항들을 공유했습니다.</p>
+<h4 id="2-위키-자동-생성-반복-작업의-완전-자동화">2. 위키 자동 생성: 반복 작업의 완전 자동화<a aria-hidden="true" tabindex="-1" href="#2-위키-자동-생성-반복-작업의-완전-자동화"><span class="anchor"></span></a></h4>
+<p>개발자들이 매번 작성해야 했던 위키 문서를 자동으로 생성하는 기능을 만들었습니다.</p>
+<p><strong>결과:</strong></p>
+<ul>
+<li>매월 170~215회 이상의 반복 작업 절감</li>
+<li>문서화 품질의 일관성 확보</li>
+<li>개발자들의 시간을 더 중요한 일에 집중</li>
+</ul>
+<h4 id="3-코드리뷰-자동화-gitlab과의-연동">3. 코드리뷰 자동화: GitLab과의 연동<a aria-hidden="true" tabindex="-1" href="#3-코드리뷰-자동화-gitlab과의-연동"><span class="anchor"></span></a></h4>
+<p>GitLab의 Merge Request를 자동으로 처리하는 시스템을 구축했습니다.</p>
+<p><strong>결과:</strong></p>
+<ul>
+<li>MergeRequest 28,523건 자동 처리</li>
+<li>173개 프로젝트에 적용</li>
+<li>코드 리뷰 프로세스의 투명성 향상</li>
+</ul>
+<h4 id="4-우아한스펙트럼-기술-자산의-체계적-관리">4. 우아한스펙트럼: 기술 자산의 체계적 관리<a aria-hidden="true" tabindex="-1" href="#4-우아한스펙트럼-기술-자산의-체계적-관리"><span class="anchor"></span></a></h4>
+<p>회사 내부에는 수많은 프론트엔드 프로젝트, 라이브러리, 모노레포가 있었지만, 이들이 어디에 있는지, 어떤 기술 스택을 사용하는지, 어떻게 활용할 수 있는지 파악하기 어려웠습니다.</p>
+<p><strong>문제 상황:</strong></p>
+<ul>
+<li>새로운 프로젝트를 시작할 때 기존에 비슷한 프로젝트가 있는지 찾기 어려움</li>
+<li>공통 라이브러리나 컴포넌트를 재사용하고 싶지만 어디에 있는지 모름</li>
+<li>각 프로젝트의 기술 스택과 상태를 파악하기 어려움</li>
+<li>모노레포 구조의 프로젝트들이 어떻게 구성되어 있는지 확인하기 어려움</li>
+</ul>
+<p><strong>해결 방안:</strong></p>
+<p><strong>우아한스펙트럼</strong>은 회사의 기술 자산을 체계적으로 정리하고 시각화하는 웹 페이지입니다.</p>
+<p><strong>주요 기능:</strong></p>
+<ol>
+<li>
+<p><strong>프로젝트 탐색</strong></p>
+<ul>
+<li>프론트엔드 프로젝트, 라이브러리, 모노레포를 카테고리별로 탐색</li>
+<li>기술 스택, 상태, 설명 등 상세 정보 제공</li>
+<li>검색 기능을 통한 빠른 탐색</li>
+</ul>
+</li>
+<li>
+<p><strong>기술 스택 시각화</strong></p>
+<ul>
+<li>각 프로젝트가 사용하는 기술 스택을 한눈에 확인</li>
+<li>React, Next.js, TypeScript 등 기술별 분류</li>
+<li>프로젝트 간 기술 스택 비교 가능</li>
+</ul>
+</li>
+<li>
+<p><strong>모노레포 구조 파악</strong></p>
+<ul>
+<li>모노레포 내부의 패키지 구조를 명확하게 표시</li>
+<li>패키지 간 의존성 관계 시각화</li>
+<li>각 패키지의 역할과 용도 명시</li>
+</ul>
+</li>
+<li>
+<p><strong>재사용성 향상</strong></p>
+<ul>
+<li>기존 프로젝트나 라이브러리를 쉽게 찾아 재사용</li>
+<li>중복 개발 방지</li>
+<li>개발 효율성 향상</li>
+</ul>
+</li>
+</ol>
+<p><strong>결과:</strong></p>
+<ul>
+<li>개발자들이 필요한 기술 자산을 빠르게 찾을 수 있게 됨</li>
+<li>프로젝트 시작 시 기존 자산 활용률 증가</li>
+<li>기술 스택의 일관성 확보</li>
+<li>조직 내 기술 자산의 가시성 향상</li>
+</ul>
+<h4 id="5-우아한북마크-정보-접근성-향상">5. 우아한북마크: 정보 접근성 향상<a aria-hidden="true" tabindex="-1" href="#5-우아한북마크-정보-접근성-향상"><span class="anchor"></span></a></h4>
+<p>개발자들이 업무를 하면서 자주 사용하는 링크와 리소스들이 있었지만, 각자 브라우저 북마크에 저장해두거나 메모장에 기록해두는 등 개인적으로 관리하고 있었습니다.</p>
+<p><strong>문제 상황:</strong></p>
+<ul>
+<li>중요한 링크를 찾기 위해 여러 곳을 뒤져야 함</li>
+<li>팀원 간 공유된 링크가 없어 정보 접근성이 낮음</li>
+<li>새로 입사한 개발자가 필요한 리소스를 찾기 어려움</li>
+<li>자주 사용하는 도구나 문서의 링크를 잊어버리는 경우 발생</li>
+</ul>
+<p><strong>해결 방안:</strong></p>
+<p><strong>우아한북마크</strong>는 개발자들이 자주 사용하는 링크와 리소스를 중앙화하여 관리하고 공유할 수 있는 기능입니다.</p>
+<p><strong>주요 기능:</strong></p>
+<ol>
+<li>
+<p><strong>중앙화된 북마크 관리</strong></p>
+<ul>
+<li>팀 또는 조직 단위로 북마크 관리</li>
+<li>카테고리별 분류 (도구, 문서, 위키, 대시보드 등)</li>
+<li>검색 기능을 통한 빠른 접근</li>
+</ul>
+</li>
+<li>
+<p><strong>공유 및 협업</strong></p>
+<ul>
+<li>팀원 간 북마크 공유</li>
+<li>추천 북마크 기능</li>
+<li>자주 사용하는 링크 통계</li>
+</ul>
+</li>
+<li>
+<p><strong>접근성 향상</strong></p>
+<ul>
+<li>한 곳에서 모든 필요한 링크에 접근</li>
+<li>새로 입사한 개발자의 온보딩 시간 단축</li>
+<li>정보 접근성 향상으로 업무 효율성 증가</li>
+</ul>
+</li>
+</ol>
+<p><strong>결과:</strong></p>
+<ul>
+<li>정보 접근 시간 단축</li>
+<li>팀 내 정보 공유 문화 개선</li>
+<li>신규 입사자의 적응 시간 단축</li>
+<li>업무 효율성 향상</li>
+</ul>
+<h4 id="6-기타-기능들">6. 기타 기능들<a aria-hidden="true" tabindex="-1" href="#6-기타-기능들"><span class="anchor"></span></a></h4>
+<p>우아한웹플로는 업무 요청 프로세스 외에도 다양한 기능들을 제공합니다:</p>
+<ul>
+<li><strong>온콜 알림</strong>: 온콜 담당자를 Slack에 자동으로 알려주는 기능</li>
+<li><strong>Opsgenie 연동</strong>: Slack 유저 그룹을 Opsgenie 스케줄 담당자로 자동 변환</li>
+<li><strong>Grafana 패널 알림</strong>: Grafana 이미지를 Slack 메시지로 전달하여 모니터링 데이터 공유</li>
+<li><strong>코드리뷰 알람</strong>: 개발자를 위한 GitLab Merge Request 알림 기능</li>
+<li><strong>우아한TIL</strong>: 개발자들의 학습 내용 공유 플랫폼</li>
+</ul>
+<p>이런 다양한 기능들을 통해 업무 생산성 향상을 위한 통합 플랫폼으로 발전하고 있습니다.</p>
+<hr>
+<h2 id="기술-스택과-아키텍처">기술 스택과 아키텍처<a aria-hidden="true" tabindex="-1" href="#기술-스택과-아키텍처"><span class="anchor"></span></a></h2>
+<h3 id="기술-선택의-이유">기술 선택의 이유<a aria-hidden="true" tabindex="-1" href="#기술-선택의-이유"><span class="anchor"></span></a></h3>
+<p>프로젝트 초기에는 기존 스택을 사용했지만, 점차 규모가 커지면서 아키텍처 개선이 필요했습니다.</p>
+<p><strong>프론트엔드:</strong></p>
+<ul>
+<li><strong>Next.js</strong>: 서버 통합 및 성능 최적화를 위해 전환</li>
+<li><strong>Module Federation</strong>: 마이크로 프론트엔드 아키텍처 적용 준비</li>
+<li><strong>React.js</strong>: 컴포넌트 기반 개발</li>
+</ul>
+<p><strong>백엔드:</strong></p>
+<ul>
+<li><strong>Nest.js</strong>: 타입 안전성과 확장성을 고려한 선택</li>
+<li><strong>TypeORM</strong>: 데이터베이스 관리의 효율성</li>
+</ul>
+<p><strong>연동 도구:</strong></p>
+<ul>
+<li>Slack, Jira, GitLab, Grafana, Opsgenie, Atlassian 등 다양한 API 활용</li>
+</ul>
+<h3 id="아키텍처-개선">아키텍처 개선<a aria-hidden="true" tabindex="-1" href="#아키텍처-개선"><span class="anchor"></span></a></h3>
+<p>초기에는 여러 서버와 데이터베이스로 분산되어 있었지만, 통합을 통해 운영 효율성을 크게 향상시켰습니다.</p>
+<ul>
+<li>서버: 6개 → 3개 (50% 절감)</li>
+<li>DB: 3개 → 1개</li>
+<li>운영 비용: 50% 절감</li>
+</ul>
+<hr>
+<h2 id="프로젝트-성장-과정">프로젝트 성장 과정<a aria-hidden="true" tabindex="-1" href="#프로젝트-성장-과정"><span class="anchor"></span></a></h2>
+<h3 id="1명에서-17명으로">1명에서 17명으로<a aria-hidden="true" tabindex="-1" href="#1명에서-17명으로"><span class="anchor"></span></a></h3>
+<p>프로젝트는 프론트엔드 개발자 1명으로 시작했습니다. 하지만 점차 팀원들이 합류하면서:</p>
+<ul>
+<li>기획자 3명</li>
+<li>백엔드 개발자 2명</li>
+<li>디자이너 1명</li>
+<li>프론트엔드 개발자 포함 총 17명</li>
+</ul>
+<p>이렇게 대규모 협업 프로젝트로 성장했습니다.</p>
+<h3 id="역할의-변화">역할의 변화<a aria-hidden="true" tabindex="-1" href="#역할의-변화"><span class="anchor"></span></a></h3>
+<p>처음에는 개발자로서 코드를 작성하는 것에 집중했지만, 프로젝트가 커지면서:</p>
+<ol>
+<li><strong>기획자 역할</strong>: 각 팀의 요구사항을 분석하고 솔루션 설계</li>
+<li><strong>프로덕트 리더</strong>: 프로젝트 전반을 리딩하고 우선순위 결정</li>
+<li><strong>기술 리더</strong>: 아키텍처 설계 및 기술 스택 선정</li>
+<li><strong>협업 촉진자</strong>: 다양한 팀과의 협업 주도</li>
+</ol>
+<p>이렇게 다양한 역할을 경험할 수 있었습니다.</p>
+<hr>
+<h2 id="협업의-힘">협업의 힘<a aria-hidden="true" tabindex="-1" href="#협업의-힘"><span class="anchor"></span></a></h2>
+<h3 id="다양한-팀과의-협업">다양한 팀과의 협업<a aria-hidden="true" tabindex="-1" href="#다양한-팀과의-협업"><span class="anchor"></span></a></h3>
+<p>이 프로젝트를 진행하면서 정말 많은 팀과 협업했습니다.</p>
+<ul>
+<li><strong>정보보안팀</strong>: 인프라 보안 관련</li>
+<li><strong>인프라보안팀</strong>: 클라우드 환경 구축</li>
+<li><strong>클라우드스토리지팀</strong>: 데이터 이전 및 관리</li>
+<li><strong>기술고도화팀</strong>: 기술적 개선 및 최적화</li>
+<li><strong>클라우드인프라팀</strong>: 퍼블릭망 구축</li>
+</ul>
+<p>각 팀의 전문성을 존중하고, 함께 문제를 해결해나가는 과정에서 많은 것을 배웠습니다.</p>
+<h3 id="협업-문화-만들기">협업 문화 만들기<a aria-hidden="true" tabindex="-1" href="#협업-문화-만들기"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>코드 리뷰</strong>: 주기적인 코드 리뷰를 통한 품질 향상</li>
+<li><strong>기술 공유</strong>: 기술 공유 세션을 통한 팀 역량 강화</li>
+<li><strong>피드백 수집</strong>: 주기적인 피드백 수집 및 개선 작업</li>
+<li><strong>업무 세분화</strong>: 역할 명확화를 통한 작업 효율 극대화</li>
+</ul>
+<hr>
+<h2 id="성과와-지표">성과와 지표<a aria-hidden="true" tabindex="-1" href="#성과와-지표"><span class="anchor"></span></a></h2>
+<h3 id="정량적-성과">정량적 성과<a aria-hidden="true" tabindex="-1" href="#정량적-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>활성 사용자</strong>: 297명</li>
+<li><strong>반복 작업 자동화</strong>: 월 200시간 이상 절감</li>
+<li><strong>운영 비용</strong>: 50% 절감</li>
+<li><strong>서비스 확장</strong>: 우아한형제들뿐만 아니라 우아한청년들까지 확장</li>
+</ul>
+<h3 id="정성적-성과">정성적 성과<a aria-hidden="true" tabindex="-1" href="#정성적-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>업무 프로세스의 투명성 향상</li>
+<li>팀 간 협업 효율성 개선</li>
+<li>개발자들의 만족도 향상</li>
+<li>조직 내 자동화 문화 확산</li>
+</ul>
+<hr>
+<h2 id="얻은-인사이트">얻은 인사이트<a aria-hidden="true" tabindex="-1" href="#얻은-인사이트"><span class="anchor"></span></a></h2>
+<h3 id="협업의-핵심">협업의 핵심<a aria-hidden="true" tabindex="-1" href="#협업의-핵심"><span class="anchor"></span></a></h3>
+<blockquote>
+<p><strong>"협업의 핵심은 다양한 관점을 수용하고 이를 시스템적으로 해결하는 능력"</strong></p>
+</blockquote>
+<p>이 프로젝트를 통해 가장 크게 배운 점입니다. 각 팀은 서로 다른 관점과 요구사항을 가지고 있었지만, 이를 시스템적으로 접근하고 해결하는 과정에서 진정한 협업이 이루어졌습니다.</p>
+<h3 id="문제-해결-접근법">문제 해결 접근법<a aria-hidden="true" tabindex="-1" href="#문제-해결-접근법"><span class="anchor"></span></a></h3>
+<ol>
+<li><strong>요구사항 분석</strong>: 각 부서의 요구사항을 깊이 있게 분석</li>
+<li><strong>맞춤형 솔루션</strong>: 특정 부서의 요청을 우선 해결하여 가치 확인</li>
+<li><strong>고도화</strong>: 검증된 솔루션을 모든 팀이 사용할 수 있도록 일반화</li>
+<li><strong>지속적 개선</strong>: 피드백을 통한 지속적인 시스템 개선</li>
+</ol>
+<h3 id="기술적-리더십">기술적 리더십<a aria-hidden="true" tabindex="-1" href="#기술적-리더십"><span class="anchor"></span></a></h3>
+<p>최신 기술 스택을 도입하고, 외부 발표를 통해 기술 역량을 공유하며, 팀 내 기술 전파 문화를 만드는 것이 중요하다는 것을 배웠습니다.</p>
+<hr>
+<h2 id="개인적-성장">개인적 성장<a aria-hidden="true" tabindex="-1" href="#개인적-성장"><span class="anchor"></span></a></h2>
+<p>이 프로젝트를 통해 단순히 개발자로서의 역량뿐만 아니라:</p>
+<ul>
+<li><strong>프로덕트 리더십</strong>: 기획, 개발, 디자인, 운영 전반 경험</li>
+<li><strong>기술적 역량</strong>: 프론트엔드뿐만 아니라 백엔드, 인프라까지 폭넓은 경험</li>
+<li><strong>협업 능력</strong>: 다양한 팀과의 협업을 통한 커뮤니케이션 역량 강화</li>
+<li><strong>시스템 사고</strong>: 복잡한 문제를 시스템적으로 접근하고 해결하는 능력</li>
+</ul>
+<p>이런 다양한 역량을 키울 수 있었습니다.</p>
+<hr>
+<h2 id="마무리하며">마무리하며<a aria-hidden="true" tabindex="-1" href="#마무리하며"><span class="anchor"></span></a></h2>
+<p>우아한웤플로 프로젝트는 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 경험이었습니다.</p>
+<p>이 프로젝트를 통해 배운 것들:</p>
+<ul>
+<li>다양한 도구를 연동하여 업무 효율성을 극대화하는 방법</li>
+<li>대규모 협업 프로젝트를 리딩하는 경험</li>
+<li>복잡한 문제를 시스템적으로 접근하고 해결하는 능력</li>
+<li>협업의 진정한 가치</li>
+<li>기술 자산의 체계적 관리와 정보 접근성 향상의 중요성</li>
+</ul>
+<p>우아한웤플로는 단순히 자동화 도구를 넘어서, <strong>서포트웤플로</strong>, <strong>위키 자동 생성</strong>, <strong>코드리뷰 자동화</strong>, <strong>우아한스펙트럼</strong>, <strong>우아한북마크</strong>, <strong>우아한TIL</strong> 등 다양한 기능을 통해 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼으로 발전했습니다.</p>
+<p>이런 경험들은 이후 <strong>공통 모듈 개발</strong>, <strong>모듈러 시스템 구축</strong>, <strong>대규모 협업 프로젝트 리딩</strong> 등 다양한 영역에서 활용할 수 있는 핵심 역량이 되었습니다.</p>
+<hr>
+<h2 id="우아한웹플로의-미래">우아한웹플로의 미래<a aria-hidden="true" tabindex="-1" href="#우아한웹플로의-미래"><span class="anchor"></span></a></h2>
+<h3 id="지속적인-성장">지속적인 성장<a aria-hidden="true" tabindex="-1" href="#지속적인-성장"><span class="anchor"></span></a></h3>
+<p>우아한웹플로 덕분에 업무 생산성이 크게 증가했다는 피드백을 많이 받았습니다. 하지만 이것은 끝이 아니라 또 다른 시작일 뿐입니다.</p>
+<p>우아한웹플로는 단발성 프로젝트가 아니라 계속 성장하여 우아한형제들의 업무 생산성 향상을 위해 계속 노력하고 있습니다.</p>
+<h3 id="coming-soon-향후-계획">Coming Soon: 향후 계획<a aria-hidden="true" tabindex="-1" href="#coming-soon-향후-계획"><span class="anchor"></span></a></h3>
+<p>늘어나는 사용자와 그만큼 늘어나는 다양한 요구사항에 대응하기 위해 다음과 같은 기능들을 준비하고 있습니다:</p>
+<p><strong>업무 처리 통계:</strong></p>
+<ul>
+<li>어떤 카테고리의 요청이 많이 접수되는지 분석</li>
+<li>누가 가장 많이 업무 요청 처리를 하는지 파악</li>
+<li>얼마나 빠르게 요청이 처리되는지 측정</li>
+</ul>
+<p><strong>미할당/미처리 업무 리마인더:</strong></p>
+<ul>
+<li>장기간 할당되지 않은 업무 요청 자동 알림</li>
+<li>장기간 처리되지 않은 업무 요청 자동 알림</li>
+<li>프로세스화하여 전체를 관리할 수 있는 기능</li>
+</ul>
+<p>이런 기능들을 통해 단발성에 그치지 않고 프로세스화하여 전체를 관리할 수 있는 시스템으로 발전시켜 나갈 예정입니다.</p>
+<hr>
+<h2 id="발표-경험-slack-tour-seoul-2024">발표 경험: Slack Tour Seoul 2024<a aria-hidden="true" tabindex="-1" href="#발표-경험-slack-tour-seoul-2024"><span class="anchor"></span></a></h2>
+<h3 id="발표-준비-과정">발표 준비 과정<a aria-hidden="true" tabindex="-1" href="#발표-준비-과정"><span class="anchor"></span></a></h3>
+<p>우아한웤플로 프로젝트, 특히 서포트웤플로 기능은 Slack Tour Seoul 2024에서 발표할 기회를 얻게 되었습니다. 발표 제목은 **"Slack x Jira 연동을 통한 업무요청 관리시스템 구축"**이었습니다.</p>
+<p>발표 준비 과정에서:</p>
+<ul>
+<li>실제 사용 사례와 데이터를 정리</li>
+<li>기술적 구현 세부사항을 명확하게 설명</li>
+<li>트러블슈팅 경험과 해결 과정 공유</li>
+<li>사용자 피드백을 바탕으로 한 개선 사항 소개</li>
+</ul>
+<p>이런 내용들을 포함했습니다.</p>
+<h3 id="발표에서-다룬-주요-내용">발표에서 다룬 주요 내용<a aria-hidden="true" tabindex="-1" href="#발표에서-다룬-주요-내용"><span class="anchor"></span></a></h3>
+<ol>
+<li>
+<p><strong>문제 정의와 해결 과정</strong></p>
+<ul>
+<li>파편화된 업무 프로세스의 문제점</li>
+<li>자동화를 통한 해결 방안</li>
+</ul>
+</li>
+<li>
+<p><strong>기술적 구현</strong></p>
+<ul>
+<li>Slack Events API와 Jira REST API 연동</li>
+<li>Webhook을 활용한 양방향 동기화</li>
+<li>에러 핸들링 및 보안 고려사항</li>
+</ul>
+</li>
+<li>
+<p><strong>실제 성과</strong></p>
+<ul>
+<li>정량적 지표 (150개 워크플로우, 5,000회 이상 처리)</li>
+<li>정성적 개선 (업무 효율성, 사용자 만족도)</li>
+</ul>
+</li>
+<li>
+<p><strong>트러블슈팅 경험</strong></p>
+<ul>
+<li>API 레이트 리밋 처리</li>
+<li>동시성 문제 해결</li>
+<li>사용자 경험 개선을 위한 반복적 개선</li>
+</ul>
+</li>
+</ol>
+<h3 id="발표-후기">발표 후기<a aria-hidden="true" tabindex="-1" href="#발표-후기"><span class="anchor"></span></a></h3>
+<p>발표를 통해 많은 분들이 관심을 보여주셨고, 특히:</p>
+<ul>
+<li>다른 회사에서도 비슷한 문제를 겪고 있다는 공감</li>
+<li>구현 방법에 대한 구체적인 질문들</li>
+<li>향후 개선 방향에 대한 제안</li>
+</ul>
+<p>이런 피드백들을 받을 수 있었습니다. 이 경험은 프로젝트의 가치를 다시 한번 확인할 수 있는 기회였고, 외부에 기술 역량을 공유할 수 있는 좋은 기회였습니다.</p>
+<hr>
+<h2 id="참고-자료">참고 자료<a aria-hidden="true" tabindex="-1" href="#참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><strong>발표</strong>: <a href="https://docs.google.com/presentation/d/1uZFXX2BcDJaKW8n6vTty_m02FWOISG1pk8PunucqWw4/edit?slide=id.p#slide=id.p">Slack Tour Seoul 2024 - "Slack x Jira 연동을 통한 업무요청 관리시스템 구축"</a></li>
+<li><strong>기간</strong>: 2024.02 ~ 2024.12</li>
+<li><strong>역할</strong>: FrontEnd/BackEnd Engineer, Product Manager</li>
+</ul></div></div></div><div class="flex flex-col gap-5 my-10 max-w-4xl mx-auto px-4 xl:pr-[220px]"><div class="sponsor-button"><a class="flex items-center justify-center gap-3 px-6 py-3.5 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-500 hover:via-amber-600 hover:to-amber-700 active:from-amber-600 active:via-amber-700 active:to-amber-800 text-white rounded-2xl transition-all duration-300 cursor-pointer border-0 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] font-semibold text-base no-underline" target="_blank" rel="noopener noreferrer" href="https://www.buymeacoffee.com/yuniq"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee" class="w-7 h-7 flex-shrink-0"/><span>Buy me a coffee</span></a></div></div><div class="max-w-4xl mx-auto px-4 xl:pr-[220px]"><ins class="kakao_ad_area block" data-ad-unit="DAN-kkYIHzVbuDz3kYsq" data-ad-width="320" data-ad-height="50" style="width:320px;height:50px"></ins></div><div class="max-w-4xl mx-auto px-4 xl:pr-[220px]"><hr class="custom-hr"/></div><div class="my-8 max-w-4xl mx-auto px-4 xl:pr-[220px]"><div class="bio-container"><div class="author-description flex"><img class="bio-author-image" src="/images/profile.png" alt="yuni-q" width="72"/><div><span class="author-name-prefix text-[90%] mr-1">Written by</span><a class="author-name-content" href="/about/"><span>@<!-- -->yuni-q</span></a><div class="author-introduction mt-1 text-[80%] leading-[1.4]">yuni-q&#x27;s graffiti.</div><p class="author-socials mt-[-4px]"><a href="https://github.com/Yuni-Q" class="mr-2 text-[80%]">GitHub</a></p></div></div></div></div><div class="max-w-4xl mx-auto px-4 xl:pr-[220px]"><nav class="navigator my-8"><ul class="flex flex-col gap-4"><li><a rel="prev" class="block p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 group" href="/develop/히스토리 복원 시스템 재설계/"><div class="text-xs text-gray-500 dark:text-gray-400 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">이전 글</div><div class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">← <!-- -->히스토리 복원 시스템 재설계</div></a></li><li><a rel="next" class="block p-4 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 group text-right" href="/develop/개발 프로세스 자동화 구축/"><div class="text-xs text-gray-500 dark:text-gray-400 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">다음 글</div><div class="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">개발 프로세스 자동화 구축<!-- --> →</div></a></li></ul></nav></div><div class="max-w-4xl mx-auto px-4 xl:pr-[220px]"><div class="utterences"></div></div><footer class="pt-[52px] text-center text-xs">©<a href="https://github.com/Yuni-Q" class="no-underline">yuni-q</a>, Built with<!-- --> <a href="https://nextjs.org" class="no-underline">Next.js</a></footer></div><script src="/_next/static/chunks/webpack-57fdca2934e5ae0a.js" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script><script>self.__next_f.push([1,"1:HL[\"/_next/static/css/bc8bb31cb71603b2.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"2:I[1633,[],\"\"]\n5:I[808,[],\"\"]\n7:I[6217,[],\"\"]\n8:I[5217,[\"3185\",\"static/chunks/app/layout-3ad8bb7cb2292578.js\"],\"ServiceWorkerCleanup\"]\n9:I[6484,[\"3185\",\"static/chunks/app/layout-3ad8bb7cb2292578.js\"],\"ThemeProvider\"]\nb:I[7768,[],\"\"]\n6:[\"slug\",\"develop/%EC%9A%B0%EC%95%84%ED%95%9C%EC%9B%A4%ED%94%8C%EB%A1%9C\",\"c\"]\nc:[]\n"])</script><script>self.__next_f.push([1,"0:[\"$\",\"$L2\",null,{\"buildId\":\"static-build-id\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"blog\",\"develop\",\"%EC%9A%B0%EC%95%84%ED%95%9C%EC%9B%A4%ED%94%8C%EB%A1%9C\",\"\"],\"initialTree\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"develop/%EC%9A%B0%EC%95%84%ED%95%9C%EC%9B%A4%ED%94%8C%EB%A1%9C\",\"c\"],{\"children\":[\"__PAGE__?{\\\"slug\\\":[\\\"develop\\\",\\\"우아한웤플로\\\"]}\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"blog\",{\"children\":[[\"slug\",\"develop/%EC%9A%B0%EC%95%84%ED%95%9C%EC%9B%A4%ED%94%8C%EB%A1%9C\",\"c\"],{\"children\":[\"__PAGE__\",{},[[\"$L3\",\"$L4\",null],null],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\",\"$6\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"blog\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/bc8bb31cb71603b2.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"ko\",\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"anonymous\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700\u0026display=swap\",\"rel\":\"stylesheet\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=Catamaran:wght@800\u0026display=swap\",\"rel\":\"stylesheet\"}],[\"$\",\"link\",null,{\"rel\":\"icon\",\"type\":\"image/png\",\"href\":\"/favicon2.png\"}],[\"$\",\"link\",null,{\"rel\":\"shortcut icon\",\"href\":\"/favicon2.png\"}],[\"$\",\"link\",null,{\"rel\":\"apple-touch-icon\",\"href\":\"/favicon2.png\"}],[\"$\",\"script\",null,{\"id\":\"ads\",\"async\":true,\"src\":\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"}],[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;\"}}]]}],[\"$\",\"body\",null,{\"children\":[[\"$\",\"noscript\",null,{\"children\":\"You need to enable JavaScript to run this app.\"}],[\"$\",\"$L8\",null,{}],[\"$\",\"$L9\",null,{\"children\":[\"$\",\"$L5\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[]}]}]]}]]}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]\n"])</script><script>self.__next_f.push([1,"d:I[5553,[\"9243\",\"static/chunks/9243-972bdccd4ceb11ae.js\",\"5800\",\"static/chunks/5800-4312aed1aa8a4305.js\",\"549\",\"static/chunks/549-2babc012700e23ed.js\",\"4853\",\"static/chunks/4853-73ca7990eb89674b.js\",\"6797\",\"static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js\"],\"BlogPostPageClient\"]\ne:T597d,"])</script><script>self.__next_f.push([1,"\n## 시작하며\n\n\"매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요.\"\n\n우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의 시간을 빼앗고 있었죠.\n\n이런 문제를 해결하기 위해 시작한 프로젝트가 바로 **우아한웤플로**입니다. 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼을 만들어가는 여정을 공유하고자 합니다.\n\n---\n\n## 문제 정의: 파편화된 업무 프로세스\n\n### 변화하는 업무 환경\n\n제가 입사한 2019년, 우아한형제들의 구성원은 1,000명이 조금 넘었습니다. 하지만 시간이 지나면서 2,000명을 넘어 두 배 이상 늘어났고, 코로나를 지나며 매일 가던 오피스는 일주일에 한 번 가는 것으로 바뀌었습니다.\n\n이런 변화를 통해 **비대면 커뮤니케이션의 중요성**이 매우 높아졌습니다. 더 이상 옆자리, 뒷자리 동료와 쉽게 소통하기 어려워졌고, 모든 커뮤니케이션이 디지털 도구를 통해 이루어져야 했습니다.\n\n### 파편화된 업무 방식\n\n회사 내부에는 다양한 업무 도구들이 있었습니다. Slack, Jira, GitLab, Grafana, Opsgenie, Atlassian 위키... 각 도구는 나름의 역할을 하고 있었지만, 서로 연동되지 않아 개발자들은 매번 여러 도구를 오가며 반복적인 작업을 해야 했습니다.\n\n업무 생산성 향상을 위해 각 팀에서는 다양한 시도들이 있었고, 그 중 업무 요청에 관한 것이 가장 많았습니다. 하지만 비대면 커뮤니케이션 도구인 Slack의 활용 능력에 따라 업무 요청 방식은 다르게 적용되었습니다:\n\n- 누군가는 **Slack 메시지**를 통해\n- 누군가는 **Slack 워크플로**를 통해\n- 누군가는 (Slack을 통하지 않은) **Jira**를 통해\n- 누군가는 **메일**을 통해\n\n이렇게 각자의 노력으로 탄생한 좋은 해결책들이었지만, 부작용도 있었습니다:\n\n- 확인해야 할 채널이 늘어남\n- 답변을 남겼지만 알림을 받지 못하는 경우 발생\n- 업무 진행이 늦어지는 상황 발생\n- 일관성 없는 프로세스로 인한 혼란\n\n예를 들어, Slack에서 업무 요청이 들어오면:\n\n1. 요청 내용을 확인하고\n2. Jira에 직접 접속해서\n3. 이슈를 생성하고\n4. 담당자를 할당하고\n5. Slack에 다시 알림을 보내는...\n\n이런 과정을 매번 반복해야 했습니다. 하루에 이런 요청이 수십 건씩 들어온다면? 생각만 해도 비효율적이었죠.\n\n### 전수조사와 사용자 인터뷰\n\n문제의 정도를 파악하기 위해 사내 업무 요청 채널을 **전수조사**했습니다. 생각보다 더 다양한 방법으로 사용하고 있었고, 워크플로 설정에 진입장벽을 느껴 원하는 기능을 충분히 사용하지 못하는 경우도 많았습니다.\n\n수많은 서포트 채널들을 조사하면서:\n\n- 어떤 절차로 사용하고 있는지\n- 어떤 요구사항이 있는지\n- 어느 특수 기능이 있는지\n\n이런 내용들을 종합 분석하고 사용자 인터뷰도 진행했습니다.\n\n---\n\n## 해결책: 자동화 워크플로우 플랫폼 구축\n\n### 핵심 아이디어\n\n\"도구들을 연결해서, 사람이 해야 할 일을 최소화하자.\"\n\n이런 생각에서 시작했습니다. 각 도구의 API를 활용해서 워크플로우를 자동화하면, 개발자들은 정말 중요한 일에만 집중할 수 있을 거라 생각했어요.\n\n### 우아한웹플로란?\n\n**우아한웹플로**는 우아한형제들에서 일을 더 잘하기 위한 가이드라인이자, 이를 돕는 도구입니다. 사내 구성원의 자발적인 참여를 통해 다양한 기능들을 제공하고 있습니다.\n\n\"우아하게 일하는 방식 가이드, 근데 이제 자동화 도구를 곁들인\"이라고 표현할 수 있겠네요.\n\n### 프로젝트의 목표\n\n파편화된 업무 요청 프로세스를 통일하는 과정에서 우리가 세운 목표는 크게 두 가지였습니다:\n\n1. **업무요청자와 업무담당자 간 질문·답변하는 방식 통일하기**\n\n   - 업무 요청자의 학습 비용 절감\n   - 일관된 프로세스로 혼란 최소화\n\n2. **업무 진행상황을 자동으로 추적하고 관리하기**\n   - 수동 추적의 번거로움 제거\n   - 투명한 업무 프로세스 구축\n\n### 주요 기능들\n\n#### 1. 서포트웤플로: Slack과 Jira의 완벽한 연동\n\n가장 먼저 해결한 문제가 바로 Slack과 Jira 연동이었습니다.\n\n**문제 상황:**\n\n기존에는 Slack에서 업무 요청이 들어오면, 담당자가 직접 Jira에 접속해서 이슈를 생성하고 담당자를 할당해야 했습니다. 이 과정에서:\n\n- 컨텍스트 스위칭으로 인한 집중력 저하\n- 수동 입력 과정에서 발생하는 실수 가능성\n- 요청 처리 상태를 추적하기 어려움\n- 여러 도구를 오가며 발생하는 시간 낭비\n\n이런 문제들이 있었습니다.\n\n**구현 방식:**\n\nSlack의 Slash Command와 Jira API를 활용하여 완전 자동화된 워크플로우를 구축했습니다.\n\n1. **Slack 워크플로우 활용**\n\n   - 워크플로를 통해 업무 요청 시, Event Subscriptions 기능을 통해 메시지를 읽어 지라 티켓을 생성\n   - 사용자 친화적인 인터페이스로 접근성 향상\n\n2. **Jira API 연동**\n\n   - Slack에서 입력한 정보를 자동으로 Jira 이슈로 변환\n   - 프로젝트, 이슈 타입, 우선순위, 담당자 등 자동 할당\n   - 커스텀 필드 및 라벨 자동 설정\n\n3. **양방향 동기화**\n\n   - Jira에서 이슈 상태가 변경되면 Slack에 자동 알림\n   - Slack에서도 이슈 진행 상황을 실시간으로 확인 가능\n   - 댓글 및 업데이트 정보 자동 동기화\n\n4. **워크플로우 템플릿화**\n   - 각 팀별로 자주 사용하는 워크플로우를 템플릿으로 저장\n   - 재사용 가능한 워크플로우로 일관성 확보\n\n**기술적 구현 세부사항:**\n\n- **Slack Events API**: 실시간 이벤트 수신 및 처리\n- **Jira REST API**: 이슈 생성, 업데이트, 조회\n- **Webhook 활용**: 양방향 통신을 위한 Webhook 설정\n- **에러 핸들링**: API 실패 시 재시도 로직 및 알림 시스템\n- **보안**: OAuth 2.0을 통한 안전한 인증 및 권한 관리\n\n**사용자 경험 개선:**\n\n- **간단한 커맨드**: 복잡한 절차 없이 한 줄 명령으로 업무 요청\n- **즉시 피드백**: 요청 생성 즉시 Jira 링크와 함께 확인 가능\n- **상태 추적**: Slack에서 이슈 진행 상황을 실시간으로 확인\n- **알림 최적화**: 중요한 업데이트만 선별적으로 알림\n\n**주요 기능 상세:**\n\n1. **이모지 기반 인터랙션**\n\n   - 업무 요청을 받은 스레드에 이모지를 추가하여 Jira 티켓의 담당자를 배정\n   - 완료 이모지를 추가하면 Jira 티켓 상태가 자동으로 완료로 변경\n   - 직관적이고 빠른 인터랙션으로 사용자 경험 향상\n\n2. **버튼을 통한 빠른 대응**\n\n   - 다양한 상황에 대해 버튼을 통해 빠르고 편리하게 대응 가능\n   - 복잡한 절차 없이 원클릭으로 처리\n\n3. **기록 기능**\n   - 업무 처리 중간에 '기록' 기능을 통해 중간 저장 가능\n   - 기록 후 완료 처리 시 기록된 내용 이후부터 자동으로 기록\n   - 업무 진행 과정의 투명성 확보\n\n**결과:**\n\n2024년 6월 중순부터 9월까지의 성과:\n\n- **136개 워크플로**에 적용\n- **55개 Jira 프로젝트**에서 사용\n- **62개 Slack 채널**에서 활용\n- Jira 메시지 5,000회 이상 자동 처리\n- 업무 요청 처리 시간 **30% 단축**\n- 사용자 만족도 크게 향상\n\n**달성한 효과 5가지:**\n\n1. **누구나 쉽게 일관된 방식으로 워크플로 설정 가능**\n\n   - 워크플로 설정의 진입장벽 제거\n   - 일관된 프로세스로 혼란 최소화\n\n2. **업무 요청의 분류별로 담당자를 자동 배정하고 Slack에서 멘션**\n\n   - 수동 할당 과정 제거\n   - 즉시 알림으로 빠른 대응 가능\n\n3. **이모지와 버튼을 통해 다양한 상황에 빠르고 편리하게 대응**\n\n   - 직관적인 인터랙션\n   - 복잡한 절차 없이 원클릭 처리\n\n4. **Jira 티켓 변경사항을 Slack에서 확인 가능하여 진행상황 빠르게 파악**\n\n   - 여러 도구를 오갈 필요 없음\n   - 실시간 상태 추적\n\n5. **업무 요청 관리 프로세스 통일**\n   - 파편화된 프로세스 해결\n   - 조직 전체의 업무 효율성 향상\n\n이 기능은 나중에 **Slack Tour Seoul 2024**에서 \"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"이라는 제목으로 발표하게 되었고, 많은 관심을 받았습니다. 발표에서는 실제 구현 과정, 트러블슈팅 경험, 그리고 사용자 피드백을 바탕으로 한 개선 사항들을 공유했습니다.\n\n#### 2. 위키 자동 생성: 반복 작업의 완전 자동화\n\n개발자들이 매번 작성해야 했던 위키 문서를 자동으로 생성하는 기능을 만들었습니다.\n\n**결과:**\n\n- 매월 170~215회 이상의 반복 작업 절감\n- 문서화 품질의 일관성 확보\n- 개발자들의 시간을 더 중요한 일에 집중\n\n#### 3. 코드리뷰 자동화: GitLab과의 연동\n\nGitLab의 Merge Request를 자동으로 처리하는 시스템을 구축했습니다.\n\n**결과:**\n\n- MergeRequest 28,523건 자동 처리\n- 173개 프로젝트에 적용\n- 코드 리뷰 프로세스의 투명성 향상\n\n#### 4. 우아한스펙트럼: 기술 자산의 체계적 관리\n\n회사 내부에는 수많은 프론트엔드 프로젝트, 라이브러리, 모노레포가 있었지만, 이들이 어디에 있는지, 어떤 기술 스택을 사용하는지, 어떻게 활용할 수 있는지 파악하기 어려웠습니다.\n\n**문제 상황:**\n\n- 새로운 프로젝트를 시작할 때 기존에 비슷한 프로젝트가 있는지 찾기 어려움\n- 공통 라이브러리나 컴포넌트를 재사용하고 싶지만 어디에 있는지 모름\n- 각 프로젝트의 기술 스택과 상태를 파악하기 어려움\n- 모노레포 구조의 프로젝트들이 어떻게 구성되어 있는지 확인하기 어려움\n\n**해결 방안:**\n\n**우아한스펙트럼**은 회사의 기술 자산을 체계적으로 정리하고 시각화하는 웹 페이지입니다.\n\n**주요 기능:**\n\n1. **프로젝트 탐색**\n\n   - 프론트엔드 프로젝트, 라이브러리, 모노레포를 카테고리별로 탐색\n   - 기술 스택, 상태, 설명 등 상세 정보 제공\n   - 검색 기능을 통한 빠른 탐색\n\n2. **기술 스택 시각화**\n\n   - 각 프로젝트가 사용하는 기술 스택을 한눈에 확인\n   - React, Next.js, TypeScript 등 기술별 분류\n   - 프로젝트 간 기술 스택 비교 가능\n\n3. **모노레포 구조 파악**\n\n   - 모노레포 내부의 패키지 구조를 명확하게 표시\n   - 패키지 간 의존성 관계 시각화\n   - 각 패키지의 역할과 용도 명시\n\n4. **재사용성 향상**\n   - 기존 프로젝트나 라이브러리를 쉽게 찾아 재사용\n   - 중복 개발 방지\n   - 개발 효율성 향상\n\n**결과:**\n\n- 개발자들이 필요한 기술 자산을 빠르게 찾을 수 있게 됨\n- 프로젝트 시작 시 기존 자산 활용률 증가\n- 기술 스택의 일관성 확보\n- 조직 내 기술 자산의 가시성 향상\n\n#### 5. 우아한북마크: 정보 접근성 향상\n\n개발자들이 업무를 하면서 자주 사용하는 링크와 리소스들이 있었지만, 각자 브라우저 북마크에 저장해두거나 메모장에 기록해두는 등 개인적으로 관리하고 있었습니다.\n\n**문제 상황:**\n\n- 중요한 링크를 찾기 위해 여러 곳을 뒤져야 함\n- 팀원 간 공유된 링크가 없어 정보 접근성이 낮음\n- 새로 입사한 개발자가 필요한 리소스를 찾기 어려움\n- 자주 사용하는 도구나 문서의 링크를 잊어버리는 경우 발생\n\n**해결 방안:**\n\n**우아한북마크**는 개발자들이 자주 사용하는 링크와 리소스를 중앙화하여 관리하고 공유할 수 있는 기능입니다.\n\n**주요 기능:**\n\n1. **중앙화된 북마크 관리**\n\n   - 팀 또는 조직 단위로 북마크 관리\n   - 카테고리별 분류 (도구, 문서, 위키, 대시보드 등)\n   - 검색 기능을 통한 빠른 접근\n\n2. **공유 및 협업**\n\n   - 팀원 간 북마크 공유\n   - 추천 북마크 기능\n   - 자주 사용하는 링크 통계\n\n3. **접근성 향상**\n   - 한 곳에서 모든 필요한 링크에 접근\n   - 새로 입사한 개발자의 온보딩 시간 단축\n   - 정보 접근성 향상으로 업무 효율성 증가\n\n**결과:**\n\n- 정보 접근 시간 단축\n- 팀 내 정보 공유 문화 개선\n- 신규 입사자의 적응 시간 단축\n- 업무 효율성 향상\n\n#### 6. 기타 기능들\n\n우아한웹플로는 업무 요청 프로세스 외에도 다양한 기능들을 제공합니다:\n\n- **온콜 알림**: 온콜 담당자를 Slack에 자동으로 알려주는 기능\n- **Opsgenie 연동**: Slack 유저 그룹을 Opsgenie 스케줄 담당자로 자동 변환\n- **Grafana 패널 알림**: Grafana 이미지를 Slack 메시지로 전달하여 모니터링 데이터 공유\n- **코드리뷰 알람**: 개발자를 위한 GitLab Merge Request 알림 기능\n- **우아한TIL**: 개발자들의 학습 내용 공유 플랫폼\n\n이런 다양한 기능들을 통해 업무 생산성 향상을 위한 통합 플랫폼으로 발전하고 있습니다.\n\n---\n\n## 기술 스택과 아키텍처\n\n### 기술 선택의 이유\n\n프로젝트 초기에는 기존 스택을 사용했지만, 점차 규모가 커지면서 아키텍처 개선이 필요했습니다.\n\n**프론트엔드:**\n\n- **Next.js**: 서버 통합 및 성능 최적화를 위해 전환\n- **Module Federation**: 마이크로 프론트엔드 아키텍처 적용 준비\n- **React.js**: 컴포넌트 기반 개발\n\n**백엔드:**\n\n- **Nest.js**: 타입 안전성과 확장성을 고려한 선택\n- **TypeORM**: 데이터베이스 관리의 효율성\n\n**연동 도구:**\n\n- Slack, Jira, GitLab, Grafana, Opsgenie, Atlassian 등 다양한 API 활용\n\n### 아키텍처 개선\n\n초기에는 여러 서버와 데이터베이스로 분산되어 있었지만, 통합을 통해 운영 효율성을 크게 향상시켰습니다.\n\n- 서버: 6개 → 3개 (50% 절감)\n- DB: 3개 → 1개\n- 운영 비용: 50% 절감\n\n---\n\n## 프로젝트 성장 과정\n\n### 1명에서 17명으로\n\n프로젝트는 프론트엔드 개발자 1명으로 시작했습니다. 하지만 점차 팀원들이 합류하면서:\n\n- 기획자 3명\n- 백엔드 개발자 2명\n- 디자이너 1명\n- 프론트엔드 개발자 포함 총 17명\n\n이렇게 대규모 협업 프로젝트로 성장했습니다.\n\n### 역할의 변화\n\n처음에는 개발자로서 코드를 작성하는 것에 집중했지만, 프로젝트가 커지면서:\n\n1. **기획자 역할**: 각 팀의 요구사항을 분석하고 솔루션 설계\n2. **프로덕트 리더**: 프로젝트 전반을 리딩하고 우선순위 결정\n3. **기술 리더**: 아키텍처 설계 및 기술 스택 선정\n4. **협업 촉진자**: 다양한 팀과의 협업 주도\n\n이렇게 다양한 역할을 경험할 수 있었습니다.\n\n---\n\n## 협업의 힘\n\n### 다양한 팀과의 협업\n\n이 프로젝트를 진행하면서 정말 많은 팀과 협업했습니다.\n\n- **정보보안팀**: 인프라 보안 관련\n- **인프라보안팀**: 클라우드 환경 구축\n- **클라우드스토리지팀**: 데이터 이전 및 관리\n- **기술고도화팀**: 기술적 개선 및 최적화\n- **클라우드인프라팀**: 퍼블릭망 구축\n\n각 팀의 전문성을 존중하고, 함께 문제를 해결해나가는 과정에서 많은 것을 배웠습니다.\n\n### 협업 문화 만들기\n\n- **코드 리뷰**: 주기적인 코드 리뷰를 통한 품질 향상\n- **기술 공유**: 기술 공유 세션을 통한 팀 역량 강화\n- **피드백 수집**: 주기적인 피드백 수집 및 개선 작업\n- **업무 세분화**: 역할 명확화를 통한 작업 효율 극대화\n\n---\n\n## 성과와 지표\n\n### 정량적 성과\n\n- **활성 사용자**: 297명\n- **반복 작업 자동화**: 월 200시간 이상 절감\n- **운영 비용**: 50% 절감\n- **서비스 확장**: 우아한형제들뿐만 아니라 우아한청년들까지 확장\n\n### 정성적 성과\n\n- 업무 프로세스의 투명성 향상\n- 팀 간 협업 효율성 개선\n- 개발자들의 만족도 향상\n- 조직 내 자동화 문화 확산\n\n---\n\n## 얻은 인사이트\n\n### 협업의 핵심\n\n\u003e **\"협업의 핵심은 다양한 관점을 수용하고 이를 시스템적으로 해결하는 능력\"**\n\n이 프로젝트를 통해 가장 크게 배운 점입니다. 각 팀은 서로 다른 관점과 요구사항을 가지고 있었지만, 이를 시스템적으로 접근하고 해결하는 과정에서 진정한 협업이 이루어졌습니다.\n\n### 문제 해결 접근법\n\n1. **요구사항 분석**: 각 부서의 요구사항을 깊이 있게 분석\n2. **맞춤형 솔루션**: 특정 부서의 요청을 우선 해결하여 가치 확인\n3. **고도화**: 검증된 솔루션을 모든 팀이 사용할 수 있도록 일반화\n4. **지속적 개선**: 피드백을 통한 지속적인 시스템 개선\n\n### 기술적 리더십\n\n최신 기술 스택을 도입하고, 외부 발표를 통해 기술 역량을 공유하며, 팀 내 기술 전파 문화를 만드는 것이 중요하다는 것을 배웠습니다.\n\n---\n\n## 개인적 성장\n\n이 프로젝트를 통해 단순히 개발자로서의 역량뿐만 아니라:\n\n- **프로덕트 리더십**: 기획, 개발, 디자인, 운영 전반 경험\n- **기술적 역량**: 프론트엔드뿐만 아니라 백엔드, 인프라까지 폭넓은 경험\n- **협업 능력**: 다양한 팀과의 협업을 통한 커뮤니케이션 역량 강화\n- **시스템 사고**: 복잡한 문제를 시스템적으로 접근하고 해결하는 능력\n\n이런 다양한 역량을 키울 수 있었습니다.\n\n---\n\n## 마무리하며\n\n우아한웤플로 프로젝트는 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 경험이었습니다.\n\n이 프로젝트를 통해 배운 것들:\n\n- 다양한 도구를 연동하여 업무 효율성을 극대화하는 방법\n- 대규모 협업 프로젝트를 리딩하는 경험\n- 복잡한 문제를 시스템적으로 접근하고 해결하는 능력\n- 협업의 진정한 가치\n- 기술 자산의 체계적 관리와 정보 접근성 향상의 중요성\n\n우아한웤플로는 단순히 자동화 도구를 넘어서, **서포트웤플로**, **위키 자동 생성**, **코드리뷰 자동화**, **우아한스펙트럼**, **우아한북마크**, **우아한TIL** 등 다양한 기능을 통해 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼으로 발전했습니다.\n\n이런 경험들은 이후 **공통 모듈 개발**, **모듈러 시스템 구축**, **대규모 협업 프로젝트 리딩** 등 다양한 영역에서 활용할 수 있는 핵심 역량이 되었습니다.\n\n---\n\n## 우아한웹플로의 미래\n\n### 지속적인 성장\n\n우아한웹플로 덕분에 업무 생산성이 크게 증가했다는 피드백을 많이 받았습니다. 하지만 이것은 끝이 아니라 또 다른 시작일 뿐입니다.\n\n우아한웹플로는 단발성 프로젝트가 아니라 계속 성장하여 우아한형제들의 업무 생산성 향상을 위해 계속 노력하고 있습니다.\n\n### Coming Soon: 향후 계획\n\n늘어나는 사용자와 그만큼 늘어나는 다양한 요구사항에 대응하기 위해 다음과 같은 기능들을 준비하고 있습니다:\n\n**업무 처리 통계:**\n\n- 어떤 카테고리의 요청이 많이 접수되는지 분석\n- 누가 가장 많이 업무 요청 처리를 하는지 파악\n- 얼마나 빠르게 요청이 처리되는지 측정\n\n**미할당/미처리 업무 리마인더:**\n\n- 장기간 할당되지 않은 업무 요청 자동 알림\n- 장기간 처리되지 않은 업무 요청 자동 알림\n- 프로세스화하여 전체를 관리할 수 있는 기능\n\n이런 기능들을 통해 단발성에 그치지 않고 프로세스화하여 전체를 관리할 수 있는 시스템으로 발전시켜 나갈 예정입니다.\n\n---\n\n## 발표 경험: Slack Tour Seoul 2024\n\n### 발표 준비 과정\n\n우아한웤플로 프로젝트, 특히 서포트웤플로 기능은 Slack Tour Seoul 2024에서 발표할 기회를 얻게 되었습니다. 발표 제목은 **\"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"**이었습니다.\n\n발표 준비 과정에서:\n\n- 실제 사용 사례와 데이터를 정리\n- 기술적 구현 세부사항을 명확하게 설명\n- 트러블슈팅 경험과 해결 과정 공유\n- 사용자 피드백을 바탕으로 한 개선 사항 소개\n\n이런 내용들을 포함했습니다.\n\n### 발표에서 다룬 주요 내용\n\n1. **문제 정의와 해결 과정**\n\n   - 파편화된 업무 프로세스의 문제점\n   - 자동화를 통한 해결 방안\n\n2. **기술적 구현**\n\n   - Slack Events API와 Jira REST API 연동\n   - Webhook을 활용한 양방향 동기화\n   - 에러 핸들링 및 보안 고려사항\n\n3. **실제 성과**\n\n   - 정량적 지표 (150개 워크플로우, 5,000회 이상 처리)\n   - 정성적 개선 (업무 효율성, 사용자 만족도)\n\n4. **트러블슈팅 경험**\n   - API 레이트 리밋 처리\n   - 동시성 문제 해결\n   - 사용자 경험 개선을 위한 반복적 개선\n\n### 발표 후기\n\n발표를 통해 많은 분들이 관심을 보여주셨고, 특히:\n\n- 다른 회사에서도 비슷한 문제를 겪고 있다는 공감\n- 구현 방법에 대한 구체적인 질문들\n- 향후 개선 방향에 대한 제안\n\n이런 피드백들을 받을 수 있었습니다. 이 경험은 프로젝트의 가치를 다시 한번 확인할 수 있는 기회였고, 외부에 기술 역량을 공유할 수 있는 좋은 기회였습니다.\n\n---\n\n## 참고 자료\n\n- **발표**: [Slack Tour Seoul 2024 - \"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"](https://docs.google.com/presentation/d/1uZFXX2BcDJaKW8n6vTty_m02FWOISG1pk8PunucqWw4/edit?slide=id.p#slide=id.p)\n- **기간**: 2024.02 ~ 2024.12\n- **역할**: FrontEnd/BackEnd Engineer, Product Manager\n"])</script><script>self.__next_f.push([1,"f:T80a6,"])</script><script>self.__next_f.push([1,"\u003ch2 id=\"시작하며\"\u003e시작하며\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#시작하며\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e\"매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요.\"\u003c/p\u003e\n\u003cp\u003e우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의 시간을 빼앗고 있었죠.\u003c/p\u003e\n\u003cp\u003e이런 문제를 해결하기 위해 시작한 프로젝트가 바로 \u003cstrong\u003e우아한웤플로\u003c/strong\u003e입니다. 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼을 만들어가는 여정을 공유하고자 합니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"문제-정의-파편화된-업무-프로세스\"\u003e문제 정의: 파편화된 업무 프로세스\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#문제-정의-파편화된-업무-프로세스\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"변화하는-업무-환경\"\u003e변화하는 업무 환경\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#변화하는-업무-환경\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e제가 입사한 2019년, 우아한형제들의 구성원은 1,000명이 조금 넘었습니다. 하지만 시간이 지나면서 2,000명을 넘어 두 배 이상 늘어났고, 코로나를 지나며 매일 가던 오피스는 일주일에 한 번 가는 것으로 바뀌었습니다.\u003c/p\u003e\n\u003cp\u003e이런 변화를 통해 \u003cstrong\u003e비대면 커뮤니케이션의 중요성\u003c/strong\u003e이 매우 높아졌습니다. 더 이상 옆자리, 뒷자리 동료와 쉽게 소통하기 어려워졌고, 모든 커뮤니케이션이 디지털 도구를 통해 이루어져야 했습니다.\u003c/p\u003e\n\u003ch3 id=\"파편화된-업무-방식\"\u003e파편화된 업무 방식\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#파편화된-업무-방식\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e회사 내부에는 다양한 업무 도구들이 있었습니다. Slack, Jira, GitLab, Grafana, Opsgenie, Atlassian 위키... 각 도구는 나름의 역할을 하고 있었지만, 서로 연동되지 않아 개발자들은 매번 여러 도구를 오가며 반복적인 작업을 해야 했습니다.\u003c/p\u003e\n\u003cp\u003e업무 생산성 향상을 위해 각 팀에서는 다양한 시도들이 있었고, 그 중 업무 요청에 관한 것이 가장 많았습니다. 하지만 비대면 커뮤니케이션 도구인 Slack의 활용 능력에 따라 업무 요청 방식은 다르게 적용되었습니다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e누군가는 \u003cstrong\u003eSlack 메시지\u003c/strong\u003e를 통해\u003c/li\u003e\n\u003cli\u003e누군가는 \u003cstrong\u003eSlack 워크플로\u003c/strong\u003e를 통해\u003c/li\u003e\n\u003cli\u003e누군가는 (Slack을 통하지 않은) \u003cstrong\u003eJira\u003c/strong\u003e를 통해\u003c/li\u003e\n\u003cli\u003e누군가는 \u003cstrong\u003e메일\u003c/strong\u003e을 통해\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이렇게 각자의 노력으로 탄생한 좋은 해결책들이었지만, 부작용도 있었습니다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e확인해야 할 채널이 늘어남\u003c/li\u003e\n\u003cli\u003e답변을 남겼지만 알림을 받지 못하는 경우 발생\u003c/li\u003e\n\u003cli\u003e업무 진행이 늦어지는 상황 발생\u003c/li\u003e\n\u003cli\u003e일관성 없는 프로세스로 인한 혼란\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e예를 들어, Slack에서 업무 요청이 들어오면:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e요청 내용을 확인하고\u003c/li\u003e\n\u003cli\u003eJira에 직접 접속해서\u003c/li\u003e\n\u003cli\u003e이슈를 생성하고\u003c/li\u003e\n\u003cli\u003e담당자를 할당하고\u003c/li\u003e\n\u003cli\u003eSlack에 다시 알림을 보내는...\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e이런 과정을 매번 반복해야 했습니다. 하루에 이런 요청이 수십 건씩 들어온다면? 생각만 해도 비효율적이었죠.\u003c/p\u003e\n\u003ch3 id=\"전수조사와-사용자-인터뷰\"\u003e전수조사와 사용자 인터뷰\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#전수조사와-사용자-인터뷰\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e문제의 정도를 파악하기 위해 사내 업무 요청 채널을 \u003cstrong\u003e전수조사\u003c/strong\u003e했습니다. 생각보다 더 다양한 방법으로 사용하고 있었고, 워크플로 설정에 진입장벽을 느껴 원하는 기능을 충분히 사용하지 못하는 경우도 많았습니다.\u003c/p\u003e\n\u003cp\u003e수많은 서포트 채널들을 조사하면서:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e어떤 절차로 사용하고 있는지\u003c/li\u003e\n\u003cli\u003e어떤 요구사항이 있는지\u003c/li\u003e\n\u003cli\u003e어느 특수 기능이 있는지\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 내용들을 종합 분석하고 사용자 인터뷰도 진행했습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"해결책-자동화-워크플로우-플랫폼-구축\"\u003e해결책: 자동화 워크플로우 플랫폼 구축\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#해결책-자동화-워크플로우-플랫폼-구축\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"핵심-아이디어\"\u003e핵심 아이디어\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#핵심-아이디어\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\"도구들을 연결해서, 사람이 해야 할 일을 최소화하자.\"\u003c/p\u003e\n\u003cp\u003e이런 생각에서 시작했습니다. 각 도구의 API를 활용해서 워크플로우를 자동화하면, 개발자들은 정말 중요한 일에만 집중할 수 있을 거라 생각했어요.\u003c/p\u003e\n\u003ch3 id=\"우아한웹플로란\"\u003e우아한웹플로란?\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#우아한웹플로란\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e우아한웹플로\u003c/strong\u003e는 우아한형제들에서 일을 더 잘하기 위한 가이드라인이자, 이를 돕는 도구입니다. 사내 구성원의 자발적인 참여를 통해 다양한 기능들을 제공하고 있습니다.\u003c/p\u003e\n\u003cp\u003e\"우아하게 일하는 방식 가이드, 근데 이제 자동화 도구를 곁들인\"이라고 표현할 수 있겠네요.\u003c/p\u003e\n\u003ch3 id=\"프로젝트의-목표\"\u003e프로젝트의 목표\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#프로젝트의-목표\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e파편화된 업무 요청 프로세스를 통일하는 과정에서 우리가 세운 목표는 크게 두 가지였습니다:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e업무요청자와 업무담당자 간 질문·답변하는 방식 통일하기\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e업무 요청자의 학습 비용 절감\u003c/li\u003e\n\u003cli\u003e일관된 프로세스로 혼란 최소화\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e업무 진행상황을 자동으로 추적하고 관리하기\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e수동 추적의 번거로움 제거\u003c/li\u003e\n\u003cli\u003e투명한 업무 프로세스 구축\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"주요-기능들\"\u003e주요 기능들\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#주요-기능들\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003ch4 id=\"1-서포트웤플로-slack과-jira의-완벽한-연동\"\u003e1. 서포트웤플로: Slack과 Jira의 완벽한 연동\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#1-서포트웤플로-slack과-jira의-완벽한-연동\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e가장 먼저 해결한 문제가 바로 Slack과 Jira 연동이었습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e문제 상황:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e기존에는 Slack에서 업무 요청이 들어오면, 담당자가 직접 Jira에 접속해서 이슈를 생성하고 담당자를 할당해야 했습니다. 이 과정에서:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e컨텍스트 스위칭으로 인한 집중력 저하\u003c/li\u003e\n\u003cli\u003e수동 입력 과정에서 발생하는 실수 가능성\u003c/li\u003e\n\u003cli\u003e요청 처리 상태를 추적하기 어려움\u003c/li\u003e\n\u003cli\u003e여러 도구를 오가며 발생하는 시간 낭비\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 문제들이 있었습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e구현 방식:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eSlack의 Slash Command와 Jira API를 활용하여 완전 자동화된 워크플로우를 구축했습니다.\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eSlack 워크플로우 활용\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e워크플로를 통해 업무 요청 시, Event Subscriptions 기능을 통해 메시지를 읽어 지라 티켓을 생성\u003c/li\u003e\n\u003cli\u003e사용자 친화적인 인터페이스로 접근성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eJira API 연동\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eSlack에서 입력한 정보를 자동으로 Jira 이슈로 변환\u003c/li\u003e\n\u003cli\u003e프로젝트, 이슈 타입, 우선순위, 담당자 등 자동 할당\u003c/li\u003e\n\u003cli\u003e커스텀 필드 및 라벨 자동 설정\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e양방향 동기화\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eJira에서 이슈 상태가 변경되면 Slack에 자동 알림\u003c/li\u003e\n\u003cli\u003eSlack에서도 이슈 진행 상황을 실시간으로 확인 가능\u003c/li\u003e\n\u003cli\u003e댓글 및 업데이트 정보 자동 동기화\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e워크플로우 템플릿화\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e각 팀별로 자주 사용하는 워크플로우를 템플릿으로 저장\u003c/li\u003e\n\u003cli\u003e재사용 가능한 워크플로우로 일관성 확보\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e기술적 구현 세부사항:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eSlack Events API\u003c/strong\u003e: 실시간 이벤트 수신 및 처리\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eJira REST API\u003c/strong\u003e: 이슈 생성, 업데이트, 조회\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eWebhook 활용\u003c/strong\u003e: 양방향 통신을 위한 Webhook 설정\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e에러 핸들링\u003c/strong\u003e: API 실패 시 재시도 로직 및 알림 시스템\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e보안\u003c/strong\u003e: OAuth 2.0을 통한 안전한 인증 및 권한 관리\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e사용자 경험 개선:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e간단한 커맨드\u003c/strong\u003e: 복잡한 절차 없이 한 줄 명령으로 업무 요청\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e즉시 피드백\u003c/strong\u003e: 요청 생성 즉시 Jira 링크와 함께 확인 가능\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e상태 추적\u003c/strong\u003e: Slack에서 이슈 진행 상황을 실시간으로 확인\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e알림 최적화\u003c/strong\u003e: 중요한 업데이트만 선별적으로 알림\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e주요 기능 상세:\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e이모지 기반 인터랙션\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e업무 요청을 받은 스레드에 이모지를 추가하여 Jira 티켓의 담당자를 배정\u003c/li\u003e\n\u003cli\u003e완료 이모지를 추가하면 Jira 티켓 상태가 자동으로 완료로 변경\u003c/li\u003e\n\u003cli\u003e직관적이고 빠른 인터랙션으로 사용자 경험 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e버튼을 통한 빠른 대응\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e다양한 상황에 대해 버튼을 통해 빠르고 편리하게 대응 가능\u003c/li\u003e\n\u003cli\u003e복잡한 절차 없이 원클릭으로 처리\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e기록 기능\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e업무 처리 중간에 '기록' 기능을 통해 중간 저장 가능\u003c/li\u003e\n\u003cli\u003e기록 후 완료 처리 시 기록된 내용 이후부터 자동으로 기록\u003c/li\u003e\n\u003cli\u003e업무 진행 과정의 투명성 확보\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e결과:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e2024년 6월 중순부터 9월까지의 성과:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e136개 워크플로\u003c/strong\u003e에 적용\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e55개 Jira 프로젝트\u003c/strong\u003e에서 사용\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e62개 Slack 채널\u003c/strong\u003e에서 활용\u003c/li\u003e\n\u003cli\u003eJira 메시지 5,000회 이상 자동 처리\u003c/li\u003e\n\u003cli\u003e업무 요청 처리 시간 \u003cstrong\u003e30% 단축\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e사용자 만족도 크게 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e달성한 효과 5가지:\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e누구나 쉽게 일관된 방식으로 워크플로 설정 가능\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e워크플로 설정의 진입장벽 제거\u003c/li\u003e\n\u003cli\u003e일관된 프로세스로 혼란 최소화\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e업무 요청의 분류별로 담당자를 자동 배정하고 Slack에서 멘션\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e수동 할당 과정 제거\u003c/li\u003e\n\u003cli\u003e즉시 알림으로 빠른 대응 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e이모지와 버튼을 통해 다양한 상황에 빠르고 편리하게 대응\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e직관적인 인터랙션\u003c/li\u003e\n\u003cli\u003e복잡한 절차 없이 원클릭 처리\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eJira 티켓 변경사항을 Slack에서 확인 가능하여 진행상황 빠르게 파악\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e여러 도구를 오갈 필요 없음\u003c/li\u003e\n\u003cli\u003e실시간 상태 추적\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e업무 요청 관리 프로세스 통일\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e파편화된 프로세스 해결\u003c/li\u003e\n\u003cli\u003e조직 전체의 업무 효율성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e이 기능은 나중에 \u003cstrong\u003eSlack Tour Seoul 2024\u003c/strong\u003e에서 \"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"이라는 제목으로 발표하게 되었고, 많은 관심을 받았습니다. 발표에서는 실제 구현 과정, 트러블슈팅 경험, 그리고 사용자 피드백을 바탕으로 한 개선 사항들을 공유했습니다.\u003c/p\u003e\n\u003ch4 id=\"2-위키-자동-생성-반복-작업의-완전-자동화\"\u003e2. 위키 자동 생성: 반복 작업의 완전 자동화\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#2-위키-자동-생성-반복-작업의-완전-자동화\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e개발자들이 매번 작성해야 했던 위키 문서를 자동으로 생성하는 기능을 만들었습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e결과:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e매월 170~215회 이상의 반복 작업 절감\u003c/li\u003e\n\u003cli\u003e문서화 품질의 일관성 확보\u003c/li\u003e\n\u003cli\u003e개발자들의 시간을 더 중요한 일에 집중\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"3-코드리뷰-자동화-gitlab과의-연동\"\u003e3. 코드리뷰 자동화: GitLab과의 연동\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#3-코드리뷰-자동화-gitlab과의-연동\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003eGitLab의 Merge Request를 자동으로 처리하는 시스템을 구축했습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e결과:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eMergeRequest 28,523건 자동 처리\u003c/li\u003e\n\u003cli\u003e173개 프로젝트에 적용\u003c/li\u003e\n\u003cli\u003e코드 리뷰 프로세스의 투명성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"4-우아한스펙트럼-기술-자산의-체계적-관리\"\u003e4. 우아한스펙트럼: 기술 자산의 체계적 관리\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#4-우아한스펙트럼-기술-자산의-체계적-관리\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e회사 내부에는 수많은 프론트엔드 프로젝트, 라이브러리, 모노레포가 있었지만, 이들이 어디에 있는지, 어떤 기술 스택을 사용하는지, 어떻게 활용할 수 있는지 파악하기 어려웠습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e문제 상황:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e새로운 프로젝트를 시작할 때 기존에 비슷한 프로젝트가 있는지 찾기 어려움\u003c/li\u003e\n\u003cli\u003e공통 라이브러리나 컴포넌트를 재사용하고 싶지만 어디에 있는지 모름\u003c/li\u003e\n\u003cli\u003e각 프로젝트의 기술 스택과 상태를 파악하기 어려움\u003c/li\u003e\n\u003cli\u003e모노레포 구조의 프로젝트들이 어떻게 구성되어 있는지 확인하기 어려움\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e해결 방안:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e우아한스펙트럼\u003c/strong\u003e은 회사의 기술 자산을 체계적으로 정리하고 시각화하는 웹 페이지입니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e주요 기능:\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e프로젝트 탐색\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e프론트엔드 프로젝트, 라이브러리, 모노레포를 카테고리별로 탐색\u003c/li\u003e\n\u003cli\u003e기술 스택, 상태, 설명 등 상세 정보 제공\u003c/li\u003e\n\u003cli\u003e검색 기능을 통한 빠른 탐색\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e기술 스택 시각화\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e각 프로젝트가 사용하는 기술 스택을 한눈에 확인\u003c/li\u003e\n\u003cli\u003eReact, Next.js, TypeScript 등 기술별 분류\u003c/li\u003e\n\u003cli\u003e프로젝트 간 기술 스택 비교 가능\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e모노레포 구조 파악\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e모노레포 내부의 패키지 구조를 명확하게 표시\u003c/li\u003e\n\u003cli\u003e패키지 간 의존성 관계 시각화\u003c/li\u003e\n\u003cli\u003e각 패키지의 역할과 용도 명시\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e재사용성 향상\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e기존 프로젝트나 라이브러리를 쉽게 찾아 재사용\u003c/li\u003e\n\u003cli\u003e중복 개발 방지\u003c/li\u003e\n\u003cli\u003e개발 효율성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e결과:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e개발자들이 필요한 기술 자산을 빠르게 찾을 수 있게 됨\u003c/li\u003e\n\u003cli\u003e프로젝트 시작 시 기존 자산 활용률 증가\u003c/li\u003e\n\u003cli\u003e기술 스택의 일관성 확보\u003c/li\u003e\n\u003cli\u003e조직 내 기술 자산의 가시성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"5-우아한북마크-정보-접근성-향상\"\u003e5. 우아한북마크: 정보 접근성 향상\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#5-우아한북마크-정보-접근성-향상\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e개발자들이 업무를 하면서 자주 사용하는 링크와 리소스들이 있었지만, 각자 브라우저 북마크에 저장해두거나 메모장에 기록해두는 등 개인적으로 관리하고 있었습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e문제 상황:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e중요한 링크를 찾기 위해 여러 곳을 뒤져야 함\u003c/li\u003e\n\u003cli\u003e팀원 간 공유된 링크가 없어 정보 접근성이 낮음\u003c/li\u003e\n\u003cli\u003e새로 입사한 개발자가 필요한 리소스를 찾기 어려움\u003c/li\u003e\n\u003cli\u003e자주 사용하는 도구나 문서의 링크를 잊어버리는 경우 발생\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e해결 방안:\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e우아한북마크\u003c/strong\u003e는 개발자들이 자주 사용하는 링크와 리소스를 중앙화하여 관리하고 공유할 수 있는 기능입니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e주요 기능:\u003c/strong\u003e\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e중앙화된 북마크 관리\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e팀 또는 조직 단위로 북마크 관리\u003c/li\u003e\n\u003cli\u003e카테고리별 분류 (도구, 문서, 위키, 대시보드 등)\u003c/li\u003e\n\u003cli\u003e검색 기능을 통한 빠른 접근\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e공유 및 협업\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e팀원 간 북마크 공유\u003c/li\u003e\n\u003cli\u003e추천 북마크 기능\u003c/li\u003e\n\u003cli\u003e자주 사용하는 링크 통계\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e접근성 향상\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e한 곳에서 모든 필요한 링크에 접근\u003c/li\u003e\n\u003cli\u003e새로 입사한 개발자의 온보딩 시간 단축\u003c/li\u003e\n\u003cli\u003e정보 접근성 향상으로 업무 효율성 증가\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e\u003cstrong\u003e결과:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e정보 접근 시간 단축\u003c/li\u003e\n\u003cli\u003e팀 내 정보 공유 문화 개선\u003c/li\u003e\n\u003cli\u003e신규 입사자의 적응 시간 단축\u003c/li\u003e\n\u003cli\u003e업무 효율성 향상\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4 id=\"6-기타-기능들\"\u003e6. 기타 기능들\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#6-기타-기능들\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h4\u003e\n\u003cp\u003e우아한웹플로는 업무 요청 프로세스 외에도 다양한 기능들을 제공합니다:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e온콜 알림\u003c/strong\u003e: 온콜 담당자를 Slack에 자동으로 알려주는 기능\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eOpsgenie 연동\u003c/strong\u003e: Slack 유저 그룹을 Opsgenie 스케줄 담당자로 자동 변환\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eGrafana 패널 알림\u003c/strong\u003e: Grafana 이미지를 Slack 메시지로 전달하여 모니터링 데이터 공유\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e코드리뷰 알람\u003c/strong\u003e: 개발자를 위한 GitLab Merge Request 알림 기능\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e우아한TIL\u003c/strong\u003e: 개발자들의 학습 내용 공유 플랫폼\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 다양한 기능들을 통해 업무 생산성 향상을 위한 통합 플랫폼으로 발전하고 있습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"기술-스택과-아키텍처\"\u003e기술 스택과 아키텍처\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#기술-스택과-아키텍처\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"기술-선택의-이유\"\u003e기술 선택의 이유\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#기술-선택의-이유\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e프로젝트 초기에는 기존 스택을 사용했지만, 점차 규모가 커지면서 아키텍처 개선이 필요했습니다.\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e프론트엔드:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eNext.js\u003c/strong\u003e: 서버 통합 및 성능 최적화를 위해 전환\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eModule Federation\u003c/strong\u003e: 마이크로 프론트엔드 아키텍처 적용 준비\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eReact.js\u003c/strong\u003e: 컴포넌트 기반 개발\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e백엔드:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eNest.js\u003c/strong\u003e: 타입 안전성과 확장성을 고려한 선택\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eTypeORM\u003c/strong\u003e: 데이터베이스 관리의 효율성\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e연동 도구:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eSlack, Jira, GitLab, Grafana, Opsgenie, Atlassian 등 다양한 API 활용\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"아키텍처-개선\"\u003e아키텍처 개선\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#아키텍처-개선\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e초기에는 여러 서버와 데이터베이스로 분산되어 있었지만, 통합을 통해 운영 효율성을 크게 향상시켰습니다.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e서버: 6개 → 3개 (50% 절감)\u003c/li\u003e\n\u003cli\u003eDB: 3개 → 1개\u003c/li\u003e\n\u003cli\u003e운영 비용: 50% 절감\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"프로젝트-성장-과정\"\u003e프로젝트 성장 과정\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#프로젝트-성장-과정\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"1명에서-17명으로\"\u003e1명에서 17명으로\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#1명에서-17명으로\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e프로젝트는 프론트엔드 개발자 1명으로 시작했습니다. 하지만 점차 팀원들이 합류하면서:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e기획자 3명\u003c/li\u003e\n\u003cli\u003e백엔드 개발자 2명\u003c/li\u003e\n\u003cli\u003e디자이너 1명\u003c/li\u003e\n\u003cli\u003e프론트엔드 개발자 포함 총 17명\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이렇게 대규모 협업 프로젝트로 성장했습니다.\u003c/p\u003e\n\u003ch3 id=\"역할의-변화\"\u003e역할의 변화\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#역할의-변화\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e처음에는 개발자로서 코드를 작성하는 것에 집중했지만, 프로젝트가 커지면서:\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e기획자 역할\u003c/strong\u003e: 각 팀의 요구사항을 분석하고 솔루션 설계\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e프로덕트 리더\u003c/strong\u003e: 프로젝트 전반을 리딩하고 우선순위 결정\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e기술 리더\u003c/strong\u003e: 아키텍처 설계 및 기술 스택 선정\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e협업 촉진자\u003c/strong\u003e: 다양한 팀과의 협업 주도\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e이렇게 다양한 역할을 경험할 수 있었습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"협업의-힘\"\u003e협업의 힘\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#협업의-힘\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"다양한-팀과의-협업\"\u003e다양한 팀과의 협업\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#다양한-팀과의-협업\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e이 프로젝트를 진행하면서 정말 많은 팀과 협업했습니다.\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e정보보안팀\u003c/strong\u003e: 인프라 보안 관련\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e인프라보안팀\u003c/strong\u003e: 클라우드 환경 구축\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e클라우드스토리지팀\u003c/strong\u003e: 데이터 이전 및 관리\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e기술고도화팀\u003c/strong\u003e: 기술적 개선 및 최적화\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e클라우드인프라팀\u003c/strong\u003e: 퍼블릭망 구축\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e각 팀의 전문성을 존중하고, 함께 문제를 해결해나가는 과정에서 많은 것을 배웠습니다.\u003c/p\u003e\n\u003ch3 id=\"협업-문화-만들기\"\u003e협업 문화 만들기\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#협업-문화-만들기\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e코드 리뷰\u003c/strong\u003e: 주기적인 코드 리뷰를 통한 품질 향상\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e기술 공유\u003c/strong\u003e: 기술 공유 세션을 통한 팀 역량 강화\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e피드백 수집\u003c/strong\u003e: 주기적인 피드백 수집 및 개선 작업\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e업무 세분화\u003c/strong\u003e: 역할 명확화를 통한 작업 효율 극대화\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"성과와-지표\"\u003e성과와 지표\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#성과와-지표\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"정량적-성과\"\u003e정량적 성과\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#정량적-성과\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e활성 사용자\u003c/strong\u003e: 297명\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e반복 작업 자동화\u003c/strong\u003e: 월 200시간 이상 절감\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e운영 비용\u003c/strong\u003e: 50% 절감\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e서비스 확장\u003c/strong\u003e: 우아한형제들뿐만 아니라 우아한청년들까지 확장\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3 id=\"정성적-성과\"\u003e정성적 성과\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#정성적-성과\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e업무 프로세스의 투명성 향상\u003c/li\u003e\n\u003cli\u003e팀 간 협업 효율성 개선\u003c/li\u003e\n\u003cli\u003e개발자들의 만족도 향상\u003c/li\u003e\n\u003cli\u003e조직 내 자동화 문화 확산\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2 id=\"얻은-인사이트\"\u003e얻은 인사이트\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#얻은-인사이트\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"협업의-핵심\"\u003e협업의 핵심\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#협업의-핵심\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003e\"협업의 핵심은 다양한 관점을 수용하고 이를 시스템적으로 해결하는 능력\"\u003c/strong\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e이 프로젝트를 통해 가장 크게 배운 점입니다. 각 팀은 서로 다른 관점과 요구사항을 가지고 있었지만, 이를 시스템적으로 접근하고 해결하는 과정에서 진정한 협업이 이루어졌습니다.\u003c/p\u003e\n\u003ch3 id=\"문제-해결-접근법\"\u003e문제 해결 접근법\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#문제-해결-접근법\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e요구사항 분석\u003c/strong\u003e: 각 부서의 요구사항을 깊이 있게 분석\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e맞춤형 솔루션\u003c/strong\u003e: 특정 부서의 요청을 우선 해결하여 가치 확인\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e고도화\u003c/strong\u003e: 검증된 솔루션을 모든 팀이 사용할 수 있도록 일반화\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e지속적 개선\u003c/strong\u003e: 피드백을 통한 지속적인 시스템 개선\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"기술적-리더십\"\u003e기술적 리더십\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#기술적-리더십\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e최신 기술 스택을 도입하고, 외부 발표를 통해 기술 역량을 공유하며, 팀 내 기술 전파 문화를 만드는 것이 중요하다는 것을 배웠습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"개인적-성장\"\u003e개인적 성장\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#개인적-성장\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e이 프로젝트를 통해 단순히 개발자로서의 역량뿐만 아니라:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e프로덕트 리더십\u003c/strong\u003e: 기획, 개발, 디자인, 운영 전반 경험\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e기술적 역량\u003c/strong\u003e: 프론트엔드뿐만 아니라 백엔드, 인프라까지 폭넓은 경험\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e협업 능력\u003c/strong\u003e: 다양한 팀과의 협업을 통한 커뮤니케이션 역량 강화\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e시스템 사고\u003c/strong\u003e: 복잡한 문제를 시스템적으로 접근하고 해결하는 능력\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 다양한 역량을 키울 수 있었습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"마무리하며\"\u003e마무리하며\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#마무리하며\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cp\u003e우아한웤플로 프로젝트는 단순히 자동화 도구를 만드는 것을 넘어서, 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 경험이었습니다.\u003c/p\u003e\n\u003cp\u003e이 프로젝트를 통해 배운 것들:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e다양한 도구를 연동하여 업무 효율성을 극대화하는 방법\u003c/li\u003e\n\u003cli\u003e대규모 협업 프로젝트를 리딩하는 경험\u003c/li\u003e\n\u003cli\u003e복잡한 문제를 시스템적으로 접근하고 해결하는 능력\u003c/li\u003e\n\u003cli\u003e협업의 진정한 가치\u003c/li\u003e\n\u003cli\u003e기술 자산의 체계적 관리와 정보 접근성 향상의 중요성\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e우아한웤플로는 단순히 자동화 도구를 넘어서, \u003cstrong\u003e서포트웤플로\u003c/strong\u003e, \u003cstrong\u003e위키 자동 생성\u003c/strong\u003e, \u003cstrong\u003e코드리뷰 자동화\u003c/strong\u003e, \u003cstrong\u003e우아한스펙트럼\u003c/strong\u003e, \u003cstrong\u003e우아한북마크\u003c/strong\u003e, \u003cstrong\u003e우아한TIL\u003c/strong\u003e 등 다양한 기능을 통해 조직의 업무 프로세스를 근본적으로 개선하고 협업 문화를 강화하는 플랫폼으로 발전했습니다.\u003c/p\u003e\n\u003cp\u003e이런 경험들은 이후 \u003cstrong\u003e공통 모듈 개발\u003c/strong\u003e, \u003cstrong\u003e모듈러 시스템 구축\u003c/strong\u003e, \u003cstrong\u003e대규모 협업 프로젝트 리딩\u003c/strong\u003e 등 다양한 영역에서 활용할 수 있는 핵심 역량이 되었습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"우아한웹플로의-미래\"\u003e우아한웹플로의 미래\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#우아한웹플로의-미래\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"지속적인-성장\"\u003e지속적인 성장\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#지속적인-성장\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e우아한웹플로 덕분에 업무 생산성이 크게 증가했다는 피드백을 많이 받았습니다. 하지만 이것은 끝이 아니라 또 다른 시작일 뿐입니다.\u003c/p\u003e\n\u003cp\u003e우아한웹플로는 단발성 프로젝트가 아니라 계속 성장하여 우아한형제들의 업무 생산성 향상을 위해 계속 노력하고 있습니다.\u003c/p\u003e\n\u003ch3 id=\"coming-soon-향후-계획\"\u003eComing Soon: 향후 계획\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#coming-soon-향후-계획\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e늘어나는 사용자와 그만큼 늘어나는 다양한 요구사항에 대응하기 위해 다음과 같은 기능들을 준비하고 있습니다:\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e업무 처리 통계:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e어떤 카테고리의 요청이 많이 접수되는지 분석\u003c/li\u003e\n\u003cli\u003e누가 가장 많이 업무 요청 처리를 하는지 파악\u003c/li\u003e\n\u003cli\u003e얼마나 빠르게 요청이 처리되는지 측정\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003cstrong\u003e미할당/미처리 업무 리마인더:\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e장기간 할당되지 않은 업무 요청 자동 알림\u003c/li\u003e\n\u003cli\u003e장기간 처리되지 않은 업무 요청 자동 알림\u003c/li\u003e\n\u003cli\u003e프로세스화하여 전체를 관리할 수 있는 기능\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 기능들을 통해 단발성에 그치지 않고 프로세스화하여 전체를 관리할 수 있는 시스템으로 발전시켜 나갈 예정입니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"발표-경험-slack-tour-seoul-2024\"\u003e발표 경험: Slack Tour Seoul 2024\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#발표-경험-slack-tour-seoul-2024\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003ch3 id=\"발표-준비-과정\"\u003e발표 준비 과정\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#발표-준비-과정\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e우아한웤플로 프로젝트, 특히 서포트웤플로 기능은 Slack Tour Seoul 2024에서 발표할 기회를 얻게 되었습니다. 발표 제목은 **\"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"**이었습니다.\u003c/p\u003e\n\u003cp\u003e발표 준비 과정에서:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e실제 사용 사례와 데이터를 정리\u003c/li\u003e\n\u003cli\u003e기술적 구현 세부사항을 명확하게 설명\u003c/li\u003e\n\u003cli\u003e트러블슈팅 경험과 해결 과정 공유\u003c/li\u003e\n\u003cli\u003e사용자 피드백을 바탕으로 한 개선 사항 소개\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 내용들을 포함했습니다.\u003c/p\u003e\n\u003ch3 id=\"발표에서-다룬-주요-내용\"\u003e발표에서 다룬 주요 내용\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#발표에서-다룬-주요-내용\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e문제 정의와 해결 과정\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e파편화된 업무 프로세스의 문제점\u003c/li\u003e\n\u003cli\u003e자동화를 통한 해결 방안\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e기술적 구현\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eSlack Events API와 Jira REST API 연동\u003c/li\u003e\n\u003cli\u003eWebhook을 활용한 양방향 동기화\u003c/li\u003e\n\u003cli\u003e에러 핸들링 및 보안 고려사항\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e실제 성과\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e정량적 지표 (150개 워크플로우, 5,000회 이상 처리)\u003c/li\u003e\n\u003cli\u003e정성적 개선 (업무 효율성, 사용자 만족도)\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e트러블슈팅 경험\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eAPI 레이트 리밋 처리\u003c/li\u003e\n\u003cli\u003e동시성 문제 해결\u003c/li\u003e\n\u003cli\u003e사용자 경험 개선을 위한 반복적 개선\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003ch3 id=\"발표-후기\"\u003e발표 후기\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#발표-후기\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h3\u003e\n\u003cp\u003e발표를 통해 많은 분들이 관심을 보여주셨고, 특히:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e다른 회사에서도 비슷한 문제를 겪고 있다는 공감\u003c/li\u003e\n\u003cli\u003e구현 방법에 대한 구체적인 질문들\u003c/li\u003e\n\u003cli\u003e향후 개선 방향에 대한 제안\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e이런 피드백들을 받을 수 있었습니다. 이 경험은 프로젝트의 가치를 다시 한번 확인할 수 있는 기회였고, 외부에 기술 역량을 공유할 수 있는 좋은 기회였습니다.\u003c/p\u003e\n\u003chr\u003e\n\u003ch2 id=\"참고-자료\"\u003e참고 자료\u003ca aria-hidden=\"true\" tabindex=\"-1\" href=\"#참고-자료\"\u003e\u003cspan class=\"anchor\"\u003e\u003c/span\u003e\u003c/a\u003e\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e발표\u003c/strong\u003e: \u003ca href=\"https://docs.google.com/presentation/d/1uZFXX2BcDJaKW8n6vTty_m02FWOISG1pk8PunucqWw4/edit?slide=id.p#slide=id.p\"\u003eSlack Tour Seoul 2024 - \"Slack x Jira 연동을 통한 업무요청 관리시스템 구축\"\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e기간\u003c/strong\u003e: 2024.02 ~ 2024.12\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e역할\u003c/strong\u003e: FrontEnd/BackEnd Engineer, Product Manager\u003c/li\u003e\n\u003c/ul\u003e"])</script><script>self.__next_f.push([1,"4:[\"$\",\"$Ld\",null,{\"post\":{\"slug\":\"/develop/우아한웤플로\",\"frontmatter\":{\"title\":\"우아한웤플로\",\"date\":\"2025-12-28T00:00:00.000Z\",\"category\":\"develop\",\"tags\":[\"자동화\",\"Slack\",\"JIRA\",\"GitLab\",\"워크플로우\",\"협업\",\"프로덕트\",\"DevOps\"],\"draft\":false},\"content\":\"$e\",\"html\":\"$f\",\"excerpt\":\"## 시작하며  \\\"매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요.\\\"  우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의 시간을 빼앗고 있었죠.\"},\"previousPost\":{\"slug\":\"/develop/히스토리 복원 시스템 재설계\",\"frontmatter\":{\"title\":\"히스토리 복원 시스템 재설계\",\"date\":\"2025-12-28T00:00:00.000Z\",\"category\":\"develop\",\"tags\":[\"Next.js\",\"React\",\"히스토리복원\",\"BF-Cache\",\"CSR\",\"SSR\",\"모노레포\"],\"draft\":false}},\"nextPost\":{\"slug\":\"/develop/개발 프로세스 자동화 구축\",\"frontmatter\":{\"title\":\"개발 프로세스 자동화 구축\",\"date\":\"2025-12-28T00:00:00.000Z\",\"category\":\"develop\",\"tags\":[\"자동화\",\"GitHub-Actions\",\"JIRA\",\"CI/CD\",\"개발프로세스\",\"대시보드\",\"DevOps\"],\"draft\":false}}}]\na:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"우아한웤플로\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"## 시작하며  \\\"매일 반복되는 수작업 때문에 정작 중요한 일에 집중할 수 없어요.\\\"  우아한형제들에서 프론트엔드 개발자로 일하던 중, 여러 팀에서 들려오는 공통된 아쉬움이었습니다. Slack에서 업무 요청을 받으면 Jira에 수동으로 등록하고, 위키 문서를 매번 직접 작성하고, 코드 리뷰 알림을 하나하나 확인하는 일들이 개발자들의"])</script><script>self.__next_f.push([1," 시간을 빼앗고 있었죠.\"}]]\n3:null\n"])</script></body></html>

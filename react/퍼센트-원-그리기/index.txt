@@ -1,0 +1,149 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","react","d"]
+5:["slug","%ED%8D%BC%EC%84%BC%ED%8A%B8-%EC%9B%90-%EA%B7%B8%EB%A6%AC%EA%B8%B0","c"]
+0:["static-build-id",[[["",{"children":[["category","react","d"],{"children":[["slug","%ED%8D%BC%EC%84%BC%ED%8A%B8-%EC%9B%90-%EA%B7%B8%EB%A6%AC%EA%B8%B0","c"],{"children":["__PAGE__?{\"category\":\"react\",\"slug\":[\"퍼센트-원-그리기\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","react","d"],{"children":[["slug","%ED%8D%BC%EC%84%BC%ED%8A%B8-%EC%9B%90-%EA%B7%B8%EB%A6%AC%EA%B8%B0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T593,
+- react와 styled-components를 이용해서 퍼센트에 따라 원을 그리는 컴포넌트를 만들었습니다.
+
+```javascript
+import React from 'react';
+import styled from 'styled-components';
+
+const GRAY = '#eeeeee';
+const BLUE = '#058ef3';
+
+const StyledIndex = styled.div`
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	.circle {
+		width: 320px;
+		height: 320px;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: ${BLUE};
+		background-image: ${({ backgroundImage }) => backgroundImage};
+	}
+	.inner-circle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: white;
+		width: 310px;
+		height: 310px;
+		border-radius: 50%;
+	}
+	.per {
+		font-size: 32px;
+		font-weight: 800;
+		color: #d6dbde;
+	}
+`;
+
+const Index = () => {
+	const percent = 60;
+	const per = percent * 3.6;
+	let deg = 90;
+	let color = GRAY;
+	if (per <= 180) {
+		deg += per;
+	} else {
+		deg += per - 180;
+		color = BLUE;
+	}
+	const backgroundImage = `
+    linear-gradient(${deg}deg, transparent 50%, ${color} 50%),
+    linear-gradient(90deg, ${GRAY} 50%, transparent 50%);
+  `;
+	return (
+		<StyledIndex backgroundImage={backgroundImage}>
+			<div className="circle">
+				<div className="inner-circle">
+					<div className="per">{percent}%</div>
+				</div>
+			</div>
+		</StyledIndex>
+	);
+};
+
+export default Index;
+```
+c:T3feb,<ul>
+<li>react와 styled-components를 이용해서 퍼센트에 따라 원을 그리는 컴포넌트를 만들었습니다.</li>
+</ul>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword module">import</span> <span class="token imports">styled</span> <span class="token keyword module">from</span> <span class="token string">'styled-components'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token constant">GRAY</span> <span class="token operator">=</span> <span class="token string">'#eeeeee'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token constant">BLUE</span> <span class="token operator">=</span> <span class="token string">'#058ef3'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token maybe-class-name">StyledIndex</span> <span class="token operator">=</span> styled<span class="token punctuation">.</span><span class="token property-access">div</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token css language-css">
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vw</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vh</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token selector"><span class="token class">.circle</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">320</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">320</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token unit">%</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">BLUE</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">background-image</span><span class="token punctuation">:</span> <span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> backgroundImage <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> backgroundImage<span class="token interpolation-punctuation punctuation">}</span></span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token selector"><span class="token class">.inner-circle</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">justify-content</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">align-items</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token color">white</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">310</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">310</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">50</span><span class="token unit">%</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token selector"><span class="token class">.per</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">32</span><span class="token unit">px</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">800</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">		<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode color">#d6dbde</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css">	<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token css language-css"></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Index</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token keyword">const</span> percent <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token keyword">const</span> per <span class="token operator">=</span> percent <span class="token operator">*</span> <span class="token number">3.6</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token keyword">let</span> deg <span class="token operator">=</span> <span class="token number">90</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token keyword">let</span> color <span class="token operator">=</span> <span class="token constant">GRAY</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>per <span class="token operator">&#x3C;=</span> <span class="token number">180</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		deg <span class="token operator">+=</span> per<span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		deg <span class="token operator">+=</span> per <span class="token operator">-</span> <span class="token number">180</span><span class="token punctuation">;</span>
+</span><span class="code-line">		color <span class="token operator">=</span> <span class="token constant">BLUE</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line">	<span class="token keyword">const</span> backgroundImage <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">    linear-gradient(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>deg<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">deg, transparent 50%, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>color<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 50%),
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">    linear-gradient(90deg, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">GRAY</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> 50%, transparent 50%);
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">  </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">		<span class="token operator">&#x3C;</span><span class="token maybe-class-name">StyledIndex</span> backgroundImage<span class="token operator">=</span><span class="token punctuation">{</span>backgroundImage<span class="token punctuation">}</span><span class="token operator">></span>
+</span><span class="code-line">			<span class="token operator">&#x3C;</span>div className<span class="token operator">=</span><span class="token string">"circle"</span><span class="token operator">></span>
+</span><span class="code-line">				<span class="token operator">&#x3C;</span>div className<span class="token operator">=</span><span class="token string">"inner-circle"</span><span class="token operator">></span>
+</span><span class="code-line">					<span class="token operator">&#x3C;</span>div className<span class="token operator">=</span><span class="token string">"per"</span><span class="token operator">></span><span class="token punctuation">{</span>percent<span class="token punctuation">}</span><span class="token operator">%</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">				<span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">			<span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">		<span class="token operator">&#x3C;</span><span class="token operator">/</span><span class="token maybe-class-name">StyledIndex</span><span class="token operator">></span>
+</span><span class="code-line">	<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">Index</span><span class="token punctuation">;</span>
+</span></code></pre>2:["$","$La",null,{"post":{"slug":"/react/퍼센트-원-그리기","frontmatter":{"title":"퍼센트 원 그리기","date":"2020-01-19T13:01:42.000Z","category":"react","draft":false},"content":"$b","html":"$c","excerpt":"- react와 styled-components를 이용해서 퍼센트에 따라 원을 그리는 컴포넌트를 만들었습니다.  ```javascript import React from 'react'; import styled from 'styled-components';  const GRAY = '#eeeeee'; const BLUE = '#058ef3';  const"},"previousPost":{"slug":"/react/리액트에서-key를-사용하는-이유","frontmatter":{"title":"리액트에서 key를 사용하는 이유","date":"2020-01-18T17:01:14.000Z","category":"react","draft":false}},"nextPost":{"slug":"/react/react-hook","frontmatter":{"title":"React Hook","date":"2020-02-02T23:02:54.000Z","category":"react","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"퍼센트 원 그리기"}],["$","meta","3",{"name":"description","content":"- react와 styled-components를 이용해서 퍼센트에 따라 원을 그리는 컴포넌트를 만들었습니다.  ```javascript import React from 'react'; import styled from 'styled-components';  const GRAY = '#eeeeee'; const BLUE = '#058ef3';  const"}]]
+1:null

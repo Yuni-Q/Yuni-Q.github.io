@@ -1,0 +1,171 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","github-education-name.com-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","github-education-name.com-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"github-education-name.com-사용하기\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","github-education-name.com-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T77f,
+- 도메인 구입
+- DNS 세팅
+  - type : A
+  - answer : {본인 IP}
+- SSL 적용
+  - CSR 생성
+
+```bash
+mkdir ~/www.moti.company.ssl/
+cd ~/www.moti.company.ssl/
+openssl genrsa -out ~/www.moti.company.ssl/www.moti.company.key 2048
+openssl req -new -sha256 -key ~/www.moti.company.ssl/www.moti.company.key -out ~/www.moti.company.ssl/www.moti.company.csr
+```
+
+> 이메일과 전화번호는 name.com 사이트와 일치하게 작성합니다.  
+> 도메인과 파일 이름을 같게 세팅 합니다.
+
+- 인증서 설치
+
+  - 아래의 정보를 바탕으로 인증서 받기
+
+  ```bash
+    cat ~/www.moti.company.ssl/www.moti.company.csr
+  ```
+
+  - 인증서 정보를 바탕으로 cert.pem 생성
+
+  ```bash
+    sudo vi ~/www.moti.company.ssl/cert.pem
+  ```
+
+  - Nginx 세팅
+
+  ```bash
+    cd /etc/nginx/
+    sudo vi nginx.conf
+  ```
+
+  ```bash
+    server {
+      listen       443 ssl http2 default_server;
+      listen       [::]:443 ssl http2 default_server;
+      server_name  _;
+      root         /usr/share/nginx/html;
+
+      ssl_certificate /home/ec2-user/www.moti.company.ssl/cert.pem;
+      ssl_certificate_key /home/ec2-user/www.moti.company.ssl/www.moti.company.key;
+
+      # ssl_session_cache shared:SSL:1m;
+
+      ssl_session_timeout  10m;
+
+      # ssl_ciphers PROFILE=SYSTEM;
+
+      ssl_prefer_server_ciphers on;
+
+      # Load configuration files for the default server block.
+      include /etc/nginx/default.d/*.conf;
+
+      location / {
+        proxy_pass http://127.0.0.1:8080;
+      }
+
+      error_page 404 /404.html;
+        location = /40x.html {
+      }
+
+      error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+      }
+    }
+  ```
+
+  > ssl_session_cache shared:SSL:1m와 ssl_ciphers PROFILE=SYSTEM는 openssl 버전에 따라서 되지 않을 수도 있습니다. 제가 작업한 버전에선 동작하지 않았습니다.
+
+  ```bash
+  sudo systemctl restart nginx
+  ```
+c:T175f,<ul>
+<li>도메인 구입</li>
+<li>DNS 세팅
+<ul>
+<li>type : A</li>
+<li>answer : {본인 IP}</li>
+</ul>
+</li>
+<li>SSL 적용
+<ul>
+<li>CSR 생성</li>
+</ul>
+</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">mkdir</span> ~/www.moti.company.ssl/
+</span><span class="code-line"><span class="token builtin class-name">cd</span> ~/www.moti.company.ssl/
+</span><span class="code-line">openssl genrsa <span class="token parameter variable">-out</span> ~/www.moti.company.ssl/www.moti.company.key <span class="token number">2048</span>
+</span><span class="code-line">openssl req <span class="token parameter variable">-new</span> <span class="token parameter variable">-sha256</span> <span class="token parameter variable">-key</span> ~/www.moti.company.ssl/www.moti.company.key <span class="token parameter variable">-out</span> ~/www.moti.company.ssl/www.moti.company.csr
+</span></code></pre>
+<blockquote>
+<p>이메일과 전화번호는 name.com 사이트와 일치하게 작성합니다.<br>
+도메인과 파일 이름을 같게 세팅 합니다.</p>
+</blockquote>
+<ul>
+<li>
+<p>인증서 설치</p>
+<ul>
+<li>아래의 정보를 바탕으로 인증서 받기</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">  <span class="token function">cat</span> ~/www.moti.company.ssl/www.moti.company.csr
+</span></code></pre>
+<ul>
+<li>인증서 정보를 바탕으로 cert.pem 생성</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">  <span class="token function">sudo</span> <span class="token function">vi</span> ~/www.moti.company.ssl/cert.pem
+</span></code></pre>
+<ul>
+<li>Nginx 세팅</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">  <span class="token builtin class-name">cd</span> /etc/nginx/
+</span><span class="code-line">  <span class="token function">sudo</span> <span class="token function">vi</span> nginx.conf
+</span></code></pre>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">  server <span class="token punctuation">{</span>
+</span><span class="code-line">    listen       <span class="token number">443</span> ssl http2 default_server<span class="token punctuation">;</span>
+</span><span class="code-line">    listen       <span class="token punctuation">[</span>::<span class="token punctuation">]</span>:443 ssl http2 default_server<span class="token punctuation">;</span>
+</span><span class="code-line">    server_name  _<span class="token punctuation">;</span>
+</span><span class="code-line">    root         /usr/share/nginx/html<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    ssl_certificate /home/ec2-user/www.moti.company.ssl/cert.pem<span class="token punctuation">;</span>
+</span><span class="code-line">    ssl_certificate_key /home/ec2-user/www.moti.company.ssl/www.moti.company.key<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token comment"># ssl_session_cache shared:SSL:1m;</span>
+</span><span class="code-line">
+</span><span class="code-line">    ssl_session_timeout  10m<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token comment"># ssl_ciphers PROFILE=SYSTEM;</span>
+</span><span class="code-line">
+</span><span class="code-line">    ssl_prefer_server_ciphers on<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    <span class="token comment"># Load configuration files for the default server block.</span>
+</span><span class="code-line">    include /etc/nginx/default.d/*.conf<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">    location / <span class="token punctuation">{</span>
+</span><span class="code-line">      proxy_pass http://127.0.0.1:8080<span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">    error_page <span class="token number">404</span> /404.html<span class="token punctuation">;</span>
+</span><span class="code-line">      location <span class="token operator">=</span> /40x.html <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">    error_page <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span> /50x.html<span class="token punctuation">;</span>
+</span><span class="code-line">      location <span class="token operator">=</span> /50x.html <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span></code></pre>
+<blockquote>
+<p>ssl_session_cache shared:SSL:1m와 ssl_ciphers PROFILE=SYSTEM는 openssl 버전에 따라서 되지 않을 수도 있습니다. 제가 작업한 버전에선 동작하지 않았습니다.</p>
+</blockquote>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">sudo</span> systemctl restart nginx
+</span></code></pre>
+</li>
+</ul>2:["$","$La",null,{"post":{"slug":"/develop/github-education-name.com-사용하기","frontmatter":{"title":"github education name.com 사용하기","date":"2020-03-22T22:03:06.000Z","category":"develop","draft":false},"content":"$b","html":"$c","excerpt":"- 도메인 구입 - DNS 세팅   - type : A   - answer : {본인 IP} - SSL 적용   - CSR 생성  ```bash mkdir ~/www.moti.company.ssl/ cd ~/www.moti.company.ssl/ openssl genrsa -out ~/www.moti.company.ssl/www.moti.company.k"},"previousPost":{"slug":"/develop/스프린트 운영 가이드","frontmatter":{"title":"스프린트 운영 가이드 - 2주 단위 애자일 개발 프로세스","date":"2020-03-06T13:03:55.000Z","category":"develop","tags":["스프린트","애자일","프로젝트관리","지라","스크럼"],"excerpt":"2주 단위 스프린트를 활용한 애자일 개발 프로세스 운영 가이드입니다. 작업 티켓 관리부터 스프린트 플래닝까지 실전 경험을 바탕으로 정리했습니다.","draft":false}},"nextPost":{"slug":"/develop/oop,-aop,-fp","frontmatter":{"title":"OOP, AOP, FP","date":"2020-04-16T10:05:11.000Z","category":"develop","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"github education name.com 사용하기"}],["$","meta","3",{"name":"description","content":"- 도메인 구입 - DNS 세팅   - type : A   - answer : {본인 IP} - SSL 적용   - CSR 생성  ```bash mkdir ~/www.moti.company.ssl/ cd ~/www.moti.company.ssl/ openssl genrsa -out ~/www.moti.company.ssl/www.moti.company.k"}]]
+1:null

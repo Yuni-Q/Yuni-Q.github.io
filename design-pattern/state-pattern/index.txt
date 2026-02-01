@@ -1,0 +1,294 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","design-pattern","d"]
+5:["slug","state-pattern","c"]
+0:["static-build-id",[[["",{"children":[["category","design-pattern","d"],{"children":[["slug","state-pattern","c"],{"children":["__PAGE__?{\"category\":\"design-pattern\",\"slug\":[\"state-pattern\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","design-pattern","d"],{"children":[["slug","state-pattern","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T1eb0,
+## 디자인 패턴이란?
+
+- 반복적으로 나타난 문제에 대해 그것을 해결한 경험 및 노하우를 축적하여 `재사용하기 좋은 형태로` 이름을 붙여 `해법을 제시하는 패턴`양식 입니다.
+- 디자인 패턴은 크게 3가지 분류가 있습니다.
+  - 생성 패턴 : 객체 생성과 관련된 패턴
+  - 구조 패턴 : 클래스나 객체를 조합해 더 큰 구조를 만드는 패턴
+  - 행위 패턴 : 객체나 클래스 사이의 알고리즘이나 책임 분배에 관련된 패턴
+
+## 행위 소프트웨어 디자인 패턴
+
+- 상태 패턴(state pattern)은 객체 지향 방식으로 상태 기계를 구현하는 `행위` 소프트웨어 디자인 패턴입니다.
+
+## 변하는 것은 잘 변하지 않는 것과 분리해라. 즉, 변하는 녀석들을 캡슐화해라!
+
+- 스테이트 패턴은 객체가 `특정 상태에 따라 행위를 달리하는 상황`에서 `자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고` 상태를 `객체화`하여 `상태가 행동을 할 수 있도록 위임하는 패턴`입니다.
+- 객체의 내부 상태에 따라 스스로 행동을 변경할 수 있게 허가하는 패턴으로, 이렇게 하면 `객체는 마치 자신의 클래스를 바꾸는 것처럼 보입니다`.
+- 상태 패턴을 이용하면 상태 패턴 인터페이스의 파생 클래스로 각각의 상태를 구현함으로써, 또 패턴의 슈퍼클래스에 의해 정의되는 메소드를 호출하여 상태 변화를 구현함으로써 상태 기계를 구현합니다.
+- 객체의 특정 `상태를 클래스로 선언`하고, 클래스에서는 `해당 상태에서 할 수 있는 행위들을 메서드로 정의`합니다. 그리고 이러한 `각 상태 클래스들을 인터페이스로 캡슐화` 하여, `클라이언트에서 인터페이스를 호출`하는 방식을 말합니다.
+- 구체적인 상태 클래스가 아닌 추상화된 State 인터페이스만 참조하므로 `현재 어떤 상태에 있는지와 무관하게 코드를 작성할 수 있습니다`.
+- 상태 전환은 State 클래스에 의해서 제어할 수도 있고, Context 클래스에 의해서 제어할 수도 있습니다.
+- State 클래스를 여러 Context 객체의 인스턴스에서 공유하도록 디자인할 수도 있습니다.
+
+## 싱글톤을 이용하는 이유
+
+- 각 상태들의 구현체에서 조금 특이한 것은 각 상태의 구현체들이 `싱글톤`으로 구현되어 있습니다. 이것은 상태들이 행위를 수행하면서 객체의 상태를 `수시로 바꾸어주기 때문`에 싱글톤으로 작성하지 않으면 `매번 새로운 인스턴스가 생겨` 불필요한 메모리를 잡아 먹을 것이고 전체적으로 성능 저하의 원인이 될 것이기 때문에 싱글톤으로 작성합니다.
+
+## 유한 상태 기계(FSM)를 구현할 수 있습니다.
+
+- FSM은 컴퓨터 과학 분야 중의 하나인 오토마타 이론에서 나왔습니다.
+- 가질 수 있는 `상태`가 한정됩니다.
+- 한 번에 `한 가지` 상태만 될 수 있습니다.
+- `입력`이나 `이벤트`가 기계에 전달됩니다.
+- 각 상태에는 입력에 따라 다음 상태로 바뀌는 `전이`가 있습니다.
+
+## 장점
+
+- 각 상태를 클래스로 `캡슐화`함으로써 나중에 변경시켜야 하는 내용을 국지화시킬 수 있습니다.
+- 하나의 객체에 대한 여러 동작을 구현해야할 때 상태 객체만 수정하므로 동작의 추가, 삭제 및 수정이 간단해집니다.
+- State 패턴을 사용하면 객체의 상태에 따른 조건문(if/else, switch)이 줄어들어 코드가 간결해지고 가독성이 올라갑니다.
+- 상태 변경에 따른 행위 로직을 직접 구현 하지 않아도 됨으로써 확장에 유리하다.
+
+## 단점
+
+- 상태에 따른 조건문을 대신한 상태 객체가 증가하여 관리해야할 클래스의 수가 증가합니다.
+
+## 스트래지티 패턴과의 비교
+
+- 상태 패턴은 패턴의 인터페이스에 정의된 `메소드들의 호출을 통해 현재의 전략을 전환할 수 있는 전략 패턴`으로 해석할 수 있습니다.
+- 스트래티지 패턴에서와 `같은 다이어그램`을 사용한다. 하지만 이 두 패턴은 용도에 있어서 차이가 있습니다.
+  - 스테이트 패턴을 사용할 때는 여러 상태 객체 중 `한 객체에서 모든 행동을 맡기게 됩니다`. 그 객체의 내부 상태에 따라 현재 상태를 나타내는 객체가 바뀌게 되고, 그 결과로 컨텍스트 객체의 행동도 자연스럽게 바뀌게 됩니다. `클라이언트는 상태 객체에 대해서 거의 아무것도 몰라도 됩니다`.
+  - 스트래티지 패턴을 사용할 때는 일반적으로 클라이언트에서 컨텍스트 객체한테 `어떤 전략 객체를 사용할지를 지정해 줍니다`. 스트래티지 패턴은 주로 실행시에 전략 객체를 변경할 수 있는 `유연성`을 제공하기 위한 용도로 쓰입니다. 보통 가장 적합한 전략 객체를 선택해서 사용하게 됩니다.
+  - 일반적으로 스트래티지 패턴은 서브클래스를 만드는 방법을 대신하여 `유연성`을 극대화하기 위한 용도로 쓰입니다. 상속을 이용해서 클래스의 행동을 정의하다 보면 행동을 변경해야 할 때 마음대로 변경하기가 힘듭니다. 하지만 스트래티지 패턴을 사용하면 구성을 통해 행동을 정의하는 객체를 유연하게 바꿀 수 있습니다.
+  - 스테이트 패턴은 컨텍스트 객체에 수많은 `조건문`을 집어넣는 대신에 사용할 수 있는 패턴이라고 생각하면 됩니다. 행동을 상태 객체 내의 캡슐화시키면 컨텍스트 내의 상태 객체를 바꾸는 것만으로도 컨텍스트 객체의 행동을 바꿀 수 있으니까요.
+
+## 코드
+
+```ts
+// State : 상태에 따른 동작을 정의하는 인터페이스입니다
+interface State {
+  onButton: (light: Light) => void;
+  offButton: (light: Light) => void;
+}
+
+// ConcreteState : State에서 정의된 메소드를 구현하는 클래스입니다.
+class ON implements State {
+  private static on = new ON(); // ON 클래스의 인스턴스로 초기화됨
+  private constructor() {}
+
+  public static getInstance() {
+    // 초기화된 ON 클래스의 인스턴스를 반환함
+    return this.on;
+  }
+
+  onButton(light: Light) {
+    // ON 상태일 때 On 버튼을 눌러도 변화 없음
+    console.log('반응 없음');
+  }
+
+  offButton(light: Light) {
+    light.setState(OFF.getInstance());
+    console.log('Light Off!');
+  }
+}
+
+class OFF implements State {
+  private static off = new OFF(); // OFF 클래스의 인스턴스로 초기화됨
+  private constructor() {}
+
+  public static getInstance() {
+    // 초기화된 OFF 클래스의 인스턴스를 반환함
+    return this.off;
+  }
+
+  onButton(light: Light) {
+    // Off 상태일 때 On 버튼을 눌러도 On 상태임
+    light.setState(ON.getInstance());
+    console.log('Light On!');
+  }
+
+  offButton(light: Light) {
+    // Off 상태일 때 Off 버튼을 눌러도 변화 없음
+    console.log('반응 없음');
+  }
+}
+
+// Context
+class Light {
+  private state: State;
+
+  constructor() {
+    this.state = OFF.getInstance();
+  }
+
+  setState(state: State) {
+    this.state = state;
+  }
+
+  onButton() {
+    this.state.onButton(this);
+  }
+
+  offButton() {
+    this.state.offButton(this);
+  }
+}
+
+const light = new Light();
+light.offButton();
+light.onButton();
+light.offButton();
+```
+
+---
+
+## 참고
+
+- [🙈\[디자인패턴\] 스테이트 패턴 ( State Pattern )🐵](https://victorydntmd.tistory.com/294)
+- [코딩스타트](https://coding-start.tistory.com/247)
+- [소년코딩](https://boycoding.tistory.com/110)
+- [Crocus](https://www.crocus.co.kr/1541)
+c:T574d,<h2 id="디자인-패턴이란">디자인 패턴이란?<a aria-hidden="true" tabindex="-1" href="#디자인-패턴이란"><span class="anchor"></span></a></h2>
+<ul>
+<li>반복적으로 나타난 문제에 대해 그것을 해결한 경험 및 노하우를 축적하여 <code class="inline-code">재사용하기 좋은 형태로</code> 이름을 붙여 <code class="inline-code">해법을 제시하는 패턴</code>양식 입니다.</li>
+<li>디자인 패턴은 크게 3가지 분류가 있습니다.
+<ul>
+<li>생성 패턴 : 객체 생성과 관련된 패턴</li>
+<li>구조 패턴 : 클래스나 객체를 조합해 더 큰 구조를 만드는 패턴</li>
+<li>행위 패턴 : 객체나 클래스 사이의 알고리즘이나 책임 분배에 관련된 패턴</li>
+</ul>
+</li>
+</ul>
+<h2 id="행위-소프트웨어-디자인-패턴">행위 소프트웨어 디자인 패턴<a aria-hidden="true" tabindex="-1" href="#행위-소프트웨어-디자인-패턴"><span class="anchor"></span></a></h2>
+<ul>
+<li>상태 패턴(state pattern)은 객체 지향 방식으로 상태 기계를 구현하는 <code class="inline-code">행위</code> 소프트웨어 디자인 패턴입니다.</li>
+</ul>
+<h2 id="변하는-것은-잘-변하지-않는-것과-분리해라-즉-변하는-녀석들을-캡슐화해라">변하는 것은 잘 변하지 않는 것과 분리해라. 즉, 변하는 녀석들을 캡슐화해라!<a aria-hidden="true" tabindex="-1" href="#변하는-것은-잘-변하지-않는-것과-분리해라-즉-변하는-녀석들을-캡슐화해라"><span class="anchor"></span></a></h2>
+<ul>
+<li>스테이트 패턴은 객체가 <code class="inline-code">특정 상태에 따라 행위를 달리하는 상황</code>에서 <code class="inline-code">자신이 직접 상태를 체크하여 상태에 따라 행위를 호출하지 않고</code> 상태를 <code class="inline-code">객체화</code>하여 <code class="inline-code">상태가 행동을 할 수 있도록 위임하는 패턴</code>입니다.</li>
+<li>객체의 내부 상태에 따라 스스로 행동을 변경할 수 있게 허가하는 패턴으로, 이렇게 하면 <code class="inline-code">객체는 마치 자신의 클래스를 바꾸는 것처럼 보입니다</code>.</li>
+<li>상태 패턴을 이용하면 상태 패턴 인터페이스의 파생 클래스로 각각의 상태를 구현함으로써, 또 패턴의 슈퍼클래스에 의해 정의되는 메소드를 호출하여 상태 변화를 구현함으로써 상태 기계를 구현합니다.</li>
+<li>객체의 특정 <code class="inline-code">상태를 클래스로 선언</code>하고, 클래스에서는 <code class="inline-code">해당 상태에서 할 수 있는 행위들을 메서드로 정의</code>합니다. 그리고 이러한 <code class="inline-code">각 상태 클래스들을 인터페이스로 캡슐화</code> 하여, <code class="inline-code">클라이언트에서 인터페이스를 호출</code>하는 방식을 말합니다.</li>
+<li>구체적인 상태 클래스가 아닌 추상화된 State 인터페이스만 참조하므로 <code class="inline-code">현재 어떤 상태에 있는지와 무관하게 코드를 작성할 수 있습니다</code>.</li>
+<li>상태 전환은 State 클래스에 의해서 제어할 수도 있고, Context 클래스에 의해서 제어할 수도 있습니다.</li>
+<li>State 클래스를 여러 Context 객체의 인스턴스에서 공유하도록 디자인할 수도 있습니다.</li>
+</ul>
+<h2 id="싱글톤을-이용하는-이유">싱글톤을 이용하는 이유<a aria-hidden="true" tabindex="-1" href="#싱글톤을-이용하는-이유"><span class="anchor"></span></a></h2>
+<ul>
+<li>각 상태들의 구현체에서 조금 특이한 것은 각 상태의 구현체들이 <code class="inline-code">싱글톤</code>으로 구현되어 있습니다. 이것은 상태들이 행위를 수행하면서 객체의 상태를 <code class="inline-code">수시로 바꾸어주기 때문</code>에 싱글톤으로 작성하지 않으면 <code class="inline-code">매번 새로운 인스턴스가 생겨</code> 불필요한 메모리를 잡아 먹을 것이고 전체적으로 성능 저하의 원인이 될 것이기 때문에 싱글톤으로 작성합니다.</li>
+</ul>
+<h2 id="유한-상태-기계fsm를-구현할-수-있습니다">유한 상태 기계(FSM)를 구현할 수 있습니다.<a aria-hidden="true" tabindex="-1" href="#유한-상태-기계fsm를-구현할-수-있습니다"><span class="anchor"></span></a></h2>
+<ul>
+<li>FSM은 컴퓨터 과학 분야 중의 하나인 오토마타 이론에서 나왔습니다.</li>
+<li>가질 수 있는 <code class="inline-code">상태</code>가 한정됩니다.</li>
+<li>한 번에 <code class="inline-code">한 가지</code> 상태만 될 수 있습니다.</li>
+<li><code class="inline-code">입력</code>이나 <code class="inline-code">이벤트</code>가 기계에 전달됩니다.</li>
+<li>각 상태에는 입력에 따라 다음 상태로 바뀌는 <code class="inline-code">전이</code>가 있습니다.</li>
+</ul>
+<h2 id="장점">장점<a aria-hidden="true" tabindex="-1" href="#장점"><span class="anchor"></span></a></h2>
+<ul>
+<li>각 상태를 클래스로 <code class="inline-code">캡슐화</code>함으로써 나중에 변경시켜야 하는 내용을 국지화시킬 수 있습니다.</li>
+<li>하나의 객체에 대한 여러 동작을 구현해야할 때 상태 객체만 수정하므로 동작의 추가, 삭제 및 수정이 간단해집니다.</li>
+<li>State 패턴을 사용하면 객체의 상태에 따른 조건문(if/else, switch)이 줄어들어 코드가 간결해지고 가독성이 올라갑니다.</li>
+<li>상태 변경에 따른 행위 로직을 직접 구현 하지 않아도 됨으로써 확장에 유리하다.</li>
+</ul>
+<h2 id="단점">단점<a aria-hidden="true" tabindex="-1" href="#단점"><span class="anchor"></span></a></h2>
+<ul>
+<li>상태에 따른 조건문을 대신한 상태 객체가 증가하여 관리해야할 클래스의 수가 증가합니다.</li>
+</ul>
+<h2 id="스트래지티-패턴과의-비교">스트래지티 패턴과의 비교<a aria-hidden="true" tabindex="-1" href="#스트래지티-패턴과의-비교"><span class="anchor"></span></a></h2>
+<ul>
+<li>상태 패턴은 패턴의 인터페이스에 정의된 <code class="inline-code">메소드들의 호출을 통해 현재의 전략을 전환할 수 있는 전략 패턴</code>으로 해석할 수 있습니다.</li>
+<li>스트래티지 패턴에서와 <code class="inline-code">같은 다이어그램</code>을 사용한다. 하지만 이 두 패턴은 용도에 있어서 차이가 있습니다.
+<ul>
+<li>스테이트 패턴을 사용할 때는 여러 상태 객체 중 <code class="inline-code">한 객체에서 모든 행동을 맡기게 됩니다</code>. 그 객체의 내부 상태에 따라 현재 상태를 나타내는 객체가 바뀌게 되고, 그 결과로 컨텍스트 객체의 행동도 자연스럽게 바뀌게 됩니다. <code class="inline-code">클라이언트는 상태 객체에 대해서 거의 아무것도 몰라도 됩니다</code>.</li>
+<li>스트래티지 패턴을 사용할 때는 일반적으로 클라이언트에서 컨텍스트 객체한테 <code class="inline-code">어떤 전략 객체를 사용할지를 지정해 줍니다</code>. 스트래티지 패턴은 주로 실행시에 전략 객체를 변경할 수 있는 <code class="inline-code">유연성</code>을 제공하기 위한 용도로 쓰입니다. 보통 가장 적합한 전략 객체를 선택해서 사용하게 됩니다.</li>
+<li>일반적으로 스트래티지 패턴은 서브클래스를 만드는 방법을 대신하여 <code class="inline-code">유연성</code>을 극대화하기 위한 용도로 쓰입니다. 상속을 이용해서 클래스의 행동을 정의하다 보면 행동을 변경해야 할 때 마음대로 변경하기가 힘듭니다. 하지만 스트래티지 패턴을 사용하면 구성을 통해 행동을 정의하는 객체를 유연하게 바꿀 수 있습니다.</li>
+<li>스테이트 패턴은 컨텍스트 객체에 수많은 <code class="inline-code">조건문</code>을 집어넣는 대신에 사용할 수 있는 패턴이라고 생각하면 됩니다. 행동을 상태 객체 내의 캡슐화시키면 컨텍스트 내의 상태 객체를 바꾸는 것만으로도 컨텍스트 객체의 행동을 바꿀 수 있으니까요.</li>
+</ul>
+</li>
+</ul>
+<h2 id="코드">코드<a aria-hidden="true" tabindex="-1" href="#코드"><span class="anchor"></span></a></h2>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// State : 상태에 따른 동작을 정의하는 인터페이스입니다</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function-variable function">onButton</span><span class="token operator">:</span> <span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token function-variable function">offButton</span><span class="token operator">:</span> <span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// ConcreteState : State에서 정의된 메소드를 구현하는 클래스입니다.</span>
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name"><span class="token constant">ON</span></span> <span class="token keyword">implements</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">private</span> <span class="token keyword">static</span> on <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">ON</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ON 클래스의 인스턴스로 초기화됨</span>
+</span><span class="code-line">  <span class="token keyword">private</span> <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// 초기화된 ON 클래스의 인스턴스를 반환함</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>on<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">onButton</span><span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// ON 상태일 때 On 버튼을 눌러도 변화 없음</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'반응 없음'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">offButton</span><span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    light<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token constant">OFF</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Light Off!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name"><span class="token constant">OFF</span></span> <span class="token keyword">implements</span> <span class="token class-name">State</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">private</span> <span class="token keyword">static</span> off <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">OFF</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// OFF 클래스의 인스턴스로 초기화됨</span>
+</span><span class="code-line">  <span class="token keyword">private</span> <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// 초기화된 OFF 클래스의 인스턴스를 반환함</span>
+</span><span class="code-line">    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>off<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">onButton</span><span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// Off 상태일 때 On 버튼을 눌러도 On 상태임</span>
+</span><span class="code-line">    light<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token constant">ON</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Light On!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">offButton</span><span class="token punctuation">(</span>light<span class="token operator">:</span> Light<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token comment">// Off 상태일 때 Off 버튼을 눌러도 변화 없음</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'반응 없음'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// Context</span>
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">Light</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">private</span> state<span class="token operator">:</span> State<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token constant">OFF</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">setState</span><span class="token punctuation">(</span>state<span class="token operator">:</span> State<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> state<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">onButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">onButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">offButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span><span class="token function">offButton</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> light <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Light</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">light<span class="token punctuation">.</span><span class="token function">offButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">light<span class="token punctuation">.</span><span class="token function">onButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">light<span class="token punctuation">.</span><span class="token function">offButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<hr>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://victorydntmd.tistory.com/294">🙈[디자인패턴] 스테이트 패턴 ( State Pattern )🐵</a></li>
+<li><a href="https://coding-start.tistory.com/247">코딩스타트</a></li>
+<li><a href="https://boycoding.tistory.com/110">소년코딩</a></li>
+<li><a href="https://www.crocus.co.kr/1541">Crocus</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/design-pattern/state-pattern","frontmatter":{"title":"state pattern","date":"2021-03-21T13:03:24.000Z","category":"design pattern","tags":["design pattern"],"draft":false},"content":"$b","html":"$c","excerpt":"## 디자인 패턴이란?  - 반복적으로 나타난 문제에 대해 그것을 해결한 경험 및 노하우를 축적하여 `재사용하기 좋은 형태로` 이름을 붙여 `해법을 제시하는 패턴`양식 입니다. - 디자인 패턴은 크게 3가지 분류가 있습니다.   - 생성 패턴 : 객체 생성과 관련된 패턴   - 구조 패턴 : 클래스나 객체를 조합해 더 큰 구조를 만드는 패턴   - 행위"},"previousPost":{"slug":"/design-pattern/strategy-pattern","frontmatter":{"title":"strategy pattern","date":"2021-03-21T09:03:48.000Z","category":"design pattern","tags":["design pattern"],"draft":false}},"nextPost":{"slug":"/design-pattern/singleton-pattern","frontmatter":{"title":"singleton pattern","date":"2021-04-14T21:05:29.000Z","category":"design pattern","tags":["design pattern"],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"state pattern"}],["$","meta","3",{"name":"description","content":"## 디자인 패턴이란?  - 반복적으로 나타난 문제에 대해 그것을 해결한 경험 및 노하우를 축적하여 `재사용하기 좋은 형태로` 이름을 붙여 `해법을 제시하는 패턴`양식 입니다. - 디자인 패턴은 크게 3가지 분류가 있습니다.   - 생성 패턴 : 객체 생성과 관련된 패턴   - 구조 패턴 : 클래스나 객체를 조합해 더 큰 구조를 만드는 패턴   - 행위"}]]
+1:null

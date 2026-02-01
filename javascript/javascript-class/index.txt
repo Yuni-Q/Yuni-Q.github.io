@@ -1,0 +1,107 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","javascript","d"]
+5:["slug","javascript-class","c"]
+0:["static-build-id",[[["",{"children":[["category","javascript","d"],{"children":[["slug","javascript-class","c"],{"children":["__PAGE__?{\"category\":\"javascript\",\"slug\":[\"javascript-class\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","javascript","d"],{"children":[["slug","javascript-class","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:Te8c,
+- ES2015(ES6)에서 자바스크립트에 클래스(Class)가 도입되었습니다.
+- 자바스크립트는 기본적으로 프로토타입 기반의 언어입니다.
+
+- 프로토타입 기반으로 객체 지향적으로 설계하는 것이 복잡하여 클래스라는 sugar syntax 문법이 도입된 것입니다.
+  - Java에서의 클래스와 똑같은 기능을 한다고 생각 할 수 있지만 여전히 객체 지향을 흉내내고 있고 그 내부는 여전히 프로토타입으로 구성되어 있는 것입니다.
+  - 하지만 이전 ES5와는 전혀 다르게 구현되어 있기 때문에 마냥 'sugar syntax로 되어 있다' 혹은 프로토타입으로 모든 것이 구현되어 있다고 보는 것 또한 옳지 않습니다.
+- 클래스는 선언문 또는 표현식으로 선언할 수 있습니다.
+- 클래스의 선언부는 let과 const와 마찬가지로 호이스팅은 되지만 temporary dead zone이 형성됩니다.
+- 클래스의 코드는 ‘use strict’를 선언하지 않아도 strict 모드에서 실행됩니다.
+- 자바스크립트에서는 프로토타입을 사용해서 클래스 밖에서도 메서드를 추가할 수 있습니다. 이미 생성된 인스턴스에 메서드를 추가하게 되면, 이전에 생성되었던 인스턴스들이 새로 추가된 메서드들을 공유해야하기 때문에 부하가 걸리지만 코드가 유연해진다는 장점도 존재한다.
+  - Java에서는 해당 기능을 사용할 수 없습니다.
+- 슈퍼 클래스의 메소드를 오버라이딩(Overriding)할 수 있습니다. 하지만 오버로딩(Overloading)을 사용 할 수 없습니다.
+- 자바스크립트 클래스에서 static 키워드를 사용하면 정적 메소드를 정의할 수 있습니다. 정적 메소드라 함은 인스턴스를 생성하지 않고 사용할 수 있는 메소드를 말합니다. 정적 메소드는 인스턴스를 생성하지 않고도 호출할 수 있지만 인스턴스에서는 호출할 수 없습니다.
+- new.target을 이용하면 슈퍼 클래스에서 서브 클래스의 static method에 접근할 수 있다.
+
+## TypeScript의 Class
+
+- type과 Access Modifier가 추가 되었습니다.
+- class에서 modifier란 class의 method나 property에 부여할수 있는 특징을 말합니다.
+  - public
+  - private
+  - protected
+  - readonly
+  - static
+- 자바스크립트 클래스의 method와 property는 기본적으로 public이며, 다른 modifier를 강제할 수 있는 문법이 없습니다. (ES10에서 부터는 #을 변수명 앞에 붙이면 private선언이 되기는 합니다.) 타입스크립트에서는 modifier를 강제할 수 있습니다.
+- modifier의 목적은 해당 method나 property에 접근할 수 있는 권한을 명시하기 위함입니다.
+- 아무것도 정해 두지 않으면 기본적으로 public이 부여됩니다. 어느곳에서든지 해당 method나 property에 접근할 수 있습니다.
+- private이 부여된 method의 경우에는 동일한 클래스에 있는 다른 method에 의해서만 호출 될 수 있습니다.
+- protected가 부여된 경우, 동일한 클래스에 있는 다른 method 혹은 child class에 있는 method에 의해 호출될 수 있습니다.
+- modifier를 추가하는 이유는 다른 개발자들이 call할 수 있는 method를 제한하기 위함입니다. 잘못 사용하는 경우 어플리케이션을 망가뜨릴 정도로 복잡한 method가 다른 개발자에 의해 call되는걸 막는것이 주 목적입니다.
+
+## 참고
+
+- [Daily Study Logging46 - 타입스크립트, Instance Method Modifiers](https://www.hamadevelop.me/dailyblogging46/?fbclid=IwAR0P-4UBlh8r7Tt6d3CepKAzZu4MxfsjXsbsHoNDoV13qqu57gZTHgEdJxE)
+c:T10be,<ul>
+<li>
+<p>ES2015(ES6)에서 자바스크립트에 클래스(Class)가 도입되었습니다.</p>
+</li>
+<li>
+<p>자바스크립트는 기본적으로 프로토타입 기반의 언어입니다.</p>
+</li>
+<li>
+<p>프로토타입 기반으로 객체 지향적으로 설계하는 것이 복잡하여 클래스라는 sugar syntax 문법이 도입된 것입니다.</p>
+<ul>
+<li>Java에서의 클래스와 똑같은 기능을 한다고 생각 할 수 있지만 여전히 객체 지향을 흉내내고 있고 그 내부는 여전히 프로토타입으로 구성되어 있는 것입니다.</li>
+<li>하지만 이전 ES5와는 전혀 다르게 구현되어 있기 때문에 마냥 'sugar syntax로 되어 있다' 혹은 프로토타입으로 모든 것이 구현되어 있다고 보는 것 또한 옳지 않습니다.</li>
+</ul>
+</li>
+<li>
+<p>클래스는 선언문 또는 표현식으로 선언할 수 있습니다.</p>
+</li>
+<li>
+<p>클래스의 선언부는 let과 const와 마찬가지로 호이스팅은 되지만 temporary dead zone이 형성됩니다.</p>
+</li>
+<li>
+<p>클래스의 코드는 ‘use strict’를 선언하지 않아도 strict 모드에서 실행됩니다.</p>
+</li>
+<li>
+<p>자바스크립트에서는 프로토타입을 사용해서 클래스 밖에서도 메서드를 추가할 수 있습니다. 이미 생성된 인스턴스에 메서드를 추가하게 되면, 이전에 생성되었던 인스턴스들이 새로 추가된 메서드들을 공유해야하기 때문에 부하가 걸리지만 코드가 유연해진다는 장점도 존재한다.</p>
+<ul>
+<li>Java에서는 해당 기능을 사용할 수 없습니다.</li>
+</ul>
+</li>
+<li>
+<p>슈퍼 클래스의 메소드를 오버라이딩(Overriding)할 수 있습니다. 하지만 오버로딩(Overloading)을 사용 할 수 없습니다.</p>
+</li>
+<li>
+<p>자바스크립트 클래스에서 static 키워드를 사용하면 정적 메소드를 정의할 수 있습니다. 정적 메소드라 함은 인스턴스를 생성하지 않고 사용할 수 있는 메소드를 말합니다. 정적 메소드는 인스턴스를 생성하지 않고도 호출할 수 있지만 인스턴스에서는 호출할 수 없습니다.</p>
+</li>
+<li>
+<p>new.target을 이용하면 슈퍼 클래스에서 서브 클래스의 static method에 접근할 수 있다.</p>
+</li>
+</ul>
+<h2 id="typescript의-class">TypeScript의 Class<a aria-hidden="true" tabindex="-1" href="#typescript의-class"><span class="anchor"></span></a></h2>
+<ul>
+<li>type과 Access Modifier가 추가 되었습니다.</li>
+<li>class에서 modifier란 class의 method나 property에 부여할수 있는 특징을 말합니다.
+<ul>
+<li>public</li>
+<li>private</li>
+<li>protected</li>
+<li>readonly</li>
+<li>static</li>
+</ul>
+</li>
+<li>자바스크립트 클래스의 method와 property는 기본적으로 public이며, 다른 modifier를 강제할 수 있는 문법이 없습니다. (ES10에서 부터는 #을 변수명 앞에 붙이면 private선언이 되기는 합니다.) 타입스크립트에서는 modifier를 강제할 수 있습니다.</li>
+<li>modifier의 목적은 해당 method나 property에 접근할 수 있는 권한을 명시하기 위함입니다.</li>
+<li>아무것도 정해 두지 않으면 기본적으로 public이 부여됩니다. 어느곳에서든지 해당 method나 property에 접근할 수 있습니다.</li>
+<li>private이 부여된 method의 경우에는 동일한 클래스에 있는 다른 method에 의해서만 호출 될 수 있습니다.</li>
+<li>protected가 부여된 경우, 동일한 클래스에 있는 다른 method 혹은 child class에 있는 method에 의해 호출될 수 있습니다.</li>
+<li>modifier를 추가하는 이유는 다른 개발자들이 call할 수 있는 method를 제한하기 위함입니다. 잘못 사용하는 경우 어플리케이션을 망가뜨릴 정도로 복잡한 method가 다른 개발자에 의해 call되는걸 막는것이 주 목적입니다.</li>
+</ul>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://www.hamadevelop.me/dailyblogging46/?fbclid=IwAR0P-4UBlh8r7Tt6d3CepKAzZu4MxfsjXsbsHoNDoV13qqu57gZTHgEdJxE">Daily Study Logging46 - 타입스크립트, Instance Method Modifiers</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/javascript/javascript-class","frontmatter":{"title":"JavaScript Class","date":"2020-02-03T12:03:29.000Z","category":"javascript","draft":false},"content":"$b","html":"$c","excerpt":"- ES2015(ES6)에서 자바스크립트에 클래스(Class)가 도입되었습니다. - 자바스크립트는 기본적으로 프로토타입 기반의 언어입니다.  - 프로토타입 기반으로 객체 지향적으로 설계하는 것이 복잡하여 클래스라는 sugar syntax 문법이 도입된 것입니다.   - Java에서의 클래스와 똑같은 기능을 한다고 생각 할 수 있지만 여전히 객체 지향을 흉"},"previousPost":{"slug":"/javascript/javascript에서-클래스를-구현하는-방법,-상속하는-방법","frontmatter":{"title":"ECMA6 이전의 class 가 없을 시절의 JS에서 클래스를 구현하는 방법, 상속하는 방법 정리","date":"2020-01-27T14:01:06.000Z","category":"javascript","draft":false}},"nextPost":{"slug":"/javascript/this","frontmatter":{"title":"this","date":"2020-04-10T18:04:24.000Z","category":"javascript","tags":["this","call","apply","bind","함수 호출","메소드 호출","생성자 함수 호출","명시적바인딩","묵시적바인딩"],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"JavaScript Class"}],["$","meta","3",{"name":"description","content":"- ES2015(ES6)에서 자바스크립트에 클래스(Class)가 도입되었습니다. - 자바스크립트는 기본적으로 프로토타입 기반의 언어입니다.  - 프로토타입 기반으로 객체 지향적으로 설계하는 것이 복잡하여 클래스라는 sugar syntax 문법이 도입된 것입니다.   - Java에서의 클래스와 똑같은 기능을 한다고 생각 할 수 있지만 여전히 객체 지향을 흉"}]]
+1:null

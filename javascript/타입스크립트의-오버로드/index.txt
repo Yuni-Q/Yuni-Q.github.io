@@ -1,0 +1,667 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","javascript","d"]
+5:["slug","%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%98%A4%EB%B2%84%EB%A1%9C%EB%93%9C","c"]
+0:["static-build-id",[[["",{"children":[["category","javascript","d"],{"children":[["slug","%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%98%A4%EB%B2%84%EB%A1%9C%EB%93%9C","c"],{"children":["__PAGE__?{\"category\":\"javascript\",\"slug\":[\"타입스크립트의-오버로드\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","javascript","d"],{"children":[["slug","%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%98%A4%EB%B2%84%EB%A1%9C%EB%93%9C","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T3456,
+## 오버로드
+
+- C나 Java같은 정적 타입 언어의 경우, 매개변수의 갯수와 타입에 따라서 정적으로 여러 개의 함수를 구현할 수 있습니다. 하지만 JavaScript는 하나의 함수 내부에서 `타입 검사`를 해서 동적으로 오버로딩을 구현할 수 있습니다.
+- TypeScript의 경우, 오버로딩이 불가능하지는 않지만 그 방식은 정적 타입 언어인 C나 Java보다는 동적 타입언어인 JavaScript와 유사합니다. 다른 인자를 받는 여러 개의 함수를 구현하는 것이 아니라, `하나의 함수에서 인자의 타입이나 갯수에 따라 여러 분기`를 태우는 것입니다.
+- 일단 TypeScript는 함수에 정해진 타입과 정해진 수의 인자를 넘기지 않으면 에러를 발생시키므로 함수를 선언할 때 어느정도의 유연성을 확보해야 오버로딩을 구현할 수 있습니다. 인자 갯수의 유연성을 확보하는 것이 바로 `Optional Parameter` 입니다.
+
+### 하고 싶은 오버로드(비지터 패턴)
+
+```java
+public class ComputerPartDisplayVisitor implements ComputerPartVisitor {
+   public void visit(Computer computer) {
+      System.out.println("Displaying Computer.");
+   }
+   public void visit(Mouse mouse) {
+      System.out.println("Displaying Mouse.");
+   }
+   public void visit(Keyboard keyboard) {
+      System.out.println("Displaying Keyboard.");
+   }
+   public void visit(Monitor monitor) {
+      System.out.println("Displaying Monitor.");
+   }
+}
+```
+
+- 자바스크립트에서 위와 같이 구현하기 위해서 할 수 있는 방법
+
+```ts
+class ComputerPartDisplayVisitor implements ComputerPartVisitor {
+  visit(target: ComputerPart) {
+    if (target instanceof Computer) {
+      // 로직
+      console.log('Displaying Computer.');
+    }
+    if (target instanceof Mouse) {
+      // 로직
+      console.log('Displaying Mouse.');
+    }
+    if (target instanceof Keyboard) {
+      // 로직
+      console.log('Displaying Keyboard.');
+    }
+    if (target instanceof Monitor) {
+      // 로직
+      console.log('Displaying Monitor.');
+    }
+  }
+```
+
+### 타입스크립트에서의 오버로드
+
+### CASE 1 : 함수 선언식
+
+```ts
+// 함수 선언(interface)
+function add(a: string, b: string): string;
+function add(a: number, b: number): number;
+
+// 함수 구현(implement)
+function add(a: any, b: any) {
+  return a + b;
+}
+
+// 함수 호출
+add('2', '3');
+add(2, 3);
+add('2', 3);
+/**
+이 호출과 일치하는 오버로드가 없습니다.
+  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+a.ts(3, 10): 이 구현에 대한 호출이 성공하겠지만, 오버로드의 구현 시그니처는 외부에 표시되지 않습니다.
+*/
+
+// .JS
+function add(a, b) {
+  return a + b;
+}
+
+// .D.TS
+declare function add(a: string, b: string): string;
+declare function add(a: number, b: number): number;
+```
+
+### CASE 2 : 함수 표현식
+
+```ts
+// 선언한 것의 이름을 대변하는 이름
+type SAdd = (a: string, b: string) => string;
+type NAdd = (a: number, b: number) => number;
+
+// function SAdd(a: any, b: any) { return a + b } // 이와 같이 구현하면 타입 추론이 올바르게 되지 않습니다.
+
+// 구현 X (익명함수일 뿐이지 선언한 것을 구현했다고 볼수 없습니다)
+const add: SAdd & NAdd = function (a: any, b: any) {
+  return a + b;
+};
+
+add('2', '3');
+add(2, 3);
+add('2', 3);
+/**
+이 호출과 일치하는 오버로드가 없습니다.
+  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+*/
+
+// .JS
+const add = function (a, b) {
+  return a + b;
+};
+
+// .D.TS
+declare type SAdd = (a: string, b: string) => string;
+declare type NAdd = (a: number, b: number) => number;
+declare const add: SAdd & NAdd;
+```
+
+### CASE 3 : 인터섹션 안 쓰기
+
+```ts
+type Add = {
+  (a: string, b: string): string;
+  (a: number, b: number): number;
+};
+
+const add: Add = function (a: any, b: any) {
+  return a + b;
+};
+
+add('2', '3');
+add(2, 3);
+add('2', 3);
+/**
+이 호출과 일치하는 오버로드가 없습니다.
+  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+*/
+
+// .JS
+const add = function (a, b) {
+  return a + b;
+};
+
+// .D.TS
+declare type Add = {
+  (a: string, b: string): string;
+  (a: number, b: number): number;
+};
+declare const add: Add;
+```
+
+### CASE 4 : 타입 바로 선언하기
+
+```ts
+const add: {
+  (a: string, b: string): string;
+  (a: number, b: number): number;
+} = function (a: any, b: any) {
+  return a + b;
+};
+
+add('2', '3');
+add(2, 3);
+add('2', 3);
+/**
+이 호출과 일치하는 오버로드가 없습니다.
+  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+*/
+
+// .JS
+const add = function (a, b) {
+  return a + b;
+};
+
+// .D.TS
+declare const add: {
+  (a: string, b: string): string;
+  (a: number, b: number): number;
+};
+```
+
+## 함수 선언식 vs 함수 표현식
+
+### 함수 선언식 - Function Declarations
+
+- 일반적인 프로그래밍 언어에서의 함수 선언과 비슷한 형식입니다.
+
+```js
+function 함수명() {
+  // 구현 로직
+}
+```
+
+### 함수 표현식 - Function Expressions
+
+- 유연한 자바스크립트 언어의 특징을 활용한 선언 방식입니다.
+
+```js
+var 함수명 = function () {
+  // 구현 로직
+};
+```
+
+### 함수 선언식과 표현식의 차이점
+
+#### 호이스팅
+
+- 함수 선언식은 `호이스팅`에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않습니다.
+- 함수 선언식은 코드를 구현한 위치와 관계없이 자바스크립트의 특징인 호이스팅에 따라 브라우저가 자바스크립트를 해석할 때 맨 위로 끌어 올려집니다.
+- 함수 표현식에서 변수 선언도 호이스팅이 적용되어 위치가 상단으로 끌어올려집니다. 하지만 function 로직은 호출된 이후에 선언됩니다.
+
+### 함수 표현식의 장점
+
+- 클로저로 사용
+- 콜백으로 사용(다른 함수의 인자로 넘길 수 있습니다)
+
+### 이펙티브 타입스크립트 아이템 12 : 함수 표현식에 타입 적용하기
+
+- 타입스크립트에서는 `함수 표현식을 사용하는 것`이 좋습니다. 함수의 매개변수 부터 반환값까지 전체를 함수 타입으로 선언하여 함수 표현식에 `재사용`할 수 있다는 장점이 있습니다.
+- 매개변수나 반환 값에 타입을 명시하기보다는 함수 표현식 전체에 타입 구문을 적용하는 것이 코드도 간결하고 안전합니다.
+- 만약 같은 타입 시그니처를 반복적으로 작성한 코드가 있다면 함수 타입을 분리해 내거나 이미 존재하는 타입을 찾아보도록 합니다. 라이브러리를 직접 만든다면 공통 콜백에 타입을 제공해야 합니다.
+- 다른 함수의 시그니처와 동일한 타입을 가지는 새 함수를 작성하거나, 동일한 타입 시그니처를 가지는 여러 개의 함수를 작성할 때는 매개변수의 타입과 반환 타입을 반복해서 작성하지 말고 함수 전체의 타입 선언을 적용해야 합니다.
+- 다른 함수의 시그니처를 참조하려면 typeof fn을 사용하면 됩니다.
+
+```ts
+// + - * /
+function add(a: number, b: number): number {
+  return a + b;
+}
+function sub(a: number, b: number): number {
+  return a - b;
+}
+
+type BinaryFn = (a: number, b: number) => number;
+const add: BinaryFn = (a, b) => a + b;
+const sub: BinaryFn = (a, b) => a - b;
+```
+
+### 참고 의견
+
+- 표현식, 함수가 나뉘는 이유는 JS this 바인딩 때문일것이고, 함수 오버로딩은 JS 스펙 상 불가능하니, 래퍼함수로써 사용할 것을 유도하는 것이 아닐까 싶습니다. JS의 수퍼셋으로써 동작을 해야하니, 윤희님이 원하시는 일반적인 오버로딩 구현은 불가하고, JS 세상에선 오버로딩 == 타입 래핑함수 거치기 라는 국룰이 있슴당.
+  - 표현식, 선언식과 this는 무관합니다. function과 arrow function의 차이입니다.
+  - 인터페이스건 객체 타입이건, 정말로 양변하는 타입을 의도한 것이 아니면 항상 화살표 표기법을 사용하는 것이 좋다는 내용이 있기는 합니다.
+- 인터섹션(&) 개념이 어렵고 D.TS의 정의가 길어집니다.
+  - D.TS의 정의가 길어지는 것은 타입스크립트 컴파일러를 믿고 가야하지 않을까 싶습니다...ㅠ
+  - 인터섹션을 사용하지 않고 표현식으로 사용하는 방법을 고민해 보았습니다.
+
+## 결론
+
+- 오버로드가 단순히 input, output에 대한 interface 정의만 한다면 타입으로 정의하는 것이 더 좋지 않을까라고 생각을 했으나 오버로드를 위한 선언과 구현을 올바르게 한 것인가에 대해서는 그렇지 않습니다.
+  - type으로 선언한 것도 선언한 것의 이름을 대변하는 이름을 붙인 것이고 구현 했다고 생각하는 것도 정의 된 것을 구현한 것이 아닌 익명함수를 넣고 그것과 타입이 같은 것일 뿐입니다.
+- 연관된 값들이라면 엮여 있고 찾기 쉽게 끔 작성하는 것이 더 좋지 않을까라고 생각했지만 그것의 역할은 IDE의 역할입니다.
+  - 실제 작성할 때 힌트를 노출하는 것과 함수를 눌러서 구현을 찾아가는 것은 IDE가 지원해 주기 때문에 크게 걱정할 요소가 아닙니다.
+- 일반적으로 널리 사용되는 방식을 사용하는 것이 좋습니다.
+  - lib.dom.d.ts와 같은 일반 라이브러리나 많은 예시들에서 CASE 1을 사용합니다.
+- 컴파일러가 알맞은 타입 검사를 하기 위해서, JavaScript와 비슷한 프로세스를 따릅니다. 오버로드 목록에서 첫 번째 오버로드를 진행하면서 제공된 매개변수를 사용하여 함수를 호출하려고 시도합니다. 만약 일치하게 된다면 해당 오버로드를 알맞은 오버로드로 선택하여 작업을 수행합니다. 이러한 이유로 가장 구체적인 것부터 오버로드 리스팅을 하는 것이 일반적입니다.
+- 함수 표현식을 사용하는 것이 좋은 경우도 있지만 무조건적으로 사용하기 보다 상황에 맞게 사용해야 하는데 함수 오버로드의 개념으로 볼때는 표현식을 사용하는 것이 올바르지 않습니다.
+
+## 추가적인 코드 개선
+
+### 문제점
+
+```ts
+// 함수 선언(interface)
+function add(a: string, b: string): string;
+function add(a: number, b: number): number;
+
+// 함수 구현(implement)
+function add(a: any, b: any) {
+  return a + b;
+}
+
+// 함수 호출
+add('2', '3');
+add(2, 3);
+
+function f(x: string | number) {
+  add(x, x);
+  // No overload matches this call.
+}
+```
+
+### 아이템 50 : 오버로딩 타입보다는 조건부 타입을 사용하기
+
+```ts
+// 함수 선언(interface)
+function add<T extends string | number>(
+  a: T,
+  b: T,
+): T extends string ? string : number;
+
+// 함수 구현(implement)
+function add(a: any, b: any) {
+  return a + b;
+}
+
+// 함수 호출
+add('2', '3');
+add(2, 3);
+
+function f(x: string | number) {
+  add(x, x);
+}
+
+add('2', 3);
+// Argument of type '3' is not assignable to parameter of type '"2"'.(2345)
+```
+
+---
+
+## 참고
+
+- [이펙티브 타입스크립트](http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966263134)
+- [함수 표현식 vs 함수 선언식](https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/)
+- [Kunoo](https://kunoo.tistory.com/entry/행위-패턴-Visitor-pattern-비지터-패턴)
+- [TypeScript: 공변과 반변, 그리고 객체 타입에서의 두 가지 함수 표기법](https://sorto.me/posts/2021-03-16+variance)
+- [Typescript-Handbook-ko](http://typescript-handbook-ko.org/pages/functions.html)
+
+<!-- ```ts
+function myScrollTo(options?: string): void;
+function myScrollTo(x: number, y: number): void;
+function myScrollTo(a?: any, b?: any) {
+  console.log(a, b);
+  return a;
+}
+```
+
+```ts
+const myScrollTo: {
+  (options?: string): void;
+  (x: number, y: number): void;
+} = (a?: any, b?: any) => {
+  console.log(a, b);
+  return a;
+};
+``` -->
+c:Td9d3,<h2 id="오버로드">오버로드<a aria-hidden="true" tabindex="-1" href="#오버로드"><span class="anchor"></span></a></h2>
+<ul>
+<li>C나 Java같은 정적 타입 언어의 경우, 매개변수의 갯수와 타입에 따라서 정적으로 여러 개의 함수를 구현할 수 있습니다. 하지만 JavaScript는 하나의 함수 내부에서 <code class="inline-code">타입 검사</code>를 해서 동적으로 오버로딩을 구현할 수 있습니다.</li>
+<li>TypeScript의 경우, 오버로딩이 불가능하지는 않지만 그 방식은 정적 타입 언어인 C나 Java보다는 동적 타입언어인 JavaScript와 유사합니다. 다른 인자를 받는 여러 개의 함수를 구현하는 것이 아니라, <code class="inline-code">하나의 함수에서 인자의 타입이나 갯수에 따라 여러 분기</code>를 태우는 것입니다.</li>
+<li>일단 TypeScript는 함수에 정해진 타입과 정해진 수의 인자를 넘기지 않으면 에러를 발생시키므로 함수를 선언할 때 어느정도의 유연성을 확보해야 오버로딩을 구현할 수 있습니다. 인자 갯수의 유연성을 확보하는 것이 바로 <code class="inline-code">Optional Parameter</code> 입니다.</li>
+</ul>
+<h3 id="하고-싶은-오버로드비지터-패턴">하고 싶은 오버로드(비지터 패턴)<a aria-hidden="true" tabindex="-1" href="#하고-싶은-오버로드비지터-패턴"><span class="anchor"></span></a></h3>
+<pre class="language-java optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-java code-highlight"><span class="code-line"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComputerPartDisplayVisitor</span> <span class="token keyword">implements</span> <span class="token class-name">ComputerPartVisitor</span> <span class="token punctuation">{</span>
+</span><span class="code-line">   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Computer</span> computer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Displaying Computer."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">   <span class="token punctuation">}</span>
+</span><span class="code-line">   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Mouse</span> mouse<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Displaying Mouse."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">   <span class="token punctuation">}</span>
+</span><span class="code-line">   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Keyboard</span> keyboard<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Displaying Keyboard."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">   <span class="token punctuation">}</span>
+</span><span class="code-line">   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">visit</span><span class="token punctuation">(</span><span class="token class-name">Monitor</span> monitor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Displaying Monitor."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">   <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<ul>
+<li>자바스크립트에서 위와 같이 구현하기 위해서 할 수 있는 방법</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">ComputerPartDisplayVisitor</span> <span class="token keyword">implements</span> <span class="token class-name">ComputerPartVisitor</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">visit</span><span class="token punctuation">(</span>target<span class="token operator">:</span> ComputerPart<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token keyword">instanceof</span> <span class="token class-name">Computer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 로직</span>
+</span><span class="code-line">      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Displaying Computer.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token keyword">instanceof</span> <span class="token class-name">Mouse</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 로직</span>
+</span><span class="code-line">      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Displaying Mouse.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token keyword">instanceof</span> <span class="token class-name">Keyboard</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 로직</span>
+</span><span class="code-line">      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Displaying Keyboard.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token keyword">instanceof</span> <span class="token class-name">Monitor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token comment">// 로직</span>
+</span><span class="code-line">      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Displaying Monitor.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="타입스크립트에서의-오버로드">타입스크립트에서의 오버로드<a aria-hidden="true" tabindex="-1" href="#타입스크립트에서의-오버로드"><span class="anchor"></span></a></h3>
+<h3 id="case-1--함수-선언식">CASE 1 : 함수 선언식<a aria-hidden="true" tabindex="-1" href="#case-1--함수-선언식"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// 함수 선언(interface)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 구현(implement)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 호출</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">/**
+</span></span><span class="code-line"><span class="token comment">이 호출과 일치하는 오버로드가 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+</span></span><span class="code-line"><span class="token comment">a.ts(3, 10): 이 구현에 대한 호출이 성공하겠지만, 오버로드의 구현 시그니처는 외부에 표시되지 않습니다.
+</span></span><span class="code-line"><span class="token comment">*/</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .JS</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .D.TS</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="case-2--함수-표현식">CASE 2 : 함수 표현식<a aria-hidden="true" tabindex="-1" href="#case-2--함수-표현식"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// 선언한 것의 이름을 대변하는 이름</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">SAdd</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">NAdd</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// function SAdd(a: any, b: any) { return a + b } // 이와 같이 구현하면 타입 추론이 올바르게 되지 않습니다.</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 구현 X (익명함수일 뿐이지 선언한 것을 구현했다고 볼수 없습니다)</span>
+</span><span class="code-line"><span class="token keyword">const</span> add<span class="token operator">:</span> SAdd <span class="token operator">&#x26;</span> <span class="token function-variable function">NAdd</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">/**
+</span></span><span class="code-line"><span class="token comment">이 호출과 일치하는 오버로드가 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+</span></span><span class="code-line"><span class="token comment">*/</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .JS</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .D.TS</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">SAdd</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">NAdd</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">const</span> add<span class="token operator">:</span> SAdd <span class="token operator">&#x26;</span> NAdd<span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="case-3--인터섹션-안-쓰기">CASE 3 : 인터섹션 안 쓰기<a aria-hidden="true" tabindex="-1" href="#case-3--인터섹션-안-쓰기"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">Add</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> add<span class="token operator">:</span> <span class="token function-variable function">Add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">/**
+</span></span><span class="code-line"><span class="token comment">이 호출과 일치하는 오버로드가 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+</span></span><span class="code-line"><span class="token comment">*/</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .JS</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .D.TS</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">type</span> <span class="token class-name">Add</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">const</span> add<span class="token operator">:</span> Add<span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="case-4--타입-바로-선언하기">CASE 4 : 타입 바로 선언하기<a aria-hidden="true" tabindex="-1" href="#case-4--타입-바로-선언하기"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">const</span> add<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">/**
+</span></span><span class="code-line"><span class="token comment">이 호출과 일치하는 오버로드가 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 1/2('(a: string, b: string): string')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'number' 형식의 인수는 'string' 형식의 매개 변수에 할당될 수 없습니다.
+</span></span><span class="code-line"><span class="token comment">  오버로드 2/2('(a: number, b: number): number')에서 다음 오류가 발생했습니다.
+</span></span><span class="code-line"><span class="token comment">    'string' 형식의 인수는 'number' 형식의 매개 변수에 할당될 수 없습니다.ts(2769)
+</span></span><span class="code-line"><span class="token comment">*/</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .JS</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// .D.TS</span>
+</span><span class="code-line"><span class="token keyword">declare</span> <span class="token keyword">const</span> add<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre>
+<h2 id="함수-선언식-vs-함수-표현식">함수 선언식 vs 함수 표현식<a aria-hidden="true" tabindex="-1" href="#함수-선언식-vs-함수-표현식"><span class="anchor"></span></a></h2>
+<h3 id="함수-선언식---function-declarations">함수 선언식 - Function Declarations<a aria-hidden="true" tabindex="-1" href="#함수-선언식---function-declarations"><span class="anchor"></span></a></h3>
+<ul>
+<li>일반적인 프로그래밍 언어에서의 함수 선언과 비슷한 형식입니다.</li>
+</ul>
+<pre class="language-js optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-js code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">함수명</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// 구현 로직</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="함수-표현식---function-expressions">함수 표현식 - Function Expressions<a aria-hidden="true" tabindex="-1" href="#함수-표현식---function-expressions"><span class="anchor"></span></a></h3>
+<ul>
+<li>유연한 자바스크립트 언어의 특징을 활용한 선언 방식입니다.</li>
+</ul>
+<pre class="language-js optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-js code-highlight"><span class="code-line"><span class="token keyword">var</span> <span class="token function-variable function">함수명</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// 구현 로직</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="함수-선언식과-표현식의-차이점">함수 선언식과 표현식의 차이점<a aria-hidden="true" tabindex="-1" href="#함수-선언식과-표현식의-차이점"><span class="anchor"></span></a></h3>
+<h4 id="호이스팅">호이스팅<a aria-hidden="true" tabindex="-1" href="#호이스팅"><span class="anchor"></span></a></h4>
+<ul>
+<li>함수 선언식은 <code class="inline-code">호이스팅</code>에 영향을 받지만, 함수 표현식은 호이스팅에 영향을 받지 않습니다.</li>
+<li>함수 선언식은 코드를 구현한 위치와 관계없이 자바스크립트의 특징인 호이스팅에 따라 브라우저가 자바스크립트를 해석할 때 맨 위로 끌어 올려집니다.</li>
+<li>함수 표현식에서 변수 선언도 호이스팅이 적용되어 위치가 상단으로 끌어올려집니다. 하지만 function 로직은 호출된 이후에 선언됩니다.</li>
+</ul>
+<h3 id="함수-표현식의-장점">함수 표현식의 장점<a aria-hidden="true" tabindex="-1" href="#함수-표현식의-장점"><span class="anchor"></span></a></h3>
+<ul>
+<li>클로저로 사용</li>
+<li>콜백으로 사용(다른 함수의 인자로 넘길 수 있습니다)</li>
+</ul>
+<h3 id="이펙티브-타입스크립트-아이템-12--함수-표현식에-타입-적용하기">이펙티브 타입스크립트 아이템 12 : 함수 표현식에 타입 적용하기<a aria-hidden="true" tabindex="-1" href="#이펙티브-타입스크립트-아이템-12--함수-표현식에-타입-적용하기"><span class="anchor"></span></a></h3>
+<ul>
+<li>타입스크립트에서는 <code class="inline-code">함수 표현식을 사용하는 것</code>이 좋습니다. 함수의 매개변수 부터 반환값까지 전체를 함수 타입으로 선언하여 함수 표현식에 <code class="inline-code">재사용</code>할 수 있다는 장점이 있습니다.</li>
+<li>매개변수나 반환 값에 타입을 명시하기보다는 함수 표현식 전체에 타입 구문을 적용하는 것이 코드도 간결하고 안전합니다.</li>
+<li>만약 같은 타입 시그니처를 반복적으로 작성한 코드가 있다면 함수 타입을 분리해 내거나 이미 존재하는 타입을 찾아보도록 합니다. 라이브러리를 직접 만든다면 공통 콜백에 타입을 제공해야 합니다.</li>
+<li>다른 함수의 시그니처와 동일한 타입을 가지는 새 함수를 작성하거나, 동일한 타입 시그니처를 가지는 여러 개의 함수를 작성할 때는 매개변수의 타입과 반환 타입을 반복해서 작성하지 말고 함수 전체의 타입 선언을 적용해야 합니다.</li>
+<li>다른 함수의 시그니처를 참조하려면 typeof fn을 사용하면 됩니다.</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// + - * /</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">sub</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">BinaryFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> add<span class="token operator">:</span> <span class="token function-variable function">BinaryFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> sub<span class="token operator">:</span> <span class="token function-variable function">BinaryFn</span> <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span> <span class="token operator">=></span> a <span class="token operator">-</span> b<span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="참고-의견">참고 의견<a aria-hidden="true" tabindex="-1" href="#참고-의견"><span class="anchor"></span></a></h3>
+<ul>
+<li>표현식, 함수가 나뉘는 이유는 JS this 바인딩 때문일것이고, 함수 오버로딩은 JS 스펙 상 불가능하니, 래퍼함수로써 사용할 것을 유도하는 것이 아닐까 싶습니다. JS의 수퍼셋으로써 동작을 해야하니, 윤희님이 원하시는 일반적인 오버로딩 구현은 불가하고, JS 세상에선 오버로딩 == 타입 래핑함수 거치기 라는 국룰이 있슴당.
+<ul>
+<li>표현식, 선언식과 this는 무관합니다. function과 arrow function의 차이입니다.</li>
+<li>인터페이스건 객체 타입이건, 정말로 양변하는 타입을 의도한 것이 아니면 항상 화살표 표기법을 사용하는 것이 좋다는 내용이 있기는 합니다.</li>
+</ul>
+</li>
+<li>인터섹션(&#x26;) 개념이 어렵고 D.TS의 정의가 길어집니다.
+<ul>
+<li>D.TS의 정의가 길어지는 것은 타입스크립트 컴파일러를 믿고 가야하지 않을까 싶습니다...ㅠ</li>
+<li>인터섹션을 사용하지 않고 표현식으로 사용하는 방법을 고민해 보았습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="결론">결론<a aria-hidden="true" tabindex="-1" href="#결론"><span class="anchor"></span></a></h2>
+<ul>
+<li>오버로드가 단순히 input, output에 대한 interface 정의만 한다면 타입으로 정의하는 것이 더 좋지 않을까라고 생각을 했으나 오버로드를 위한 선언과 구현을 올바르게 한 것인가에 대해서는 그렇지 않습니다.
+<ul>
+<li>type으로 선언한 것도 선언한 것의 이름을 대변하는 이름을 붙인 것이고 구현 했다고 생각하는 것도 정의 된 것을 구현한 것이 아닌 익명함수를 넣고 그것과 타입이 같은 것일 뿐입니다.</li>
+</ul>
+</li>
+<li>연관된 값들이라면 엮여 있고 찾기 쉽게 끔 작성하는 것이 더 좋지 않을까라고 생각했지만 그것의 역할은 IDE의 역할입니다.
+<ul>
+<li>실제 작성할 때 힌트를 노출하는 것과 함수를 눌러서 구현을 찾아가는 것은 IDE가 지원해 주기 때문에 크게 걱정할 요소가 아닙니다.</li>
+</ul>
+</li>
+<li>일반적으로 널리 사용되는 방식을 사용하는 것이 좋습니다.
+<ul>
+<li>lib.dom.d.ts와 같은 일반 라이브러리나 많은 예시들에서 CASE 1을 사용합니다.</li>
+</ul>
+</li>
+<li>컴파일러가 알맞은 타입 검사를 하기 위해서, JavaScript와 비슷한 프로세스를 따릅니다. 오버로드 목록에서 첫 번째 오버로드를 진행하면서 제공된 매개변수를 사용하여 함수를 호출하려고 시도합니다. 만약 일치하게 된다면 해당 오버로드를 알맞은 오버로드로 선택하여 작업을 수행합니다. 이러한 이유로 가장 구체적인 것부터 오버로드 리스팅을 하는 것이 일반적입니다.</li>
+<li>함수 표현식을 사용하는 것이 좋은 경우도 있지만 무조건적으로 사용하기 보다 상황에 맞게 사용해야 하는데 함수 오버로드의 개념으로 볼때는 표현식을 사용하는 것이 올바르지 않습니다.</li>
+</ul>
+<h2 id="추가적인-코드-개선">추가적인 코드 개선<a aria-hidden="true" tabindex="-1" href="#추가적인-코드-개선"><span class="anchor"></span></a></h2>
+<h3 id="문제점">문제점<a aria-hidden="true" tabindex="-1" href="#문제점"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// 함수 선언(interface)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 구현(implement)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 호출</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// No overload matches this call.</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="아이템-50--오버로딩-타입보다는-조건부-타입을-사용하기">아이템 50 : 오버로딩 타입보다는 조건부 타입을 사용하기<a aria-hidden="true" tabindex="-1" href="#아이템-50--오버로딩-타입보다는-조건부-타입을-사용하기"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// 함수 선언(interface)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token generic-function"><span class="token function">add</span><span class="token generic class-name"><span class="token operator">&#x3C;</span><span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token operator">></span></span></span><span class="token punctuation">(</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token constant">T</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token constant">T</span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token builtin">string</span></span> <span class="token operator">?</span> <span class="token builtin">string</span> <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 구현(implement)</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">,</span> b<span class="token operator">:</span> <span class="token builtin">any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 함수 호출</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token string">'3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'2'</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// Argument of type '3' is not assignable to parameter of type '"2"'.(2345)</span>
+</span></code></pre>
+<hr>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&#x26;ejkGb=KOR&#x26;barcode=9788966263134">이펙티브 타입스크립트</a></li>
+<li><a href="https://joshua1988.github.io/web-development/javascript/function-expressions-vs-declarations/">함수 표현식 vs 함수 선언식</a></li>
+<li><a href="https://kunoo.tistory.com/entry/%ED%96%89%EC%9C%84-%ED%8C%A8%ED%84%B4-Visitor-pattern-%EB%B9%84%EC%A7%80%ED%84%B0-%ED%8C%A8%ED%84%B4">Kunoo</a></li>
+<li><a href="https://sorto.me/posts/2021-03-16+variance">TypeScript: 공변과 반변, 그리고 객체 타입에서의 두 가지 함수 표기법</a></li>
+<li><a href="http://typescript-handbook-ko.org/pages/functions.html">Typescript-Handbook-ko</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/javascript/타입스크립트의-오버로드","frontmatter":{"title":"타입스크립트의 오버로드","date":"2021-08-14T01:08:02.000Z","category":"javascript","tags":[],"draft":false},"content":"$b","html":"$c","excerpt":"## 오버로드  - C나 Java같은 정적 타입 언어의 경우, 매개변수의 갯수와 타입에 따라서 정적으로 여러 개의 함수를 구현할 수 있습니다. 하지만 JavaScript는 하나의 함수 내부에서 `타입 검사`를 해서 동적으로 오버로딩을 구현할 수 있습니다. - TypeScript의 경우, 오버로딩이 불가능하지는 않지만 그 방식은 정적 타입 언어인 C나 Ja"},"previousPost":{"slug":"/javascript/javascript-call-by-reference가-존재하는가","frontmatter":{"title":"javascript call by reference가 존재하는가","date":"2021-07-26T00:08:23.000Z","category":"javascript","tags":[],"draft":false}},"nextPost":{"slug":"/javascript/자바스크립트-조금-더-알아보기","frontmatter":{"title":"자바스크립트 조금 더 알아보기","date":"2022-01-19T23:01:46.000Z","category":"javascript","tags":["javascript"],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"타입스크립트의 오버로드"}],["$","meta","3",{"name":"description","content":"## 오버로드  - C나 Java같은 정적 타입 언어의 경우, 매개변수의 갯수와 타입에 따라서 정적으로 여러 개의 함수를 구현할 수 있습니다. 하지만 JavaScript는 하나의 함수 내부에서 `타입 검사`를 해서 동적으로 오버로딩을 구현할 수 있습니다. - TypeScript의 경우, 오버로딩이 불가능하지는 않지만 그 방식은 정적 타입 언어인 C나 Ja"}]]
+1:null

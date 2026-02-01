@@ -1,0 +1,139 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","terminer-setting","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","terminer-setting","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"terminer-setting\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","terminer-setting","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T61d,
+## zsh
+
+### 버전 확인
+
+```bash
+zsh --version
+# zsh 5.5.1 (x86_64-apple-darwin17.5.0)
+```
+
+### zsh가 없다면 설치
+
+```bash
+brew update
+brew install zsh
+```
+
+### bash를 zsh로 변경
+
+```bash
+chsh -s `which zsh`
+```
+
+### 재로그인하거나 터미널을 종료하고 재시작한 후 기본 쉘이 zsh인 것을 확인한다.
+
+- 일부 시스템 특히 OS X에서는 /etc/shells 파일에 설치한 쉘을 등록한 후에 재시작해야 합니다.
+
+```bash
+echo $SHELL
+# /usr/bin/zsh
+```
+
+### oh-my-zsh 설치
+
+```bash
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
+
+## iTerm2
+
+### iTerm2 에서 다운로드 하거나, Homebrew 를 통해 다운 받는다.
+
+```bash
+brew cask install iterm2
+```
+
+### 테마 변경 ~./zshrc
+
+```bash
+vi ~/.zshrc
+```
+
+- 현재 사용 중인 테마 : ZSH_THEME="refined"
+
+### 단축키
+
+- 새로운 탭 : command + t
+- 탭 이동 : command + 숫자
+- 화면 세로 분할 : command + d
+- 화면 가로 분할 : command + shift + d
+- 화면 포커스 이동 : command + [ 또는 command + ]
+- 현재 포커스 찾기 : command + /
+- 현재 화면 종료 : command + w
+
+### 테마
+
+#### Bullet Train
+
+- 내장된 테마가 아니기 때문에 별도의 설치가 필요합니다.
+- 커서가 개행된 위치에 있기 때문에 항상 커서 위치가 같습니다.
+
+#### zsh-syntax-highlighting
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-\$HOME}/.zshrc
+```
+c:T1750,<h2 id="zsh">zsh<a aria-hidden="true" tabindex="-1" href="#zsh"><span class="anchor"></span></a></h2>
+<h3 id="버전-확인">버전 확인<a aria-hidden="true" tabindex="-1" href="#버전-확인"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">zsh</span> <span class="token parameter variable">--version</span>
+</span><span class="code-line"><span class="token comment"># zsh 5.5.1 (x86_64-apple-darwin17.5.0)</span>
+</span></code></pre>
+<h3 id="zsh가-없다면-설치">zsh가 없다면 설치<a aria-hidden="true" tabindex="-1" href="#zsh가-없다면-설치"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">brew update
+</span><span class="code-line">brew <span class="token function">install</span> <span class="token function">zsh</span>
+</span></code></pre>
+<h3 id="bash를-zsh로-변경">bash를 zsh로 변경<a aria-hidden="true" tabindex="-1" href="#bash를-zsh로-변경"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">chsh <span class="token parameter variable">-s</span> <span class="token variable"><span class="token variable">`</span><span class="token function">which</span> <span class="token function">zsh</span><span class="token variable">`</span></span>
+</span></code></pre>
+<h3 id="재로그인하거나-터미널을-종료하고-재시작한-후-기본-쉘이-zsh인-것을-확인한다">재로그인하거나 터미널을 종료하고 재시작한 후 기본 쉘이 zsh인 것을 확인한다.<a aria-hidden="true" tabindex="-1" href="#재로그인하거나-터미널을-종료하고-재시작한-후-기본-쉘이-zsh인-것을-확인한다"><span class="anchor"></span></a></h3>
+<ul>
+<li>일부 시스템 특히 OS X에서는 /etc/shells 파일에 설치한 쉘을 등록한 후에 재시작해야 합니다.</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token builtin class-name">echo</span> <span class="token environment constant">$SHELL</span>
+</span><span class="code-line"><span class="token comment"># /usr/bin/zsh</span>
+</span></code></pre>
+<h3 id="oh-my-zsh-설치">oh-my-zsh 설치<a aria-hidden="true" tabindex="-1" href="#oh-my-zsh-설치"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">curl</span> <span class="token parameter variable">-L</span> https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh <span class="token operator">|</span> <span class="token function">sh</span>
+</span></code></pre>
+<h2 id="iterm2">iTerm2<a aria-hidden="true" tabindex="-1" href="#iterm2"><span class="anchor"></span></a></h2>
+<h3 id="iterm2-에서-다운로드-하거나-homebrew-를-통해-다운-받는다">iTerm2 에서 다운로드 하거나, Homebrew 를 통해 다운 받는다.<a aria-hidden="true" tabindex="-1" href="#iterm2-에서-다운로드-하거나-homebrew-를-통해-다운-받는다"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">brew cask <span class="token function">install</span> iterm2
+</span></code></pre>
+<h3 id="테마-변경-zshrc">테마 변경 ~./zshrc<a aria-hidden="true" tabindex="-1" href="#테마-변경-zshrc"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">vi</span> ~/.zshrc
+</span></code></pre>
+<ul>
+<li>현재 사용 중인 테마 : ZSH_THEME="refined"</li>
+</ul>
+<h3 id="단축키">단축키<a aria-hidden="true" tabindex="-1" href="#단축키"><span class="anchor"></span></a></h3>
+<ul>
+<li>새로운 탭 : command + t</li>
+<li>탭 이동 : command + 숫자</li>
+<li>화면 세로 분할 : command + d</li>
+<li>화면 가로 분할 : command + shift + d</li>
+<li>화면 포커스 이동 : command + [ 또는 command + ]</li>
+<li>현재 포커스 찾기 : command + /</li>
+<li>현재 화면 종료 : command + w</li>
+</ul>
+<h3 id="테마">테마<a aria-hidden="true" tabindex="-1" href="#테마"><span class="anchor"></span></a></h3>
+<h4 id="bullet-train">Bullet Train<a aria-hidden="true" tabindex="-1" href="#bullet-train"><span class="anchor"></span></a></h4>
+<ul>
+<li>내장된 테마가 아니기 때문에 별도의 설치가 필요합니다.</li>
+<li>커서가 개행된 위치에 있기 때문에 항상 커서 위치가 같습니다.</li>
+</ul>
+<h4 id="zsh-syntax-highlighting">zsh-syntax-highlighting<a aria-hidden="true" tabindex="-1" href="#zsh-syntax-highlighting"><span class="anchor"></span></a></h4>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line"><span class="token function">git</span> clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+</span><span class="code-line"><span class="token builtin class-name">echo</span> <span class="token string">"source <span class="token variable">${(q-)PWD}</span>/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"</span> <span class="token operator">>></span> <span class="token variable">${ZDOTDIR<span class="token operator">:-</span>\$HOME}</span>/.zshrc
+</span></code></pre>2:["$","$La",null,{"post":{"slug":"/develop/terminer-setting","frontmatter":{"title":"Terminer Setting","date":"2020-05-25T22:06:28.000Z","category":"develop","draft":false},"content":"$b","html":"$c","excerpt":"## zsh  ### 버전 확인  ```bash zsh --version # zsh 5.5.1 (x86_64-apple-darwin17.5.0) ```  ### zsh가 없다면 설치  ```bash brew update brew install zsh ```  ### bash를 zsh로 변경  ```bash chsh -s `which zsh` ```  ##"},"previousPost":{"slug":"/develop/oop,-aop,-fp","frontmatter":{"title":"OOP, AOP, FP","date":"2020-04-16T10:05:11.000Z","category":"develop","draft":false}},"nextPost":{"slug":"/develop/객체지향-프로그래밍(oop)","frontmatter":{"title":"객체지향 프로그래밍(OOP)","date":"2020-07-21T12:08:11.000Z","category":"develop","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Terminer Setting"}],["$","meta","3",{"name":"description","content":"## zsh  ### 버전 확인  ```bash zsh --version # zsh 5.5.1 (x86_64-apple-darwin17.5.0) ```  ### zsh가 없다면 설치  ```bash brew update brew install zsh ```  ### bash를 zsh로 변경  ```bash chsh -s `which zsh` ```  ##"}]]
+1:null

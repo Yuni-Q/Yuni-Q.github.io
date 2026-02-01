@@ -1,0 +1,144 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"동기-비동기\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","%EB%8F%99%EA%B8%B0-%EB%B9%84%EB%8F%99%EA%B8%B0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:Te4e,
+## SYNC / ASYNC
+
+- 중요한 포인트는 `순서와 결과(처리)이 관점 `입니다.
+- `return 한다면 SYNC, callback으로 응답한다면 ASYNC 입니다`.
+- Synchronous / Asynchronous는 호출되는 함수의 작업 완료 여부를 누가 신경쓰냐가 관심사 입니다.
+- SYNC : 서브루틴이 즉시 값을 반환 합니다.
+  - 이벤트를 자신이 직접 처리 합니다.(확인의 주체가 유저 프로세스이며, 다 될때까지 기다리거나 스스로 확인 합니다.)
+  - Synchronous I/O : 작업을 요청한 후 작업의 결과가 나올 때까지 기다린 후 처리 합니다.(프로세스는 커널에 지속적으로 I/O 준비사항을 체크 합니다.)
+- ASYNC : 서브루틴이 콜백을 통해 값을 반환 합니다.
+  - 이벤트 핸들러 (callback)에 의해 처리 합니다.(callback 함수가 호출되기까지 다른 작업 가능 합니다.)
+  - Asynchronous I/O : 직전 시스템 호출의 종료가 발생하면 그에 따른 처리를 진행 합니다.
+
+## BLOCK / NON BLOCK
+
+- 중요한 포인트는 `제어권 `입니다.
+- `주도권을 넘기면 BLOCK, 주도권을 넘지지 않으면 NON BLOCK 입니다`.
+- Blocking/NonBlocking은 호출되는 함수가 바로 리턴하느냐 마느냐가 관심사 입니다.
+- block : 완료까지 대기(리턴되기 전까지 멈춤) 합니다.
+  - Blocking I/O : 유저 프로세스가 시스템 호출을 하고나서 결과가 반환되기까지 다음 처리로 넘어가지 않습니다.
+- non-block : 미완료라도 즉시 리턴 합니다.
+  - Non-Blocking I/O : 호출한 직후에 프로그램으로 제어가 돌아와서 시스템 호출의 종료를 기다리지 않고 다음 처리로 넘어갈 수 있습니다.
+
+## SYNC BLOCK
+
+- 즉시 플로우제어권을 반환하지 않습니다.
+- normalAPI, legacyAPI
+- 일반적인 생각하는 프로그램 동작입니다.
+
+## SYNC NON BLOCK
+
+- 즉시 플로우 제어권을 반화합니다.
+- oldAPI, IOCP, Future, complete, 정보 로딩 정도를 보여줄 때 사용합니다.
+- event loop처럼 쓰레드가 묶여 있지 않고 그 동안 다른 작업을 하다가 callback이 오면 다시 플로우를 진행합니다.
+
+## ASYNC BLOCK
+
+- 즉시 플로우 제어권을 반환하지 않습니다.
+- TRAP
+
+## ASYNC NON BLOCK
+
+- 즉시 플로우 제어권을 반환 합니다.
+- modernAPI
+- ASYNC 함수를 부르고 다른 일을 하지 않고 작업을 계속 진행합니다.
+
+## 카페에서 커피를 주문할 경우
+
+- 1-1. 커피를 타달라는 요청이 왔다.
+- 2-1. 이 때 커피가 있으면 타준다(블로킹/넌블로킹 모두)
+- 2-2. 커피가 없는 경우 블로킹 : '잠깐만요'하고 사러 간다. / 넌블로킹 : 커피가 없다고 말하고 사러 간다.
+- 3-1. 동기 : 커피가 타졌는지 안타졌는지 내가 확인한다.
+- 3-2. 비동기 : 벨이 울리면 받으러 간다.
+
+## 직렬(Serial) 처리 / 동시(concurrent) 처리
+
+- 직렬 처리 : 다른 한개의 쓰레드에서. (보통 메인에서) 분산처리 시킨 작업을 다른 한개의 쓰레드에서 처리 합니다.
+- 동시 처리 : 다른 여러개의 쓰레드에서. (보통 메인에서) 분산처리 시킨 작업을 다른 여러개의 쓰레드에서 처리 합니다.
+- 분선처리 하려는 것이라면 무조건 동시처리가 좋아보이는데 직렬 처리하는 이유는 작업의 순서가 필요할 수도 있기 때문입니다.
+- 직렬 처리는 순서가 중요한 작업을 처리할때 사용합니다.
+- 동시 처리는 각자 독립적이지만 중요도나 작업의 성격등 유사한 여러개의 작업을 처리할 때 사용합니다.
+c:T1440,<h2 id="sync--async">SYNC / ASYNC<a aria-hidden="true" tabindex="-1" href="#sync--async"><span class="anchor"></span></a></h2>
+<ul>
+<li>중요한 포인트는 <code class="inline-code">순서와 결과(처리)이 관점 </code>입니다.</li>
+<li><code class="inline-code">return 한다면 SYNC, callback으로 응답한다면 ASYNC 입니다</code>.</li>
+<li>Synchronous / Asynchronous는 호출되는 함수의 작업 완료 여부를 누가 신경쓰냐가 관심사 입니다.</li>
+<li>SYNC : 서브루틴이 즉시 값을 반환 합니다.
+<ul>
+<li>이벤트를 자신이 직접 처리 합니다.(확인의 주체가 유저 프로세스이며, 다 될때까지 기다리거나 스스로 확인 합니다.)</li>
+<li>Synchronous I/O : 작업을 요청한 후 작업의 결과가 나올 때까지 기다린 후 처리 합니다.(프로세스는 커널에 지속적으로 I/O 준비사항을 체크 합니다.)</li>
+</ul>
+</li>
+<li>ASYNC : 서브루틴이 콜백을 통해 값을 반환 합니다.
+<ul>
+<li>이벤트 핸들러 (callback)에 의해 처리 합니다.(callback 함수가 호출되기까지 다른 작업 가능 합니다.)</li>
+<li>Asynchronous I/O : 직전 시스템 호출의 종료가 발생하면 그에 따른 처리를 진행 합니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="block--non-block">BLOCK / NON BLOCK<a aria-hidden="true" tabindex="-1" href="#block--non-block"><span class="anchor"></span></a></h2>
+<ul>
+<li>중요한 포인트는 <code class="inline-code">제어권 </code>입니다.</li>
+<li><code class="inline-code">주도권을 넘기면 BLOCK, 주도권을 넘지지 않으면 NON BLOCK 입니다</code>.</li>
+<li>Blocking/NonBlocking은 호출되는 함수가 바로 리턴하느냐 마느냐가 관심사 입니다.</li>
+<li>block : 완료까지 대기(리턴되기 전까지 멈춤) 합니다.
+<ul>
+<li>Blocking I/O : 유저 프로세스가 시스템 호출을 하고나서 결과가 반환되기까지 다음 처리로 넘어가지 않습니다.</li>
+</ul>
+</li>
+<li>non-block : 미완료라도 즉시 리턴 합니다.
+<ul>
+<li>Non-Blocking I/O : 호출한 직후에 프로그램으로 제어가 돌아와서 시스템 호출의 종료를 기다리지 않고 다음 처리로 넘어갈 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sync-block">SYNC BLOCK<a aria-hidden="true" tabindex="-1" href="#sync-block"><span class="anchor"></span></a></h2>
+<ul>
+<li>즉시 플로우제어권을 반환하지 않습니다.</li>
+<li>normalAPI, legacyAPI</li>
+<li>일반적인 생각하는 프로그램 동작입니다.</li>
+</ul>
+<h2 id="sync-non-block">SYNC NON BLOCK<a aria-hidden="true" tabindex="-1" href="#sync-non-block"><span class="anchor"></span></a></h2>
+<ul>
+<li>즉시 플로우 제어권을 반화합니다.</li>
+<li>oldAPI, IOCP, Future, complete, 정보 로딩 정도를 보여줄 때 사용합니다.</li>
+<li>event loop처럼 쓰레드가 묶여 있지 않고 그 동안 다른 작업을 하다가 callback이 오면 다시 플로우를 진행합니다.</li>
+</ul>
+<h2 id="async-block">ASYNC BLOCK<a aria-hidden="true" tabindex="-1" href="#async-block"><span class="anchor"></span></a></h2>
+<ul>
+<li>즉시 플로우 제어권을 반환하지 않습니다.</li>
+<li>TRAP</li>
+</ul>
+<h2 id="async-non-block">ASYNC NON BLOCK<a aria-hidden="true" tabindex="-1" href="#async-non-block"><span class="anchor"></span></a></h2>
+<ul>
+<li>즉시 플로우 제어권을 반환 합니다.</li>
+<li>modernAPI</li>
+<li>ASYNC 함수를 부르고 다른 일을 하지 않고 작업을 계속 진행합니다.</li>
+</ul>
+<h2 id="카페에서-커피를-주문할-경우">카페에서 커피를 주문할 경우<a aria-hidden="true" tabindex="-1" href="#카페에서-커피를-주문할-경우"><span class="anchor"></span></a></h2>
+<ul>
+<li>1-1. 커피를 타달라는 요청이 왔다.</li>
+<li>2-1. 이 때 커피가 있으면 타준다(블로킹/넌블로킹 모두)</li>
+<li>2-2. 커피가 없는 경우 블로킹 : '잠깐만요'하고 사러 간다. / 넌블로킹 : 커피가 없다고 말하고 사러 간다.</li>
+<li>3-1. 동기 : 커피가 타졌는지 안타졌는지 내가 확인한다.</li>
+<li>3-2. 비동기 : 벨이 울리면 받으러 간다.</li>
+</ul>
+<h2 id="직렬serial-처리--동시concurrent-처리">직렬(Serial) 처리 / 동시(concurrent) 처리<a aria-hidden="true" tabindex="-1" href="#직렬serial-처리--동시concurrent-처리"><span class="anchor"></span></a></h2>
+<ul>
+<li>직렬 처리 : 다른 한개의 쓰레드에서. (보통 메인에서) 분산처리 시킨 작업을 다른 한개의 쓰레드에서 처리 합니다.</li>
+<li>동시 처리 : 다른 여러개의 쓰레드에서. (보통 메인에서) 분산처리 시킨 작업을 다른 여러개의 쓰레드에서 처리 합니다.</li>
+<li>분선처리 하려는 것이라면 무조건 동시처리가 좋아보이는데 직렬 처리하는 이유는 작업의 순서가 필요할 수도 있기 때문입니다.</li>
+<li>직렬 처리는 순서가 중요한 작업을 처리할때 사용합니다.</li>
+<li>동시 처리는 각자 독립적이지만 중요도나 작업의 성격등 유사한 여러개의 작업을 처리할 때 사용합니다.</li>
+</ul>2:["$","$La",null,{"post":{"slug":"/develop/동기-비동기","frontmatter":{"title":"동기 비동기","date":"2020-02-24T12:02:21.000Z","category":"develop","draft":false},"content":"$b","html":"$c","excerpt":"## SYNC / ASYNC  - 중요한 포인트는 `순서와 결과(처리)이 관점 `입니다. - `return 한다면 SYNC, callback으로 응답한다면 ASYNC 입니다`. - Synchronous / Asynchronous는 호출되는 함수의 작업 완료 여부를 누가 신경쓰냐가 관심사 입니다. - SYNC : 서브루틴이 즉시 값을 반환 합니다.   -"},"previousPost":{"slug":"/develop/http","frontmatter":{"title":"http","date":"2020-02-11T09:02:40.000Z","category":"develop","draft":false}},"nextPost":{"slug":"/develop/repository와-dao","frontmatter":{"title":"repository와 DAO","date":"2020-02-24T18:02:29.000Z","category":"develop","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"동기 비동기"}],["$","meta","3",{"name":"description","content":"## SYNC / ASYNC  - 중요한 포인트는 `순서와 결과(처리)이 관점 `입니다. - `return 한다면 SYNC, callback으로 응답한다면 ASYNC 입니다`. - Synchronous / Asynchronous는 호출되는 함수의 작업 완료 여부를 누가 신경쓰냐가 관심사 입니다. - SYNC : 서브루틴이 즉시 값을 반환 합니다.   -"}]]
+1:null

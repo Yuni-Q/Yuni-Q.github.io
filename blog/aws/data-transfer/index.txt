@@ -1,0 +1,56 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","aws/data-transfer","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","aws/data-transfer","c"],{"children":["__PAGE__?{\"slug\":[\"aws\",\"data-transfer\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","aws/data-transfer","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T749,
+- AWS EC2를 이용해 사이드 프로젝트를 진행하는 중 \$273.11 달러의 요금 청구서가 날아왔습니다.
+- Free Tier를 사용하고 있었기 때문에 과금 될 요소가 있지 않다고 생각했습니다.
+  - EC2, MYSQL, S3를 사용하고 있었습니다.
+- 비용 발생 요인은 `Data Transfer` 입니다.
+  - $0.126 per GB - first 10 TB / month data transfer out beyond the global free tier / 1,961.881 GB / $247.20
+  - $0.01 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB / 107.630 GB / $1.08
+  - VAT / \$24.83
+- AWS EC2와 S3, MYSQL 간에 데이터 전송은 Data Transfer가 발생하지 않지만 앱에서의 호출 때문에 Data Transfer 요금이 발생했습니다.
+  - 이미지는 캐싱 했으나 API를 페이징 없이 호출해서 한번 호출에 2.1M가 소모 되었습니다.(캐싱과 페이징의 중요성...)
+- 무제한 호스팅도 생각해 보았으나 AWS 이외의 다른 서비스이고 제약도 많아 보였습니다.
+- 같은 AWS에서 Data Transfer가 많이 지원되는 Lightsail로 서버를 옮기기로 하였습니다.
+  - Lightsail의 bandwidth(네트워크 대역폭)는 무제한(물론 무료는 아닙니다)이지만, 한 달에 무료로 상당한 양의 outbound bandwidth를 제공합니다. 또한 Routh53의 제한된 기능과 단순한 인터페이스를 맺을 수 있습니다.
+  - Lightsail의 대상은 AWS의 EC2, EBS, VPC, 그리고 Route53 같은 무수한 옵션들을 고려하고 싶지 않은 `간단한 VPS를 원하는 고객`들 입니다.
+  - 20 USD / 월로 4GB 메모리 / 2코어 프로세서 / 80GB SSD 디스크 / 4TB 전송을 사용해 보도록 했습니다.
+  - 이 역시 4T를 초과할 경우 Data Transfer 비용이 발생합니다.
+- Lightsail을 활용해서 비용을 \$21.29로 감소하게 되었습니다.
+b:T81b,<ul>
+<li>AWS EC2를 이용해 사이드 프로젝트를 진행하는 중 $273.11 달러의 요금 청구서가 날아왔습니다.</li>
+<li>Free Tier를 사용하고 있었기 때문에 과금 될 요소가 있지 않다고 생각했습니다.
+<ul>
+<li>EC2, MYSQL, S3를 사용하고 있었습니다.</li>
+</ul>
+</li>
+<li>비용 발생 요인은 <code class="inline-code">Data Transfer</code> 입니다.
+<ul>
+<li>$0.126 per GB - first 10 TB / month data transfer out beyond the global free tier / 1,961.881 GB / $247.20</li>
+<li>$0.01 per GB - regional data transfer - in/out/between EC2 AZs or using elastic IPs or ELB / 107.630 GB / $1.08</li>
+<li>VAT / $24.83</li>
+</ul>
+</li>
+<li>AWS EC2와 S3, MYSQL 간에 데이터 전송은 Data Transfer가 발생하지 않지만 앱에서의 호출 때문에 Data Transfer 요금이 발생했습니다.
+<ul>
+<li>이미지는 캐싱 했으나 API를 페이징 없이 호출해서 한번 호출에 2.1M가 소모 되었습니다.(캐싱과 페이징의 중요성...)</li>
+</ul>
+</li>
+<li>무제한 호스팅도 생각해 보았으나 AWS 이외의 다른 서비스이고 제약도 많아 보였습니다.</li>
+<li>같은 AWS에서 Data Transfer가 많이 지원되는 Lightsail로 서버를 옮기기로 하였습니다.
+<ul>
+<li>Lightsail의 bandwidth(네트워크 대역폭)는 무제한(물론 무료는 아닙니다)이지만, 한 달에 무료로 상당한 양의 outbound bandwidth를 제공합니다. 또한 Routh53의 제한된 기능과 단순한 인터페이스를 맺을 수 있습니다.</li>
+<li>Lightsail의 대상은 AWS의 EC2, EBS, VPC, 그리고 Route53 같은 무수한 옵션들을 고려하고 싶지 않은 <code class="inline-code">간단한 VPS를 원하는 고객</code>들 입니다.</li>
+<li>20 USD / 월로 4GB 메모리 / 2코어 프로세서 / 80GB SSD 디스크 / 4TB 전송을 사용해 보도록 했습니다.</li>
+<li>이 역시 4T를 초과할 경우 Data Transfer 비용이 발생합니다.</li>
+</ul>
+</li>
+<li>Lightsail을 활용해서 비용을 $21.29로 감소하게 되었습니다.</li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/aws/data-transfer","frontmatter":{"title":"data transfer","date":"2020-05-07T23:05:09.000Z","category":"aws","draft":false},"content":"$a","html":"$b","excerpt":"- AWS EC2를 이용해 사이드 프로젝트를 진행하는 중 \\$273.11 달러의 요금 청구서가 날아왔습니다. - Free Tier를 사용하고 있었기 때문에 과금 될 요소가 있지 않다고 생각했습니다.   - EC2, MYSQL, S3를 사용하고 있었습니다. - 비용 발생 요인은 `Data Transfer` 입니다.   - $0.126 per GB - fir"},"previousPost":{"slug":"/frontend/ellipsis","frontmatter":{"title":"ellipsis","date":"2020-04-28T09:04:01.000Z","category":"frontend","draft":false}},"nextPost":{"slug":"/frontend/lh-and-rlh","frontmatter":{"title":"lh and rlh","date":"2020-05-08T09:06:27.000Z","category":"frontend","draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"data transfer"}],["$","meta","3",{"name":"description","content":"- AWS EC2를 이용해 사이드 프로젝트를 진행하는 중 \\$273.11 달러의 요금 청구서가 날아왔습니다. - Free Tier를 사용하고 있었기 때문에 과금 될 요소가 있지 않다고 생각했습니다.   - EC2, MYSQL, S3를 사용하고 있었습니다. - 비용 발생 요인은 `Data Transfer` 입니다.   - $0.126 per GB - fir"}]]
+1:null

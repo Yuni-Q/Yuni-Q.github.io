@@ -1,0 +1,951 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","typescript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AA%A8%EB%8D%B8%EB%A7%81","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","typescript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AA%A8%EB%8D%B8%EB%A7%81","c"],{"children":["__PAGE__?{\"slug\":[\"typescript\",\"타입스크립트-모델링\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","typescript/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AA%A8%EB%8D%B8%EB%A7%81","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T3536,
+## 타입스크립트의 타이핑
+
+- 자바스크립트는 덕 타이핑(duck typing) 기반이고 타입스크립트가 이를 모델링하기 위해 `구조적 타이핑`을 사용합니다.
+  - 타입스크립트가 구조적 타이핑을 도입한 이유는 동적 타입 언어인 자바스크립트를 기반으로 하기 때문입니다.
+  - Java 기반의 객체지향에서는 `명목적 타이핑`을 사용합니다.
+
+## 구조적 타이핑이란?
+
+- 구조적 타이핑은 값 자체의 타입보다는 값이 가진 `내부 구조`에 기반해서 타입 호환성을 검사한다.
+- **좋든 싫든 타입은 열려있습니다**.
+- 타입스크립트의 클래스 역시 구조적 타이핑 규칙을 따릅니다.
+  - 클래스의 인스턴스가 Java 기반의 객체지향과 다를 수 있습니다.
+- 어떤 인터페이스에 할당 가능한 값이라면 타입 선언에 명시적으로 나열된 속성들을 가지고 있을 겁니다. 타입은 `봉인`되어 있지 않습니다.
+- 추가 속성이 있으면 값의 집합은 더 작아집니다.
+- 반대로 유니온 타입이 있으면 값의 집합은 더 커집니다.
+
+### 내부 구조만 같다면 타입은 동일한 것으로 판단합니다.
+
+```ts
+class ClassA {
+  str: string;
+  constructor(str: string) {
+    this.str = str;
+  }
+}
+const classA = new ClassA('instance of A');
+const objectB: ClassA = { str: 'object literal' };
+
+// ---
+
+class A {
+  clap() {
+    console.log('A');
+  }
+}
+class B {
+  clap() {
+    console.log('B');
+  }
+}
+const C = {
+  clap() {
+    console.log('C');
+  },
+};
+
+let a: A = new A();
+a.clap();
+
+a = new B();
+a.clap();
+
+a = C;
+a.clap();
+
+a = { clap: () => console.log('D') };
+a.clap();
+```
+
+### 인터페이스의 이름이 달라도 내부 구조가 같다면 할당 가능합니다.
+
+- `이는 Java 기반의 객체지향과의 큰 차이점이며 우리가 구조적 타이핑을 잘 이해하고 사용해야 하는 이유` 입니다.
+
+```ts
+interface Vector1D {
+  x: number;
+}
+
+interface Point {
+  x: number;
+}
+
+let p = v1; // Ok
+v1 = p; // Ok
+```
+
+### 타입스크립트는 구조적 타이핑(덕 타이핑)을 사용하기 때문에, 값을 세밀하게 구분하지 못하는 경우가 있습니다
+
+- 값을 구분하기 위해 공식 명칭이 필요하다면 상표를 붙이는 것을 고려해야 합니다.
+- 상표 기법은 타입 시스템에서 동작하지만 런타임에 상표를 검사하는 것과 동일한 효과를 얻을 수 있습니다.
+
+```ts
+type Meters = number & { _brand: 'meters' };
+type Seconds = number & { _brand: 'seconds' };
+
+const meters = (m: number) => m as Meters;
+const seconds = (s: number) => s as Seconds;
+
+const oneKm = meters(1000); // 타입이 Meters
+const oneMin = seconds(60); // 타입이 Seconds
+```
+
+### 상속을 받은 것과 나열한 것 역시 내부 구조가 같다면 동일한 것으로 판단 합니다.
+
+```ts
+interface Vector1D {
+  x: number;
+}
+
+// Vector2D는 Vector1D의 서브타입입니다.
+// Vector2D와 Vector2D2는 타입스크립트의 구조적 타이핑에서 동일합니다.
+interface Vector2D extends Vector1D {
+  y: number;
+}
+interface Vector2D2 {
+  x: number;
+  y: number;
+}
+
+// Vector3D는 Vector2D의 서브타입입니다.
+// Vector3D와 Vector3D2는 타입스크립트의 구조적 타이핑에서 동일합니다.
+interface Vector3D extends Vector2D {
+  z: number;
+}
+interface Vector3D2 {
+  x: number;
+  y: number;
+  z: number;
+}
+```
+
+### 구조적 타이핑은 잉여 속성 체크에 한계가 있습니다.
+
+- `객체 리터럴 변수에 할당`하거나 `함수에 매개변수로 전달`할 때 `잉여 속성 체크`가 수행됩니다.
+- 잉여 속성 체크는 오류를 찾는 효과적인 방법이지만, **타입스크립트 타입 체커가 수행하는 일반적인 구조적 할당 가능성 체크와 역할이 다릅니다**. 할당의 개념을 정확히 알아야 잉여 속성 체크와 일반적인 구조적 할당 가능성 체크를 구분할 수 있습니다.
+- 잉여 속성 체크는 구조적 타이핑 시스템에서 허용되는 속성 이름의 오타 같은 실수를 잡는 데 효과적인 방법입니다. 선택적 필드를 포함하는 타입에 특히 유용한 반면, 적용 범위도 매우 제한적이며 `오직 객체 리터럴에만 적용됩니다`.
+- 잉여 속성 체크에는 한계가 있습니다. `임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다`는 점을 기억해야 합니다.
+
+```ts
+interface Vector1D {
+  x: number;
+}
+
+interface Vector2D extends Vector1D {
+  y: number;
+}
+
+let v1: Vector1D = {
+  x: 1,
+};
+let v2: Vector2D = {
+  x: 1,
+  y: 2,
+};
+
+v1 = v2; // OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)
+v2 = v1; // Property 'y' is missing in type 'Vector1D' but required in type 'Vector2D'.(2741)
+
+// ---
+
+interface A {
+  a: string;
+  b: string;
+}
+
+const a: A = {
+  a: 'a',
+  b: 'b',
+  c: 'c',
+  // '{ a: string; b: string; c: string; }' 형식은 'A' 형식에 할당할 수 없습니다. 개체 리터럴은 알려진 속성만 지정할 수 있으며 'A' 형식에 'c'이(가) 없습니다.ts(2322)
+};
+
+const b = {
+  a: 'a',
+  b: 'b',
+  c: 'c',
+};
+
+const c: A = b; // OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)
+```
+
+## 그렇다면 타입을 어떻게 사용해야 할까요?
+
+- 공통적인 것을 원본 모델로 만들고 이를 유틸리티 타입을 활용해서 파생된 타입을 사용합니다.
+  - 타입스크립트는 `절충하는 언어`입니다.
+  - 원본 타입과 유틸타입의 조합으로 타입이 많아지는 것을 방지합니다.
+
+### 리액트에서 컴포넌트를 만드는 것처럼 타이핑을 해보겠습니다.
+
+- 원본 모델(인터페이스)과 타입 레이어의 분리합니다.
+  - interface는 병합이 가능하다는 특징을 활용해 `외부와의 소통`에 활용합니다. 사용하는 곳에서 필요에 따라 유틸리티 타입 혹은 병합 성질을 활용해서 사용합니다.
+  - type은 파일 내에서 interface를 활용해서 만들어서 사용합니다.
+- 원본 모델은 css-in-js나 custom hook에서 거의 같지만 조금 다르게 활용되는 경우가 많습니다. 보통 Component의 props에서는 optional인 값이 css-in-js로 넘어갈 때는 필수값이 됩니다. 이를 위해 타입을 2번 만드는 것이 아니라 원본 모델과 유틸리티 타입을 활용해 타입을 여러개 만들지 않고 유지보수성도 향상 시킬 수 있습니다.
+
+```ts
+// 원본 모델(외부와 소통 및 공개용)
+export interface TextProps {
+  value: string;
+  placeholder: string;
+  color: string;
+  border: string;
+}
+
+// 내부 소모용
+type TextPropsMustBe = Pick<TextProps, 'value' | 'border'>;
+type TextPropsPartialType = Partial<TextProps> & TextPropsMustBe;
+type TextContainerProps = Pick<TextProps, 'color'>;
+
+// Component
+const TextComponent: (props: TextPropsPartialType) => string = (props) => {
+  const passedProps = useText(props);
+
+  return TextContainer(passedProps);
+};
+
+// css-in-js
+const TextContainer = (props: TextContainerProps) => `
+  color: ${props.color};
+`;
+
+// custom hook
+function useText(
+  props: TextPropsPartialType,
+): TextPropsMustBe & TextContainerProps {
+  return {
+    color: props.value || '#fff',
+    value: props.value,
+    border: props.border,
+  };
+}
+
+// 실제 사용
+TextComponent({ value: '', border: '1px solid black' });
+```
+
+---
+
+## 참고
+
+- [마광휘님의 설명](https://vallista.kr/)
+  - 타입스크립트의 핵심 개념인 구조적 타입 시스템을 기반으로 설명하면, 타입스크립트에서 구조적 타입 시스템을 선택한 이유는 다음과 같습니다. interface는 가장 기저에 있는 객체의 모델을 나타냅니다. 다만, 자바스크립트는 타입으로 정의할 수 없는 다양한 형태가 런타임으로 동작될 수 있습니다. 그렇기에 런타임과 컴파일 타임 (사실 타입 체킹 타임 이겠죠?)이 다르고, 런타임에서 원하는 (허용해야하는) 경우와 오브젝트에서 은닉하고 캡슐화 해야하는 경우 등이 존재. 그러한 다양한 타입을 포용하려면 타입을 자유롭게 가공하고 만들 수 있도록 제공되어야 했습니다. 그렇기에 다양한 Utility Type과 그에따른 순수 객체를 위한 인터페이스를 분리하고 조합하여 Type Alias를 하여금 더 복잡한 타입을 나타낼 수 있도록 하였고, 궁극적인 지향점은, 아주 최소한의 모델을 만들고 최소한의 모델을 유연하게 타입으로 만들어서, 타입을 조합해 최소한의 타입으로 동작하도록 하는 것입니다. 또한 이 구조는 타입스크립트에서 지향하고 있는 “점진적 타이핑“과 자바스크립트의 “덕 타이핑” 관점에서도 충분히 먹히는 선택지기에 가게 되었죠. (출처: 타입스크립트 위키피디아 + 타입스크립트 깃헙 MR)
+
+---
+
+## 서브타입 파보기
+
+### extends에서의 관계
+
+#### 서브셋이 아닌 경우
+
+```ts
+// ERROR
+interface A {
+  a: string;
+}
+
+interface B extends A {
+  // Interface 'B' incorrectly extends interface 'A'. Types of property 'a' are incompatible. Type 'number' is not assignable to type 'string'.(2430)
+  a: number;
+}
+```
+
+#### 서브셋인 경우
+
+```ts
+// OK
+interface A {
+  a?: string;
+}
+
+interface B extends A {
+  a: string;
+}
+```
+
+#### 서브셋이 아닌 경우2
+
+```ts
+// ERROR
+interface A {
+  a: string;
+}
+
+interface B extends A {
+  // Interface 'B' incorrectly extends interface 'A'. Types of property 'a' are incompatible. Type 'string | undefined' is not assignable to type 'string'. Type 'undefined' is not assignable to type 'string'.(2430)
+  a?: string;
+}
+```
+
+### 선언 병합에서는?
+
+#### 같은 타입인 경우
+
+```ts
+// OK
+interface A {
+  a: string;
+}
+
+interface A {
+  a: string;
+}
+```
+
+#### 서브셋이 아닌 경우
+
+```ts
+// ERROR
+interface A {
+  a: string;
+  // All declarations of 'a' must have identical modifiers.(2687)
+}
+
+interface A {
+  a: number;
+  // All declarations of 'a' must have identical modifiers.(2687)
+  // Subsequent property declarations must have the same type.  Property 'a' must be of type 'string | undefined', but here has type 'string'.(2717)
+}
+```
+
+#### 서브셋인 경우
+
+```ts
+// ERROR
+interface A {
+  a: string;
+  // All declarations of 'a' must have identical modifiers.(2687)
+}
+
+interface A {
+  a?: string;
+  // All declarations of 'a' must have identical modifiers.(2687)
+  // Subsequent property declarations must have the same type.  Property 'a' must be of type 'string', but here has type 'string | undefined'.(2717)
+}
+```
+
+#### 서브셋인 경우2
+
+```ts
+// ERROR
+interface A {
+  a: string;
+}
+
+interface A {
+  a: 'a';
+  // Subsequent property declarations must have the same type.  Property 'a' must be of type 'string', but here has type '"a"'.(2717)
+}
+```
+
+---
+
+## 집합론적으로 타입 바라보기
+
+- `구조적 타이핑이란?` 내용을 다시 한번 읽고 보시면 좋습니다.
+- 타입을 공변의 입장에서 바라봅니다.
+  - 할당 가능성을 중심으로 살펴봅니다.
+- 타입을 개념으로 바라보는지 원소로 바라보는지에 따라서도 차이가 있습니다.
+
+### number는 숫자의 슈퍼 타입이다.
+
+- number > 1
+
+```ts
+// ERROR
+const a: number = 1;
+const b: 1 = a; // Type 'number' is not assignable to type '1'.(2322)
+
+// OK
+const c: 1 = 1;
+const d: number = c;
+```
+
+### readonly Array는 Array의 슈퍼 타입이다.
+
+- readonly Array > Array
+
+```ts
+// ERROR
+const a: readonly [1] = [1];
+const b: [1] = a; // The type 'readonly [1]' is 'readonly' and cannot be assigned to the mutable type '[1]'.(4104)
+
+// OK
+const c: [1] = [1];
+const d: readonly [1] = c;
+```
+
+## 객체를 인자로 넘기는 경우는 어떤가
+
+```ts
+function a(obj: { b: string }) {
+  return obj;
+}
+
+// OK
+const c = {
+  b: '1',
+};
+a(c);
+
+// OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)
+const d = {
+  b: '1',
+  e: '1',
+};
+a(c);
+
+a({ b: '1' });
+a({ b: '1', e: '1' }); // Argument of type '{ b: string; e: string; }' is not assignable to parameter of type '{ b: string; }'. Object literal may only specify known properties, and 'e' does not exist in type '{ b: string; }'.(2345)
+```
+
+- 일반적으로 객체에 속성이 더 있다면 잉여 속성을 체크하지 않아서 문제가 없습니다. 하지만 `함수에 매개변수로 전달`할 때 `잉여 속성 체크`가 수행됩니다. 이것은 구조적 타이핑의 한계를 제한하기 위해 도입된 것이므로 구조적 타이핑 입장에서의 집합론에서는 잉여 속성이 있어도 서브 타입으로 보는 것이 맞습니다.
+
+## 인터페이스로 바라보기
+
+```ts
+interface A {
+  a: string | undefined;
+}
+
+// OK
+interface B extends A {
+  a: string;
+}
+
+// OK
+interface C extends A {
+  a: undefined;
+}
+
+interface D {
+  a: undefined;
+}
+
+// ERROR
+interface E extends D {
+  a: string;
+}
+
+// 특이하게 바라보기
+interface F {
+  a: string;
+  b: string;
+}
+
+type G = Omit<F, 'a'>;
+
+let f: F = {
+  a: 'a',
+  b: 'b',
+};
+
+let g: G = {
+  b: 'b',
+};
+
+// OK
+g = f;
+// Property 'a' is missing in type 'G' but required in type 'F'.(2741)
+f = g;
+
+interface H {
+  a: string;
+}
+
+interface I {
+  b: string;
+}
+
+// 요 개념이 아니라 interface J로 바라봐야 함
+type J = H & I;
+
+const h: H = {
+  a: 'a',
+};
+
+const i: I = {
+  b: 'b',
+};
+
+interface J {
+  c: string;
+}
+
+interface H extends J {
+  a: string;
+}
+
+interface I extends J {
+  b: string;
+}
+```
+
+## 집합이란?
+
+- `특정 조건을 만족시키는 대상의 모임`입니다.
+b:T10473,<h2 id="타입스크립트의-타이핑">타입스크립트의 타이핑<a aria-hidden="true" tabindex="-1" href="#타입스크립트의-타이핑"><span class="anchor"></span></a></h2>
+<ul>
+<li>자바스크립트는 덕 타이핑(duck typing) 기반이고 타입스크립트가 이를 모델링하기 위해 <code class="inline-code">구조적 타이핑</code>을 사용합니다.
+<ul>
+<li>타입스크립트가 구조적 타이핑을 도입한 이유는 동적 타입 언어인 자바스크립트를 기반으로 하기 때문입니다.</li>
+<li>Java 기반의 객체지향에서는 <code class="inline-code">명목적 타이핑</code>을 사용합니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="구조적-타이핑이란">구조적 타이핑이란?<a aria-hidden="true" tabindex="-1" href="#구조적-타이핑이란"><span class="anchor"></span></a></h2>
+<ul>
+<li>구조적 타이핑은 값 자체의 타입보다는 값이 가진 <code class="inline-code">내부 구조</code>에 기반해서 타입 호환성을 검사한다.</li>
+<li><strong>좋든 싫든 타입은 열려있습니다</strong>.</li>
+<li>타입스크립트의 클래스 역시 구조적 타이핑 규칙을 따릅니다.
+<ul>
+<li>클래스의 인스턴스가 Java 기반의 객체지향과 다를 수 있습니다.</li>
+</ul>
+</li>
+<li>어떤 인터페이스에 할당 가능한 값이라면 타입 선언에 명시적으로 나열된 속성들을 가지고 있을 겁니다. 타입은 <code class="inline-code">봉인</code>되어 있지 않습니다.</li>
+<li>추가 속성이 있으면 값의 집합은 더 작아집니다.</li>
+<li>반대로 유니온 타입이 있으면 값의 집합은 더 커집니다.</li>
+</ul>
+<h3 id="내부-구조만-같다면-타입은-동일한-것으로-판단합니다">내부 구조만 같다면 타입은 동일한 것으로 판단합니다.<a aria-hidden="true" tabindex="-1" href="#내부-구조만-같다면-타입은-동일한-것으로-판단합니다"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">class</span> <span class="token class-name">ClassA</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  str<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token function">constructor</span><span class="token punctuation">(</span>str<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span>str <span class="token operator">=</span> str<span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">const</span> classA <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ClassA</span><span class="token punctuation">(</span><span class="token string">'instance of A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> objectB<span class="token operator">:</span> ClassA <span class="token operator">=</span> <span class="token punctuation">{</span> str<span class="token operator">:</span> <span class="token string">'object literal'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// ---</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">class</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token constant">C</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'C'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">let</span> a<span class="token operator">:</span> <span class="token constant">A</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">A</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">a<span class="token punctuation">.</span><span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token constant">B</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">a<span class="token punctuation">.</span><span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">a <span class="token operator">=</span> <span class="token constant">C</span><span class="token punctuation">;</span>
+</span><span class="code-line">a<span class="token punctuation">.</span><span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">a <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function-variable function">clap</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'D'</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">a<span class="token punctuation">.</span><span class="token function">clap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="인터페이스의-이름이-달라도-내부-구조가-같다면-할당-가능합니다">인터페이스의 이름이 달라도 내부 구조가 같다면 할당 가능합니다.<a aria-hidden="true" tabindex="-1" href="#인터페이스의-이름이-달라도-내부-구조가-같다면-할당-가능합니다"><span class="anchor"></span></a></h3>
+<ul>
+<li><code class="inline-code">이는 Java 기반의 객체지향과의 큰 차이점이며 우리가 구조적 타이핑을 잘 이해하고 사용해야 하는 이유</code> 입니다.</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector1D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">let</span> p <span class="token operator">=</span> v1<span class="token punctuation">;</span> <span class="token comment">// Ok</span>
+</span><span class="code-line">v1 <span class="token operator">=</span> p<span class="token punctuation">;</span> <span class="token comment">// Ok</span>
+</span></code></pre>
+<h3 id="타입스크립트는-구조적-타이핑덕-타이핑을-사용하기-때문에-값을-세밀하게-구분하지-못하는-경우가-있습니다">타입스크립트는 구조적 타이핑(덕 타이핑)을 사용하기 때문에, 값을 세밀하게 구분하지 못하는 경우가 있습니다<a aria-hidden="true" tabindex="-1" href="#타입스크립트는-구조적-타이핑덕-타이핑을-사용하기-때문에-값을-세밀하게-구분하지-못하는-경우가-있습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>값을 구분하기 위해 공식 명칭이 필요하다면 상표를 붙이는 것을 고려해야 합니다.</li>
+<li>상표 기법은 타입 시스템에서 동작하지만 런타임에 상표를 검사하는 것과 동일한 효과를 얻을 수 있습니다.</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">Meters</span> <span class="token operator">=</span> <span class="token builtin">number</span> <span class="token operator">&#x26;</span> <span class="token punctuation">{</span> _brand<span class="token operator">:</span> <span class="token string">'meters'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">Seconds</span> <span class="token operator">=</span> <span class="token builtin">number</span> <span class="token operator">&#x26;</span> <span class="token punctuation">{</span> _brand<span class="token operator">:</span> <span class="token string">'seconds'</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">meters</span> <span class="token operator">=</span> <span class="token punctuation">(</span>m<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> m <span class="token keyword">as</span> Meters<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">seconds</span> <span class="token operator">=</span> <span class="token punctuation">(</span>s<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> s <span class="token keyword">as</span> Seconds<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> oneKm <span class="token operator">=</span> <span class="token function">meters</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 타입이 Meters</span>
+</span><span class="code-line"><span class="token keyword">const</span> oneMin <span class="token operator">=</span> <span class="token function">seconds</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 타입이 Seconds</span>
+</span></code></pre>
+<h3 id="상속을-받은-것과-나열한-것-역시-내부-구조가-같다면-동일한-것으로-판단-합니다">상속을 받은 것과 나열한 것 역시 내부 구조가 같다면 동일한 것으로 판단 합니다.<a aria-hidden="true" tabindex="-1" href="#상속을-받은-것과-나열한-것-역시-내부-구조가-같다면-동일한-것으로-판단-합니다"><span class="anchor"></span></a></h3>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector1D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// Vector2D는 Vector1D의 서브타입입니다.</span>
+</span><span class="code-line"><span class="token comment">// Vector2D와 Vector2D2는 타입스크립트의 구조적 타이핑에서 동일합니다.</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector2D</span> <span class="token keyword">extends</span> <span class="token class-name">Vector1D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector2D2</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// Vector3D는 Vector2D의 서브타입입니다.</span>
+</span><span class="code-line"><span class="token comment">// Vector3D와 Vector3D2는 타입스크립트의 구조적 타이핑에서 동일합니다.</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector3D</span> <span class="token keyword">extends</span> <span class="token class-name">Vector2D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  z<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector3D2</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">  z<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="구조적-타이핑은-잉여-속성-체크에-한계가-있습니다">구조적 타이핑은 잉여 속성 체크에 한계가 있습니다.<a aria-hidden="true" tabindex="-1" href="#구조적-타이핑은-잉여-속성-체크에-한계가-있습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li><code class="inline-code">객체 리터럴 변수에 할당</code>하거나 <code class="inline-code">함수에 매개변수로 전달</code>할 때 <code class="inline-code">잉여 속성 체크</code>가 수행됩니다.</li>
+<li>잉여 속성 체크는 오류를 찾는 효과적인 방법이지만, <strong>타입스크립트 타입 체커가 수행하는 일반적인 구조적 할당 가능성 체크와 역할이 다릅니다</strong>. 할당의 개념을 정확히 알아야 잉여 속성 체크와 일반적인 구조적 할당 가능성 체크를 구분할 수 있습니다.</li>
+<li>잉여 속성 체크는 구조적 타이핑 시스템에서 허용되는 속성 이름의 오타 같은 실수를 잡는 데 효과적인 방법입니다. 선택적 필드를 포함하는 타입에 특히 유용한 반면, 적용 범위도 매우 제한적이며 <code class="inline-code">오직 객체 리터럴에만 적용됩니다</code>.</li>
+<li>잉여 속성 체크에는 한계가 있습니다. <code class="inline-code">임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다</code>는 점을 기억해야 합니다.</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector1D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name">Vector2D</span> <span class="token keyword">extends</span> <span class="token class-name">Vector1D</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">let</span> v1<span class="token operator">:</span> Vector1D <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">let</span> v2<span class="token operator">:</span> Vector2D <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  x<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+</span><span class="code-line">  y<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">v1 <span class="token operator">=</span> v2<span class="token punctuation">;</span> <span class="token comment">// OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)</span>
+</span><span class="code-line">v2 <span class="token operator">=</span> v1<span class="token punctuation">;</span> <span class="token comment">// Property 'y' is missing in type 'Vector1D' but required in type 'Vector2D'.(2741)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// ---</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> a<span class="token operator">:</span> <span class="token constant">A</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  c<span class="token operator">:</span> <span class="token string">'c'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token comment">// '{ a: string; b: string; c: string; }' 형식은 'A' 형식에 할당할 수 없습니다. 개체 리터럴은 알려진 속성만 지정할 수 있으며 'A' 형식에 'c'이(가) 없습니다.ts(2322)</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> b <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  c<span class="token operator">:</span> <span class="token string">'c'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> c<span class="token operator">:</span> <span class="token constant">A</span> <span class="token operator">=</span> b<span class="token punctuation">;</span> <span class="token comment">// OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)</span>
+</span></code></pre>
+<h2 id="그렇다면-타입을-어떻게-사용해야-할까요">그렇다면 타입을 어떻게 사용해야 할까요?<a aria-hidden="true" tabindex="-1" href="#그렇다면-타입을-어떻게-사용해야-할까요"><span class="anchor"></span></a></h2>
+<ul>
+<li>공통적인 것을 원본 모델로 만들고 이를 유틸리티 타입을 활용해서 파생된 타입을 사용합니다.
+<ul>
+<li>타입스크립트는 <code class="inline-code">절충하는 언어</code>입니다.</li>
+<li>원본 타입과 유틸타입의 조합으로 타입이 많아지는 것을 방지합니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="리액트에서-컴포넌트를-만드는-것처럼-타이핑을-해보겠습니다">리액트에서 컴포넌트를 만드는 것처럼 타이핑을 해보겠습니다.<a aria-hidden="true" tabindex="-1" href="#리액트에서-컴포넌트를-만드는-것처럼-타이핑을-해보겠습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>원본 모델(인터페이스)과 타입 레이어의 분리합니다.
+<ul>
+<li>interface는 병합이 가능하다는 특징을 활용해 <code class="inline-code">외부와의 소통</code>에 활용합니다. 사용하는 곳에서 필요에 따라 유틸리티 타입 혹은 병합 성질을 활용해서 사용합니다.</li>
+<li>type은 파일 내에서 interface를 활용해서 만들어서 사용합니다.</li>
+</ul>
+</li>
+<li>원본 모델은 css-in-js나 custom hook에서 거의 같지만 조금 다르게 활용되는 경우가 많습니다. 보통 Component의 props에서는 optional인 값이 css-in-js로 넘어갈 때는 필수값이 됩니다. 이를 위해 타입을 2번 만드는 것이 아니라 원본 모델과 유틸리티 타입을 활용해 타입을 여러개 만들지 않고 유지보수성도 향상 시킬 수 있습니다.</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// 원본 모델(외부와 소통 및 공개용)</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">TextProps</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  placeholder<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  color<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  border<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 내부 소모용</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">TextPropsMustBe</span> <span class="token operator">=</span> Pick<span class="token operator">&#x3C;</span>TextProps<span class="token punctuation">,</span> <span class="token string">'value'</span> <span class="token operator">|</span> <span class="token string">'border'</span><span class="token operator">></span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">TextPropsPartialType</span> <span class="token operator">=</span> Partial<span class="token operator">&#x3C;</span>TextProps<span class="token operator">></span> <span class="token operator">&#x26;</span> TextPropsMustBe<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name">TextContainerProps</span> <span class="token operator">=</span> Pick<span class="token operator">&#x3C;</span>TextProps<span class="token punctuation">,</span> <span class="token string">'color'</span><span class="token operator">></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// Component</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">TextComponent</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token operator">:</span> TextPropsPartialType<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function-variable function">string</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> passedProps <span class="token operator">=</span> <span class="token function">useText</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token function">TextContainer</span><span class="token punctuation">(</span>passedProps<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// css-in-js</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token function-variable function">TextContainer</span> <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token operator">:</span> TextContainerProps<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">  color: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>props<span class="token punctuation">.</span>color<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string"></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// custom hook</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">useText</span><span class="token punctuation">(</span>
+</span><span class="code-line">  props<span class="token operator">:</span> TextPropsPartialType<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">)</span><span class="token operator">:</span> TextPropsMustBe <span class="token operator">&#x26;</span> TextContainerProps <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    color<span class="token operator">:</span> props<span class="token punctuation">.</span>value <span class="token operator">||</span> <span class="token string">'#fff'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    value<span class="token operator">:</span> props<span class="token punctuation">.</span>value<span class="token punctuation">,</span>
+</span><span class="code-line">    border<span class="token operator">:</span> props<span class="token punctuation">.</span>border<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 실제 사용</span>
+</span><span class="code-line"><span class="token function">TextComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> border<span class="token operator">:</span> <span class="token string">'1px solid black'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<hr>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://vallista.kr/">마광휘님의 설명</a>
+<ul>
+<li>타입스크립트의 핵심 개념인 구조적 타입 시스템을 기반으로 설명하면, 타입스크립트에서 구조적 타입 시스템을 선택한 이유는 다음과 같습니다. interface는 가장 기저에 있는 객체의 모델을 나타냅니다. 다만, 자바스크립트는 타입으로 정의할 수 없는 다양한 형태가 런타임으로 동작될 수 있습니다. 그렇기에 런타임과 컴파일 타임 (사실 타입 체킹 타임 이겠죠?)이 다르고, 런타임에서 원하는 (허용해야하는) 경우와 오브젝트에서 은닉하고 캡슐화 해야하는 경우 등이 존재. 그러한 다양한 타입을 포용하려면 타입을 자유롭게 가공하고 만들 수 있도록 제공되어야 했습니다. 그렇기에 다양한 Utility Type과 그에따른 순수 객체를 위한 인터페이스를 분리하고 조합하여 Type Alias를 하여금 더 복잡한 타입을 나타낼 수 있도록 하였고, 궁극적인 지향점은, 아주 최소한의 모델을 만들고 최소한의 모델을 유연하게 타입으로 만들어서, 타입을 조합해 최소한의 타입으로 동작하도록 하는 것입니다. 또한 이 구조는 타입스크립트에서 지향하고 있는 “점진적 타이핑“과 자바스크립트의 “덕 타이핑” 관점에서도 충분히 먹히는 선택지기에 가게 되었죠. (출처: 타입스크립트 위키피디아 + 타입스크립트 깃헙 MR)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="서브타입-파보기">서브타입 파보기<a aria-hidden="true" tabindex="-1" href="#서브타입-파보기"><span class="anchor"></span></a></h2>
+<h3 id="extends에서의-관계">extends에서의 관계<a aria-hidden="true" tabindex="-1" href="#extends에서의-관계"><span class="anchor"></span></a></h3>
+<h4 id="서브셋이-아닌-경우">서브셋이 아닌 경우<a aria-hidden="true" tabindex="-1" href="#서브셋이-아닌-경우"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// Interface 'B' incorrectly extends interface 'A'. Types of property 'a' are incompatible. Type 'number' is not assignable to type 'string'.(2430)</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="서브셋인-경우">서브셋인 경우<a aria-hidden="true" tabindex="-1" href="#서브셋인-경우"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="서브셋이-아닌-경우2">서브셋이 아닌 경우2<a aria-hidden="true" tabindex="-1" href="#서브셋이-아닌-경우2"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// Interface 'B' incorrectly extends interface 'A'. Types of property 'a' are incompatible. Type 'string | undefined' is not assignable to type 'string'. Type 'undefined' is not assignable to type 'string'.(2430)</span>
+</span><span class="code-line">  a<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="선언-병합에서는">선언 병합에서는?<a aria-hidden="true" tabindex="-1" href="#선언-병합에서는"><span class="anchor"></span></a></h3>
+<h4 id="같은-타입인-경우">같은 타입인 경우<a aria-hidden="true" tabindex="-1" href="#같은-타입인-경우"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="서브셋이-아닌-경우-1">서브셋이 아닌 경우<a aria-hidden="true" tabindex="-1" href="#서브셋이-아닌-경우-1"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// All declarations of 'a' must have identical modifiers.(2687)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// All declarations of 'a' must have identical modifiers.(2687)</span>
+</span><span class="code-line">  <span class="token comment">// Subsequent property declarations must have the same type.  Property 'a' must be of type 'string | undefined', but here has type 'string'.(2717)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="서브셋인-경우-1">서브셋인 경우<a aria-hidden="true" tabindex="-1" href="#서브셋인-경우-1"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// All declarations of 'a' must have identical modifiers.(2687)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// All declarations of 'a' must have identical modifiers.(2687)</span>
+</span><span class="code-line">  <span class="token comment">// Subsequent property declarations must have the same type.  Property 'a' must be of type 'string', but here has type 'string | undefined'.(2717)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="서브셋인-경우2">서브셋인 경우2<a aria-hidden="true" tabindex="-1" href="#서브셋인-경우2"><span class="anchor"></span></a></h4>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token comment">// Subsequent property declarations must have the same type.  Property 'a' must be of type 'string', but here has type '"a"'.(2717)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<hr>
+<h2 id="집합론적으로-타입-바라보기">집합론적으로 타입 바라보기<a aria-hidden="true" tabindex="-1" href="#집합론적으로-타입-바라보기"><span class="anchor"></span></a></h2>
+<ul>
+<li><code class="inline-code">구조적 타이핑이란?</code> 내용을 다시 한번 읽고 보시면 좋습니다.</li>
+<li>타입을 공변의 입장에서 바라봅니다.
+<ul>
+<li>할당 가능성을 중심으로 살펴봅니다.</li>
+</ul>
+</li>
+<li>타입을 개념으로 바라보는지 원소로 바라보는지에 따라서도 차이가 있습니다.</li>
+</ul>
+<h3 id="number는-숫자의-슈퍼-타입이다">number는 숫자의 슈퍼 타입이다.<a aria-hidden="true" tabindex="-1" href="#number는-숫자의-슈퍼-타입이다"><span class="anchor"></span></a></h3>
+<ul>
+<li>number > 1</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">const</span> a<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> b<span class="token operator">:</span> <span class="token number">1</span> <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">// Type 'number' is not assignable to type '1'.(2322)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">const</span> c<span class="token operator">:</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> d<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="readonly-array는-array의-슈퍼-타입이다">readonly Array는 Array의 슈퍼 타입이다.<a aria-hidden="true" tabindex="-1" href="#readonly-array는-array의-슈퍼-타입이다"><span class="anchor"></span></a></h3>
+<ul>
+<li>readonly Array > Array</li>
+</ul>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">const</span> a<span class="token operator">:</span> <span class="token keyword">readonly</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> b<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">;</span> <span class="token comment">// The type 'readonly [1]' is 'readonly' and cannot be assigned to the mutable type '[1]'.(4104)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">const</span> c<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> d<span class="token operator">:</span> <span class="token keyword">readonly</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">;</span>
+</span></code></pre>
+<h2 id="객체를-인자로-넘기는-경우는-어떤가">객체를 인자로 넘기는 경우는 어떤가<a aria-hidden="true" tabindex="-1" href="#객체를-인자로-넘기는-경우는-어떤가"><span class="anchor"></span></a></h2>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span>obj<span class="token operator">:</span> <span class="token punctuation">{</span> b<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">const</span> c <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">a</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK(임시 변수를 도입하면 잉여 속성 체크를 건너뛸 수 있다)</span>
+</span><span class="code-line"><span class="token keyword">const</span> d <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  e<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">a</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">{</span> b<span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">{</span> b<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> e<span class="token operator">:</span> <span class="token string">'1'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Argument of type '{ b: string; e: string; }' is not assignable to parameter of type '{ b: string; }'. Object literal may only specify known properties, and 'e' does not exist in type '{ b: string; }'.(2345)</span>
+</span></code></pre>
+<ul>
+<li>일반적으로 객체에 속성이 더 있다면 잉여 속성을 체크하지 않아서 문제가 없습니다. 하지만 <code class="inline-code">함수에 매개변수로 전달</code>할 때 <code class="inline-code">잉여 속성 체크</code>가 수행됩니다. 이것은 구조적 타이핑의 한계를 제한하기 위해 도입된 것이므로 구조적 타이핑 입장에서의 집합론에서는 잉여 속성이 있어도 서브 타입으로 보는 것이 맞습니다.</li>
+</ul>
+<h2 id="인터페이스로-바라보기">인터페이스로 바라보기<a aria-hidden="true" tabindex="-1" href="#인터페이스로-바라보기"><span class="anchor"></span></a></h2>
+<pre class="language-ts optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-ts code-highlight"><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">|</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">B</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">C</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">A</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">D</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// ERROR</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">E</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">D</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 특이하게 바라보기</span>
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">F</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name"><span class="token constant">G</span></span> <span class="token operator">=</span> Omit<span class="token operator">&#x3C;</span><span class="token constant">F</span><span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token operator">></span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">let</span> f<span class="token operator">:</span> <span class="token constant">F</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">let</span> g<span class="token operator">:</span> <span class="token constant">G</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// OK</span>
+</span><span class="code-line">g <span class="token operator">=</span> f<span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// Property 'a' is missing in type 'G' but required in type 'F'.(2741)</span>
+</span><span class="code-line">f <span class="token operator">=</span> g<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">H</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">I</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 요 개념이 아니라 interface J로 바라봐야 함</span>
+</span><span class="code-line"><span class="token keyword">type</span> <span class="token class-name"><span class="token constant">J</span></span> <span class="token operator">=</span> <span class="token constant">H</span> <span class="token operator">&#x26;</span> <span class="token constant">I</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> h<span class="token operator">:</span> <span class="token constant">H</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token string">'a'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> i<span class="token operator">:</span> <span class="token constant">I</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token string">'b'</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">J</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  c<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">H</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">J</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  a<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">interface</span> <span class="token class-name"><span class="token constant">I</span></span> <span class="token keyword">extends</span> <span class="token class-name"><span class="token constant">J</span></span> <span class="token punctuation">{</span>
+</span><span class="code-line">  b<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h2 id="집합이란">집합이란?<a aria-hidden="true" tabindex="-1" href="#집합이란"><span class="anchor"></span></a></h2>
+<ul>
+<li><code class="inline-code">특정 조건을 만족시키는 대상의 모임</code>입니다.</li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/typescript/타입스크립트-모델링","frontmatter":{"title":"타입스크립트 모델링","date":"2022-02-07T20:02:09.000Z","category":"typescript","tags":[],"draft":false},"content":"$a","html":"$b","excerpt":"## 타입스크립트의 타이핑  - 자바스크립트는 덕 타이핑(duck typing) 기반이고 타입스크립트가 이를 모델링하기 위해 `구조적 타이핑`을 사용합니다.   - 타입스크립트가 구조적 타이핑을 도입한 이유는 동적 타입 언어인 자바스크립트를 기반으로 하기 때문입니다.   - Java 기반의 객체지향에서는 `명목적 타이핑`을 사용합니다.  ## 구조적 타이"},"previousPost":{"slug":"/javascript/prototype","frontmatter":{"title":"prototype","date":"2022-01-20T00:02:22.000Z","category":"javascript","tags":[],"draft":false}},"nextPost":{"slug":"/book/객체지향의 사실과 오해/부록a-추상화-기법","frontmatter":{"title":"부록A 추상화 기법","date":"2022-03-15T22:04:07.000Z","category":"객체지향의 사실과 오해","tags":[],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"타입스크립트 모델링"}],["$","meta","3",{"name":"description","content":"## 타입스크립트의 타이핑  - 자바스크립트는 덕 타이핑(duck typing) 기반이고 타입스크립트가 이를 모델링하기 위해 `구조적 타이핑`을 사용합니다.   - 타입스크립트가 구조적 타이핑을 도입한 이유는 동적 타입 언어인 자바스크립트를 기반으로 하기 때문입니다.   - Java 기반의 객체지향에서는 `명목적 타이핑`을 사용합니다.  ## 구조적 타이"}]]
+1:null

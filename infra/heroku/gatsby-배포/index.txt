@@ -1,0 +1,251 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","infra","d"]
+5:["slug","heroku/gatsby-%EB%B0%B0%ED%8F%AC","c"]
+0:["static-build-id",[[["",{"children":[["category","infra","d"],{"children":[["slug","heroku/gatsby-%EB%B0%B0%ED%8F%AC","c"],{"children":["__PAGE__?{\"category\":\"infra\",\"slug\":[\"heroku\",\"gatsby-배포\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","infra","d"],{"children":[["slug","heroku/gatsby-%EB%B0%B0%ED%8F%AC","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:Td94,
+- gatsby 배포 시 gatsby develop 옵션은 구동하는데 많이 시간이 필요하기 때문에 적절하지 않습니다.
+- gatsby serve 역시 포트 조정이 불가능하여서 마땅치 않습니다.
+
+## 해결책
+
+### 애플리케이션에서 heroku/node.js및 heroku-buildpack-static 빌드 팩을 설정합니다.
+
+```bash
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
+```
+
+### heroku 플랫폼 API를 app.json 활용하려면 빌드 팩을 선택적으로 추가 할 수 있습니다.
+
+```json
+// app.json
+{
+	"buildpacks": [
+		{
+			"url": "heroku/nodejs"
+		},
+		{
+			"url": "https://github.com/heroku/heroku-buildpack-static"
+		}
+	]
+}
+```
+
+### Heroku는 자동으로 package.json의 build 스크립트를 감지하고 실행합니다.
+
+```json
+// package.json
+{
+	"scripts": {
+		"build": "gatsby build"
+	}
+}
+```
+
+### 누락 된 모듈
+
+- package.json 또는 프로덕션 앱에서 모듈이 누락 된 경우는 Heroku에 의해 제거되었을 수 있습니다.
+- 일반적인 오류는 다음과 같습니다.
+
+```zsh
+internal/modules/cjs/loader.js:960
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+```
+
+- 앱에 대해 더 작은 슬러그 크기를 만들기 위해 빌드 팩은 빌드가 끝날 때 devDependencies부터 잘라내어 package.json 슬러그가 dependencies 런타임에 나열된 항목만 포함하도록 합니다. 종속성이있는 경우 devDependencies를 dependencies 이동해 제거되지 않도록 합니다.
+- 다른 해결책은 가지 치기를 devDependencies 완전히 끄는 것 입니다. 이렇게 하려면 npm에 다음을 설정합니다.
+
+```zsh
+heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
+- 앱이 Yarn을 사용하는 경우 다음을 실행합니다.
+
+```zsh
+heroku config:set YARN_PRODUCTION=false
+```
+
+## 마지막으로 프로젝트의 루트에 static.json 파일을 추가 하여 정적 자산이 위치 할 디렉토리를 정의합니다.
+
+- heroku-buildpack-static 구성에서 이 파일의 모든 옵션을 확인할 수 있습니다.
+- 다음 구성은 Gatsby의 제안 된 캐싱 접근 방식과 일치하는 좋은 시작점을 제공합니다.
+
+```json
+// static.json
+{
+	"root": "public/",
+	"headers": {
+		"/**": {
+			"Cache-Control": "public, max-age=0, must-revalidate"
+		},
+		"/**.css": {
+			"Cache-Control": "public, max-age=31536000, immutable"
+		},
+		"/**.js": {
+			"Cache-Control": "public, max-age=31536000, immutable"
+		},
+		"/static/**": {
+			"Cache-Control": "public, max-age=31536000, immutable"
+		},
+		"/icons/*.png": {
+			"Cache-Control": "public, max-age=31536000, immutable"
+		}
+	},
+	"https_only": true,
+	"error_page": "404.html"
+}
+```
+
+## Git Action
+
+```yml
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.3.6 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: 'layer-after-layer' #Must be unique in Heroku
+          heroku_email: 'carnotcycle2@naver.com'
+          dontuseforce: true
+```
+
+### HEROKU_API_KEY 얻는법
+
+```bash
+heroku auth:token
+```
+
+## 참고
+
+- [Deploying to Heroku](https://www.gatsbyjs.org/docs/deploying-to-heroku/)
+- [Deploy to Heroku](https://github.com/marketplace/actions/deploy-to-heroku)
+- [Heroku CLI Authentication](https://devcenter.heroku.com/articles/authentication)
+c:T364c,<ul>
+<li>gatsby 배포 시 gatsby develop 옵션은 구동하는데 많이 시간이 필요하기 때문에 적절하지 않습니다.</li>
+<li>gatsby serve 역시 포트 조정이 불가능하여서 마땅치 않습니다.</li>
+</ul>
+<h2 id="해결책">해결책<a aria-hidden="true" tabindex="-1" href="#해결책"><span class="anchor"></span></a></h2>
+<h3 id="애플리케이션에서-herokunodejs및-heroku-buildpack-static-빌드-팩을-설정합니다">애플리케이션에서 heroku/node.js및 heroku-buildpack-static 빌드 팩을 설정합니다.<a aria-hidden="true" tabindex="-1" href="#애플리케이션에서-herokunodejs및-heroku-buildpack-static-빌드-팩을-설정합니다"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">heroku buildpacks:set heroku/nodejs
+</span><span class="code-line">heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
+</span></code></pre>
+<h3 id="heroku-플랫폼-api를-appjson-활용하려면-빌드-팩을-선택적으로-추가-할-수-있습니다">heroku 플랫폼 API를 app.json 활용하려면 빌드 팩을 선택적으로 추가 할 수 있습니다.<a aria-hidden="true" tabindex="-1" href="#heroku-플랫폼-api를-appjson-활용하려면-빌드-팩을-선택적으로-추가-할-수-있습니다"><span class="anchor"></span></a></h3>
+<pre class="language-json optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-json code-highlight"><span class="code-line"><span class="token comment">// app.json</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">"buildpacks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line">		<span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"heroku/nodejs"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://github.com/heroku/heroku-buildpack-static"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span>
+</span><span class="code-line">	<span class="token punctuation">]</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="heroku는-자동으로-packagejson의-build-스크립트를-감지하고-실행합니다">Heroku는 자동으로 package.json의 build 스크립트를 감지하고 실행합니다.<a aria-hidden="true" tabindex="-1" href="#heroku는-자동으로-packagejson의-build-스크립트를-감지하고-실행합니다"><span class="anchor"></span></a></h3>
+<pre class="language-json optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-json code-highlight"><span class="code-line"><span class="token comment">// package.json</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"gatsby build"</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="누락-된-모듈">누락 된 모듈<a aria-hidden="true" tabindex="-1" href="#누락-된-모듈"><span class="anchor"></span></a></h3>
+<ul>
+<li>package.json 또는 프로덕션 앱에서 모듈이 누락 된 경우는 Heroku에 의해 제거되었을 수 있습니다.</li>
+<li>일반적인 오류는 다음과 같습니다.</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">internal/modules/cjs/loader.js:960
+</span><span class="code-line">  throw err<span class="token punctuation">;</span>
+</span><span class="code-line">  ^
+</span><span class="code-line">
+</span><span class="code-line">Error: Cannot <span class="token function">find</span> module <span class="token string">'express'</span>
+</span></code></pre>
+<ul>
+<li>앱에 대해 더 작은 슬러그 크기를 만들기 위해 빌드 팩은 빌드가 끝날 때 devDependencies부터 잘라내어 package.json 슬러그가 dependencies 런타임에 나열된 항목만 포함하도록 합니다. 종속성이있는 경우 devDependencies를 dependencies 이동해 제거되지 않도록 합니다.</li>
+<li>다른 해결책은 가지 치기를 devDependencies 완전히 끄는 것 입니다. 이렇게 하려면 npm에 다음을 설정합니다.</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">heroku config:set <span class="token assign-left variable">NPM_CONFIG_PRODUCTION</span><span class="token operator">=</span>false
+</span></code></pre>
+<ul>
+<li>앱이 Yarn을 사용하는 경우 다음을 실행합니다.</li>
+</ul>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">heroku config:set <span class="token assign-left variable">YARN_PRODUCTION</span><span class="token operator">=</span>false
+</span></code></pre>
+<h2 id="마지막으로-프로젝트의-루트에-staticjson-파일을-추가-하여-정적-자산이-위치-할-디렉토리를-정의합니다">마지막으로 프로젝트의 루트에 static.json 파일을 추가 하여 정적 자산이 위치 할 디렉토리를 정의합니다.<a aria-hidden="true" tabindex="-1" href="#마지막으로-프로젝트의-루트에-staticjson-파일을-추가-하여-정적-자산이-위치-할-디렉토리를-정의합니다"><span class="anchor"></span></a></h2>
+<ul>
+<li>heroku-buildpack-static 구성에서 이 파일의 모든 옵션을 확인할 수 있습니다.</li>
+<li>다음 구성은 Gatsby의 제안 된 캐싱 접근 방식과 일치하는 좋은 시작점을 제공합니다.</li>
+</ul>
+<pre class="language-json optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-json code-highlight"><span class="code-line"><span class="token comment">// static.json</span>
+</span><span class="code-line"><span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token property">"root"</span><span class="token operator">:</span> <span class="token string">"public/"</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token property">"headers"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token property">"/**"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"Cache-Control"</span><span class="token operator">:</span> <span class="token string">"public, max-age=0, must-revalidate"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token property">"/**.css"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"Cache-Control"</span><span class="token operator">:</span> <span class="token string">"public, max-age=31536000, immutable"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token property">"/**.js"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"Cache-Control"</span><span class="token operator">:</span> <span class="token string">"public, max-age=31536000, immutable"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token property">"/static/**"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"Cache-Control"</span><span class="token operator">:</span> <span class="token string">"public, max-age=31536000, immutable"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token property">"/icons/*.png"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token property">"Cache-Control"</span><span class="token operator">:</span> <span class="token string">"public, max-age=31536000, immutable"</span>
+</span><span class="code-line">		<span class="token punctuation">}</span>
+</span><span class="code-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token property">"https_only"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token property">"error_page"</span><span class="token operator">:</span> <span class="token string">"404.html"</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h2 id="git-action">Git Action<a aria-hidden="true" tabindex="-1" href="#git-action"><span class="anchor"></span></a></h2>
+<pre class="language-yml optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-yml code-highlight"><span class="code-line"><span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy
+</span><span class="code-line">
+</span><span class="code-line"><span class="token key atrule">on</span><span class="token punctuation">:</span>
+</span><span class="code-line">  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+</span><span class="code-line">    <span class="token key atrule">branches</span><span class="token punctuation">:</span>
+</span><span class="code-line">      <span class="token punctuation">-</span> master
+</span><span class="code-line">
+</span><span class="code-line"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+</span><span class="code-line">  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+</span><span class="code-line">    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+</span><span class="code-line">    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+</span><span class="code-line">      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+</span><span class="code-line">      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> akhileshns/heroku<span class="token punctuation">-</span>deploy@v3.3.6 <span class="token comment"># This is the action</span>
+</span><span class="code-line">        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+</span><span class="code-line">          <span class="token key atrule">heroku_api_key</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span>secrets.HEROKU_API_KEY<span class="token punctuation">}</span><span class="token punctuation">}</span>
+</span><span class="code-line">          <span class="token key atrule">heroku_app_name</span><span class="token punctuation">:</span> <span class="token string">'layer-after-layer'</span> <span class="token comment">#Must be unique in Heroku</span>
+</span><span class="code-line">          <span class="token key atrule">heroku_email</span><span class="token punctuation">:</span> <span class="token string">'carnotcycle2@naver.com'</span>
+</span><span class="code-line">          <span class="token key atrule">dontuseforce</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</span></code></pre>
+<h3 id="heroku_api_key-얻는법">HEROKU_API_KEY 얻는법<a aria-hidden="true" tabindex="-1" href="#heroku_api_key-얻는법"><span class="anchor"></span></a></h3>
+<pre class="language-bash optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-bash code-highlight"><span class="code-line">heroku auth:token
+</span></code></pre>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://www.gatsbyjs.org/docs/deploying-to-heroku/">Deploying to Heroku</a></li>
+<li><a href="https://github.com/marketplace/actions/deploy-to-heroku">Deploy to Heroku</a></li>
+<li><a href="https://devcenter.heroku.com/articles/authentication">Heroku CLI Authentication</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/infra/heroku/gatsby-배포","frontmatter":{"title":"gatsby 배포","date":"2020-07-27T17:08:21.000Z","category":"heroku","draft":false},"content":"$b","html":"$c","excerpt":"- gatsby 배포 시 gatsby develop 옵션은 구동하는데 많이 시간이 필요하기 때문에 적절하지 않습니다. - gatsby serve 역시 포트 조정이 불가능하여서 마땅치 않습니다.  ## 해결책  ### 애플리케이션에서 heroku/node.js및 heroku-buildpack-static 빌드 팩을 설정합니다.  ```bash heroku"},"previousPost":null,"nextPost":null}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"gatsby 배포"}],["$","meta","3",{"name":"description","content":"- gatsby 배포 시 gatsby develop 옵션은 구동하는데 많이 시간이 필요하기 때문에 적절하지 않습니다. - gatsby serve 역시 포트 조정이 불가능하여서 마땅치 않습니다.  ## 해결책  ### 애플리케이션에서 heroku/node.js및 heroku-buildpack-static 빌드 팩을 설정합니다.  ```bash heroku"}]]
+1:null

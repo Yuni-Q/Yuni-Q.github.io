@@ -1,0 +1,663 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","develop","d"]
+5:["slug","%EA%B0%9C%EB%B0%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%9E%90%EB%8F%99%ED%99%94%20%EA%B5%AC%EC%B6%95","c"]
+0:["static-build-id",[[["",{"children":[["category","develop","d"],{"children":[["slug","%EA%B0%9C%EB%B0%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%9E%90%EB%8F%99%ED%99%94%20%EA%B5%AC%EC%B6%95","c"],{"children":["__PAGE__?{\"category\":\"develop\",\"slug\":[\"개발 프로세스 자동화 구축\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","develop","d"],{"children":[["slug","%EA%B0%9C%EB%B0%9C%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20%EC%9E%90%EB%8F%99%ED%99%94%20%EA%B5%AC%EC%B6%95","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T2b33,
+> GitHub Actions, JIRA API, Confluence API를 활용하여 개발 프로세스를 전면 자동화한 경험을 공유합니다. PR 자동 할당, JIRA 티켓 상태 자동 업데이트, 데일리 리포트 자동 생성으로 개발 생산성을 크게 향상시켰습니다.
+
+## 📊 프로젝트 개요
+
+### 목표
+
+- PR 처리 시간 50% 단축
+- 개발 프로세스 자동화 구현
+- JIRA 티켓과 GitHub PR 연동
+- 데일리 업무 리포트 자동 생성
+
+### 핵심 성과
+
+- ✅ PR 기본 정보 자동화 (어싸이니, 리뷰어, 라벨)
+- ✅ JIRA 티켓 상태 자동 업데이트 (진행중 → 해결)
+- ✅ OSS PR 연동 시 티켓 상태 자동 변경
+- ✅ 데일리 리포트 자동 생성 (주간보고, 배포 현황, 티켓 브리핑, 코드리뷰)
+- ✅ 개발 시간 절약 및 프로세스 일관성 확보
+
+---
+
+## 🔴 문제 상황
+
+### 1. 수동 작업의 반복성
+
+**문제**:
+
+- PR 생성 시마다 어싸이니, 리뷰어, 라벨을 수동으로 설정해야 함
+- JIRA 티켓 상태를 수동으로 업데이트해야 함
+- 매일 반복되는 업무 정보 수집 작업 (주간보고, 배포 현황, 티켓 상태 등)
+
+**영향**:
+
+- 개발 시간 낭비
+- 실수로 인한 누락 가능성
+- 일관성 없는 프로세스
+
+### 2. PR과 JIRA 티켓 연동 부재
+
+**문제**:
+
+- PR이 생성되어도 JIRA 티켓 상태가 자동으로 변경되지 않음
+- PR이 머지되어도 티켓 상태가 자동으로 업데이트되지 않음
+- 티켓 상태를 수동으로 확인하고 업데이트해야 함
+
+**영향**:
+
+- 프로젝트 진행 상황 파악 어려움
+- 티켓 상태와 실제 진행 상황 불일치
+
+### 3. 업무 정보 수집의 비효율성
+
+**문제**:
+
+- 매일 주간보고, 배포 현황, 티켓 상태를 수동으로 확인해야 함
+- 여러 시스템(Confluence, JIRA, GitHub)을 오가며 정보 수집
+- 정보가 분산되어 있어 한눈에 파악하기 어려움
+
+**영향**:
+
+- 업무 시작 전 정보 수집에 시간 소요
+- 중요한 정보 누락 가능성
+
+---
+
+## ✅ 해결 방법
+
+### 1. PR 자동화 시스템
+
+### 1.1 PR 기본 정보 자동화
+
+**구현 내용**:
+
+- PR 생성 시 자동으로 어싸이니, 리뷰어, 라벨 할당
+- 커밋명에서 티켓 키 추출
+- 티켓 정보를 기반으로 자동 설정
+
+**효과**:
+
+- ✅ PR 생성 시 자동으로 기본 정보 설정
+- ✅ 티켓 정보 기반 일관된 설정
+- ✅ 수동 작업 시간 절약
+
+---
+
+### 2. JIRA-OSS 연동 시스템
+
+### 2.1 JIRA 티켓 상태 자동 업데이트
+
+**구현 내용**:
+
+- 브랜치 푸시 시 티켓 상태를 "진행중"으로 자동 변경
+- PR 생성 시 티켓 상태를 "리뷰중"으로 자동 변경
+- PR 머지 시 티켓 상태를 "컨펌"으로 자동 변경
+- 배포 시 티켓 상태를 "완료"으로 자동 변경
+- 닫힘 상태 티켓 변경 방지 로직
+
+**효과**:
+
+- ✅ 브랜치 푸시 시 자동으로 티켓 상태 "진행중"으로 변경
+- ✅ PR 생성 시 자동으로 티켓 상태 "리뷰중"으로 변경
+- ✅ PR 머지 시 자동으로 티켓 상태 "컨펌"으로 변경
+- ✅ 배포 시 자동으로 티켓 상태 "완료"로 변경
+- ✅ 닫힘 상태 티켓 변경 방지로 데이터 무결성 보장
+
+---
+
+### 3. 대시보드 시스템 구축
+
+### 3.1 데일리 리포트 자동 생성
+
+**구현 내용**:
+
+- 매일 반복되는 업무 정보를 자동으로 수집하여 Obsidian 마크다운 파일 생성
+- Confluence, JIRA, GitHub API를 직접 호출하여 데이터 수집
+- 순수 JavaScript로 구현하여 의존성 없음
+
+**주요 기능**:
+
+#### 1. 주간보고 데이터 수집
+
+```javascript
+// 위키 페이지 수집
+async function getWeeklyReportPages() {
+  const pages = await confluenceAPI.getChildrenPages(PARENT_PAGE_ID)
+
+  // 필터링: 이윤희 관련 + 오늘 이후 날짜
+  const filteredPages = pages.filter((page) => {
+    const hasUserName = page.title.includes('이윤희')
+    const hasFutureDate = extractDate(page.title) >= today
+    return hasUserName && hasFutureDate
+  })
+
+  return filteredPages
+}
+
+// Jira 티켓 수집
+async function getWeeklyReportTickets() {
+  const jql = `assignee = "KR22913" AND updated >= "지난목요일" AND updated <= "오늘 23:59"`
+  const tickets = await jiraAPI.searchIssues(jql)
+
+  return tickets.sort((a, b) => new Date(b.updated) - new Date(a.updated))
+}
+```
+
+#### 2. 배포 현황 데이터 수집
+
+```javascript
+// 정기배포 티켓 조회
+async function getRegularDeploymentTickets(deploymentDate) {
+  const dateStr = formatDate(deploymentDate, 'yyMMdd') // 예: 251112
+  const fixVersion = `RB_${dateStr}_쇼핑버티컬웹개발`
+
+  const jql = `assignee = KR22913 AND fixVersion = ${fixVersion}`
+  return await jiraAPI.searchIssues(jql)
+}
+
+// 비정기배포 티켓 조회
+async function getIrregularDeploymentTickets(deploymentDate) {
+  const dateStr = formatDate(deploymentDate, 'yyMMdd')
+  const fixVersion = `HF_${dateStr}_쇼핑버티컬웹개발`
+
+  const jql = `assignee = KR22913 AND fixVersion = ${fixVersion}`
+  return await jiraAPI.searchIssues(jql)
+}
+```
+
+#### 3. 지라 티켓 브리핑
+
+```javascript
+// 오픈 스프린트 티켓 조회
+async function getSprintTickets() {
+  const jql = `sprint in openSprints() AND assignee = "KR22913" ORDER BY status ASC, updated DESC`
+  const tickets = await jiraAPI.searchIssues(jql)
+
+  // 상태별 그룹화
+  const grouped = groupByStatus(tickets, [
+    '리뷰 중',
+    '진행 중',
+    '보류',
+    '할 일',
+    '등록',
+    '해결',
+    '닫힘',
+  ])
+
+  return grouped
+}
+```
+
+#### 4. 코드리뷰 알림
+
+```javascript
+// 내가 만든 PR
+async function getMyPRs() {
+  const query = `author:${username} is:pr is:open`
+  return await githubAPI.searchPullRequests(query)
+}
+
+// 내가 리뷰어인 PR
+async function getPRsWhereIAmReviewer() {
+  const queries = [
+    `review-requested:${username} is:pr is:open`,
+    `reviewed-by:${username} is:pr is:open`,
+  ]
+
+  // 팀 리뷰 요청 포함
+  const teams = await githubAPI.getUserTeams(username)
+  teams.forEach((team) => {
+    queries.push(`review-requested:${team} is:pr is:open`)
+  })
+
+  return await Promise.all(
+    queries.map((query) => githubAPI.searchPullRequests(query))
+  ).then((results) => results.flat())
+}
+```
+
+**효과**:
+
+- ✅ 매일 반복되는 정보 수집 작업 자동화
+- ✅ 여러 시스템을 한눈에 파악 가능
+- ✅ 중요한 정보 누락 방지
+- ✅ 업무 시작 전 빠른 브리핑
+
+---
+
+## 🏗️ 전체 아키텍처
+
+### 자동화 흐름
+
+```
+브랜치 푸시
+  ↓
+JIRA 상태 자동 업데이트 (진행중)
+  ↓
+PR 생성
+  ↓
+GitHub Actions 트리거
+  ↓
+┌─────────────────┬──────────────────────────┬─────────────────┐
+│ PR 기본 정보    │ JIRA 상태 자동 업데이트   │ 리뷰어 할당     │
+│ 자동 설정       │ (리뷰중)                  │                 │
+└─────────────────┴──────────────────────────┴─────────────────┘
+  ↓
+PR 머지
+  ↓
+JIRA 상태 자동 업데이트 (컨펌)
+  ↓
+배포
+  ↓
+JIRA 상태 자동 업데이트 (완료)
+  ↓
+QA 확인
+  ↓
+JIRA 상태 업데이트 (닫힘)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ↓
+매일 자동 실행 (데일리 리포트)
+  ↓
+Confluence API → 주간보고 데이터
+JIRA API → 티켓 브리핑, 배포 현황
+GitHub API → 코드리뷰 알림
+  ↓
+Obsidian 마크다운 파일 생성
+```
+
+---
+
+## 📈 개선 효과
+
+### 정량적 성과
+
+| 항목                   | Before           | After           | 개선              |
+| ---------------------- | ---------------- | --------------- | ----------------- |
+| **PR 처리 시간**       | 수동 설정 필요   | 자동화          | **50% 단축**      |
+| **티켓 상태 업데이트** | 수동             | 자동            | **100% 자동화**   |
+| **데일리 리포트 생성** | 수동 수집 (30분) | 자동 생성 (1분) | **97% 시간 절약** |
+| **정보 수집 시간**     | 30분/일          | 1분/일          | **97% 감소**      |
+
+### 정성적 성과
+
+- ✅ 개발 프로세스 일관성 확보
+- ✅ 실수로 인한 누락 방지
+- ✅ 개발자 생산성 향상
+- ✅ 프로젝트 진행 상황 가시성 향상
+- ✅ 업무 시작 전 빠른 브리핑 가능
+
+---
+
+## 💡 핵심 교훈
+
+### 1. 자동화는 점진적으로 확장해야 함
+
+처음에는 기본적인 기능부터 시작하고, 점진적으로 고도화하는 것이 좋습니다. 한 번에 모든 것을 자동화하려고 하면 복잡도가 높아질 수 있습니다.
+
+### 2. 에러 처리와 Fallback 로직이 중요함
+
+JIRA API 호출 실패, 티켓 키 추출 실패 등 다양한 예외 상황을 고려해야 합니다. 자동화가 실패해도 수동으로 처리할 수 있는 Fallback 로직이 필요합니다.
+
+### 3. 팀의 워크플로우를 이해해야 함
+
+각 팀마다 다른 워크플로우가 있으므로, 팀의 실제 프로세스를 이해하고 그에 맞게 자동화를 설계해야 합니다.
+
+### 4. 보안을 고려해야 함
+
+JIRA API 토큰, GitHub 토큰 등 민감한 정보는 GitHub Secrets로 관리하고, 최소 권한 원칙을 적용해야 합니다.
+
+### 5. 모니터링과 로깅이 필요함
+
+자동화가 제대로 동작하는지 모니터링하고, 실패 시 로그를 확인할 수 있어야 합니다.
+
+### 6. Rate Limit 처리
+
+API 호출 시 Rate Limit을 고려하여 `Retry-After` 헤더 기반 자동 재시도 로직을 구현해야 합니다.
+
+---
+
+## 🎯 결론
+
+개발 프로세스 자동화 구축을 통해 다음과 같은 성과를 달성했습니다:
+
+1. ✅ **PR 처리 시간 50% 단축**: 자동화로 수동 작업 시간 절약
+2. ✅ **JIRA 티켓 상태 자동 업데이트**: PR과 티켓 연동으로 프로젝트 진행 상황 가시성 향상
+3. ✅ **데일리 리포트 자동 생성**: 매일 반복되는 정보 수집 작업 자동화로 97% 시간 절약
+4. ✅ **일관된 프로세스**: 자동화로 일관된 워크플로우 확보
+5. ✅ **개발자 생산성 향상**: 반복 작업 자동화로 개발에 집중 가능
+
+이번 작업을 통해 개발 프로세스 자동화의 중요성을 깨달았고, GitHub Actions, JIRA API, Confluence API 연동 경험을 쌓을 수 있었습니다. 특히 데일리 리포트 자동화는 개인 생산성 향상에 큰 도움이 되었습니다.
+
+---
+
+## 📚 참고 자료
+
+- [GitHub Actions Documentation](https://docs.github.com/en/actions)
+- [JIRA REST API Documentation](https://developer.atlassian.com/cloud/jira/platform/rest/v3/)
+- [Confluence REST API Documentation](https://developer.atlassian.com/cloud/confluence/rest/v1/)
+- [GitHub REST API Documentation](https://docs.github.com/en/rest)
+c:T8809,<blockquote>
+<p>GitHub Actions, JIRA API, Confluence API를 활용하여 개발 프로세스를 전면 자동화한 경험을 공유합니다. PR 자동 할당, JIRA 티켓 상태 자동 업데이트, 데일리 리포트 자동 생성으로 개발 생산성을 크게 향상시켰습니다.</p>
+</blockquote>
+<h2 id="-프로젝트-개요">📊 프로젝트 개요<a aria-hidden="true" tabindex="-1" href="#-프로젝트-개요"><span class="anchor"></span></a></h2>
+<h3 id="목표">목표<a aria-hidden="true" tabindex="-1" href="#목표"><span class="anchor"></span></a></h3>
+<ul>
+<li>PR 처리 시간 50% 단축</li>
+<li>개발 프로세스 자동화 구현</li>
+<li>JIRA 티켓과 GitHub PR 연동</li>
+<li>데일리 업무 리포트 자동 생성</li>
+</ul>
+<h3 id="핵심-성과">핵심 성과<a aria-hidden="true" tabindex="-1" href="#핵심-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ PR 기본 정보 자동화 (어싸이니, 리뷰어, 라벨)</li>
+<li>✅ JIRA 티켓 상태 자동 업데이트 (진행중 → 해결)</li>
+<li>✅ OSS PR 연동 시 티켓 상태 자동 변경</li>
+<li>✅ 데일리 리포트 자동 생성 (주간보고, 배포 현황, 티켓 브리핑, 코드리뷰)</li>
+<li>✅ 개발 시간 절약 및 프로세스 일관성 확보</li>
+</ul>
+<hr>
+<h2 id="-문제-상황">🔴 문제 상황<a aria-hidden="true" tabindex="-1" href="#-문제-상황"><span class="anchor"></span></a></h2>
+<h3 id="1-수동-작업의-반복성">1. 수동 작업의 반복성<a aria-hidden="true" tabindex="-1" href="#1-수동-작업의-반복성"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>PR 생성 시마다 어싸이니, 리뷰어, 라벨을 수동으로 설정해야 함</li>
+<li>JIRA 티켓 상태를 수동으로 업데이트해야 함</li>
+<li>매일 반복되는 업무 정보 수집 작업 (주간보고, 배포 현황, 티켓 상태 등)</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>개발 시간 낭비</li>
+<li>실수로 인한 누락 가능성</li>
+<li>일관성 없는 프로세스</li>
+</ul>
+<h3 id="2-pr과-jira-티켓-연동-부재">2. PR과 JIRA 티켓 연동 부재<a aria-hidden="true" tabindex="-1" href="#2-pr과-jira-티켓-연동-부재"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>PR이 생성되어도 JIRA 티켓 상태가 자동으로 변경되지 않음</li>
+<li>PR이 머지되어도 티켓 상태가 자동으로 업데이트되지 않음</li>
+<li>티켓 상태를 수동으로 확인하고 업데이트해야 함</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>프로젝트 진행 상황 파악 어려움</li>
+<li>티켓 상태와 실제 진행 상황 불일치</li>
+</ul>
+<h3 id="3-업무-정보-수집의-비효율성">3. 업무 정보 수집의 비효율성<a aria-hidden="true" tabindex="-1" href="#3-업무-정보-수집의-비효율성"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>매일 주간보고, 배포 현황, 티켓 상태를 수동으로 확인해야 함</li>
+<li>여러 시스템(Confluence, JIRA, GitHub)을 오가며 정보 수집</li>
+<li>정보가 분산되어 있어 한눈에 파악하기 어려움</li>
+</ul>
+<p><strong>영향</strong>:</p>
+<ul>
+<li>업무 시작 전 정보 수집에 시간 소요</li>
+<li>중요한 정보 누락 가능성</li>
+</ul>
+<hr>
+<h2 id="-해결-방법">✅ 해결 방법<a aria-hidden="true" tabindex="-1" href="#-해결-방법"><span class="anchor"></span></a></h2>
+<h3 id="1-pr-자동화-시스템">1. PR 자동화 시스템<a aria-hidden="true" tabindex="-1" href="#1-pr-자동화-시스템"><span class="anchor"></span></a></h3>
+<h3 id="11-pr-기본-정보-자동화">1.1 PR 기본 정보 자동화<a aria-hidden="true" tabindex="-1" href="#11-pr-기본-정보-자동화"><span class="anchor"></span></a></h3>
+<p><strong>구현 내용</strong>:</p>
+<ul>
+<li>PR 생성 시 자동으로 어싸이니, 리뷰어, 라벨 할당</li>
+<li>커밋명에서 티켓 키 추출</li>
+<li>티켓 정보를 기반으로 자동 설정</li>
+</ul>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ PR 생성 시 자동으로 기본 정보 설정</li>
+<li>✅ 티켓 정보 기반 일관된 설정</li>
+<li>✅ 수동 작업 시간 절약</li>
+</ul>
+<hr>
+<h3 id="2-jira-oss-연동-시스템">2. JIRA-OSS 연동 시스템<a aria-hidden="true" tabindex="-1" href="#2-jira-oss-연동-시스템"><span class="anchor"></span></a></h3>
+<h3 id="21-jira-티켓-상태-자동-업데이트">2.1 JIRA 티켓 상태 자동 업데이트<a aria-hidden="true" tabindex="-1" href="#21-jira-티켓-상태-자동-업데이트"><span class="anchor"></span></a></h3>
+<p><strong>구현 내용</strong>:</p>
+<ul>
+<li>브랜치 푸시 시 티켓 상태를 "진행중"으로 자동 변경</li>
+<li>PR 생성 시 티켓 상태를 "리뷰중"으로 자동 변경</li>
+<li>PR 머지 시 티켓 상태를 "컨펌"으로 자동 변경</li>
+<li>배포 시 티켓 상태를 "완료"으로 자동 변경</li>
+<li>닫힘 상태 티켓 변경 방지 로직</li>
+</ul>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 브랜치 푸시 시 자동으로 티켓 상태 "진행중"으로 변경</li>
+<li>✅ PR 생성 시 자동으로 티켓 상태 "리뷰중"으로 변경</li>
+<li>✅ PR 머지 시 자동으로 티켓 상태 "컨펌"으로 변경</li>
+<li>✅ 배포 시 자동으로 티켓 상태 "완료"로 변경</li>
+<li>✅ 닫힘 상태 티켓 변경 방지로 데이터 무결성 보장</li>
+</ul>
+<hr>
+<h3 id="3-대시보드-시스템-구축">3. 대시보드 시스템 구축<a aria-hidden="true" tabindex="-1" href="#3-대시보드-시스템-구축"><span class="anchor"></span></a></h3>
+<h3 id="31-데일리-리포트-자동-생성">3.1 데일리 리포트 자동 생성<a aria-hidden="true" tabindex="-1" href="#31-데일리-리포트-자동-생성"><span class="anchor"></span></a></h3>
+<p><strong>구현 내용</strong>:</p>
+<ul>
+<li>매일 반복되는 업무 정보를 자동으로 수집하여 Obsidian 마크다운 파일 생성</li>
+<li>Confluence, JIRA, GitHub API를 직접 호출하여 데이터 수집</li>
+<li>순수 JavaScript로 구현하여 의존성 없음</li>
+</ul>
+<p><strong>주요 기능</strong>:</p>
+<h4 id="1-주간보고-데이터-수집">1. 주간보고 데이터 수집<a aria-hidden="true" tabindex="-1" href="#1-주간보고-데이터-수집"><span class="anchor"></span></a></h4>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// 위키 페이지 수집</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getWeeklyReportPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> pages <span class="token operator">=</span> <span class="token keyword control-flow">await</span> confluenceAPI<span class="token punctuation">.</span><span class="token method function property-access">getChildrenPages</span><span class="token punctuation">(</span><span class="token constant">PARENT_PAGE_ID</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 필터링: 이윤희 관련 + 오늘 이후 날짜</span>
+</span><span class="code-line">  <span class="token keyword">const</span> filteredPages <span class="token operator">=</span> pages<span class="token punctuation">.</span><span class="token method function property-access">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">const</span> hasUserName <span class="token operator">=</span> page<span class="token punctuation">.</span><span class="token property-access">title</span><span class="token punctuation">.</span><span class="token method function property-access">includes</span><span class="token punctuation">(</span><span class="token string">'이윤희'</span><span class="token punctuation">)</span>
+</span><span class="code-line">    <span class="token keyword">const</span> hasFutureDate <span class="token operator">=</span> <span class="token function">extractDate</span><span class="token punctuation">(</span>page<span class="token punctuation">.</span><span class="token property-access">title</span><span class="token punctuation">)</span> <span class="token operator">>=</span> today
+</span><span class="code-line">    <span class="token keyword control-flow">return</span> hasUserName <span class="token operator">&#x26;&#x26;</span> hasFutureDate
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> filteredPages
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// Jira 티켓 수집</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getWeeklyReportTickets</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> jql <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">assignee = "KR22913" AND updated >= "지난목요일" AND updated &#x3C;= "오늘 23:59"</span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">  <span class="token keyword">const</span> tickets <span class="token operator">=</span> <span class="token keyword control-flow">await</span> jiraAPI<span class="token punctuation">.</span><span class="token method function property-access">searchIssues</span><span class="token punctuation">(</span>jql<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> tickets<span class="token punctuation">.</span><span class="token method function property-access">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token property-access">updated</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token property-access">updated</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="2-배포-현황-데이터-수집">2. 배포 현황 데이터 수집<a aria-hidden="true" tabindex="-1" href="#2-배포-현황-데이터-수집"><span class="anchor"></span></a></h4>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// 정기배포 티켓 조회</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getRegularDeploymentTickets</span><span class="token punctuation">(</span><span class="token parameter">deploymentDate</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> dateStr <span class="token operator">=</span> <span class="token function">formatDate</span><span class="token punctuation">(</span>deploymentDate<span class="token punctuation">,</span> <span class="token string">'yyMMdd'</span><span class="token punctuation">)</span> <span class="token comment">// 예: 251112</span>
+</span><span class="code-line">  <span class="token keyword">const</span> fixVersion <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">RB_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>dateStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">_쇼핑버티컬웹개발</span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">const</span> jql <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">assignee = KR22913 AND fixVersion = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fixVersion<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token keyword control-flow">await</span> jiraAPI<span class="token punctuation">.</span><span class="token method function property-access">searchIssues</span><span class="token punctuation">(</span>jql<span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 비정기배포 티켓 조회</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getIrregularDeploymentTickets</span><span class="token punctuation">(</span><span class="token parameter">deploymentDate</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> dateStr <span class="token operator">=</span> <span class="token function">formatDate</span><span class="token punctuation">(</span>deploymentDate<span class="token punctuation">,</span> <span class="token string">'yyMMdd'</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">const</span> fixVersion <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">HF_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>dateStr<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">_쇼핑버티컬웹개발</span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">const</span> jql <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">assignee = KR22913 AND fixVersion = </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>fixVersion<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token keyword control-flow">await</span> jiraAPI<span class="token punctuation">.</span><span class="token method function property-access">searchIssues</span><span class="token punctuation">(</span>jql<span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="3-지라-티켓-브리핑">3. 지라 티켓 브리핑<a aria-hidden="true" tabindex="-1" href="#3-지라-티켓-브리핑"><span class="anchor"></span></a></h4>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// 오픈 스프린트 티켓 조회</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getSprintTickets</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> jql <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">sprint in openSprints() AND assignee = "KR22913" ORDER BY status ASC, updated DESC</span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">  <span class="token keyword">const</span> tickets <span class="token operator">=</span> <span class="token keyword control-flow">await</span> jiraAPI<span class="token punctuation">.</span><span class="token method function property-access">searchIssues</span><span class="token punctuation">(</span>jql<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 상태별 그룹화</span>
+</span><span class="code-line">  <span class="token keyword">const</span> grouped <span class="token operator">=</span> <span class="token function">groupByStatus</span><span class="token punctuation">(</span>tickets<span class="token punctuation">,</span> <span class="token punctuation">[</span>
+</span><span class="code-line">    <span class="token string">'리뷰 중'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'진행 중'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'보류'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'할 일'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'등록'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'해결'</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token string">'닫힘'</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> grouped
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h4 id="4-코드리뷰-알림">4. 코드리뷰 알림<a aria-hidden="true" tabindex="-1" href="#4-코드리뷰-알림"><span class="anchor"></span></a></h4>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// 내가 만든 PR</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getMyPRs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">author:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is:pr is:open</span><span class="token template-punctuation string">`</span></span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token keyword control-flow">await</span> githubAPI<span class="token punctuation">.</span><span class="token method function property-access">searchPullRequests</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 내가 리뷰어인 PR</span>
+</span><span class="code-line"><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getPRsWhereIAmReviewer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> queries <span class="token operator">=</span> <span class="token punctuation">[</span>
+</span><span class="code-line">    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">review-requested:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is:pr is:open</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">reviewed-by:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>username<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is:pr is:open</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">]</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 팀 리뷰 요청 포함</span>
+</span><span class="code-line">  <span class="token keyword">const</span> teams <span class="token operator">=</span> <span class="token keyword control-flow">await</span> githubAPI<span class="token punctuation">.</span><span class="token method function property-access">getUserTeams</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span>
+</span><span class="code-line">  teams<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">team</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    queries<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">review-requested:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>team<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is:pr is:open</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token keyword control-flow">await</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">all</span><span class="token punctuation">(</span>
+</span><span class="code-line">    queries<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">query</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> githubAPI<span class="token punctuation">.</span><span class="token method function property-access">searchPullRequests</span><span class="token punctuation">(</span>query<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">results</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> results<span class="token punctuation">.</span><span class="token method function property-access">flat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 매일 반복되는 정보 수집 작업 자동화</li>
+<li>✅ 여러 시스템을 한눈에 파악 가능</li>
+<li>✅ 중요한 정보 누락 방지</li>
+<li>✅ 업무 시작 전 빠른 브리핑</li>
+</ul>
+<hr>
+<h2 id="️-전체-아키텍처">🏗️ 전체 아키텍처<a aria-hidden="true" tabindex="-1" href="#️-전체-아키텍처"><span class="anchor"></span></a></h2>
+<h3 id="자동화-흐름">자동화 흐름<a aria-hidden="true" tabindex="-1" href="#자동화-흐름"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">브랜치 푸시
+</span><span class="code-line">  ↓
+</span><span class="code-line">JIRA 상태 자동 업데이트 (진행중)
+</span><span class="code-line">  ↓
+</span><span class="code-line">PR 생성
+</span><span class="code-line">  ↓
+</span><span class="code-line">GitHub Actions 트리거
+</span><span class="code-line">  ↓
+</span><span class="code-line">┌─────────────────┬──────────────────────────┬─────────────────┐
+</span><span class="code-line">│ PR 기본 정보    │ JIRA 상태 자동 업데이트   │ 리뷰어 할당     │
+</span><span class="code-line">│ 자동 설정       │ (리뷰중)                  │                 │
+</span><span class="code-line">└─────────────────┴──────────────────────────┴─────────────────┘
+</span><span class="code-line">  ↓
+</span><span class="code-line">PR 머지
+</span><span class="code-line">  ↓
+</span><span class="code-line">JIRA 상태 자동 업데이트 (컨펌)
+</span><span class="code-line">  ↓
+</span><span class="code-line">배포
+</span><span class="code-line">  ↓
+</span><span class="code-line">JIRA 상태 자동 업데이트 (완료)
+</span><span class="code-line">  ↓
+</span><span class="code-line">QA 확인
+</span><span class="code-line">  ↓
+</span><span class="code-line">JIRA 상태 업데이트 (닫힘)
+</span><span class="code-line">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+</span><span class="code-line">  ↓
+</span><span class="code-line">매일 자동 실행 (데일리 리포트)
+</span><span class="code-line">  ↓
+</span><span class="code-line">Confluence API → 주간보고 데이터
+</span><span class="code-line">JIRA API → 티켓 브리핑, 배포 현황
+</span><span class="code-line">GitHub API → 코드리뷰 알림
+</span><span class="code-line">  ↓
+</span><span class="code-line">Obsidian 마크다운 파일 생성
+</span></code></pre>
+<hr>
+<h2 id="-개선-효과">📈 개선 효과<a aria-hidden="true" tabindex="-1" href="#-개선-효과"><span class="anchor"></span></a></h2>
+<h3 id="정량적-성과">정량적 성과<a aria-hidden="true" tabindex="-1" href="#정량적-성과"><span class="anchor"></span></a></h3>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Before</th>
+<th>After</th>
+<th>개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PR 처리 시간</strong></td>
+<td>수동 설정 필요</td>
+<td>자동화</td>
+<td><strong>50% 단축</strong></td>
+</tr>
+<tr>
+<td><strong>티켓 상태 업데이트</strong></td>
+<td>수동</td>
+<td>자동</td>
+<td><strong>100% 자동화</strong></td>
+</tr>
+<tr>
+<td><strong>데일리 리포트 생성</strong></td>
+<td>수동 수집 (30분)</td>
+<td>자동 생성 (1분)</td>
+<td><strong>97% 시간 절약</strong></td>
+</tr>
+<tr>
+<td><strong>정보 수집 시간</strong></td>
+<td>30분/일</td>
+<td>1분/일</td>
+<td><strong>97% 감소</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="정성적-성과">정성적 성과<a aria-hidden="true" tabindex="-1" href="#정성적-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ 개발 프로세스 일관성 확보</li>
+<li>✅ 실수로 인한 누락 방지</li>
+<li>✅ 개발자 생산성 향상</li>
+<li>✅ 프로젝트 진행 상황 가시성 향상</li>
+<li>✅ 업무 시작 전 빠른 브리핑 가능</li>
+</ul>
+<hr>
+<h2 id="-핵심-교훈">💡 핵심 교훈<a aria-hidden="true" tabindex="-1" href="#-핵심-교훈"><span class="anchor"></span></a></h2>
+<h3 id="1-자동화는-점진적으로-확장해야-함">1. 자동화는 점진적으로 확장해야 함<a aria-hidden="true" tabindex="-1" href="#1-자동화는-점진적으로-확장해야-함"><span class="anchor"></span></a></h3>
+<p>처음에는 기본적인 기능부터 시작하고, 점진적으로 고도화하는 것이 좋습니다. 한 번에 모든 것을 자동화하려고 하면 복잡도가 높아질 수 있습니다.</p>
+<h3 id="2-에러-처리와-fallback-로직이-중요함">2. 에러 처리와 Fallback 로직이 중요함<a aria-hidden="true" tabindex="-1" href="#2-에러-처리와-fallback-로직이-중요함"><span class="anchor"></span></a></h3>
+<p>JIRA API 호출 실패, 티켓 키 추출 실패 등 다양한 예외 상황을 고려해야 합니다. 자동화가 실패해도 수동으로 처리할 수 있는 Fallback 로직이 필요합니다.</p>
+<h3 id="3-팀의-워크플로우를-이해해야-함">3. 팀의 워크플로우를 이해해야 함<a aria-hidden="true" tabindex="-1" href="#3-팀의-워크플로우를-이해해야-함"><span class="anchor"></span></a></h3>
+<p>각 팀마다 다른 워크플로우가 있으므로, 팀의 실제 프로세스를 이해하고 그에 맞게 자동화를 설계해야 합니다.</p>
+<h3 id="4-보안을-고려해야-함">4. 보안을 고려해야 함<a aria-hidden="true" tabindex="-1" href="#4-보안을-고려해야-함"><span class="anchor"></span></a></h3>
+<p>JIRA API 토큰, GitHub 토큰 등 민감한 정보는 GitHub Secrets로 관리하고, 최소 권한 원칙을 적용해야 합니다.</p>
+<h3 id="5-모니터링과-로깅이-필요함">5. 모니터링과 로깅이 필요함<a aria-hidden="true" tabindex="-1" href="#5-모니터링과-로깅이-필요함"><span class="anchor"></span></a></h3>
+<p>자동화가 제대로 동작하는지 모니터링하고, 실패 시 로그를 확인할 수 있어야 합니다.</p>
+<h3 id="6-rate-limit-처리">6. Rate Limit 처리<a aria-hidden="true" tabindex="-1" href="#6-rate-limit-처리"><span class="anchor"></span></a></h3>
+<p>API 호출 시 Rate Limit을 고려하여 <code class="inline-code">Retry-After</code> 헤더 기반 자동 재시도 로직을 구현해야 합니다.</p>
+<hr>
+<h2 id="-결론">🎯 결론<a aria-hidden="true" tabindex="-1" href="#-결론"><span class="anchor"></span></a></h2>
+<p>개발 프로세스 자동화 구축을 통해 다음과 같은 성과를 달성했습니다:</p>
+<ol>
+<li>✅ <strong>PR 처리 시간 50% 단축</strong>: 자동화로 수동 작업 시간 절약</li>
+<li>✅ <strong>JIRA 티켓 상태 자동 업데이트</strong>: PR과 티켓 연동으로 프로젝트 진행 상황 가시성 향상</li>
+<li>✅ <strong>데일리 리포트 자동 생성</strong>: 매일 반복되는 정보 수집 작업 자동화로 97% 시간 절약</li>
+<li>✅ <strong>일관된 프로세스</strong>: 자동화로 일관된 워크플로우 확보</li>
+<li>✅ <strong>개발자 생산성 향상</strong>: 반복 작업 자동화로 개발에 집중 가능</li>
+</ol>
+<p>이번 작업을 통해 개발 프로세스 자동화의 중요성을 깨달았고, GitHub Actions, JIRA API, Confluence API 연동 경험을 쌓을 수 있었습니다. 특히 데일리 리포트 자동화는 개인 생산성 향상에 큰 도움이 되었습니다.</p>
+<hr>
+<h2 id="-참고-자료">📚 참고 자료<a aria-hidden="true" tabindex="-1" href="#-참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions Documentation</a></li>
+<li><a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/">JIRA REST API Documentation</a></li>
+<li><a href="https://developer.atlassian.com/cloud/confluence/rest/v1/">Confluence REST API Documentation</a></li>
+<li><a href="https://docs.github.com/en/rest">GitHub REST API Documentation</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/develop/개발 프로세스 자동화 구축","frontmatter":{"title":"개발 프로세스 자동화 구축","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["자동화","GitHub-Actions","JIRA","CI/CD","개발프로세스","대시보드","DevOps"],"draft":false},"content":"$b","html":"$c","excerpt":"> GitHub Actions, JIRA API, Confluence API를 활용하여 개발 프로세스를 전면 자동화한 경험을 공유합니다. PR 자동 할당, JIRA 티켓 상태 자동 업데이트, 데일리 리포트 자동 생성으로 개발 생산성을 크게 향상시켰습니다.  ## 📊 프로젝트 개요  ### 목표  - PR 처리 시간 50% 단축 - 개발 프로세스 자동화"},"previousPost":{"slug":"/develop/우아한웤플로","frontmatter":{"title":"우아한웤플로","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["자동화","Slack","JIRA","GitLab","워크플로우","협업","프로덕트","DevOps"],"draft":false}},"nextPost":{"slug":"/develop/React Query 개선","frontmatter":{"title":"React Query 개선","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["React-Query","Next.js","SSR","Props-Drilling","아키텍처","모노레포"],"draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"개발 프로세스 자동화 구축"}],["$","meta","3",{"name":"description","content":"> GitHub Actions, JIRA API, Confluence API를 활용하여 개발 프로세스를 전면 자동화한 경험을 공유합니다. PR 자동 할당, JIRA 티켓 상태 자동 업데이트, 데일리 리포트 자동 생성으로 개발 생산성을 크게 향상시켰습니다.  ## 📊 프로젝트 개요  ### 목표  - PR 처리 시간 50% 단축 - 개발 프로세스 자동화"}]]
+1:null

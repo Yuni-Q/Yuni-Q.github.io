@@ -1,0 +1,601 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","frontend","d"]
+5:["slug","%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95","c"]
+0:["static-build-id",[[["",{"children":[["category","frontend","d"],{"children":[["slug","%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95","c"],{"children":["__PAGE__?{\"category\":\"frontend\",\"slug\":[\"라이브러리-없이-애니메이션-구현하는-방법\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","frontend","d"],{"children":[["slug","%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EC%97%86%EC%9D%B4-%EC%95%A0%EB%8B%88%EB%A9%94%EC%9D%B4%EC%85%98-%EA%B5%AC%ED%98%84%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T2889,
+가장 먼저 CSS transition 속성을 이용해서 아코디언 애니메이션을 구현했습니다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<style>
+			.box {
+				height: 0;
+				overflow: hidden;
+				transition: all 0.3s ease-out;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="button" type="button">클릭</button>
+		<div class="box">
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+		</div>
+		<script>
+			const box = document.querySelector('.box');
+			const button = document.querySelector('.button');
+			let visible = false;
+			button.addEventListener('click', () => {
+				!!visible ? expandSection(box) : collapseSection(box);
+				visible = !visible;
+			});
+
+			const collapseSection = element => {
+				element.style.height = '';
+			};
+
+			const expandSection = element => {
+				const sectionHeight = element.scrollHeight;
+				element.style.height = `${sectionHeight}px`;
+			};
+		</script>
+	</body>
+</html>
+```
+
+## CSS를 수정하지 않고 애니메이션 구현하기
+
+- window.requestAnimationFrame 함수를 사용해서 구현했습니다.
+
+```
+브라우저가 화면에 무언가를 그리기까지는 여러 단계가 존재합니다.
+애니메이션 및 기타 작업들을 수행하는 Javascript
+CSS 규칙을 어떤 요소에 적용할지 계산하는 프로세스인 Style
+브라우저가 요소에 어떤 규칙을 적용할지 알게 되면 화면에서 얼마의 공간을 차지하고 어디에 배치되는지 계산하는 프로세스인 Layout(reflow)
+픽셀을 채우는 프로세스인 Paint(redraw)
+이전의 작업들이 개별적인 레이어에서 진행되고 이를 합치는 프로세스인 Composite 로 진행됩니다.
+requestAnimationFrame()은 화면에서 변화가 발생할 때 개발자는 브라우저에서 정확한 시간(프레임 시작 시)에 작업을 수행해야 매끄러운 움직임을 수행할 수 있습니다.
+이 메소드는 실제 화면이 갱신되어 표시되는 주기에 따라 함수를 호출해주기 때문에 자바스크립트가 프레임 시작 시 실행되도록 보장합니다.
+보통 1초에 60회 정도 실행이 되지만 대부분의 브라우저는 W3C 권장사항에 따라 디스플레이 주사율과 일치하도록 실행됩니다.
+setTimeout(), setInterval()은 보이지 않은 곳에서도 수행되지만, requestAnimationFrame()는 현재 창에 표시 되지 않으면 애니메이션을 중지하여 배터리 수명과 성능향상에 도움이 됩니다
+즉, requestAnimationFrame()을 사용하면 브라우저가 리소스 사용을 더욱 최적화하고 애니메이션을 더욱 부드럽게 만들 수 있습니다.
+출처 : https://fullest-sway.me/blog/2019/01/28/requestAnimationFrame/
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<style>
+		.box {
+			height: 0;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<button class="button" type="button">클릭</button>
+		<div class="box">
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+		</div>
+		<script>
+			const element = document.querySelector('.box');
+			const button = document.querySelector('.button');
+			const scrollHeight = element.scrollHeight;
+			let progress = scrollHeight * 10;
+			let visible = false;
+			button.addEventListener('click', () => {
+				!!visible
+					? window.requestAnimationFrame(unStep)
+					: window.requestAnimationFrame(step);
+				visible = !visible;
+			});
+
+			const step = () => {
+				if (progress >= scrollHeight * 10) progress = 0;
+				if (progress <= scrollHeight * 10) progress += 16;
+				element.style.height = Math.min(progress / 10, scrollHeight) + 'px';
+				if (progress < scrollHeight * 10) {
+					window.requestAnimationFrame(step);
+				}
+			};
+
+			const unStep = () => {
+				if (progress <= 0) progress = scrollHeight * 10;
+				if (progress > 0) progress -= 16;
+				element.style.height = Math.max(progress / 10, 0) + 'px';
+				if (progress > 0) {
+					window.requestAnimationFrame(unStep);
+				}
+			};
+		</script>
+	</body>
+</html>
+```
+
+- 애니메이션을 모두 기다린 후에 클릭을 하면 잘 작동하지만 애니메이션 도중 클릭을 할 경우 제대로 작동하지 않고 다시 클릭 했을 때 2번 작동 되는 경우가 발생했습니다.
+- 펴지는 동작과 접히는 동작이 같이 일어나서 움직이지 않는거처럼 보인 이후 한쪽 함수가 많아지면 한쪽으로 수행 된 후 나머지 함수가 실행 되었습니다.
+- ex)
+  1. 클릭
+  1. (+ 16) 플러스 애니메이션 시작
+  1. 클릭
+  1. (+16) + (-16) 애니메이션 멈춤
+  1. 클릭
+  1. (+16) + (-16) + (+16) 플러스 애니메이션 시작
+  1. 플러스 애니메이션 종료
+  1. (-16) 마이너스 애니메이션 실행
+  1. 마이너스 애니메이션 종료
+
+## 애니메이션 중 추가 애니메이션 생성 방지
+
+- 애니메이션을 하는 함수를 취소하려고 했지만 Javascript가 싱글스레드이기 때문에 함수 취소가 어렵다는 결론만 얻고 우선적으로 애니메이션 동작되는 동안 이상 동작을 막기 위해 애니메이션 중에는 click에 따른 이벤를 실행하지 않게 하였습니다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<style>
+		.box {
+			height: 0;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<button class="button" type="button">클릭</button>
+		<div class="box">
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+		</div>
+		<script>
+			let start = false;
+			const element = document.querySelector('.box');
+			const button = document.querySelector('.button');
+			const scrollHeight = element.scrollHeight;
+			let progress = scrollHeight * 10;
+			let visible = false;
+
+			button.addEventListener('click', event => {
+				if (!start) {
+					!!visible
+						? window.requestAnimationFrame(unStep)
+						: window.requestAnimationFrame(step);
+				}
+			});
+
+			const step = () => {
+				start = true;
+				if (progress >= scrollHeight * 10) progress = 0;
+				if (progress <= scrollHeight * 10) progress += 16;
+				element.style.height = Math.min(progress / 10, scrollHeight) + 'px';
+				if (progress < scrollHeight * 10) {
+					window.requestAnimationFrame(step);
+				} else {
+					start = false;
+					visible = !visible;
+				}
+			};
+
+			const unStep = () => {
+				start = true;
+				if (progress <= 0) progress = scrollHeight * 10;
+				if (progress > 0) progress -= 16;
+				element.style.height = Math.max(progress / 10, 0) + 'px';
+				if (progress > 0) {
+					window.requestAnimationFrame(unStep);
+				} else {
+					start = false;
+					visible = !visible;
+				}
+			};
+		</script>
+	</body>
+</html>
+```
+
+## 애니메이션 도중에 다른 애니메이션 실행
+
+- 애니메이션 함수가 연속적으로 발생하는 것이었기 때문에 취소하는 것이 아니라 실행하는 함수를 막는 것이 목적이고 애니메이션 함수가 click callback이 끝나고 실행 된다는 점을 고려하여 조건을 추가하여 문제를 해결했습니다.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<style>
+		.box {
+			height: 0;
+			overflow: hidden;
+		}
+	</style>
+	<body>
+		<button class="button" type="button">클릭</button>
+		<div class="box">
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+			내용을 만들어 봅시다.<br />
+		</div>
+		<script>
+			let start = false;
+			const element = document.querySelector('.box');
+			const button = document.querySelector('.button');
+			const scrollHeight = element.scrollHeight;
+			let progress = scrollHeight * 10;
+			let visible = false;
+
+			button.addEventListener('click', event => {
+				!!visible
+					? window.requestAnimationFrame(unStep)
+					: window.requestAnimationFrame(step);
+				visible = !visible;
+			});
+
+			const step = () => {
+				if (progress >= scrollHeight * 10) progress = 0;
+				if (progress <= scrollHeight * 10) progress += 16;
+				element.style.height = Math.min(progress / 10, scrollHeight) + 'px';
+				if (progress < scrollHeight * 10 && !!visible) {
+					window.requestAnimationFrame(step);
+				}
+			};
+
+			const unStep = () => {
+				if (progress <= 0) progress = scrollHeight * 10;
+				if (progress > 0) progress -= 16;
+				element.style.height = Math.max(progress / 10, 0) + 'px';
+				if (progress > 0 && !visible) {
+					window.requestAnimationFrame(unStep);
+				}
+			};
+		</script>
+	</body>
+</html>
+```
+c:T148e3,<p>가장 먼저 CSS transition 속성을 이용해서 아코디언 애니메이션을 구현했습니다.</p>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token selector"><span class="token class">.box</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">				<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">				<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">				<span class="token property">transition</span><span class="token punctuation">:</span> all <span class="token number">0.3</span><span class="token unit">s</span> ease-out<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>클릭<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> box <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.box'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> visible <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			button<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token operator">!</span><span class="token operator">!</span>visible <span class="token operator">?</span> <span class="token function">expandSection</span><span class="token punctuation">(</span>box<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">collapseSection</span><span class="token punctuation">(</span>box<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				visible <span class="token operator">=</span> <span class="token operator">!</span>visible<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">collapseSection</span> <span class="token operator">=</span> <span class="token parameter">element</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">expandSection</span> <span class="token operator">=</span> <span class="token parameter">element</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword">const</span> sectionHeight <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token property-access">scrollHeight</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sectionHeight<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">		</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<h2 id="css를-수정하지-않고-애니메이션-구현하기">CSS를 수정하지 않고 애니메이션 구현하기<a aria-hidden="true" tabindex="-1" href="#css를-수정하지-않고-애니메이션-구현하기"><span class="anchor"></span></a></h2>
+<ul>
+<li>window.requestAnimationFrame 함수를 사용해서 구현했습니다.</li>
+</ul>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">브라우저가 화면에 무언가를 그리기까지는 여러 단계가 존재합니다.
+</span><span class="code-line">애니메이션 및 기타 작업들을 수행하는 Javascript
+</span><span class="code-line">CSS 규칙을 어떤 요소에 적용할지 계산하는 프로세스인 Style
+</span><span class="code-line">브라우저가 요소에 어떤 규칙을 적용할지 알게 되면 화면에서 얼마의 공간을 차지하고 어디에 배치되는지 계산하는 프로세스인 Layout(reflow)
+</span><span class="code-line">픽셀을 채우는 프로세스인 Paint(redraw)
+</span><span class="code-line">이전의 작업들이 개별적인 레이어에서 진행되고 이를 합치는 프로세스인 Composite 로 진행됩니다.
+</span><span class="code-line">requestAnimationFrame()은 화면에서 변화가 발생할 때 개발자는 브라우저에서 정확한 시간(프레임 시작 시)에 작업을 수행해야 매끄러운 움직임을 수행할 수 있습니다.
+</span><span class="code-line">이 메소드는 실제 화면이 갱신되어 표시되는 주기에 따라 함수를 호출해주기 때문에 자바스크립트가 프레임 시작 시 실행되도록 보장합니다.
+</span><span class="code-line">보통 1초에 60회 정도 실행이 되지만 대부분의 브라우저는 W3C 권장사항에 따라 디스플레이 주사율과 일치하도록 실행됩니다.
+</span><span class="code-line">setTimeout(), setInterval()은 보이지 않은 곳에서도 수행되지만, requestAnimationFrame()는 현재 창에 표시 되지 않으면 애니메이션을 중지하여 배터리 수명과 성능향상에 도움이 됩니다
+</span><span class="code-line">즉, requestAnimationFrame()을 사용하면 브라우저가 리소스 사용을 더욱 최적화하고 애니메이션을 더욱 부드럽게 만들 수 있습니다.
+</span><span class="code-line">출처 : https://fullest-sway.me/blog/2019/01/28/requestAnimationFrame/
+</span></code></pre>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token selector"><span class="token class">.box</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>클릭<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.box'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> scrollHeight <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token property-access">scrollHeight</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> visible <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			button<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token operator">!</span><span class="token operator">!</span>visible
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token operator">?</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				visible <span class="token operator">=</span> <span class="token operator">!</span>visible<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">step</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">>=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">+=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">min</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> scrollHeight<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">unStep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">-=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">		</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<ul>
+<li>애니메이션을 모두 기다린 후에 클릭을 하면 잘 작동하지만 애니메이션 도중 클릭을 할 경우 제대로 작동하지 않고 다시 클릭 했을 때 2번 작동 되는 경우가 발생했습니다.</li>
+<li>펴지는 동작과 접히는 동작이 같이 일어나서 움직이지 않는거처럼 보인 이후 한쪽 함수가 많아지면 한쪽으로 수행 된 후 나머지 함수가 실행 되었습니다.</li>
+<li>ex)
+<ol>
+<li>클릭</li>
+<li>(+ 16) 플러스 애니메이션 시작</li>
+<li>클릭</li>
+<li>(+16) + (-16) 애니메이션 멈춤</li>
+<li>클릭</li>
+<li>(+16) + (-16) + (+16) 플러스 애니메이션 시작</li>
+<li>플러스 애니메이션 종료</li>
+<li>(-16) 마이너스 애니메이션 실행</li>
+<li>마이너스 애니메이션 종료</li>
+</ol>
+</li>
+</ul>
+<h2 id="애니메이션-중-추가-애니메이션-생성-방지">애니메이션 중 추가 애니메이션 생성 방지<a aria-hidden="true" tabindex="-1" href="#애니메이션-중-추가-애니메이션-생성-방지"><span class="anchor"></span></a></h2>
+<ul>
+<li>애니메이션을 하는 함수를 취소하려고 했지만 Javascript가 싱글스레드이기 때문에 함수 취소가 어렵다는 결론만 얻고 우선적으로 애니메이션 동작되는 동안 이상 동작을 막기 위해 애니메이션 중에는 click에 따른 이벤를 실행하지 않게 하였습니다.</li>
+</ul>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token selector"><span class="token class">.box</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>클릭<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> start <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.box'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> scrollHeight <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token property-access">scrollHeight</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> visible <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			button<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>start<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token operator">!</span><span class="token operator">!</span>visible
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">						<span class="token operator">?</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">						<span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">step</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				start <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">>=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">+=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">min</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> scrollHeight<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					start <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					visible <span class="token operator">=</span> <span class="token operator">!</span>visible<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">unStep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				start <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">-=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					start <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					visible <span class="token operator">=</span> <span class="token operator">!</span>visible<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">		</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<h2 id="애니메이션-도중에-다른-애니메이션-실행">애니메이션 도중에 다른 애니메이션 실행<a aria-hidden="true" tabindex="-1" href="#애니메이션-도중에-다른-애니메이션-실행"><span class="anchor"></span></a></h2>
+<ul>
+<li>애니메이션 함수가 연속적으로 발생하는 것이었기 때문에 취소하는 것이 아니라 실행하는 함수를 막는 것이 목적이고 애니메이션 함수가 click callback이 끝나고 실행 된다는 점을 고려하여 조건을 추가하여 문제를 해결했습니다.</li>
+</ul>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ie=edge<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token selector"><span class="token class">.box</span></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">			<span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">		<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token style"><span class="token language-css">	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>style</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>클릭<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>button</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">			내용을 만들어 봅시다.<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>br</span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>div</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> start <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.box'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> button <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.button'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> scrollHeight <span class="token operator">=</span> element<span class="token punctuation">.</span><span class="token property-access">scrollHeight</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">let</span> visible <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			button<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token parameter">event</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token operator">!</span><span class="token operator">!</span>visible
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token operator">?</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				visible <span class="token operator">=</span> <span class="token operator">!</span>visible<span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">step</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">>=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span> progress <span class="token operator">+=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">min</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> scrollHeight<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">&#x26;&#x26;</span> <span class="token operator">!</span><span class="token operator">!</span>visible<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token keyword">const</span> <span class="token function-variable function">unStep</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">&#x3C;=</span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">=</span> scrollHeight <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> progress <span class="token operator">-=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">height</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>progress <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>progress <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&#x26;&#x26;</span> <span class="token operator">!</span>visible<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">					<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">requestAnimationFrame</span><span class="token punctuation">(</span>unStep<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">				<span class="token punctuation">}</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">			<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span></span><span class="code-line"><span class="token script"><span class="token language-javascript">		</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>2:["$","$La",null,{"post":{"slug":"/frontend/라이브러리-없이-애니메이션-구현하는-방법","frontmatter":{"title":"라이브러리 없이 애니메이션 구현하는 방법","date":"2020-01-14T20:01:35.000Z","category":"frontend","draft":false},"content":"$b","html":"$c","excerpt":"가장 먼저 CSS transition 속성을 이용해서 아코디언 애니메이션을 구현했습니다.  ```html <!DOCTYPE html> <html lang=\"en\"> \t<head> \t\t<meta charset=\"UTF-8\" /> \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\""},"previousPost":null,"nextPost":{"slug":"/frontend/v8-엔진의-동작-원리","frontmatter":{"title":"V8 엔진의 동작 원리","date":"2020-01-14T20:02:39.000Z","category":"frontend","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"라이브러리 없이 애니메이션 구현하는 방법"}],["$","meta","3",{"name":"description","content":"가장 먼저 CSS transition 속성을 이용해서 아코디언 애니메이션을 구현했습니다.  ```html <!DOCTYPE html> <html lang=\"en\"> \t<head> \t\t<meta charset=\"UTF-8\" /> \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\""}]]
+1:null

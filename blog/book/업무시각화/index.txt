@@ -1,0 +1,622 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","book/%EC%97%85%EB%AC%B4%EC%8B%9C%EA%B0%81%ED%99%94","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","book/%EC%97%85%EB%AC%B4%EC%8B%9C%EA%B0%81%ED%99%94","c"],{"children":["__PAGE__?{\"slug\":[\"book\",\"업무시각화\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","book/%EC%97%85%EB%AC%B4%EC%8B%9C%EA%B0%81%ED%99%94","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T2fad,
+> "업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법"을 읽고 정리한 내용입니다.
+
+## 들어가며
+
+시간은 우리가 가장 원하는 것인데도 엉망으로 사용한다. 업무를 효율적으로 처리하고 싶지만, 어디서 시간이 사라지는지 모를 때가 많다. 
+
+**칸반(Kanban)**은 업무와 문제를 시각화하고, 업무 흐름의 효율성을 개선하기 위한 접근 방식이다. 궁극적인 목적은 **문제를 수면 위로 끌어올리는 것**이다.
+
+이 글에서는 업무 효율성을 저해하는 **시간을 훔쳐가는 다섯 도둑**을 찾아내고, 이를 시각화하여 해결하는 방법을 다룬다.
+
+---
+
+## 시간을 훔쳐가는 다섯 도둑
+
+업무 효율성을 저해하는 주요 요인들은 다음과 같다.
+
+### 1. 너무 많은 진행 중 업무(WIP)
+
+**소화하기 힘들 정도로 초과 업무를 맡는 이유**
+
+1. 우리는 요청한 사람을 좋아한다
+2. 우리는 팀에 소속된 사람이다
+3. 굴욕감을 느끼기를 두려워한다
+4. 새롭고 반짝이는 것을 좋아한다
+5. 시작하기 전까지는 요구사항이 얼마나 큰지 알 수 없다
+6. 우리는 사람들을 기쁘게 하고 싶다
+
+**문제점**
+
+- 잦은 문맥 전환
+- 고객 대기 시간 증가
+- 품질 관리 어려움
+- 팀원들의 짜증 유발
+- 비용 증가
+
+**해결책**
+
+- **WIP 제한**을 통해 지속 가능한 업무량을 유지
+- 불필요한 문맥 전환을 줄임
+- 진행 중 업무 개수를 줄이는 것을 제한이 아닌 자유라고 생각하기
+
+> 멀티태스킹은 일의 진행을 망치는 좋은 방법이다. 멀티태스킹은 그저 한 번에 여러 가지 일을 망칠 기회에 불과하다.
+
+### 2. 알려지지 않은 의존성
+
+**의존성의 유형**
+
+- **구조 의존성**: 시스템이나 아키텍처에 대한 의존성
+- **전문 지식 의존성**: 특정 전문가에 대한 의존성
+- **활동 의존성**: 다른 활동이 완료되어야 진행할 수 있는 의존성
+
+**문제점**
+
+- 모든 의존성은 지연되거나 늦을 수 있는 가능성을 두 배로 만듦
+- 프로젝트 관리자가 모든 구성원을 찾아다니며 조정해야 할 일이 많음
+- 업무에 필요한 사람이 바빠서 대응할 수 없음
+- 코드/개요/계획의 일부분이 변경되면서 예기치 않게 다른 일에 영향
+
+**해결책**
+
+- 의존성을 시각화하고 줄여 시간과 비용을 절약
+- 팀 간 의존성을 명확히 표시
+- 제품 중심으로 팀을 구성하면 프로젝트와 관련된 문제를 줄일 수 있음
+
+### 3. 계획에 없던 업무
+
+**문제점**
+
+- 시스템 예측 불가능성 증가
+- 기대치 훼손
+- 계획된 업무의 지연
+- 계획에 없던 업무는 계획한 업무에게서 시간을 훔침
+
+**해결책**
+
+- 칸반을 통해 계획에 없던 업무를 시각화하고 예측 가능성을 높임
+- 긴급 업무를 수용할 자원과 능력을 미리 계획
+- 계획에 없던 업무와 계획한 업무의 비율을 측정하여 수용량을 계획하는 데 활용
+
+> 계획에 없던 업무는 언제나 존재하기 때문에 계획에 없던 업무를 계획해야 한다.
+
+### 4. 상충하는 우선순위
+
+**문제점**
+
+- 무엇이 최우선인지 불확실
+- 너무 많은 WIP로 이어짐
+- 사이클 타임 증가
+- 인력/자원 경쟁으로 업무 흐름 차단
+
+**해결책**
+
+- 팀원들에게 가장 중요한 우선순위를 명확히 알림
+- 불필요한 경쟁을 줄임
+- 우선순위를 시각화하여 명확히 전달
+
+> 생산성이란 워커홀릭이 되어 바쁘게 보내거나 밤늦게까지 일하는 것이 아니다. 그것은 업무를 우선순위화하고 필사적으로 당신의 시간을 지키는 것이다.
+
+### 5. 방치된 업무
+
+**문제점**
+
+- 중요하지만 방치된 업무가 결국 긴급한 업무가 됨
+- 기술 부채 누적
+- 좀비 프로젝트 발생
+
+**해결책**
+
+- 방치된 업무를 시각화
+- 좀비 프로젝트를 식별하여 집중하거나 제거
+- 지연을 시각화하고, 가치가 낮은 프로젝트를 제거
+
+---
+
+## 시간 도둑을 드러내는 방법: 시각화
+
+### 시각화의 중요성
+
+- 인간의 두뇌는 시각을 통해 의미 있는 패턴과 구조를 찾도록 설계되어 있음
+- 인구의 2/3는 시각-공간 학습자로, 시각화가 특히 효과적
+- 시각화는 업무 개선의 가장 기본적인 방법
+
+### 시각화의 4가지 요소
+
+1. **구조**: 명확한 구조와 체계
+2. **유용성**: 실제로 유용한 정보 제공
+3. **관련성**: 관련 있는 정보만 포함
+4. **정직성**: 정확하고 신뢰할 수 있는 정보
+
+### 업무 가시화가 필요한 경우
+
+1. 업무 처리 방법을 한 사람만 아는 경우 (알려지지 않은 의존성)
+2. 한 팀의 업무가 다른 팀에 영향을 미치는 경우 (알려지지 않은 의존성)
+3. 짧은 시간 소요 업무가 많아 추적되지 않는 경우 (너무 많은 WIP)
+4. 잦은 인터럽트, 상충하는 우선순위 등 반복적인 문제가 발생하는 경우
+
+### 업무 카테고리 설정
+
+- 시스템 상태를 파악하기 위해 **3~7개의 업무 카테고리** 설정
+- 예: 계획에 없던 업무, 유지보수, 비즈니스 요청, 팀 개선
+- 실무자의 참여를 통해 주인의식을 높임
+
+### 업무 항목 카드 디자인
+
+업무 흐름 관리에 필요한 데이터를 포함:
+
+- 카드 ID
+- 제목
+- 담당자
+- 우선순위
+- 요청일
+- 코멘트
+- 꼬리표(태그)
+
+**주의할 점**: 시각화를 시작할 때 칸반보드에 너무 많은 요소를 넣어서 설계하는 것은 아무 의미가 없음을 명심하고 **단순하게 유지**하자. 보드 설계가 안정화되려면 팀 성숙도에 따라 2~4주, 혹은 6주 정도가 걸린다.
+
+### 업무 흐름 지도 작성
+
+- 현재 진행 중인 업무와 잠재적인 중단/지연 문제를 시각화
+- 시간 도둑을 식별
+
+### 가치 흐름 캔버스
+
+- 모든 업무와 팀 간의 업무 전달을 시각화
+- 가치 흐름을 이해하고 개선 영역을 찾음
+
+---
+
+## 너무 많은 진행 중 업무 도둑 잡기
+
+### WIP 제한 설정
+
+- 업무 항목 유형, 레인(swimlane), 열(column) 또는 팀 레벨로 제한 설정 가능
+- WIP 제한은 시스템에 필요한 긴장감을 만들어 업무 완료를 위한 제약 조건을 제공
+- 진행 중 업무 제한은 시스템에 필요한 긴장감을 만든다
+
+### 흐름 타임(Flow Time) 계산
+
+```
+흐름 타임 = 진행 중 업무 / 처리량
+```
+
+- 하나의 항목이 시스템을 통해 흐르는 데 걸리는 평균 시간
+- WIP, 처리량, 흐름 타임 간의 관계를 이해하고 측정하여 업무 흐름을 최적화
+
+**핵심 개념**
+
+- **처리량**: 특정 기간 동안 완료된 항목의 평균 개수
+- **진행 중 업무**: 시작했지만 완료되지 않은 업무의 평균 양
+- **흐름 타임**: 하나의 항목이 시스템을 통해 흐르는 데 걸리는 평균 시간
+
+---
+
+## 측정 메트릭, 피드백 그리고 주변 환경
+
+### 핵심 흐름 메트릭
+
+1. **흐름 타임**: 업무가 시스템을 통해 흐르는 데 걸리는 평균 시간
+2. **흐름 속도**: 단위 시간당 완료되는 업무의 양
+3. **흐름 효율성**: 실제 작업 시간 대비 대기 시간의 비율
+4. **흐름 분배**: 다양한 업무 유형의 분포
+5. **흐름 부하**: 시스템에 가해지는 부하
+
+### 시간 도둑 다이어그램
+
+- 시간 도둑 다이어그램은 조직에 어떤 도둑이 있는지, 그들이 얼마나 시간을 훔치고 있는지 보여줌
+- 팀이 직면한 이슈를 보고 싶어 하는 리더들에게 투명성을 제공
+- 예측성을 개선하고, 위험을 줄이는 데 필요한 일을 하기 위해 임원들의 승인을 유도할 수 있는 자료
+
+### 운영 리뷰
+
+**발표할 메트릭**
+
+- 처리량
+- 흐름 타임
+- 이슈와 차단된 업무 항목
+- 시간 도둑 다이어그램
+
+**추가로 보여줄 수 있는 메트릭**
+
+- 에이징 리포트
+- 카드 유형 분포
+- 품질 척도로써 실패 부하(가치 요구 대 실패 요구)
+- 흐름 효율
+
+### 회의의 기술
+
+**스탠드업 회의 핵심 질문**
+
+1. 어떤 업무가 차단돼 있는가?
+2. 어떤 업무가 차단될 위험이 있는가?
+3. 보드에 없는 일이 진행되고 있는가?
+
+**린 커피**
+
+- 사람들이 재미있어 하고, 서로 존중하며 효율적인 환경에서 그들이 원하는 주제를 논의할 수 있게 함
+- 린 커피 주제는 참석자들이 투표를 마친 뒤, 흐름을 볼 수 있게 칸반을 사용해서 시각화
+
+---
+
+## 5가지 업무 흐름 시스템
+
+효율적인 업무 흐름을 만들기 위한 5가지 시스템:
+
+1. **업무 시각화**: 문제를 수면 위로 끌어올림
+2. **진행 중 업무(WIP) 제한**: 지속 가능한 업무량 유지
+3. **업무 흐름 측정 및 관리**: 메트릭을 통한 객관적 평가
+4. **효과적인 우선순위 선정**: 명확한 우선순위 정책 수립
+5. **피드백과 측정 기반의 지속적인 조정**: 지속적인 개선
+
+---
+
+## 주의할 점: 추천하지 않는 사례
+
+### 주말을 제외한 흐름 타임 메트릭
+
+- 모든 메트릭은 가정을 기반으로 함
+- 일부 시간을 제외한 흐름 타임은 데이터를 조작함
+- 비즈니스 고객들은 기간에 관심을 가짐
+
+### 개인별 레인의 문제점
+
+- 업무 자체가 아니라 개인에게 집중됨 → **업무에 초점을 둬야 함**
+- 업무 항목 카드를 완료 상태로 빠르게 옮기지 않으면 일을 잘하지 못한다고 생각함 → 변동성의 원인
+- 본인의 레인 바깥의 일에 관여해서는 안 된다고 느낌 → 알려지지 않은 의존성 위험 증가
+- 업무의 활용성이 아닌 사람의 활용성에 초점 → 협업이 불가능
+
+---
+
+## 실전 팁
+
+### 스탠드업 회의 개선
+
+- 스탠드업을 준비 미리 하고 오게 하고, 필요한 질문만 주고 받음
+- 해당 작업을 하기 전에 보드를 통해 알 수 없는 것을 질문하고, 이를 기록해 두면 차츰 필요한 것을 미리 정리할 수 있음
+- 아침에 정리하라고 하는 것보다 전날 일을 마치며 정리할 것을 권장
+
+### 스프린트 관리
+
+- 스프린트가 2개 이상 추가 되어 있는 작업은 문제가 있다고 보고, 따로 관리
+- 각자의 스프린트에 수행한 SP와 수행해야 할 SP를 노출하는 것이 좋음
+- 남은 것만 보면 알 수 없는 것들이 있음
+
+### 예측 가능성 향상
+
+- 예측 가능성을 위해 휴일/명절을 포함하는 것이 좋음
+- 휴일/명절 영향까지도 고려해야 함
+
+---
+
+## 결론
+
+업무 시각화와 WIP 제한, 의존성 관리 등의 개념을 적용함으로써 팀은:
+
+- 업무 흐름을 개선하고
+- 시간 도둑을 식별하여 제거하며
+- 궁극적으로 효율성과 생산성을 높일 수 있습니다
+
+**핵심 메시지**
+
+- 시간을 훔쳐가는 것을 눈으로 볼 수 있을 때, 조직을 방해하는 전반적인 문제를 재조정하고 교정할 수 있게 해줍니다
+- 극적인 변화 대신 점진적인 변화로 사람들을 만족시킵니다
+- 칸반은 업무 영역을 지속적으로 개선할 수 있는 방법입니다
+- 가끔씩은 지루함을 경험하는 것도 좋을 수 있습니다
+- 회복성과 호기심의 조합이 지속가능하고 건강한 업무 문화로 나아가는 데 도움이 됩니다
+- 균형 잡힌 업무량의 중요성을 깨닫는 것이 중요합니다
+
+**마지막으로**
+
+> 시각화 하는 것과 수치화 하는 것은 다른데... 우선은 시각화 하면서 수치화 할 수 있는 것을 찾는 듯 하다.
+
+업무 시각화는 단순히 보드를 만드는 것이 아니라, 문제를 발견하고 개선하는 지속적인 과정이다. 작은 것부터 시작하여 점진적으로 개선해 나가자.
+
+---
+
+## 참고 자료
+
+- "업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법" (데이비드 J. 앤더슨, 마르쿠스 로메르트 저)
+- 칸반(Kanban): 일본어로 신호카드를 의미하며, 어떤 일을 할 수 있는 상태인지 알려주는 방식
+
+---
+b:T4ae8,<blockquote>
+<p>"업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법"을 읽고 정리한 내용입니다.</p>
+</blockquote>
+<h2 id="들어가며">들어가며<a aria-hidden="true" tabindex="-1" href="#들어가며"><span class="anchor"></span></a></h2>
+<p>시간은 우리가 가장 원하는 것인데도 엉망으로 사용한다. 업무를 효율적으로 처리하고 싶지만, 어디서 시간이 사라지는지 모를 때가 많다.</p>
+<p><strong>칸반(Kanban)</strong>은 업무와 문제를 시각화하고, 업무 흐름의 효율성을 개선하기 위한 접근 방식이다. 궁극적인 목적은 <strong>문제를 수면 위로 끌어올리는 것</strong>이다.</p>
+<p>이 글에서는 업무 효율성을 저해하는 <strong>시간을 훔쳐가는 다섯 도둑</strong>을 찾아내고, 이를 시각화하여 해결하는 방법을 다룬다.</p>
+<hr>
+<h2 id="시간을-훔쳐가는-다섯-도둑">시간을 훔쳐가는 다섯 도둑<a aria-hidden="true" tabindex="-1" href="#시간을-훔쳐가는-다섯-도둑"><span class="anchor"></span></a></h2>
+<p>업무 효율성을 저해하는 주요 요인들은 다음과 같다.</p>
+<h3 id="1-너무-많은-진행-중-업무wip">1. 너무 많은 진행 중 업무(WIP)<a aria-hidden="true" tabindex="-1" href="#1-너무-많은-진행-중-업무wip"><span class="anchor"></span></a></h3>
+<p><strong>소화하기 힘들 정도로 초과 업무를 맡는 이유</strong></p>
+<ol>
+<li>우리는 요청한 사람을 좋아한다</li>
+<li>우리는 팀에 소속된 사람이다</li>
+<li>굴욕감을 느끼기를 두려워한다</li>
+<li>새롭고 반짝이는 것을 좋아한다</li>
+<li>시작하기 전까지는 요구사항이 얼마나 큰지 알 수 없다</li>
+<li>우리는 사람들을 기쁘게 하고 싶다</li>
+</ol>
+<p><strong>문제점</strong></p>
+<ul>
+<li>잦은 문맥 전환</li>
+<li>고객 대기 시간 증가</li>
+<li>품질 관리 어려움</li>
+<li>팀원들의 짜증 유발</li>
+<li>비용 증가</li>
+</ul>
+<p><strong>해결책</strong></p>
+<ul>
+<li><strong>WIP 제한</strong>을 통해 지속 가능한 업무량을 유지</li>
+<li>불필요한 문맥 전환을 줄임</li>
+<li>진행 중 업무 개수를 줄이는 것을 제한이 아닌 자유라고 생각하기</li>
+</ul>
+<blockquote>
+<p>멀티태스킹은 일의 진행을 망치는 좋은 방법이다. 멀티태스킹은 그저 한 번에 여러 가지 일을 망칠 기회에 불과하다.</p>
+</blockquote>
+<h3 id="2-알려지지-않은-의존성">2. 알려지지 않은 의존성<a aria-hidden="true" tabindex="-1" href="#2-알려지지-않은-의존성"><span class="anchor"></span></a></h3>
+<p><strong>의존성의 유형</strong></p>
+<ul>
+<li><strong>구조 의존성</strong>: 시스템이나 아키텍처에 대한 의존성</li>
+<li><strong>전문 지식 의존성</strong>: 특정 전문가에 대한 의존성</li>
+<li><strong>활동 의존성</strong>: 다른 활동이 완료되어야 진행할 수 있는 의존성</li>
+</ul>
+<p><strong>문제점</strong></p>
+<ul>
+<li>모든 의존성은 지연되거나 늦을 수 있는 가능성을 두 배로 만듦</li>
+<li>프로젝트 관리자가 모든 구성원을 찾아다니며 조정해야 할 일이 많음</li>
+<li>업무에 필요한 사람이 바빠서 대응할 수 없음</li>
+<li>코드/개요/계획의 일부분이 변경되면서 예기치 않게 다른 일에 영향</li>
+</ul>
+<p><strong>해결책</strong></p>
+<ul>
+<li>의존성을 시각화하고 줄여 시간과 비용을 절약</li>
+<li>팀 간 의존성을 명확히 표시</li>
+<li>제품 중심으로 팀을 구성하면 프로젝트와 관련된 문제를 줄일 수 있음</li>
+</ul>
+<h3 id="3-계획에-없던-업무">3. 계획에 없던 업무<a aria-hidden="true" tabindex="-1" href="#3-계획에-없던-업무"><span class="anchor"></span></a></h3>
+<p><strong>문제점</strong></p>
+<ul>
+<li>시스템 예측 불가능성 증가</li>
+<li>기대치 훼손</li>
+<li>계획된 업무의 지연</li>
+<li>계획에 없던 업무는 계획한 업무에게서 시간을 훔침</li>
+</ul>
+<p><strong>해결책</strong></p>
+<ul>
+<li>칸반을 통해 계획에 없던 업무를 시각화하고 예측 가능성을 높임</li>
+<li>긴급 업무를 수용할 자원과 능력을 미리 계획</li>
+<li>계획에 없던 업무와 계획한 업무의 비율을 측정하여 수용량을 계획하는 데 활용</li>
+</ul>
+<blockquote>
+<p>계획에 없던 업무는 언제나 존재하기 때문에 계획에 없던 업무를 계획해야 한다.</p>
+</blockquote>
+<h3 id="4-상충하는-우선순위">4. 상충하는 우선순위<a aria-hidden="true" tabindex="-1" href="#4-상충하는-우선순위"><span class="anchor"></span></a></h3>
+<p><strong>문제점</strong></p>
+<ul>
+<li>무엇이 최우선인지 불확실</li>
+<li>너무 많은 WIP로 이어짐</li>
+<li>사이클 타임 증가</li>
+<li>인력/자원 경쟁으로 업무 흐름 차단</li>
+</ul>
+<p><strong>해결책</strong></p>
+<ul>
+<li>팀원들에게 가장 중요한 우선순위를 명확히 알림</li>
+<li>불필요한 경쟁을 줄임</li>
+<li>우선순위를 시각화하여 명확히 전달</li>
+</ul>
+<blockquote>
+<p>생산성이란 워커홀릭이 되어 바쁘게 보내거나 밤늦게까지 일하는 것이 아니다. 그것은 업무를 우선순위화하고 필사적으로 당신의 시간을 지키는 것이다.</p>
+</blockquote>
+<h3 id="5-방치된-업무">5. 방치된 업무<a aria-hidden="true" tabindex="-1" href="#5-방치된-업무"><span class="anchor"></span></a></h3>
+<p><strong>문제점</strong></p>
+<ul>
+<li>중요하지만 방치된 업무가 결국 긴급한 업무가 됨</li>
+<li>기술 부채 누적</li>
+<li>좀비 프로젝트 발생</li>
+</ul>
+<p><strong>해결책</strong></p>
+<ul>
+<li>방치된 업무를 시각화</li>
+<li>좀비 프로젝트를 식별하여 집중하거나 제거</li>
+<li>지연을 시각화하고, 가치가 낮은 프로젝트를 제거</li>
+</ul>
+<hr>
+<h2 id="시간-도둑을-드러내는-방법-시각화">시간 도둑을 드러내는 방법: 시각화<a aria-hidden="true" tabindex="-1" href="#시간-도둑을-드러내는-방법-시각화"><span class="anchor"></span></a></h2>
+<h3 id="시각화의-중요성">시각화의 중요성<a aria-hidden="true" tabindex="-1" href="#시각화의-중요성"><span class="anchor"></span></a></h3>
+<ul>
+<li>인간의 두뇌는 시각을 통해 의미 있는 패턴과 구조를 찾도록 설계되어 있음</li>
+<li>인구의 2/3는 시각-공간 학습자로, 시각화가 특히 효과적</li>
+<li>시각화는 업무 개선의 가장 기본적인 방법</li>
+</ul>
+<h3 id="시각화의-4가지-요소">시각화의 4가지 요소<a aria-hidden="true" tabindex="-1" href="#시각화의-4가지-요소"><span class="anchor"></span></a></h3>
+<ol>
+<li><strong>구조</strong>: 명확한 구조와 체계</li>
+<li><strong>유용성</strong>: 실제로 유용한 정보 제공</li>
+<li><strong>관련성</strong>: 관련 있는 정보만 포함</li>
+<li><strong>정직성</strong>: 정확하고 신뢰할 수 있는 정보</li>
+</ol>
+<h3 id="업무-가시화가-필요한-경우">업무 가시화가 필요한 경우<a aria-hidden="true" tabindex="-1" href="#업무-가시화가-필요한-경우"><span class="anchor"></span></a></h3>
+<ol>
+<li>업무 처리 방법을 한 사람만 아는 경우 (알려지지 않은 의존성)</li>
+<li>한 팀의 업무가 다른 팀에 영향을 미치는 경우 (알려지지 않은 의존성)</li>
+<li>짧은 시간 소요 업무가 많아 추적되지 않는 경우 (너무 많은 WIP)</li>
+<li>잦은 인터럽트, 상충하는 우선순위 등 반복적인 문제가 발생하는 경우</li>
+</ol>
+<h3 id="업무-카테고리-설정">업무 카테고리 설정<a aria-hidden="true" tabindex="-1" href="#업무-카테고리-설정"><span class="anchor"></span></a></h3>
+<ul>
+<li>시스템 상태를 파악하기 위해 <strong>3~7개의 업무 카테고리</strong> 설정</li>
+<li>예: 계획에 없던 업무, 유지보수, 비즈니스 요청, 팀 개선</li>
+<li>실무자의 참여를 통해 주인의식을 높임</li>
+</ul>
+<h3 id="업무-항목-카드-디자인">업무 항목 카드 디자인<a aria-hidden="true" tabindex="-1" href="#업무-항목-카드-디자인"><span class="anchor"></span></a></h3>
+<p>업무 흐름 관리에 필요한 데이터를 포함:</p>
+<ul>
+<li>카드 ID</li>
+<li>제목</li>
+<li>담당자</li>
+<li>우선순위</li>
+<li>요청일</li>
+<li>코멘트</li>
+<li>꼬리표(태그)</li>
+</ul>
+<p><strong>주의할 점</strong>: 시각화를 시작할 때 칸반보드에 너무 많은 요소를 넣어서 설계하는 것은 아무 의미가 없음을 명심하고 <strong>단순하게 유지</strong>하자. 보드 설계가 안정화되려면 팀 성숙도에 따라 2~4주, 혹은 6주 정도가 걸린다.</p>
+<h3 id="업무-흐름-지도-작성">업무 흐름 지도 작성<a aria-hidden="true" tabindex="-1" href="#업무-흐름-지도-작성"><span class="anchor"></span></a></h3>
+<ul>
+<li>현재 진행 중인 업무와 잠재적인 중단/지연 문제를 시각화</li>
+<li>시간 도둑을 식별</li>
+</ul>
+<h3 id="가치-흐름-캔버스">가치 흐름 캔버스<a aria-hidden="true" tabindex="-1" href="#가치-흐름-캔버스"><span class="anchor"></span></a></h3>
+<ul>
+<li>모든 업무와 팀 간의 업무 전달을 시각화</li>
+<li>가치 흐름을 이해하고 개선 영역을 찾음</li>
+</ul>
+<hr>
+<h2 id="너무-많은-진행-중-업무-도둑-잡기">너무 많은 진행 중 업무 도둑 잡기<a aria-hidden="true" tabindex="-1" href="#너무-많은-진행-중-업무-도둑-잡기"><span class="anchor"></span></a></h2>
+<h3 id="wip-제한-설정">WIP 제한 설정<a aria-hidden="true" tabindex="-1" href="#wip-제한-설정"><span class="anchor"></span></a></h3>
+<ul>
+<li>업무 항목 유형, 레인(swimlane), 열(column) 또는 팀 레벨로 제한 설정 가능</li>
+<li>WIP 제한은 시스템에 필요한 긴장감을 만들어 업무 완료를 위한 제약 조건을 제공</li>
+<li>진행 중 업무 제한은 시스템에 필요한 긴장감을 만든다</li>
+</ul>
+<h3 id="흐름-타임flow-time-계산">흐름 타임(Flow Time) 계산<a aria-hidden="true" tabindex="-1" href="#흐름-타임flow-time-계산"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">흐름 타임 = 진행 중 업무 / 처리량
+</span></code></pre>
+<ul>
+<li>하나의 항목이 시스템을 통해 흐르는 데 걸리는 평균 시간</li>
+<li>WIP, 처리량, 흐름 타임 간의 관계를 이해하고 측정하여 업무 흐름을 최적화</li>
+</ul>
+<p><strong>핵심 개념</strong></p>
+<ul>
+<li><strong>처리량</strong>: 특정 기간 동안 완료된 항목의 평균 개수</li>
+<li><strong>진행 중 업무</strong>: 시작했지만 완료되지 않은 업무의 평균 양</li>
+<li><strong>흐름 타임</strong>: 하나의 항목이 시스템을 통해 흐르는 데 걸리는 평균 시간</li>
+</ul>
+<hr>
+<h2 id="측정-메트릭-피드백-그리고-주변-환경">측정 메트릭, 피드백 그리고 주변 환경<a aria-hidden="true" tabindex="-1" href="#측정-메트릭-피드백-그리고-주변-환경"><span class="anchor"></span></a></h2>
+<h3 id="핵심-흐름-메트릭">핵심 흐름 메트릭<a aria-hidden="true" tabindex="-1" href="#핵심-흐름-메트릭"><span class="anchor"></span></a></h3>
+<ol>
+<li><strong>흐름 타임</strong>: 업무가 시스템을 통해 흐르는 데 걸리는 평균 시간</li>
+<li><strong>흐름 속도</strong>: 단위 시간당 완료되는 업무의 양</li>
+<li><strong>흐름 효율성</strong>: 실제 작업 시간 대비 대기 시간의 비율</li>
+<li><strong>흐름 분배</strong>: 다양한 업무 유형의 분포</li>
+<li><strong>흐름 부하</strong>: 시스템에 가해지는 부하</li>
+</ol>
+<h3 id="시간-도둑-다이어그램">시간 도둑 다이어그램<a aria-hidden="true" tabindex="-1" href="#시간-도둑-다이어그램"><span class="anchor"></span></a></h3>
+<ul>
+<li>시간 도둑 다이어그램은 조직에 어떤 도둑이 있는지, 그들이 얼마나 시간을 훔치고 있는지 보여줌</li>
+<li>팀이 직면한 이슈를 보고 싶어 하는 리더들에게 투명성을 제공</li>
+<li>예측성을 개선하고, 위험을 줄이는 데 필요한 일을 하기 위해 임원들의 승인을 유도할 수 있는 자료</li>
+</ul>
+<h3 id="운영-리뷰">운영 리뷰<a aria-hidden="true" tabindex="-1" href="#운영-리뷰"><span class="anchor"></span></a></h3>
+<p><strong>발표할 메트릭</strong></p>
+<ul>
+<li>처리량</li>
+<li>흐름 타임</li>
+<li>이슈와 차단된 업무 항목</li>
+<li>시간 도둑 다이어그램</li>
+</ul>
+<p><strong>추가로 보여줄 수 있는 메트릭</strong></p>
+<ul>
+<li>에이징 리포트</li>
+<li>카드 유형 분포</li>
+<li>품질 척도로써 실패 부하(가치 요구 대 실패 요구)</li>
+<li>흐름 효율</li>
+</ul>
+<h3 id="회의의-기술">회의의 기술<a aria-hidden="true" tabindex="-1" href="#회의의-기술"><span class="anchor"></span></a></h3>
+<p><strong>스탠드업 회의 핵심 질문</strong></p>
+<ol>
+<li>어떤 업무가 차단돼 있는가?</li>
+<li>어떤 업무가 차단될 위험이 있는가?</li>
+<li>보드에 없는 일이 진행되고 있는가?</li>
+</ol>
+<p><strong>린 커피</strong></p>
+<ul>
+<li>사람들이 재미있어 하고, 서로 존중하며 효율적인 환경에서 그들이 원하는 주제를 논의할 수 있게 함</li>
+<li>린 커피 주제는 참석자들이 투표를 마친 뒤, 흐름을 볼 수 있게 칸반을 사용해서 시각화</li>
+</ul>
+<hr>
+<h2 id="5가지-업무-흐름-시스템">5가지 업무 흐름 시스템<a aria-hidden="true" tabindex="-1" href="#5가지-업무-흐름-시스템"><span class="anchor"></span></a></h2>
+<p>효율적인 업무 흐름을 만들기 위한 5가지 시스템:</p>
+<ol>
+<li><strong>업무 시각화</strong>: 문제를 수면 위로 끌어올림</li>
+<li><strong>진행 중 업무(WIP) 제한</strong>: 지속 가능한 업무량 유지</li>
+<li><strong>업무 흐름 측정 및 관리</strong>: 메트릭을 통한 객관적 평가</li>
+<li><strong>효과적인 우선순위 선정</strong>: 명확한 우선순위 정책 수립</li>
+<li><strong>피드백과 측정 기반의 지속적인 조정</strong>: 지속적인 개선</li>
+</ol>
+<hr>
+<h2 id="주의할-점-추천하지-않는-사례">주의할 점: 추천하지 않는 사례<a aria-hidden="true" tabindex="-1" href="#주의할-점-추천하지-않는-사례"><span class="anchor"></span></a></h2>
+<h3 id="주말을-제외한-흐름-타임-메트릭">주말을 제외한 흐름 타임 메트릭<a aria-hidden="true" tabindex="-1" href="#주말을-제외한-흐름-타임-메트릭"><span class="anchor"></span></a></h3>
+<ul>
+<li>모든 메트릭은 가정을 기반으로 함</li>
+<li>일부 시간을 제외한 흐름 타임은 데이터를 조작함</li>
+<li>비즈니스 고객들은 기간에 관심을 가짐</li>
+</ul>
+<h3 id="개인별-레인의-문제점">개인별 레인의 문제점<a aria-hidden="true" tabindex="-1" href="#개인별-레인의-문제점"><span class="anchor"></span></a></h3>
+<ul>
+<li>업무 자체가 아니라 개인에게 집중됨 → <strong>업무에 초점을 둬야 함</strong></li>
+<li>업무 항목 카드를 완료 상태로 빠르게 옮기지 않으면 일을 잘하지 못한다고 생각함 → 변동성의 원인</li>
+<li>본인의 레인 바깥의 일에 관여해서는 안 된다고 느낌 → 알려지지 않은 의존성 위험 증가</li>
+<li>업무의 활용성이 아닌 사람의 활용성에 초점 → 협업이 불가능</li>
+</ul>
+<hr>
+<h2 id="실전-팁">실전 팁<a aria-hidden="true" tabindex="-1" href="#실전-팁"><span class="anchor"></span></a></h2>
+<h3 id="스탠드업-회의-개선">스탠드업 회의 개선<a aria-hidden="true" tabindex="-1" href="#스탠드업-회의-개선"><span class="anchor"></span></a></h3>
+<ul>
+<li>스탠드업을 준비 미리 하고 오게 하고, 필요한 질문만 주고 받음</li>
+<li>해당 작업을 하기 전에 보드를 통해 알 수 없는 것을 질문하고, 이를 기록해 두면 차츰 필요한 것을 미리 정리할 수 있음</li>
+<li>아침에 정리하라고 하는 것보다 전날 일을 마치며 정리할 것을 권장</li>
+</ul>
+<h3 id="스프린트-관리">스프린트 관리<a aria-hidden="true" tabindex="-1" href="#스프린트-관리"><span class="anchor"></span></a></h3>
+<ul>
+<li>스프린트가 2개 이상 추가 되어 있는 작업은 문제가 있다고 보고, 따로 관리</li>
+<li>각자의 스프린트에 수행한 SP와 수행해야 할 SP를 노출하는 것이 좋음</li>
+<li>남은 것만 보면 알 수 없는 것들이 있음</li>
+</ul>
+<h3 id="예측-가능성-향상">예측 가능성 향상<a aria-hidden="true" tabindex="-1" href="#예측-가능성-향상"><span class="anchor"></span></a></h3>
+<ul>
+<li>예측 가능성을 위해 휴일/명절을 포함하는 것이 좋음</li>
+<li>휴일/명절 영향까지도 고려해야 함</li>
+</ul>
+<hr>
+<h2 id="결론">결론<a aria-hidden="true" tabindex="-1" href="#결론"><span class="anchor"></span></a></h2>
+<p>업무 시각화와 WIP 제한, 의존성 관리 등의 개념을 적용함으로써 팀은:</p>
+<ul>
+<li>업무 흐름을 개선하고</li>
+<li>시간 도둑을 식별하여 제거하며</li>
+<li>궁극적으로 효율성과 생산성을 높일 수 있습니다</li>
+</ul>
+<p><strong>핵심 메시지</strong></p>
+<ul>
+<li>시간을 훔쳐가는 것을 눈으로 볼 수 있을 때, 조직을 방해하는 전반적인 문제를 재조정하고 교정할 수 있게 해줍니다</li>
+<li>극적인 변화 대신 점진적인 변화로 사람들을 만족시킵니다</li>
+<li>칸반은 업무 영역을 지속적으로 개선할 수 있는 방법입니다</li>
+<li>가끔씩은 지루함을 경험하는 것도 좋을 수 있습니다</li>
+<li>회복성과 호기심의 조합이 지속가능하고 건강한 업무 문화로 나아가는 데 도움이 됩니다</li>
+<li>균형 잡힌 업무량의 중요성을 깨닫는 것이 중요합니다</li>
+</ul>
+<p><strong>마지막으로</strong></p>
+<blockquote>
+<p>시각화 하는 것과 수치화 하는 것은 다른데... 우선은 시각화 하면서 수치화 할 수 있는 것을 찾는 듯 하다.</p>
+</blockquote>
+<p>업무 시각화는 단순히 보드를 만드는 것이 아니라, 문제를 발견하고 개선하는 지속적인 과정이다. 작은 것부터 시작하여 점진적으로 개선해 나가자.</p>
+<hr>
+<h2 id="참고-자료">참고 자료<a aria-hidden="true" tabindex="-1" href="#참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li>"업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법" (데이비드 J. 앤더슨, 마르쿠스 로메르트 저)</li>
+<li>칸반(Kanban): 일본어로 신호카드를 의미하며, 어떤 일을 할 수 있는 상태인지 알려주는 방식</li>
+</ul>
+<hr>2:["$","$L9",null,{"post":{"slug":"/book/업무시각화","frontmatter":{"title":"업무 시각화: 시간 도둑을 잡고 효율적인 업무 흐름 만들기","date":"2025-12-27T21:00:00.000Z","category":"book","tags":["업무시각화","칸반","생산성","시간관리","프로젝트관리"],"draft":false},"content":"$a","html":"$b","excerpt":"> \"업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법\"을 읽고 정리한 내용입니다.  ## 들어가며  시간은 우리가 가장 원하는 것인데도 엉망으로 사용한다. 업무를 효율적으로 처리하고 싶지만, 어디서 시간이 사라지는지 모를 때가 많다.   **칸반(Kanban)**은 업무와 문제를 시각화하고, 업무 흐름의 효율성을 개선하기 위한 접근 방식이"},"previousPost":{"slug":"/docs/프로젝트 회고","frontmatter":{"title":"프로젝트 회고 가이드 - KPT 방법론을 활용한 효과적인 회고","date":"2024-06-10T19:07:32.000Z","category":"docs","tags":["회고","KPT","프로젝트관리","협업"],"excerpt":"프로젝트를 함께 진행한 팀원들과 효과적으로 회고를 진행하는 방법을 정리했습니다. KPT(Keep, Problem, Try) 방법론을 활용한 실전 회고 가이드입니다.","draft":false}},"nextPost":{"slug":"/develop/히스토리 복원 시스템 재설계","frontmatter":{"title":"히스토리 복원 시스템 재설계","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["Next.js","React","히스토리복원","BF-Cache","CSR","SSR","모노레포"],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"업무 시각화: 시간 도둑을 잡고 효율적인 업무 흐름 만들기"}],["$","meta","3",{"name":"description","content":"> \"업무 시각화 2/e: 효율적으로 업무를 처리하는 시간 관리 비법\"을 읽고 정리한 내용입니다.  ## 들어가며  시간은 우리가 가장 원하는 것인데도 엉망으로 사용한다. 업무를 효율적으로 처리하고 싶지만, 어디서 시간이 사라지는지 모를 때가 많다.   **칸반(Kanban)**은 업무와 문제를 시각화하고, 업무 흐름의 효율성을 개선하기 위한 접근 방식이"}]]
+1:null

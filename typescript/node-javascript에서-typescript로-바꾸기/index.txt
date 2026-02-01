@@ -1,0 +1,359 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","typescript","d"]
+5:["slug","node-javascript%EC%97%90%EC%84%9C-typescript%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0","c"]
+0:["static-build-id",[[["",{"children":[["category","typescript","d"],{"children":[["slug","node-javascript%EC%97%90%EC%84%9C-typescript%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0","c"],{"children":["__PAGE__?{\"category\":\"typescript\",\"slug\":[\"node-javascript에서-typescript로-바꾸기\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","typescript","d"],{"children":[["slug","node-javascript%EC%97%90%EC%84%9C-typescript%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:Tf99,
+## tsconfig 파일 작성
+
+```
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["es2016"],
+    "outDir": "dist",
+    "typeRoots": ["./node_modules/@types"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
+  },
+  "exclude": ["node_modules"]
+}
+```
+
+- esModuleInterop을 설정하지 않고 module.exports와 export default를 다르게 import 한다.
+  - module.exports `import * as`를 사용해서 import 해야한다.
+
+## scripts 작성
+
+```
+"scripts": {
+    "start": "NODE_ENV=test env TZ='Asia/Seoul' nodemon --watch ./ --delay 1 --exec 'ts-node' ./bin/www.ts",
+    "build:tsc": "rm -rf ./dist && tsc ",
+    "deploy:ts": "git pull origin dev && npm install && pm2 kill && env TZ='Asia/Seoul' pm2 start ts-node -- -P tsconfig.json ./bin/www.ts",
+    "deploy": "git pull origin dev && npm install && npm run build && pm2 kill && env TZ='Asia/Seoul' pm2 start ecosystem.config.js"
+  }
+```
+
+## webpack 적용
+
+```javascript
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+module.exports = {
+	mode: 'development',
+	entry: './bin/www.ts',
+	target: 'node',
+	output: {
+		path: path.resolve(__dirname, 'dist/bin'),
+		filename: 'www.js',
+	},
+	resolve: {
+		extensions: ['.ts', '.js', 'json'],
+	},
+	module: {
+		rules: [
+			{
+				test: /\.ts$/,
+				use: ['ts-loader'],
+				exclude: ['/node_modules/'],
+			},
+		],
+	},
+	node: {
+		__dirname: false,
+	},
+	externals: [nodeExternals()],
+	devtool: 'source-map',
+	plugins: [new CleanWebpackPlugin()],
+};
+```
+
+- nodeExternals를 사용하지 않으면 웹팩에서 에러가 발생한다. 왜인지는 아직 잘 모르겠다...
+
+## ts 파일로 jest 실행
+
+```json
+"jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    }
+  }
+```
+
+## sequilze-cli가 만들어준 index 파일 수정
+
+```typescript
+import * as Sequelize from 'sequelize';
+import answer from './answer';
+import file from './file';
+import mission from './mission';
+import user from './user';
+import configDate from '../config/config';
+
+const env = process.env.NODE_ENV || 'development';
+const config = configDate[env];
+const db = {} as any;
+
+const options =
+	process.env.NODE_ENV === 'test'
+		? {
+				username: 'root',
+				password: 'root',
+				storage: ':memory:',
+				host: 'localhost',
+				dialect: 'sqlite',
+				operatorsAliases: false,
+				logging: false,
+		  }
+		: {
+				host: config.host,
+				dialect: 'mysql',
+				timezone: '+09:00',
+				operatorsAliases: false,
+				define: {
+					timestamps: true,
+				},
+				dialectOptions: {
+					dateStrings: true,
+					typeCast: true,
+				},
+				pool: {
+					min: 0,
+					max: 10,
+					idle: 10000,
+					acquire: 10000,
+				},
+				logging: false,
+		  };
+
+// let sequelize;
+// if (config.use_env_variable) {
+// sequelize = new Sequelize(process.env[config.use_env_variable], config.options);
+// } else {
+const sequelize: any = new Sequelize(
+	config.database,
+	config.username,
+	config.password,
+	options
+);
+// }
+
+db.answers = answer(sequelize, Sequelize);
+db.files = file(sequelize, Sequelize);
+db.missions = mission(sequelize, Sequelize);
+db.users = user(sequelize, Sequelize);
+
+Object.keys(db).forEach(modelName => {
+	if (db[modelName].associate) {
+		db[modelName].associate(db);
+	}
+});
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+export default db;
+```
+
+- fs를 쓰면 실행 시에는 가져가지만 webpack이 동작하는 순간에는 가져가지 않는다.
+
+## process 사용하기
+
+- @types/node 설치
+
+## 같이 볼 만한 글
+
+- [Monolithic 서버사이드 타입스크립트 세팅 01](https://changhoi.github.io/posts/etc/serverside-typescript-setting-01/)
+c:T61cc,<h2 id="tsconfig-파일-작성">tsconfig 파일 작성<a aria-hidden="true" tabindex="-1" href="#tsconfig-파일-작성"><span class="anchor"></span></a></h2>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">{
+</span><span class="code-line">  "compilerOptions": {
+</span><span class="code-line">    "target": "es2016",
+</span><span class="code-line">    "lib": ["es2016"],
+</span><span class="code-line">    "outDir": "dist",
+</span><span class="code-line">    "typeRoots": ["./node_modules/@types"],
+</span><span class="code-line">    "module": "commonjs",
+</span><span class="code-line">    "moduleResolution": "node",
+</span><span class="code-line">    "experimentalDecorators": true,
+</span><span class="code-line">    "emitDecoratorMetadata": true,
+</span><span class="code-line">    "allowSyntheticDefaultImports": true,
+</span><span class="code-line">    "allowJs": true
+</span><span class="code-line">  },
+</span><span class="code-line">  "exclude": ["node_modules"]
+</span><span class="code-line">}
+</span></code></pre>
+<ul>
+<li>esModuleInterop을 설정하지 않고 module.exports와 export default를 다르게 import 한다.
+<ul>
+<li>module.exports <code class="inline-code">import * as</code>를 사용해서 import 해야한다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="scripts-작성">scripts 작성<a aria-hidden="true" tabindex="-1" href="#scripts-작성"><span class="anchor"></span></a></h2>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">"scripts": {
+</span><span class="code-line">    "start": "NODE_ENV=test env TZ='Asia/Seoul' nodemon --watch ./ --delay 1 --exec 'ts-node' ./bin/www.ts",
+</span><span class="code-line">    "build:tsc": "rm -rf ./dist &#x26;&#x26; tsc ",
+</span><span class="code-line">    "deploy:ts": "git pull origin dev &#x26;&#x26; npm install &#x26;&#x26; pm2 kill &#x26;&#x26; env TZ='Asia/Seoul' pm2 start ts-node -- -P tsconfig.json ./bin/www.ts",
+</span><span class="code-line">    "deploy": "git pull origin dev &#x26;&#x26; npm install &#x26;&#x26; npm run build &#x26;&#x26; pm2 kill &#x26;&#x26; env TZ='Asia/Seoul' pm2 start ecosystem.config.js"
+</span><span class="code-line">  }
+</span></code></pre>
+<h2 id="webpack-적용">webpack 적용<a aria-hidden="true" tabindex="-1" href="#webpack-적용"><span class="anchor"></span></a></h2>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> nodeExternals <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-node-externals'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">CleanWebpackPlugin</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">module<span class="token punctuation">.</span><span class="token property-access">exports</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">'./bin/www.ts'</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'node'</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token literal-property property">path</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist/bin'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token literal-property property">filename</span><span class="token operator">:</span> <span class="token string">'www.js'</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">resolve</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token literal-property property">extensions</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'json'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line">			<span class="token punctuation">{</span>
+</span><span class="code-line">				<span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex"><span class="token special-escape escape">\.</span>ts<span class="token anchor function">$</span></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+</span><span class="code-line">				<span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'ts-loader'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">				<span class="token literal-property property">exclude</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/node_modules/'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">node</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token literal-property property">__dirname</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">externals</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">nodeExternals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">devtool</span><span class="token operator">:</span> <span class="token string">'source-map'</span><span class="token punctuation">,</span>
+</span><span class="code-line">	<span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></code></pre>
+<ul>
+<li>nodeExternals를 사용하지 않으면 웹팩에서 에러가 발생한다. 왜인지는 아직 잘 모르겠다...</li>
+</ul>
+<h2 id="ts-파일로-jest-실행">ts 파일로 jest 실행<a aria-hidden="true" tabindex="-1" href="#ts-파일로-jest-실행"><span class="anchor"></span></a></h2>
+<pre class="language-json optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-json code-highlight"><span class="code-line"><span class="token property">"jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token property">"transform"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token property">"^.+\\.ts$"</span><span class="token operator">:</span> <span class="token string">"ts-jest"</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token property">"testRegex"</span><span class="token operator">:</span> <span class="token string">"\\.test\\.ts$"</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token property">"moduleFileExtensions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+</span><span class="code-line">      <span class="token string">"ts"</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token string">"tsx"</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token string">"js"</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token string">"json"</span>
+</span><span class="code-line">    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token property">"globals"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token property">"ts-jest"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">        <span class="token property">"diagnostics"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</span><span class="code-line">      <span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token punctuation">}</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span></code></pre>
+<h2 id="sequilze-cli가-만들어준-index-파일-수정">sequilze-cli가 만들어준 index 파일 수정<a aria-hidden="true" tabindex="-1" href="#sequilze-cli가-만들어준-index-파일-수정"><span class="anchor"></span></a></h2>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> Sequelize <span class="token keyword">from</span> <span class="token string">'sequelize'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">import</span> answer <span class="token keyword">from</span> <span class="token string">'./answer'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">import</span> file <span class="token keyword">from</span> <span class="token string">'./file'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">import</span> mission <span class="token keyword">from</span> <span class="token string">'./mission'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">import</span> user <span class="token keyword">from</span> <span class="token string">'./user'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">import</span> configDate <span class="token keyword">from</span> <span class="token string">'../config/config'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> env <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">||</span> <span class="token string">'development'</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> config <span class="token operator">=</span> configDate<span class="token punctuation">[</span>env<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword">const</span> db <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token keyword">as</span> <span class="token builtin">any</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">const</span> options <span class="token operator">=</span>
+</span><span class="code-line">	process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'test'</span>
+</span><span class="code-line">		<span class="token operator">?</span> <span class="token punctuation">{</span>
+</span><span class="code-line">				username<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				password<span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				storage<span class="token operator">:</span> <span class="token string">':memory:'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				host<span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				dialect<span class="token operator">:</span> <span class="token string">'sqlite'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				operatorsAliases<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">				logging<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">		  <span class="token punctuation">}</span>
+</span><span class="code-line">		<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">				host<span class="token operator">:</span> config<span class="token punctuation">.</span>host<span class="token punctuation">,</span>
+</span><span class="code-line">				dialect<span class="token operator">:</span> <span class="token string">'mysql'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				timezone<span class="token operator">:</span> <span class="token string">'+09:00'</span><span class="token punctuation">,</span>
+</span><span class="code-line">				operatorsAliases<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">				define<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">					timestamps<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">				dialectOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">					dateStrings<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">					typeCast<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+</span><span class="code-line">				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">				pool<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">					min<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">					max<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+</span><span class="code-line">					idle<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+</span><span class="code-line">					acquire<span class="token operator">:</span> <span class="token number">10000</span><span class="token punctuation">,</span>
+</span><span class="code-line">				<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">				logging<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+</span><span class="code-line">		  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// let sequelize;</span>
+</span><span class="code-line"><span class="token comment">// if (config.use_env_variable) {</span>
+</span><span class="code-line"><span class="token comment">// sequelize = new Sequelize(process.env[config.use_env_variable], config.options);</span>
+</span><span class="code-line"><span class="token comment">// } else {</span>
+</span><span class="code-line"><span class="token keyword">const</span> sequelize<span class="token operator">:</span> <span class="token builtin">any</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sequelize</span><span class="token punctuation">(</span>
+</span><span class="code-line">	config<span class="token punctuation">.</span>database<span class="token punctuation">,</span>
+</span><span class="code-line">	config<span class="token punctuation">.</span>username<span class="token punctuation">,</span>
+</span><span class="code-line">	config<span class="token punctuation">.</span>password<span class="token punctuation">,</span>
+</span><span class="code-line">	options
+</span><span class="code-line"><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token comment">// }</span>
+</span><span class="code-line">
+</span><span class="code-line">db<span class="token punctuation">.</span>answers <span class="token operator">=</span> <span class="token function">answer</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">db<span class="token punctuation">.</span>files <span class="token operator">=</span> <span class="token function">file</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">db<span class="token punctuation">.</span>missions <span class="token operator">=</span> <span class="token function">mission</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">db<span class="token punctuation">.</span>users <span class="token operator">=</span> <span class="token function">user</span><span class="token punctuation">(</span>sequelize<span class="token punctuation">,</span> Sequelize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>db<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>modelName <span class="token operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token keyword">if</span> <span class="token punctuation">(</span>db<span class="token punctuation">[</span>modelName<span class="token punctuation">]</span><span class="token punctuation">.</span>associate<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		db<span class="token punctuation">[</span>modelName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">associate</span><span class="token punctuation">(</span>db<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">db<span class="token punctuation">.</span>sequelize <span class="token operator">=</span> sequelize<span class="token punctuation">;</span>
+</span><span class="code-line">db<span class="token punctuation">.</span>Sequelize <span class="token operator">=</span> Sequelize<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">default</span> db<span class="token punctuation">;</span>
+</span></code></pre>
+<ul>
+<li>fs를 쓰면 실행 시에는 가져가지만 webpack이 동작하는 순간에는 가져가지 않는다.</li>
+</ul>
+<h2 id="process-사용하기">process 사용하기<a aria-hidden="true" tabindex="-1" href="#process-사용하기"><span class="anchor"></span></a></h2>
+<ul>
+<li>@types/node 설치</li>
+</ul>
+<h2 id="같이-볼-만한-글">같이 볼 만한 글<a aria-hidden="true" tabindex="-1" href="#같이-볼-만한-글"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://changhoi.github.io/posts/etc/serverside-typescript-setting-01/">Monolithic 서버사이드 타입스크립트 세팅 01</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/typescript/node-javascript에서-typescript로-바꾸기","frontmatter":{"title":"Node javascript에서 typescript로 바꾸기","date":"2020-02-22T11:02:44.000Z","category":"typescript","draft":false},"content":"$b","html":"$c","excerpt":"## tsconfig 파일 작성  ``` {   \"compilerOptions\": {     \"target\": \"es2016\",     \"lib\": [\"es2016\"],     \"outDir\": \"dist\",     \"typeRoots\": [\"./node_modules/@types\"],     \"module\": \"commonjs\",     \"moduleR"},"previousPost":{"slug":"/typescript/TypeScript 버전에 따른 변경점","frontmatter":{"title":"TypeScript 버전에 따른 변경점","date":"2020-02-01T13:03:30.000Z","category":"typescript","tags":["typesciprt","version"],"draft":false}},"nextPost":{"slug":"/typescript/커스텀-타입-선언-파일","frontmatter":{"title":"커스텀 타입 선언 파일","date":"2020-03-26T20:03:31.000Z","category":"typescript","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Node javascript에서 typescript로 바꾸기"}],["$","meta","3",{"name":"description","content":"## tsconfig 파일 작성  ``` {   \"compilerOptions\": {     \"target\": \"es2016\",     \"lib\": [\"es2016\"],     \"outDir\": \"dist\",     \"typeRoots\": [\"./node_modules/@types\"],     \"module\": \"commonjs\",     \"moduleR"}]]
+1:null

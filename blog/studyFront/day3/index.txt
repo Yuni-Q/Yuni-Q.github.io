@@ -1,0 +1,74 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","studyFront/day3","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","studyFront/day3","c"],{"children":["__PAGE__?{\"slug\":[\"studyFront\",\"day3\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","studyFront/day3","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T5f5,
+## 이미지 가운데 정렬
+
+- 이미지도 inline 요소이기 때문에 `text-align: center`를 통해 가운데 정렬을 합니다.
+
+## plugin 사용하기
+
+- vscode 좌측 active bar에 있는 Extenstions에서 각종 plugin을 사용합니다.
+  - ![](./images/extenstions.png)
+- [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+  - 페어링 태그의 이름을 자동으로 바꿔줍니다.
+- [htmltagwrap](https://marketplace.visualstudio.com/items?itemName=bradgashler.htmltagwrap)
+  - option + w 를 이용하여 선택한 내용을 HTML(p) 태그로 래핑 합니다.
+- [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css)
+  - 작업 영역에 있는 정의 또는 링크 요소를 통해 참조되는 외부 파일을 기반으로 HTML 클래스 특성에 대해 CSS 클래스 이름 완성을 제공 합니다.
+- [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+  - vs-code의 아이콘을 바꿔줍니다.
+  - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)도 있습니다.
+- [CSS Peek](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek)
+  - commande + click으로 해당 css가 정의된 곳으로 이동합니다.
+- [indent-rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)
+  - indent를 보기 쉽게 여러개의 색으로 표현해 줍니다.
+b:T887,<h2 id="이미지-가운데-정렬">이미지 가운데 정렬<a aria-hidden="true" tabindex="-1" href="#이미지-가운데-정렬"><span class="anchor"></span></a></h2>
+<ul>
+<li>이미지도 inline 요소이기 때문에 <code class="inline-code">text-align: center</code>를 통해 가운데 정렬을 합니다.</li>
+</ul>
+<h2 id="plugin-사용하기">plugin 사용하기<a aria-hidden="true" tabindex="-1" href="#plugin-사용하기"><span class="anchor"></span></a></h2>
+<ul>
+<li>vscode 좌측 active bar에 있는 Extenstions에서 각종 plugin을 사용합니다.
+<ul>
+<li><img src="./images/extenstions.png" alt="" loading="lazy" decoding="async" style="max-width: 100%; height: auto;"></li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag</a>
+<ul>
+<li>페어링 태그의 이름을 자동으로 바꿔줍니다.</li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=bradgashler.htmltagwrap">htmltagwrap</a>
+<ul>
+<li>option + w 를 이용하여 선택한 내용을 HTML(p) 태그로 래핑 합니다.</li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css">HTML CSS Support</a>
+<ul>
+<li>작업 영역에 있는 정의 또는 링크 요소를 통해 참조되는 외부 파일을 기반으로 HTML 클래스 특성에 대해 CSS 클래스 이름 완성을 제공 합니다.</li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons">vscode-icons</a>
+<ul>
+<li>vs-code의 아이콘을 바꿔줍니다.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme">Material Icon Theme</a>도 있습니다.</li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek">CSS Peek</a>
+<ul>
+<li>commande + click으로 해당 css가 정의된 곳으로 이동합니다.</li>
+</ul>
+</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow">indent-rainbow</a>
+<ul>
+<li>indent를 보기 쉽게 여러개의 색으로 표현해 줍니다.</li>
+</ul>
+</li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/studyFront/day3","frontmatter":{"title":"day3","date":"2020-07-12T13:07:30.000Z","category":"studyFront","draft":false},"content":"$a","html":"$b","excerpt":"## 이미지 가운데 정렬  - 이미지도 inline 요소이기 때문에 `text-align: center`를 통해 가운데 정렬을 합니다.  ## plugin 사용하기  - vscode 좌측 active bar에 있는 Extenstions에서 각종 plugin을 사용합니다.   - ![](./images/extenstions.png) - [Auto Renam"},"previousPost":{"slug":"/javascript/nullish-coalescing-operator","frontmatter":{"title":"nullish coalescing operator","date":"2020-07-09T09:08:24.000Z","category":"javascript","draft":false}},"nextPost":{"slug":"/react/타이머-만들기","frontmatter":{"title":"타이머 만들기","date":"2020-07-12T13:08:32.000Z","category":"react","draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"day3"}],["$","meta","3",{"name":"description","content":"## 이미지 가운데 정렬  - 이미지도 inline 요소이기 때문에 `text-align: center`를 통해 가운데 정렬을 합니다.  ## plugin 사용하기  - vscode 좌측 active bar에 있는 Extenstions에서 각종 plugin을 사용합니다.   - ![](./images/extenstions.png) - [Auto Renam"}]]
+1:null

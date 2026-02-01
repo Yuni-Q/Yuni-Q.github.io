@@ -1,0 +1,247 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","studyFront/day5","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","studyFront/day5","c"],{"children":["__PAGE__?{\"slug\":[\"studyFront\",\"day5\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","studyFront/day5","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:Tc4c,
+## 캔버스를 활용한 눈알 굴리기
+
+```html
+<!DOCTYPE html>
+<html lang="ko-KO">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Snow</title>
+	</head>
+
+	<body style="width: 100vw;height: 100vh;">
+		<canvas id="canvas" width="1550" height="1306"></canvas>
+		<script src="./index.js"></script>
+	</body>
+</html>
+```
+
+- Canvas API는 JavaScript와 HTML canvas 엘리먼트를 통해 그래픽을 그리기위한 수단을 제공합니다. 무엇보다도 애니메이션, 게임 그래픽, 데이터 시각화, 사진 조작 및 실시간 비디오 처리를 위해 사용됩니다.
+- Canvas API는 주로 2D 그래픽에 중점을 두고 있습니다. WebGL API 또한 canvas 엘리먼트를 사용하며, 하드웨어 가속 2D 및 3D 그래픽을 그립니다.
+
+```javascript
+// document.getElementById() 메서드를 호출하여 <canvas> 요소를 표시할 DOM을 검색합니다.
+const canvas = document.getElementById('canvas');
+if (canvas.getContext) {
+	// 요소가 있으면 getContext() 메서드를 사용하여 드로잉 컨텍스트에 액세스 할 수 있습니다.
+	const ctx = canvas.getContext('2d');
+
+	// 원 그리기
+	function eye(cx, cy, width, height, ball) {
+		const PI2 = Math.PI * 2;
+		const ratio = height / width;
+		const radius = Math.max(width, height) / 2;
+		const increment = 1 / radius;
+
+		ctx.beginPath();
+
+		const x = cx + radius * Math.cos(0);
+		const y = cy - ratio * radius * Math.sin(0);
+
+		ctx.lineTo(x, y);
+
+		for (let radians = increment; radians < PI2; radians += increment) {
+			const dx = cx + radius * Math.cos(radians);
+			const dy = cy - ratio * radius * Math.sin(radians);
+			ctx.lineTo(dx, dy);
+		}
+
+		ctx.closePath();
+		// 원 안을 채울 것인지 : 원만 그릴 것인지
+		ball ? ctx.fill() : ctx.stroke();
+	}
+
+	// 눈 그리기
+	function draw(x, y) {
+		// 왼쪽 눈
+		eye(
+			document.body.clientWidth / 2 - 60,
+			document.body.clientHeight / 2,
+			100,
+			100
+		);
+		// 오른쪽 눈
+		eye(
+			document.body.clientWidth / 2 + 60,
+			document.body.clientHeight / 2,
+			100,
+			100
+		);
+		// 왼쪽 눈알
+		eye(
+			x ? x : document.body.clientWidth / 2 - 60,
+			y ? y : document.body.clientHeight / 2,
+			10,
+			10,
+			true
+		);
+		// 오른쪽 눈알
+		eye(
+			x ? x + 120 : document.body.clientWidth / 2 + 60,
+			y ? y : document.body.clientHeight / 2,
+			10,
+			10,
+			true
+		);
+	}
+
+	// 위치 구하기
+	function map(value, start1, stop1, start2, stop2) {
+		return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
+	}
+
+	// 이벤트 함수
+	function onMouseMove(event) {
+		canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+		const x = map(
+			event.clientX,
+			0,
+			document.body.clientWidth,
+			document.body.clientWidth / 2 - 90,
+			document.body.clientWidth / 2 - 30
+		);
+		const y = map(
+			event.clientY,
+			0,
+			document.body.clientHeight,
+			document.body.clientHeight / 2 - 20,
+			document.body.clientHeight / 2 + 30
+		);
+
+		draw(x, y);
+	}
+
+	// addEventListener
+	window.addEventListener('mousemove', onMouseMove);
+
+	// 기본적인 눈 그리기
+	draw();
+}
+```
+b:T6ebc,<h2 id="캔버스를-활용한-눈알-굴리기">캔버스를 활용한 눈알 굴리기<a aria-hidden="true" tabindex="-1" href="#캔버스를-활용한-눈알-굴리기"><span class="anchor"></span></a></h2>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ko-KO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>Snow<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vw</span><span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">vh</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>canvas</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>canvas<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1550<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1306<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>canvas</span><span class="token punctuation">></span></span>
+</span><span class="code-line">		<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">	<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<ul>
+<li>Canvas API는 JavaScript와 HTML canvas 엘리먼트를 통해 그래픽을 그리기위한 수단을 제공합니다. 무엇보다도 애니메이션, 게임 그래픽, 데이터 시각화, 사진 조작 및 실시간 비디오 처리를 위해 사용됩니다.</li>
+<li>Canvas API는 주로 2D 그래픽에 중점을 두고 있습니다. WebGL API 또한 canvas 엘리먼트를 사용하며, 하드웨어 가속 2D 및 3D 그래픽을 그립니다.</li>
+</ul>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token comment">// document.getElementById() 메서드를 호출하여 &#x3C;canvas> 요소를 표시할 DOM을 검색합니다.</span>
+</span><span class="code-line"><span class="token keyword">const</span> canvas <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>canvas<span class="token punctuation">.</span><span class="token property-access">getContext</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">	<span class="token comment">// 요소가 있으면 getContext() 메서드를 사용하여 드로잉 컨텍스트에 액세스 할 수 있습니다.</span>
+</span><span class="code-line">	<span class="token keyword">const</span> ctx <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token method function property-access">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// 원 그리기</span>
+</span><span class="code-line">	<span class="token keyword">function</span> <span class="token function">eye</span><span class="token punctuation">(</span><span class="token parameter">cx<span class="token punctuation">,</span> cy<span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">,</span> ball</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token keyword">const</span> <span class="token constant">PI2</span> <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token constant">PI</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> ratio <span class="token operator">=</span> height <span class="token operator">/</span> width<span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> radius <span class="token operator">=</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">max</span><span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> increment <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">/</span> radius<span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">		ctx<span class="token punctuation">.</span><span class="token method function property-access">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">		<span class="token keyword">const</span> x <span class="token operator">=</span> cx <span class="token operator">+</span> radius <span class="token operator">*</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">cos</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> y <span class="token operator">=</span> cy <span class="token operator">-</span> ratio <span class="token operator">*</span> radius <span class="token operator">*</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">sin</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">		ctx<span class="token punctuation">.</span><span class="token method function property-access">lineTo</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">		<span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> radians <span class="token operator">=</span> increment<span class="token punctuation">;</span> radians <span class="token operator">&#x3C;</span> <span class="token constant">PI2</span><span class="token punctuation">;</span> radians <span class="token operator">+=</span> increment<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">			<span class="token keyword">const</span> dx <span class="token operator">=</span> cx <span class="token operator">+</span> radius <span class="token operator">*</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">cos</span><span class="token punctuation">(</span>radians<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">			<span class="token keyword">const</span> dy <span class="token operator">=</span> cy <span class="token operator">-</span> ratio <span class="token operator">*</span> radius <span class="token operator">*</span> <span class="token known-class-name class-name">Math</span><span class="token punctuation">.</span><span class="token method function property-access">sin</span><span class="token punctuation">(</span>radians<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">			ctx<span class="token punctuation">.</span><span class="token method function property-access">lineTo</span><span class="token punctuation">(</span>dx<span class="token punctuation">,</span> dy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">		ctx<span class="token punctuation">.</span><span class="token method function property-access">closePath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token comment">// 원 안을 채울 것인지 : 원만 그릴 것인지</span>
+</span><span class="code-line">		ball <span class="token operator">?</span> ctx<span class="token punctuation">.</span><span class="token method function property-access">fill</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> ctx<span class="token punctuation">.</span><span class="token method function property-access">stroke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// 눈 그리기</span>
+</span><span class="code-line">	<span class="token keyword">function</span> <span class="token function">draw</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token comment">// 왼쪽 눈</span>
+</span><span class="code-line">		<span class="token function">eye</span><span class="token punctuation">(</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">60</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">100</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">100</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token comment">// 오른쪽 눈</span>
+</span><span class="code-line">		<span class="token function">eye</span><span class="token punctuation">(</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">60</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">100</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">100</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token comment">// 왼쪽 눈알</span>
+</span><span class="code-line">		<span class="token function">eye</span><span class="token punctuation">(</span>
+</span><span class="code-line">			x <span class="token operator">?</span> x <span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">60</span><span class="token punctuation">,</span>
+</span><span class="code-line">			y <span class="token operator">?</span> y <span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">10</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">10</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token boolean">true</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token comment">// 오른쪽 눈알</span>
+</span><span class="code-line">		<span class="token function">eye</span><span class="token punctuation">(</span>
+</span><span class="code-line">			x <span class="token operator">?</span> x <span class="token operator">+</span> <span class="token number">120</span> <span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">60</span><span class="token punctuation">,</span>
+</span><span class="code-line">			y <span class="token operator">?</span> y <span class="token operator">:</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">10</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">10</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token boolean">true</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// 위치 구하기</span>
+</span><span class="code-line">	<span class="token keyword">function</span> <span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> start1<span class="token punctuation">,</span> stop1<span class="token punctuation">,</span> start2<span class="token punctuation">,</span> stop2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		<span class="token keyword control-flow">return</span> start2 <span class="token operator">+</span> <span class="token punctuation">(</span>stop2 <span class="token operator">-</span> start2<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>value <span class="token operator">-</span> start1<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>stop1 <span class="token operator">-</span> start1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// 이벤트 함수</span>
+</span><span class="code-line">	<span class="token keyword">function</span> <span class="token function">onMouseMove</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">		canvas<span class="token punctuation">.</span><span class="token method function property-access">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">clearRect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> canvas<span class="token punctuation">.</span><span class="token property-access">width</span><span class="token punctuation">,</span> canvas<span class="token punctuation">.</span><span class="token property-access">height</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> x <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>
+</span><span class="code-line">			event<span class="token punctuation">.</span><span class="token property-access">clientX</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">90</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientWidth</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">30</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">		<span class="token keyword">const</span> y <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span>
+</span><span class="code-line">			event<span class="token punctuation">.</span><span class="token property-access">clientY</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">20</span><span class="token punctuation">,</span>
+</span><span class="code-line">			<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token property-access">clientHeight</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">30</span>
+</span><span class="code-line">		<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">		<span class="token function">draw</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">	<span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// addEventListener</span>
+</span><span class="code-line">	<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> onMouseMove<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">	<span class="token comment">// 기본적인 눈 그리기</span>
+</span><span class="code-line">	<span class="token function">draw</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>2:["$","$L9",null,{"post":{"slug":"/studyFront/day5","frontmatter":{"title":"day5","date":"2020-07-14T23:07:19.000Z","category":"studyFront","draft":false},"content":"$a","html":"$b","excerpt":"## 캔버스를 활용한 눈알 굴리기  ```html <!DOCTYPE html> <html lang=\"ko-KO\"> \t<head> \t\t<meta charset=\"UTF-8\" /> \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> \t\t<title>Snow</title> \t</"},"previousPost":{"slug":"/studyFront/day4","frontmatter":{"title":"day4","date":"2020-07-14T05:07:36.000Z","category":"studyFront","draft":false}},"nextPost":{"slug":"/Java/build-파일의-위치","frontmatter":{"title":"build 파일의 위치","date":"2020-07-15T17:07:01.000Z","category":"java","draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"day5"}],["$","meta","3",{"name":"description","content":"## 캔버스를 활용한 눈알 굴리기  ```html <!DOCTYPE html> <html lang=\"ko-KO\"> \t<head> \t\t<meta charset=\"UTF-8\" /> \t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /> \t\t<title>Snow</title> \t</"}]]
+1:null

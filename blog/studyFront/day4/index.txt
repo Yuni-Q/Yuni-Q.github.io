@@ -1,0 +1,291 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","studyFront/day4","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","studyFront/day4","c"],{"children":["__PAGE__?{\"slug\":[\"studyFront\",\"day4\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","studyFront/day4","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T1df8,
+## 자바스크립트 사용하기
+
+- index.html에 script 태그를 연결 합니다.
+
+```html
+<!DOCTYPE html>
+<html lang="ko-KO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript</title>
+  </head>
+
+  <body>
+    <script src="./index.js"></script>
+  </body>
+</html>
+```
+
+- 자바스크립트에서 특정 html의 element를 사용할 때 그 element보다 자바스크립트 코드가 상위에 있을 경우 에러를 발생할 수 있습니다. 또한 스크립트가 element보다 상단에 위치할 경우 사용자에게 초기에 보여지는 속도가 느려질 수 있기 때문에 body 끝에 작성합니다.
+- 자바스크립트 파일을 작성합니다.
+
+```javascript
+alert('javascript');
+```
+
+- html을 실행하면 새로고침 시 마다 javascript가 작성된 시스템 팝업이 등장합니다.
+
+## 클릭 시 이벤트 발생
+
+- 새로고침하면 뜨던 시스템 팝업을 클릭 시 작성되게 변경해 보겠습니다.
+
+```javascript
+function onClick() {
+  alert('javascript');
+}
+
+window.addEventListener('click', onClick);
+```
+
+### window란?
+
+- 브라우저의 요소들과 자바스크립트 엔진, 그리고 모든 변수를 담고 있는 객체입니다. 브라우저 전체를 담당하는 게 Window 객체이고, 웹사이트만 담당하는게 Document 객체입니다.
+- window는 모든 객체의 조상입니다. 전역객체(글로벌객체)라고 하는데요. 모든 객체를 다 포함하고 있기 때문에 window는 그냥 생략가능합니다. window 객체 아래를 보면, String, Boolean, Object, Number, Function, Array같은 자료형도 다 들어있습니다.
+
+#### addEventListener란?
+
+- addEventListener은 이벤트를 등록하는 가장 권장되는 방식입니다. 이 방식을 이용하면 여러개의 이벤트 핸들러를 등록할 수 있습니다.
+  - 이 방식은 ie8이하에서는 호환되지 않습니다. ie에서는 attachEvent 메소드를 사용해야 합니다.
+  - removeEventListener라는 짝이 있습니다.
+
+### javascript 함수
+
+- 함수는 JavaScript에서 기본적인 구성 블록 중의 하나입니다. 함수는 작업을 수행하거나 값을 계산하는 문장 집합 같은 자바스크립트 절차입니다. 함수를 사용하려면 함수를 호출하고자 하는 범위 내에서 함수를 정의해야만 합니다.
+- 함수 정의(또는 함수 선언)는 다음과 같은 함수 키워드로 구성되어 있습니다:
+  - 함수의 이름
+  - 괄호 안에서 쉼표로 분리된 함수의 매개변수 목록
+  - 중괄호 { } 안에서 함수를 정의하는 자바스크립트 표현
+- 함수 표현식과 arrow function에 대해서는 다음에 알아보겠습니다.
+
+## 클릭마다 eleement 추가
+
+```javascript
+function onClick() {
+  const element = document.createElement('div');
+  element.textContent = '추가!!';
+  document.body.appendChild(element);
+}
+window.addEventListener('click', onClick);
+```
+
+- Document 객체는 웹 페이지 그 자체를 의미합니다. 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작해야 합니다.
+- createElement로 element를 만들고 textContent로 text를 추가하고 body에 appendChild를 통해 body의 마지막에 element를 추가합니다.
+- 자바스크립트에서 값을 담을 수 있는 방법은 3가지가 있습니다. var, let, const
+
+### var
+
+- ES6(ECMAScript6) 이전에 나온 변수 선언 방식입니다.
+- var와 let의 차이점으로는 scope이 있습니다. var는 function 단위의 scope을 가집니다.
+- 현재는 사용하지 않을 것을 권장합니다.
+
+### let
+
+- ES6(ECMAScript6)에서 추가된 변수 선언 방식입니다.
+- let은 {}(block) 단위의 scope을 가집니다.
+- var와 다르게 같은 변수명을 갖는 변수는 두 번 선언하게 되면 오류가 발생하므로 변수의 값을 바꿔주는 식으로 사용하여야 합니다.
+
+### const
+
+- const는 상수를 선언할 때 사용합니다.
+- 상수는 한번 선언하면 바꿀 수 없습니다.
+- const의 scope은 {}(block)입니다.
+
+## 눈(Snow) 그리기
+
+```javascript
+function onClick() {
+  const element = document.createElement('div');
+  element.style.cssText = `
+		position: absolute;
+		top: ${window.event.clientY - 5}px;
+		left: ${window.event.clientX - 5}px;
+		width: 10px;
+		height: 10px;
+		background-color: red;
+		border-radius: 100%;
+	`;
+  document.body.appendChild(element);
+}
+window.addEventListener('click', onClick);
+```
+
+- window.event를 통해 현재 마우스 포인터의 위치를 구합니다.
+- element.style.cssText를 통해 style을 작성합니다.
+- 템플릿 리터럴을 사용해 문자열 안에 javascript 변수를 사용합니다.
+
+### 템플릿 리터럴(Template literals)
+
+- 템플릿 리터럴은 내장된 표현식을 허용하는 문자열 리터럴입니다.
+- 템플릿 리터럴은 표현식/문자열 삽입, 여러 줄 문자열, 문자열 형식화, 문자열 태깅 등 다양한 기능을 제공합니다.
+- ES2015 사양명세서에선 template strings라고 불렸습니다.
+- 템플릿 리터럴은 런타임 시점에 일반 자바스크립트 문자열로 처리/변환됩니다.
+- 프론트엔드에서는 HTML을 데이터와 결합해서 DOM을 다시 그려야 하는 일이 빈번하기 때문에, 템플릿을 좀 더 쉽게 편집하고 작성해야 할 필요가 있어서, 이러한 기능이 추가되었습니다.(자바스크립트 자체적으로 지원하기 전에도 라이브러리로 존재했습니다.)
+- 템플릿 리터럴에서는 아래와 같이 \$와 중괄호{}를 사용하여 표현식을 표기할 수 있습니다.(Expression interpolation (표현식 삽입법))
+- 태그를 사용하여 템플릿 리터럴을 함수로 파싱할 수 있습니다.(Tagged templates)
+- 템플릿 리터럴을 사용하면 여러 줄의 문자열도 나눠서 작성할 필요가 없습니다.(Multi-line strings)
+- 특정 조건을 만족하는 경우마다 다른 문자열을 변수에 저장하고 싶을 때, 템플릿을 중첩해서 작성하는 것이 가독성이 더 좋을 때가 있습니다.(Nesting templates (중첩 템플릿))
+- String.raw 태그함수를 사용하면 템플릿 문자열을 입력한 대로 출력할 수 있습니다.(Raw strings (원래 문자열))
+
+## absolute Potision
+
+- 부모 엘리먼트 내부에 속박되지 않고, 독립된 배치 문맥(positioning context)을 가지게 됩니다. 마치 포토샵 같은 그래픽 툴에서 새로운 레이어를 추가하는 효과에 비슷하다고 생각하시면 됩니다.
+- 엘리먼트를 기본적으로 브라우저 화면(viewport) 상에서 어디든지 원하는 위치에 자유롭게 배치시킬 수 있으며, 심지어 부모 엘리먼트 위에 겹쳐서 배치할 수도 있습니다.
+- 상위 엘리먼트 중에 position 속성이 static이 아닌 엘리먼트가 있다면, 그 중 가장 가까운 엘리먼트의 내부에서만 엘리먼트를 자유롭게 배치할 수 있습니다. 즉, 전체 화면이 아닌 해당 상위 엘리먼트를 기준으로 offset 속성(top, left, bottom, right)이 적용됩니다.
+
+## 참고
+
+- [Window 객체와 BOM](https://www.zerocho.com/category/JavaScript/post/573b321aa54b5e8427432946)
+- [[Javascript]자바스크립트 기초-변수와 상수(var,let,const)](https://hees-dev.tistory.com/32)
+- [[JavaScript] ES6 템플릿 리터럴에 대해 알아보자](https://eblee-repo.tistory.com/38)
+- [[CSS] Absolute Postion - 자유로운 엘리먼트 배치](https://www.daleseo.com/css-position-absolute)
+b:T4f38,<h2 id="자바스크립트-사용하기">자바스크립트 사용하기<a aria-hidden="true" tabindex="-1" href="#자바스크립트-사용하기"><span class="anchor"></span></a></h2>
+<ul>
+<li>index.html에 script 태그를 연결 합니다.</li>
+</ul>
+<pre class="language-html optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-html code-highlight"><span class="code-line"><span class="token doctype"><span class="token punctuation">&#x3C;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ko-KO<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>title</span><span class="token punctuation">></span></span>javascript<span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>title</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>head</span><span class="token punctuation">></span></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line">    <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./index.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>script</span><span class="token punctuation">></span></span>
+</span><span class="code-line">  <span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>body</span><span class="token punctuation">></span></span>
+</span><span class="code-line"><span class="token tag"><span class="token tag"><span class="token punctuation">&#x3C;/</span>html</span><span class="token punctuation">></span></span>
+</span></code></pre>
+<ul>
+<li>자바스크립트에서 특정 html의 element를 사용할 때 그 element보다 자바스크립트 코드가 상위에 있을 경우 에러를 발생할 수 있습니다. 또한 스크립트가 element보다 상단에 위치할 경우 사용자에게 초기에 보여지는 속도가 느려질 수 있기 때문에 body 끝에 작성합니다.</li>
+<li>자바스크립트 파일을 작성합니다.</li>
+</ul>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'javascript'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<ul>
+<li>html을 실행하면 새로고침 시 마다 javascript가 작성된 시스템 팝업이 등장합니다.</li>
+</ul>
+<h2 id="클릭-시-이벤트-발생">클릭 시 이벤트 발생<a aria-hidden="true" tabindex="-1" href="#클릭-시-이벤트-발생"><span class="anchor"></span></a></h2>
+<ul>
+<li>새로고침하면 뜨던 시스템 팝업을 클릭 시 작성되게 변경해 보겠습니다.</li>
+</ul>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'javascript'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<h3 id="window란">window란?<a aria-hidden="true" tabindex="-1" href="#window란"><span class="anchor"></span></a></h3>
+<ul>
+<li>브라우저의 요소들과 자바스크립트 엔진, 그리고 모든 변수를 담고 있는 객체입니다. 브라우저 전체를 담당하는 게 Window 객체이고, 웹사이트만 담당하는게 Document 객체입니다.</li>
+<li>window는 모든 객체의 조상입니다. 전역객체(글로벌객체)라고 하는데요. 모든 객체를 다 포함하고 있기 때문에 window는 그냥 생략가능합니다. window 객체 아래를 보면, String, Boolean, Object, Number, Function, Array같은 자료형도 다 들어있습니다.</li>
+</ul>
+<h4 id="addeventlistener란">addEventListener란?<a aria-hidden="true" tabindex="-1" href="#addeventlistener란"><span class="anchor"></span></a></h4>
+<ul>
+<li>addEventListener은 이벤트를 등록하는 가장 권장되는 방식입니다. 이 방식을 이용하면 여러개의 이벤트 핸들러를 등록할 수 있습니다.
+<ul>
+<li>이 방식은 ie8이하에서는 호환되지 않습니다. ie에서는 attachEvent 메소드를 사용해야 합니다.</li>
+<li>removeEventListener라는 짝이 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="javascript-함수">javascript 함수<a aria-hidden="true" tabindex="-1" href="#javascript-함수"><span class="anchor"></span></a></h3>
+<ul>
+<li>함수는 JavaScript에서 기본적인 구성 블록 중의 하나입니다. 함수는 작업을 수행하거나 값을 계산하는 문장 집합 같은 자바스크립트 절차입니다. 함수를 사용하려면 함수를 호출하고자 하는 범위 내에서 함수를 정의해야만 합니다.</li>
+<li>함수 정의(또는 함수 선언)는 다음과 같은 함수 키워드로 구성되어 있습니다:
+<ul>
+<li>함수의 이름</li>
+<li>괄호 안에서 쉼표로 분리된 함수의 매개변수 목록</li>
+<li>중괄호 { } 안에서 함수를 정의하는 자바스크립트 표현</li>
+</ul>
+</li>
+<li>함수 표현식과 arrow function에 대해서는 다음에 알아보겠습니다.</li>
+</ul>
+<h2 id="클릭마다-eleement-추가">클릭마다 eleement 추가<a aria-hidden="true" tabindex="-1" href="#클릭마다-eleement-추가"><span class="anchor"></span></a></h2>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  element<span class="token punctuation">.</span><span class="token property-access">textContent</span> <span class="token operator">=</span> <span class="token string">'추가!!'</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<ul>
+<li>Document 객체는 웹 페이지 그 자체를 의미합니다. 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시 Document 객체부터 시작해야 합니다.</li>
+<li>createElement로 element를 만들고 textContent로 text를 추가하고 body에 appendChild를 통해 body의 마지막에 element를 추가합니다.</li>
+<li>자바스크립트에서 값을 담을 수 있는 방법은 3가지가 있습니다. var, let, const</li>
+</ul>
+<h3 id="var">var<a aria-hidden="true" tabindex="-1" href="#var"><span class="anchor"></span></a></h3>
+<ul>
+<li>ES6(ECMAScript6) 이전에 나온 변수 선언 방식입니다.</li>
+<li>var와 let의 차이점으로는 scope이 있습니다. var는 function 단위의 scope을 가집니다.</li>
+<li>현재는 사용하지 않을 것을 권장합니다.</li>
+</ul>
+<h3 id="let">let<a aria-hidden="true" tabindex="-1" href="#let"><span class="anchor"></span></a></h3>
+<ul>
+<li>ES6(ECMAScript6)에서 추가된 변수 선언 방식입니다.</li>
+<li>let은 {}(block) 단위의 scope을 가집니다.</li>
+<li>var와 다르게 같은 변수명을 갖는 변수는 두 번 선언하게 되면 오류가 발생하므로 변수의 값을 바꿔주는 식으로 사용하여야 합니다.</li>
+</ul>
+<h3 id="const">const<a aria-hidden="true" tabindex="-1" href="#const"><span class="anchor"></span></a></h3>
+<ul>
+<li>const는 상수를 선언할 때 사용합니다.</li>
+<li>상수는 한번 선언하면 바꿀 수 없습니다.</li>
+<li>const의 scope은 {}(block)입니다.</li>
+</ul>
+<h2 id="눈snow-그리기">눈(Snow) 그리기<a aria-hidden="true" tabindex="-1" href="#눈snow-그리기"><span class="anchor"></span></a></h2>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> element <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  element<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">cssText</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		position: absolute;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		top: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">event</span><span class="token punctuation">.</span><span class="token property-access">clientY</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		left: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">event</span><span class="token punctuation">.</span><span class="token property-access">clientX</span> <span class="token operator">-</span> <span class="token number">5</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">px;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		width: 10px;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		height: 10px;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		background-color: red;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">		border-radius: 100%;
+</span></span></span><span class="code-line"><span class="token template-string"><span class="token string">	</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></code></pre>
+<ul>
+<li>window.event를 통해 현재 마우스 포인터의 위치를 구합니다.</li>
+<li>element.style.cssText를 통해 style을 작성합니다.</li>
+<li>템플릿 리터럴을 사용해 문자열 안에 javascript 변수를 사용합니다.</li>
+</ul>
+<h3 id="템플릿-리터럴template-literals">템플릿 리터럴(Template literals)<a aria-hidden="true" tabindex="-1" href="#템플릿-리터럴template-literals"><span class="anchor"></span></a></h3>
+<ul>
+<li>템플릿 리터럴은 내장된 표현식을 허용하는 문자열 리터럴입니다.</li>
+<li>템플릿 리터럴은 표현식/문자열 삽입, 여러 줄 문자열, 문자열 형식화, 문자열 태깅 등 다양한 기능을 제공합니다.</li>
+<li>ES2015 사양명세서에선 template strings라고 불렸습니다.</li>
+<li>템플릿 리터럴은 런타임 시점에 일반 자바스크립트 문자열로 처리/변환됩니다.</li>
+<li>프론트엔드에서는 HTML을 데이터와 결합해서 DOM을 다시 그려야 하는 일이 빈번하기 때문에, 템플릿을 좀 더 쉽게 편집하고 작성해야 할 필요가 있어서, 이러한 기능이 추가되었습니다.(자바스크립트 자체적으로 지원하기 전에도 라이브러리로 존재했습니다.)</li>
+<li>템플릿 리터럴에서는 아래와 같이 $와 중괄호{}를 사용하여 표현식을 표기할 수 있습니다.(Expression interpolation (표현식 삽입법))</li>
+<li>태그를 사용하여 템플릿 리터럴을 함수로 파싱할 수 있습니다.(Tagged templates)</li>
+<li>템플릿 리터럴을 사용하면 여러 줄의 문자열도 나눠서 작성할 필요가 없습니다.(Multi-line strings)</li>
+<li>특정 조건을 만족하는 경우마다 다른 문자열을 변수에 저장하고 싶을 때, 템플릿을 중첩해서 작성하는 것이 가독성이 더 좋을 때가 있습니다.(Nesting templates (중첩 템플릿))</li>
+<li>String.raw 태그함수를 사용하면 템플릿 문자열을 입력한 대로 출력할 수 있습니다.(Raw strings (원래 문자열))</li>
+</ul>
+<h2 id="absolute-potision">absolute Potision<a aria-hidden="true" tabindex="-1" href="#absolute-potision"><span class="anchor"></span></a></h2>
+<ul>
+<li>부모 엘리먼트 내부에 속박되지 않고, 독립된 배치 문맥(positioning context)을 가지게 됩니다. 마치 포토샵 같은 그래픽 툴에서 새로운 레이어를 추가하는 효과에 비슷하다고 생각하시면 됩니다.</li>
+<li>엘리먼트를 기본적으로 브라우저 화면(viewport) 상에서 어디든지 원하는 위치에 자유롭게 배치시킬 수 있으며, 심지어 부모 엘리먼트 위에 겹쳐서 배치할 수도 있습니다.</li>
+<li>상위 엘리먼트 중에 position 속성이 static이 아닌 엘리먼트가 있다면, 그 중 가장 가까운 엘리먼트의 내부에서만 엘리먼트를 자유롭게 배치할 수 있습니다. 즉, 전체 화면이 아닌 해당 상위 엘리먼트를 기준으로 offset 속성(top, left, bottom, right)이 적용됩니다.</li>
+</ul>
+<h2 id="참고">참고<a aria-hidden="true" tabindex="-1" href="#참고"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://www.zerocho.com/category/JavaScript/post/573b321aa54b5e8427432946">Window 객체와 BOM</a></li>
+<li><a href="https://hees-dev.tistory.com/32">[Javascript]자바스크립트 기초-변수와 상수(var,let,const)</a></li>
+<li><a href="https://eblee-repo.tistory.com/38">[JavaScript] ES6 템플릿 리터럴에 대해 알아보자</a></li>
+<li><a href="https://www.daleseo.com/css-position-absolute">[CSS] Absolute Postion - 자유로운 엘리먼트 배치</a></li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/studyFront/day4","frontmatter":{"title":"day4","date":"2020-07-14T05:07:36.000Z","category":"studyFront","draft":false},"content":"$a","html":"$b","excerpt":"## 자바스크립트 사용하기  - index.html에 script 태그를 연결 합니다.  ```html <!DOCTYPE html> <html lang=\"ko-KO\">   <head>     <meta charset=\"UTF-8\" />     <meta name=\"viewport\" content=\"width=device-width, initial-scal"},"previousPost":{"slug":"/react/타이머-만들기","frontmatter":{"title":"타이머 만들기","date":"2020-07-12T13:08:32.000Z","category":"react","draft":false}},"nextPost":{"slug":"/studyFront/day5","frontmatter":{"title":"day5","date":"2020-07-14T23:07:19.000Z","category":"studyFront","draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"day4"}],["$","meta","3",{"name":"description","content":"## 자바스크립트 사용하기  - index.html에 script 태그를 연결 합니다.  ```html <!DOCTYPE html> <html lang=\"ko-KO\">   <head>     <meta charset=\"UTF-8\" />     <meta name=\"viewport\" content=\"width=device-width, initial-scal"}]]
+1:null

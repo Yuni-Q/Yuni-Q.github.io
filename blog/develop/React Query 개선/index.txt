@@ -1,0 +1,1221 @@
+3:I[808,[],""]
+5:I[6217,[],""]
+6:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+7:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["slug","develop/React%20Query%20%EA%B0%9C%EC%84%A0","c"]
+0:["static-build-id",[[["",{"children":["blog",{"children":[["slug","develop/React%20Query%20%EA%B0%9C%EC%84%A0","c"],{"children":["__PAGE__?{\"slug\":[\"develop\",\"React Query 개선\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":["blog",{"children":[["slug","develop/React%20Query%20%EA%B0%9C%EC%84%A0","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","blog","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L6",null,{}],["$","$L7",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L8",null]]]]
+9:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","6797","static/chunks/app/blog/%5B...slug%5D/page-9b274a2e0073d544.js"],"BlogPostPageClient"]
+a:T4363,
+> Next.js 기반의 대규모 모노레포에서 React Query 레이어를 구축하여 props drilling을 제거하고 SSR/CSR 환경을 통합 처리한 경험을 공유합니다. Provider level에서 하이드레이트 대응으로 사용처의 react-query 디펜던시를 제거했습니다.
+
+## 📊 프로젝트 개요
+
+### 배경
+
+- **프레임워크**: Next.js 14, React 18
+- **목표**: props drilling 제거 및 SSR/CSR 환경 통합 처리
+- **성과**: 사용처 react-query 디펜던시 제거, 모듈 독립성 확보
+
+### 핵심 성과
+
+- ✅ Provider level에서 하이드레이트 대응
+- ✅ prefetch/query/useQuery를 이용한 props drilling 제거
+- ✅ 쿼리 키와 queryFn을 함께 묶어서 사용하여 캐시 미스 방지
+- ✅ 사용처 react-query 디펜던시 제거
+- ✅ SSR에 컴포넌트를 유연하게 대응
+- ✅ 모듈 독립성 확보
+
+---
+
+## 🔴 문제 상황
+
+### 1. Props Drilling 문제
+
+**문제**:
+
+- 데이터를 여러 컴포넌트 레벨을 거쳐 전달해야 함
+- 중간 컴포넌트들이 불필요한 props를 받아야 함
+- 코드 가독성 저하 및 유지보수 어려움
+
+**Before (Props Drilling)**:
+
+```typescript
+// 페이지 컴포넌트
+export default function HomePage({ initialData }) {
+  return (
+    <Layout>
+      <Header userData={initialData.user} />
+      <MainContent
+        products={initialData.products}
+        userData={initialData.user}
+      />
+      <Footer />
+    </Layout>
+  )
+}
+
+// 중간 컴포넌트
+function MainContent({ products, userData }) {
+  return (
+    <div>
+      <ProductList products={products} userData={userData} />
+      <RecommendationSection userData={userData} />
+    </div>
+  )
+}
+
+// 실제 사용 컴포넌트
+function ProductList({ products, userData }) {
+  // userData를 사용하지 않지만 props로 받아야 함
+  return <div>{/* products만 사용 */}</div>
+}
+```
+
+**문제점**:
+
+- `userData`를 사용하지 않는 컴포넌트도 props로 받아야 함
+- 중간 컴포넌트들이 불필요한 props 전달 역할만 함
+- 타입 정의가 복잡해짐
+
+---
+
+### 2. SSR/CSR 환경 분리 문제
+
+**문제**:
+
+- SSR 환경에서는 `getStaticProps`에서 데이터를 가져와야 함
+- CSR 환경에서는 `useQuery`를 사용해야 함
+- 같은 데이터를 두 가지 방식으로 처리해야 함
+
+**Before (환경 분리)**:
+
+```typescript
+// SSR 환경
+export async function getStaticProps() {
+  const products = await fetchProducts()
+  const user = await fetchUser()
+
+  return {
+    props: {
+      initialData: { products, user },
+    },
+  }
+}
+
+// CSR 환경
+function Component() {
+  const { data: products } = useQuery('products', fetchProducts)
+  const { data: user } = useQuery('user', fetchUser)
+
+  // 같은 로직을 두 번 작성해야 함
+}
+```
+
+**문제점**:
+
+- 같은 데이터를 두 가지 방식으로 처리
+- 코드 중복 발생
+- 환경 전환 시 수정 범위 큼
+
+---
+
+### 3. 사용처 react-query 디펜던시 문제
+
+**문제**:
+
+- 모듈을 사용하는 곳에서 react-query를 직접 import해야 함
+- 모듈과 사용처 간 결합도 증가
+- 모듈 독립성 저하
+
+**Before (직접 디펜던시)**:
+
+```typescript
+// 모듈 사용처
+import { useQuery } from '@tanstack/react-query'
+import { ProductList } from '@modules/product-list'
+
+function Page() {
+  const { data: products } = useQuery(['products'], fetchProducts)
+
+  return <ProductList products={products} />
+}
+```
+
+**문제점**:
+
+- 사용처에서 react-query를 알아야 함
+- 모듈과 사용처 간 결합도 높음
+- 모듈 교체 시 사용처도 수정 필요
+
+---
+
+## ✅ 해결 방법
+
+### 1. Provider Level에서 하이드레이트 대응
+
+**핵심 아이디어**:
+
+- Provider level에서 SSR 데이터를 React Query 캐시에 하이드레이트
+- 사용처에서는 환경을 신경 쓰지 않고 `useQuery`만 사용
+
+**구현**:
+
+```typescript
+// CorePackProvider.tsx
+import {
+  QueryClient,
+  QueryClientProvider,
+  dehydrate,
+  Hydrate,
+} from '@tanstack/react-query'
+
+export function CorePackProvider({
+  children,
+  dehydratedState,
+}: CorePackProviderProps) {
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60 * 1000, // 1분
+            cacheTime: 5 * 60 * 1000, // 5분
+          },
+        },
+      })
+  )
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={dehydratedState}>{children}</Hydrate>
+    </QueryClientProvider>
+  )
+}
+```
+
+**페이지 레벨에서 사용**:
+
+```typescript
+// pages/home.tsx
+export async function getStaticProps() {
+  const queryClient = new QueryClient()
+
+  // SSR에서 데이터 prefetch
+  await queryClient.prefetchQuery(['products'], fetchProducts)
+  await queryClient.prefetchQuery(['user'], fetchUser)
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  }
+}
+
+export default function HomePage({ dehydratedState }) {
+  return (
+    <CorePackProvider dehydratedState={dehydratedState}>
+      <HomePageContent />
+    </CorePackProvider>
+  )
+}
+```
+
+**효과**:
+
+- ✅ SSR 데이터가 React Query 캐시에 하이드레이트됨
+- ✅ CSR 환경에서도 동일한 방식으로 접근 가능
+- ✅ 환경 전환 시 코드 수정 불필요
+
+---
+
+### 2. 쿼리 키와 함수 관리 → prefetch/useQuery에서 사용
+
+**핵심 원칙**: 쿼리 키와 queryFn을 함께 묶어서 prefetch와 useQuery에서 동일하게 사용하면 캐시 미스가 발생하지 않습니다.
+
+**구조**:
+
+1. **쿼리 키와 함수 관리**: 쿼리 객체로 묶어서 정의
+2. **prefetch/useQuery에서 사용**: 정의한 쿼리 객체를 재사용
+
+#### 1단계: 쿼리 키와 함수 관리
+
+**쿼리 객체로 묶기** (`queries/products.ts`):
+
+```typescript
+// queries/products.ts
+import { QueryOptions } from '@tanstack/react-query'
+
+export const productsQuery = {
+  queryKey: ['products'] as const,
+  queryFn: fetchProducts,
+} satisfies QueryOptions
+
+export const productDetailQuery = (id: number) =>
+  ({
+    queryKey: ['products', 'detail', id] as const,
+    queryFn: () => fetchProductDetail(id),
+  } satisfies QueryOptions)
+
+export const productsListQuery = (filters?: string) =>
+  ({
+    queryKey: ['products', 'list', { filters }] as const,
+    queryFn: () => fetchProducts(filters),
+  } satisfies QueryOptions)
+```
+
+**효과**:
+
+- ✅ prefetch와 useQuery에서 동일한 객체 사용으로 캐시 미스 방지
+- ✅ 쿼리 키와 queryFn이 항상 일치 보장
+- ✅ 타입 안전성 확보
+- ✅ 쿼리 정의 변경 시 한 곳만 수정
+
+#### 2단계: prefetch와 useQuery에서 사용
+
+**prefetch (SSR에서 데이터 준비)**:
+
+```typescript
+// hooks/useProductsPrefetch.ts
+import { QueryClient } from '@tanstack/react-query'
+import {
+  productsQuery,
+  productDetailQuery,
+  productsListQuery,
+} from '../queries/products'
+
+export async function prefetchProducts(
+  queryClient: QueryClient,
+  filters?: string
+) {
+  // prefetch에서도 동일한 쿼리 객체 사용
+  return queryClient.prefetchQuery({
+    ...productsListQuery(filters),
+    staleTime: 60 * 1000,
+  })
+}
+
+export async function prefetchProductDetail(
+  queryClient: QueryClient,
+  id: number
+) {
+  // prefetch에서도 동일한 쿼리 객체 사용
+  return queryClient.prefetchQuery({
+    ...productDetailQuery(id),
+    staleTime: 60 * 1000,
+  })
+}
+```
+
+**useQuery (컴포넌트에서 사용)**:
+
+```typescript
+// hooks/useProductsQuery.ts
+import { useQuery, UseQueryOptions } from '@tanstack/react-query'
+import {
+  productsQuery,
+  productDetailQuery,
+  productsListQuery,
+} from '../queries/products'
+
+export function useProductsQuery(
+  filters?: string,
+  options?: Omit<UseQueryOptions, 'queryKey' | 'queryFn'>
+) {
+  // useQuery에서도 동일한 쿼리 객체 사용 → 캐시 미스 방지!
+  return useQuery({
+    ...productsListQuery(filters),
+    staleTime: 60 * 1000,
+    ...options,
+  })
+}
+
+export function useProductDetailQuery(
+  id: number,
+  options?: Omit<UseQueryOptions, 'queryKey' | 'queryFn'>
+) {
+  // useQuery에서도 동일한 쿼리 객체 사용 → 캐시 미스 방지!
+  return useQuery({
+    ...productDetailQuery(id),
+    staleTime: 60 * 1000,
+    ...options,
+  })
+}
+```
+
+**컴포넌트에서 사용하는 hook**:
+
+```typescript
+// hooks/useProducts.ts
+import { useProductsQuery, useProductDetailQuery } from './useProductsQuery'
+
+export function useProducts(filters?: string) {
+  const { data, isLoading, error } = useProductsQuery(filters)
+
+  return {
+    products: data ?? [],
+    isLoading,
+    error,
+  }
+}
+
+export function useProduct(id: number) {
+  const { data, isLoading, error } = useProductDetailQuery(id)
+
+  return {
+    product: data,
+    isLoading,
+    error,
+  }
+}
+```
+
+**사용 예시**:
+
+```typescript
+// 컴포넌트에서 사용
+function ProductList({ filters }: { filters?: string }) {
+  const { products, isLoading } = useProducts(filters)
+
+  if (isLoading) return <Loading />
+
+  return (
+    <div>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  )
+}
+
+function ProductDetail({ id }: { id: number }) {
+  const { product, isLoading } = useProduct(id)
+
+  if (isLoading) return <Loading />
+  if (!product) return <NotFound />
+
+  return <ProductDetailView product={product} />
+}
+```
+
+**효과**:
+
+- ✅ props drilling 제거
+- ✅ 컴포넌트가 필요한 데이터를 직접 가져옴
+- ✅ 중간 컴포넌트는 props 전달 불필요
+- ✅ **prefetch와 useQuery에서 동일한 쿼리 객체 사용으로 캐시 미스 방지**
+- ✅ 쿼리 키와 queryFn이 항상 일치하여 캐시 히트 보장
+
+---
+
+### 3. 모듈 독립성 확보
+
+**Before (사용처에서 react-query 직접 사용)**:
+
+```typescript
+// 사용처
+import { useQuery } from '@tanstack/react-query'
+import { ProductList } from '@modules/product-list'
+
+function Page() {
+  const { data: products } = useQuery(['products'], fetchProducts)
+  return <ProductList products={products} />
+}
+```
+
+**After (모듈 내부에서 처리)**:
+
+```typescript
+// 모듈 내부 (ProductList/index.tsx)
+import { useProducts } from './hooks/useProducts'
+
+export function ProductList() {
+  const { products, isLoading } = useProducts()
+
+  if (isLoading) return <Loading />
+
+  return (
+    <div>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  )
+}
+
+// 사용처
+import { ProductList } from '@modules/product-list'
+
+function Page() {
+  // react-query를 직접 사용하지 않음!
+  return <ProductList />
+}
+```
+
+**효과**:
+
+- ✅ 사용처에서 react-query 디펜던시 제거
+- ✅ 모듈 독립성 확보
+- ✅ 모듈 교체 시 사용처 수정 불필요
+
+---
+
+### 4. SSR/CSR 통합 처리
+
+**통합된 데이터 페칭 로직**:
+
+```typescript
+// hooks/useProducts.ts
+import { useProductsQuery } from './useProductsQuery'
+
+export function useProducts(filters?: string) {
+  // SSR에서 prefetch된 데이터가 있으면 사용
+  // 없으면 CSR에서 fetch
+  // prefetch와 동일한 쿼리 객체 사용으로 캐시 히트 보장
+  const { data, isLoading, error } = useProductsQuery(filters)
+
+  return {
+    products: data ?? [],
+    isLoading,
+    error,
+  }
+}
+```
+
+**페이지 레벨에서 prefetch**:
+
+```typescript
+// pages/home.tsx
+import { QueryClient } from '@tanstack/react-query'
+import { dehydrate } from '@tanstack/react-query'
+import { prefetchProducts } from '../hooks/useProductsPrefetch'
+import { prefetchUserProfile } from '../hooks/useUserPrefetch'
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient()
+
+  // SSR에서 prefetch (중앙 관리된 쿼리 키와 함수 사용)
+  await prefetchProducts(queryClient)
+  await prefetchUserProfile(queryClient)
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+    revalidate: 60, // ISR
+  }
+}
+```
+
+**효과**:
+
+- ✅ SSR과 CSR에서 동일한 코드 사용
+- ✅ 환경 전환 시 코드 수정 불필요
+- ✅ ISR과도 자연스럽게 통합
+
+---
+
+## 🏗️ 아키텍처
+
+### 변경 전 구조
+
+```
+Page Component
+  ↓ (props drilling)
+Layout Component
+  ↓ (props drilling)
+MainContent Component
+  ↓ (props drilling)
+ProductList Component (실제 사용)
+```
+
+### 변경 후 구조
+
+```
+1. 쿼리 키와 함수 관리
+   queries/products.ts
+   └─ productsQuery (queryKey + queryFn 묶음)
+
+2. prefetch/useQuery에서 사용
+   Page Component
+     ↓ (prefetch - 동일한 쿼리 객체 사용)
+   CorePackProvider (하이드레이트)
+     ↓
+   ProductList Component
+     ↓ (useQuery - 동일한 쿼리 객체 사용)
+   React Query Cache (캐시 히트 보장!)
+```
+
+---
+
+## 📈 개선 효과
+
+| 항목                   | Before         | After       | 개선               |
+| ---------------------- | -------------- | ----------- | ------------------ |
+| **Props 전달 레벨**    | 3-4단계        | 0단계       | **100% 제거**      |
+| **중간 컴포넌트 수정** | 필요           | 불필요      | **수정 범위 감소** |
+| **코드 가독성**        | 낮음           | 높음        | **향상**           |
+| **모듈 독립성**        | 낮음           | 높음        | **향상**           |
+| **환경 전환**          | 코드 수정 필요 | 수정 불필요 | **유연성 향상**    |
+
+---
+
+## 💡 핵심 교훈
+
+### 1. Provider Level에서 하이드레이트가 핵심
+
+SSR 데이터를 React Query 캐시에 하이드레이트하면, CSR 환경에서도 동일한 방식으로 접근할 수 있습니다. 이는 환경 전환 시 코드 수정을 최소화하는 핵심입니다.
+
+### 2. 쿼리 키와 queryFn을 함께 묶어서 사용해야 함
+
+**핵심**: prefetch와 useQuery에서 동일한 쿼리 객체(queryKey + queryFn)를 사용해야 캐시 미스가 발생하지 않습니다.
+
+**문제 상황**:
+
+```typescript
+// ❌ 잘못된 예: prefetch와 useQuery에서 다른 방식으로 정의
+// prefetch에서
+await queryClient.prefetchQuery({
+  queryKey: ['products'],
+  queryFn: fetchProducts,
+})
+
+// useQuery에서 (쿼리 키나 함수가 조금이라도 다르면 캐시 미스!)
+const { data } = useQuery({
+  queryKey: ['products'], // 동일하지만
+  queryFn: () => fetchProducts(), // 화살표 함수로 감싸면 다른 함수로 인식!
+})
+```
+
+**해결 방법**:
+
+```typescript
+// ✅ 올바른 예: 쿼리 객체를 묶어서 재사용
+const productsQuery = {
+  queryKey: ['products'],
+  queryFn: fetchProducts,
+}
+
+// prefetch에서
+await queryClient.prefetchQuery(productsQuery)
+
+// useQuery에서 (동일한 객체 사용)
+const { data } = useQuery(productsQuery)
+```
+
+이렇게 하면 prefetch에서 준비한 데이터를 useQuery에서 정확히 찾을 수 있어 캐시 히트가 보장됩니다.
+
+### 3. 쿼리 키와 함수를 먼저 관리하고 prefetch/useQuery에서 사용하는 구조가 효과적
+
+쿼리 키와 queryFn을 먼저 묶어서 관리하고, prefetch와 useQuery에서 동일한 쿼리 객체를 사용하면 캐시 일관성이 보장됩니다. 이렇게 하면 각 레이어의 책임이 명확해지고 재사용성이 높아집니다.
+
+### 4. 모듈 독립성을 위해 내부에서 처리
+
+모듈이 필요한 데이터를 내부에서 가져오도록 하면, 사용처의 디펜던시를 제거할 수 있고 모듈 독립성이 향상됩니다.
+
+### 5. 타입 안전성을 유지해야 함
+
+React Query의 타입을 활용하여 타입 안전성을 유지하는 것이 중요합니다. `useQuery`의 제네릭 타입을 명시적으로 지정하고, 쿼리 키를 `as const`로 정의하면 타입 체크가 강화됩니다.
+
+### 6. 캐싱 전략을 신중하게 설계해야 함
+
+`staleTime`, `cacheTime` 등을 적절히 설정하여 불필요한 API 호출을 방지하고, 사용자 경험을 향상시켜야 합니다. prefetch와 useQuery에서 동일한 쿼리 객체를 사용하면 캐시 히트가 보장되어 SSR 데이터를 효율적으로 활용할 수 있습니다.
+
+---
+
+## 🎯 결론
+
+React Query 레이어 구축을 통해 다음과 같은 성과를 달성했습니다:
+
+1. ✅ **Props Drilling 완전 제거**: 컴포넌트가 필요한 데이터를 직접 가져옴
+2. ✅ **캐시 미스 방지**: prefetch와 useQuery에서 동일한 쿼리 객체 사용으로 캐시 히트 보장
+3. ✅ **SSR/CSR 환경 통합**: 동일한 코드로 두 환경 모두 지원
+4. ✅ **모듈 독립성 확보**: 사용처 react-query 디펜던시 제거
+5. ✅ **코드 가독성 향상**: 중간 컴포넌트의 불필요한 props 전달 제거
+6. ✅ **유지보수성 향상**: 환경 전환 시 코드 수정 최소화, 쿼리 객체 변경 시 한 곳만 수정
+
+이번 작업을 통해 대규모 모노레포에서의 상태 관리와 데이터 페칭 아키텍처 설계 경험을 쌓았고, React Query의 prefetch, 하이드레이트, 캐싱 전략, 쿼리 키와 queryFn을 함께 묶어서 사용하는 패턴 등을 실무에 적용할 수 있었습니다.
+
+---
+
+## 📚 참고 자료
+
+- [TanStack Query Documentation](https://tanstack.com/query/latest)
+- [Next.js Data Fetching](https://nextjs.org/docs/app/building-your-application/data-fetching)
+- [React Query SSR Guide](https://tanstack.com/query/latest/docs/react/guides/ssr)
+b:T1243d,<blockquote>
+<p>Next.js 기반의 대규모 모노레포에서 React Query 레이어를 구축하여 props drilling을 제거하고 SSR/CSR 환경을 통합 처리한 경험을 공유합니다. Provider level에서 하이드레이트 대응으로 사용처의 react-query 디펜던시를 제거했습니다.</p>
+</blockquote>
+<h2 id="-프로젝트-개요">📊 프로젝트 개요<a aria-hidden="true" tabindex="-1" href="#-프로젝트-개요"><span class="anchor"></span></a></h2>
+<h3 id="배경">배경<a aria-hidden="true" tabindex="-1" href="#배경"><span class="anchor"></span></a></h3>
+<ul>
+<li><strong>프레임워크</strong>: Next.js 14, React 18</li>
+<li><strong>목표</strong>: props drilling 제거 및 SSR/CSR 환경 통합 처리</li>
+<li><strong>성과</strong>: 사용처 react-query 디펜던시 제거, 모듈 독립성 확보</li>
+</ul>
+<h3 id="핵심-성과">핵심 성과<a aria-hidden="true" tabindex="-1" href="#핵심-성과"><span class="anchor"></span></a></h3>
+<ul>
+<li>✅ Provider level에서 하이드레이트 대응</li>
+<li>✅ prefetch/query/useQuery를 이용한 props drilling 제거</li>
+<li>✅ 쿼리 키와 queryFn을 함께 묶어서 사용하여 캐시 미스 방지</li>
+<li>✅ 사용처 react-query 디펜던시 제거</li>
+<li>✅ SSR에 컴포넌트를 유연하게 대응</li>
+<li>✅ 모듈 독립성 확보</li>
+</ul>
+<hr>
+<h2 id="-문제-상황">🔴 문제 상황<a aria-hidden="true" tabindex="-1" href="#-문제-상황"><span class="anchor"></span></a></h2>
+<h3 id="1-props-drilling-문제">1. Props Drilling 문제<a aria-hidden="true" tabindex="-1" href="#1-props-drilling-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>데이터를 여러 컴포넌트 레벨을 거쳐 전달해야 함</li>
+<li>중간 컴포넌트들이 불필요한 props를 받아야 함</li>
+<li>코드 가독성 저하 및 유지보수 어려움</li>
+</ul>
+<p><strong>BOLD_PAREN_PLACEHOLDER_0</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 페이지 컴포넌트</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span> initialData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>Layout<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>Header userData<span class="token operator">=</span><span class="token punctuation">{</span>initialData<span class="token punctuation">.</span>user<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>MainContent
+</span><span class="code-line">        products<span class="token operator">=</span><span class="token punctuation">{</span>initialData<span class="token punctuation">.</span>products<span class="token punctuation">}</span>
+</span><span class="code-line">        userData<span class="token operator">=</span><span class="token punctuation">{</span>initialData<span class="token punctuation">.</span>user<span class="token punctuation">}</span>
+</span><span class="code-line">      <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>Footer <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>Layout<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 중간 컴포넌트</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">MainContent</span><span class="token punctuation">(</span><span class="token punctuation">{</span> products<span class="token punctuation">,</span> userData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>ProductList products<span class="token operator">=</span><span class="token punctuation">{</span>products<span class="token punctuation">}</span> userData<span class="token operator">=</span><span class="token punctuation">{</span>userData<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>RecommendationSection userData<span class="token operator">=</span><span class="token punctuation">{</span>userData<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 실제 사용 컴포넌트</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">ProductList</span><span class="token punctuation">(</span><span class="token punctuation">{</span> products<span class="token punctuation">,</span> userData <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// userData를 사용하지 않지만 props로 받아야 함</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>div<span class="token operator">></span><span class="token punctuation">{</span><span class="token comment">/* products만 사용 */</span><span class="token punctuation">}</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>문제점</strong>:</p>
+<ul>
+<li><code class="inline-code">userData</code>를 사용하지 않는 컴포넌트도 props로 받아야 함</li>
+<li>중간 컴포넌트들이 불필요한 props 전달 역할만 함</li>
+<li>타입 정의가 복잡해짐</li>
+</ul>
+<hr>
+<h3 id="2-ssrcsr-환경-분리-문제">2. SSR/CSR 환경 분리 문제<a aria-hidden="true" tabindex="-1" href="#2-ssrcsr-환경-분리-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>SSR 환경에서는 <code class="inline-code">getStaticProps</code>에서 데이터를 가져와야 함</li>
+<li>CSR 환경에서는 <code class="inline-code">useQuery</code>를 사용해야 함</li>
+<li>같은 데이터를 두 가지 방식으로 처리해야 함</li>
+</ul>
+<p><strong>BOLD_PAREN_PLACEHOLDER_1</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// SSR 환경</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getStaticProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> products <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">const</span> user <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetchUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    props<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      initialData<span class="token operator">:</span> <span class="token punctuation">{</span> products<span class="token punctuation">,</span> user <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// CSR 환경</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">Component</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token string">'products'</span><span class="token punctuation">,</span> fetchProducts<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> user <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token string">'user'</span><span class="token punctuation">,</span> fetchUser<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// 같은 로직을 두 번 작성해야 함</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>문제점</strong>:</p>
+<ul>
+<li>같은 데이터를 두 가지 방식으로 처리</li>
+<li>코드 중복 발생</li>
+<li>환경 전환 시 수정 범위 큼</li>
+</ul>
+<hr>
+<h3 id="3-사용처-react-query-디펜던시-문제">3. 사용처 react-query 디펜던시 문제<a aria-hidden="true" tabindex="-1" href="#3-사용처-react-query-디펜던시-문제"><span class="anchor"></span></a></h3>
+<p><strong>문제</strong>:</p>
+<ul>
+<li>모듈을 사용하는 곳에서 react-query를 직접 import해야 함</li>
+<li>모듈과 사용처 간 결합도 증가</li>
+<li>모듈 독립성 저하</li>
+</ul>
+<p><strong>BOLD_PAREN_PLACEHOLDER_2</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 모듈 사용처</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> ProductList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@modules/product-list'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fetchProducts<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>ProductList products<span class="token operator">=</span><span class="token punctuation">{</span>products<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>문제점</strong>:</p>
+<ul>
+<li>사용처에서 react-query를 알아야 함</li>
+<li>모듈과 사용처 간 결합도 높음</li>
+<li>모듈 교체 시 사용처도 수정 필요</li>
+</ul>
+<hr>
+<h2 id="-해결-방법">✅ 해결 방법<a aria-hidden="true" tabindex="-1" href="#-해결-방법"><span class="anchor"></span></a></h2>
+<h3 id="1-provider-level에서-하이드레이트-대응">1. Provider Level에서 하이드레이트 대응<a aria-hidden="true" tabindex="-1" href="#1-provider-level에서-하이드레이트-대응"><span class="anchor"></span></a></h3>
+<p><strong>핵심 아이디어</strong>:</p>
+<ul>
+<li>Provider level에서 SSR 데이터를 React Query 캐시에 하이드레이트</li>
+<li>사용처에서는 환경을 신경 쓰지 않고 <code class="inline-code">useQuery</code>만 사용</li>
+</ul>
+<p><strong>구현</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// CorePackProvider.tsx</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  QueryClient<span class="token punctuation">,</span>
+</span><span class="code-line">  QueryClientProvider<span class="token punctuation">,</span>
+</span><span class="code-line">  dehydrate<span class="token punctuation">,</span>
+</span><span class="code-line">  Hydrate<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">CorePackProvider</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  children<span class="token punctuation">,</span>
+</span><span class="code-line">  dehydratedState<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token operator">:</span> CorePackProviderProps<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">[</span>queryClient<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+</span><span class="code-line">      <span class="token keyword">new</span> <span class="token class-name">QueryClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">        defaultOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">          queries<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">            staleTime<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token comment">// 1분</span>
+</span><span class="code-line">            cacheTime<span class="token operator">:</span> <span class="token number">5</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span> <span class="token comment">// 5분</span>
+</span><span class="code-line">          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>QueryClientProvider client<span class="token operator">=</span><span class="token punctuation">{</span>queryClient<span class="token punctuation">}</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>Hydrate state<span class="token operator">=</span><span class="token punctuation">{</span>dehydratedState<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>Hydrate<span class="token operator">></span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>QueryClientProvider<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>페이지 레벨에서 사용</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// pages/home.tsx</span>
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getStaticProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> queryClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// SSR에서 데이터 prefetch</span>
+</span><span class="code-line">  <span class="token keyword">await</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fetchProducts<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">await</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'user'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fetchUser<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    props<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      dehydratedState<span class="token operator">:</span> <span class="token function">dehydrate</span><span class="token punctuation">(</span>queryClient<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span> dehydratedState <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>CorePackProvider dehydratedState<span class="token operator">=</span><span class="token punctuation">{</span>dehydratedState<span class="token punctuation">}</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>HomePageContent <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>CorePackProvider<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ SSR 데이터가 React Query 캐시에 하이드레이트됨</li>
+<li>✅ CSR 환경에서도 동일한 방식으로 접근 가능</li>
+<li>✅ 환경 전환 시 코드 수정 불필요</li>
+</ul>
+<hr>
+<h3 id="2-쿼리-키와-함수-관리--prefetchusequery에서-사용">2. 쿼리 키와 함수 관리 → prefetch/useQuery에서 사용<a aria-hidden="true" tabindex="-1" href="#2-쿼리-키와-함수-관리--prefetchusequery에서-사용"><span class="anchor"></span></a></h3>
+<p><strong>핵심 원칙</strong>: 쿼리 키와 queryFn을 함께 묶어서 prefetch와 useQuery에서 동일하게 사용하면 캐시 미스가 발생하지 않습니다.</p>
+<p><strong>구조</strong>:</p>
+<ol>
+<li><strong>쿼리 키와 함수 관리</strong>: 쿼리 객체로 묶어서 정의</li>
+<li><strong>prefetch/useQuery에서 사용</strong>: 정의한 쿼리 객체를 재사용</li>
+</ol>
+<h4 id="1단계-쿼리-키와-함수-관리">1단계: 쿼리 키와 함수 관리<a aria-hidden="true" tabindex="-1" href="#1단계-쿼리-키와-함수-관리"><span class="anchor"></span></a></h4>
+<p><strong>쿼리 객체로 묶기</strong> (<code class="inline-code">queries/products.ts</code>):</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// queries/products.ts</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> QueryOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> productsQuery <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token keyword">const</span><span class="token punctuation">,</span>
+</span><span class="code-line">  queryFn<span class="token operator">:</span> fetchProducts<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span> satisfies QueryOptions
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">productDetailQuery</span> <span class="token operator">=</span> <span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+</span><span class="code-line">  <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">,</span> <span class="token string">'detail'</span><span class="token punctuation">,</span> id<span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token keyword">const</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token function-variable function">queryFn</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">fetchProductDetail</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span> satisfies QueryOptions<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">productsListQuery</span> <span class="token operator">=</span> <span class="token punctuation">(</span>filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+</span><span class="code-line">  <span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">,</span> <span class="token string">'list'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> filters <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token keyword">const</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token function-variable function">queryFn</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">fetchProducts</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span> satisfies QueryOptions<span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ prefetch와 useQuery에서 동일한 객체 사용으로 캐시 미스 방지</li>
+<li>✅ 쿼리 키와 queryFn이 항상 일치 보장</li>
+<li>✅ 타입 안전성 확보</li>
+<li>✅ 쿼리 정의 변경 시 한 곳만 수정</li>
+</ul>
+<h4 id="2단계-prefetch와-usequery에서-사용">2단계: prefetch와 useQuery에서 사용<a aria-hidden="true" tabindex="-1" href="#2단계-prefetch와-usequery에서-사용"><span class="anchor"></span></a></h4>
+<p><strong>BOLD_PAREN_PLACEHOLDER_3</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// hooks/useProductsPrefetch.ts</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> QueryClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  productsQuery<span class="token punctuation">,</span>
+</span><span class="code-line">  productDetailQuery<span class="token punctuation">,</span>
+</span><span class="code-line">  productsListQuery<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../queries/products'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">prefetchProducts</span><span class="token punctuation">(</span>
+</span><span class="code-line">  queryClient<span class="token operator">:</span> QueryClient<span class="token punctuation">,</span>
+</span><span class="code-line">  filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span>
+</span><span class="code-line"><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// prefetch에서도 동일한 쿼리 객체 사용</span>
+</span><span class="code-line">  <span class="token keyword">return</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span><span class="token function">productsListQuery</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    staleTime<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">prefetchProductDetail</span><span class="token punctuation">(</span>
+</span><span class="code-line">  queryClient<span class="token operator">:</span> QueryClient<span class="token punctuation">,</span>
+</span><span class="code-line">  id<span class="token operator">:</span> <span class="token builtin">number</span>
+</span><span class="code-line"><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// prefetch에서도 동일한 쿼리 객체 사용</span>
+</span><span class="code-line">  <span class="token keyword">return</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span><span class="token function">productDetailQuery</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    staleTime<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>BOLD_PAREN_PLACEHOLDER_4</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// hooks/useProductsQuery.ts</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useQuery<span class="token punctuation">,</span> UseQueryOptions <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  productsQuery<span class="token punctuation">,</span>
+</span><span class="code-line">  productDetailQuery<span class="token punctuation">,</span>
+</span><span class="code-line">  productsListQuery<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../queries/products'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useProductsQuery</span><span class="token punctuation">(</span>
+</span><span class="code-line">  filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span>
+</span><span class="code-line">  options<span class="token operator">?</span><span class="token operator">:</span> Omit<span class="token operator">&#x3C;</span>UseQueryOptions<span class="token punctuation">,</span> <span class="token string">'queryKey'</span> <span class="token operator">|</span> <span class="token string">'queryFn'</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// useQuery에서도 동일한 쿼리 객체 사용 → 캐시 미스 방지!</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span><span class="token function">productsListQuery</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    staleTime<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token operator">...</span>options<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useProductDetailQuery</span><span class="token punctuation">(</span>
+</span><span class="code-line">  id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span>
+</span><span class="code-line">  options<span class="token operator">?</span><span class="token operator">:</span> Omit<span class="token operator">&#x3C;</span>UseQueryOptions<span class="token punctuation">,</span> <span class="token string">'queryKey'</span> <span class="token operator">|</span> <span class="token string">'queryFn'</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// useQuery에서도 동일한 쿼리 객체 사용 → 캐시 미스 방지!</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token operator">...</span><span class="token function">productDetailQuery</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    staleTime<span class="token operator">:</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token operator">...</span>options<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>컴포넌트에서 사용하는 hook</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// hooks/useProducts.ts</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useProductsQuery<span class="token punctuation">,</span> useProductDetailQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./useProductsQuery'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useProducts</span><span class="token punctuation">(</span>filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> isLoading<span class="token punctuation">,</span> error <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProductsQuery</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    products<span class="token operator">:</span> data <span class="token operator">??</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">    isLoading<span class="token punctuation">,</span>
+</span><span class="code-line">    error<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useProduct</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> isLoading<span class="token punctuation">,</span> error <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProductDetailQuery</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    product<span class="token operator">:</span> data<span class="token punctuation">,</span>
+</span><span class="code-line">    isLoading<span class="token punctuation">,</span>
+</span><span class="code-line">    error<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>사용 예시</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 컴포넌트에서 사용</span>
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">ProductList</span><span class="token punctuation">(</span><span class="token punctuation">{</span> filters <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> products<span class="token punctuation">,</span> isLoading <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProducts</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLoading<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>Loading <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">{</span>products<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+</span><span class="code-line">        <span class="token operator">&#x3C;</span>ProductCard key<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>id<span class="token punctuation">}</span> product<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">ProductDetail</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> product<span class="token punctuation">,</span> isLoading <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProduct</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLoading<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>Loading <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>product<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>NotFound <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>ProductDetailView product<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ props drilling 제거</li>
+<li>✅ 컴포넌트가 필요한 데이터를 직접 가져옴</li>
+<li>✅ 중간 컴포넌트는 props 전달 불필요</li>
+<li>✅ <strong>prefetch와 useQuery에서 동일한 쿼리 객체 사용으로 캐시 미스 방지</strong></li>
+<li>✅ 쿼리 키와 queryFn이 항상 일치하여 캐시 히트 보장</li>
+</ul>
+<hr>
+<h3 id="3-모듈-독립성-확보">3. 모듈 독립성 확보<a aria-hidden="true" tabindex="-1" href="#3-모듈-독립성-확보"><span class="anchor"></span></a></h3>
+<p><strong>BOLD_PAREN_PLACEHOLDER_5</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 사용처</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> ProductList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@modules/product-list'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token operator">:</span> products <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fetchProducts<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>ProductList products<span class="token operator">=</span><span class="token punctuation">{</span>products<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>BOLD_PAREN_PLACEHOLDER_6</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// 모듈 내부 (ProductList/index.tsx)</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useProducts <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./hooks/useProducts'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">ProductList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> products<span class="token punctuation">,</span> isLoading <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">if</span> <span class="token punctuation">(</span>isLoading<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>Loading <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">{</span>products<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span>product<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+</span><span class="code-line">        <span class="token operator">&#x3C;</span>ProductCard key<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">.</span>id<span class="token punctuation">}</span> product<span class="token operator">=</span><span class="token punctuation">{</span>product<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line">      <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// 사용처</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> ProductList <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@modules/product-list'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">function</span> <span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// react-query를 직접 사용하지 않음!</span>
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token operator">&#x3C;</span>ProductList <span class="token operator">/</span><span class="token operator">></span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ 사용처에서 react-query 디펜던시 제거</li>
+<li>✅ 모듈 독립성 확보</li>
+<li>✅ 모듈 교체 시 사용처 수정 불필요</li>
+</ul>
+<hr>
+<h3 id="4-ssrcsr-통합-처리">4. SSR/CSR 통합 처리<a aria-hidden="true" tabindex="-1" href="#4-ssrcsr-통합-처리"><span class="anchor"></span></a></h3>
+<p><strong>통합된 데이터 페칭 로직</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// hooks/useProducts.ts</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> useProductsQuery <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./useProductsQuery'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">useProducts</span><span class="token punctuation">(</span>filters<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token comment">// SSR에서 prefetch된 데이터가 있으면 사용</span>
+</span><span class="code-line">  <span class="token comment">// 없으면 CSR에서 fetch</span>
+</span><span class="code-line">  <span class="token comment">// prefetch와 동일한 쿼리 객체 사용으로 캐시 히트 보장</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">{</span> data<span class="token punctuation">,</span> isLoading<span class="token punctuation">,</span> error <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useProductsQuery</span><span class="token punctuation">(</span>filters<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    products<span class="token operator">:</span> data <span class="token operator">??</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">    isLoading<span class="token punctuation">,</span>
+</span><span class="code-line">    error<span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>페이지 레벨에서 prefetch</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// pages/home.tsx</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> QueryClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> dehydrate <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@tanstack/react-query'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> prefetchProducts <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../hooks/useProductsPrefetch'</span>
+</span><span class="code-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> prefetchUserProfile <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../hooks/useUserPrefetch'</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword">export</span> <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getStaticProps</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> queryClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">QueryClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token comment">// SSR에서 prefetch (중앙 관리된 쿼리 키와 함수 사용)</span>
+</span><span class="code-line">  <span class="token keyword">await</span> <span class="token function">prefetchProducts</span><span class="token punctuation">(</span>queryClient<span class="token punctuation">)</span>
+</span><span class="code-line">  <span class="token keyword">await</span> <span class="token function">prefetchUserProfile</span><span class="token punctuation">(</span>queryClient<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    props<span class="token operator">:</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      dehydratedState<span class="token operator">:</span> <span class="token function">dehydrate</span><span class="token punctuation">(</span>queryClient<span class="token punctuation">)</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</span><span class="code-line">    revalidate<span class="token operator">:</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token comment">// ISR</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<p><strong>효과</strong>:</p>
+<ul>
+<li>✅ SSR과 CSR에서 동일한 코드 사용</li>
+<li>✅ 환경 전환 시 코드 수정 불필요</li>
+<li>✅ ISR과도 자연스럽게 통합</li>
+</ul>
+<hr>
+<h2 id="️-아키텍처">🏗️ 아키텍처<a aria-hidden="true" tabindex="-1" href="#️-아키텍처"><span class="anchor"></span></a></h2>
+<h3 id="변경-전-구조">변경 전 구조<a aria-hidden="true" tabindex="-1" href="#변경-전-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">Page Component
+</span><span class="code-line">  ↓ (props drilling)
+</span><span class="code-line">Layout Component
+</span><span class="code-line">  ↓ (props drilling)
+</span><span class="code-line">MainContent Component
+</span><span class="code-line">  ↓ (props drilling)
+</span><span class="code-line">ProductList Component (실제 사용)
+</span></code></pre>
+<h3 id="변경-후-구조">변경 후 구조<a aria-hidden="true" tabindex="-1" href="#변경-후-구조"><span class="anchor"></span></a></h3>
+<pre class="optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="code-highlight"><span class="code-line">1. 쿼리 키와 함수 관리
+</span><span class="code-line">   queries/products.ts
+</span><span class="code-line">   └─ productsQuery (queryKey + queryFn 묶음)
+</span><span class="code-line">
+</span><span class="code-line">2. prefetch/useQuery에서 사용
+</span><span class="code-line">   Page Component
+</span><span class="code-line">     ↓ (prefetch - 동일한 쿼리 객체 사용)
+</span><span class="code-line">   CorePackProvider (하이드레이트)
+</span><span class="code-line">     ↓
+</span><span class="code-line">   ProductList Component
+</span><span class="code-line">     ↓ (useQuery - 동일한 쿼리 객체 사용)
+</span><span class="code-line">   React Query Cache (캐시 히트 보장!)
+</span></code></pre>
+<hr>
+<h2 id="-개선-효과">📈 개선 효과<a aria-hidden="true" tabindex="-1" href="#-개선-효과"><span class="anchor"></span></a></h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Before</th>
+<th>After</th>
+<th>개선</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Props 전달 레벨</strong></td>
+<td>3-4단계</td>
+<td>0단계</td>
+<td><strong>100% 제거</strong></td>
+</tr>
+<tr>
+<td><strong>중간 컴포넌트 수정</strong></td>
+<td>필요</td>
+<td>불필요</td>
+<td><strong>수정 범위 감소</strong></td>
+</tr>
+<tr>
+<td><strong>코드 가독성</strong></td>
+<td>낮음</td>
+<td>높음</td>
+<td><strong>향상</strong></td>
+</tr>
+<tr>
+<td><strong>모듈 독립성</strong></td>
+<td>낮음</td>
+<td>높음</td>
+<td><strong>향상</strong></td>
+</tr>
+<tr>
+<td><strong>환경 전환</strong></td>
+<td>코드 수정 필요</td>
+<td>수정 불필요</td>
+<td><strong>유연성 향상</strong></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-핵심-교훈">💡 핵심 교훈<a aria-hidden="true" tabindex="-1" href="#-핵심-교훈"><span class="anchor"></span></a></h2>
+<h3 id="1-provider-level에서-하이드레이트가-핵심">1. Provider Level에서 하이드레이트가 핵심<a aria-hidden="true" tabindex="-1" href="#1-provider-level에서-하이드레이트가-핵심"><span class="anchor"></span></a></h3>
+<p>SSR 데이터를 React Query 캐시에 하이드레이트하면, CSR 환경에서도 동일한 방식으로 접근할 수 있습니다. 이는 환경 전환 시 코드 수정을 최소화하는 핵심입니다.</p>
+<h3 id="2-쿼리-키와-queryfn을-함께-묶어서-사용해야-함">2. 쿼리 키와 queryFn을 함께 묶어서 사용해야 함<a aria-hidden="true" tabindex="-1" href="#2-쿼리-키와-queryfn을-함께-묶어서-사용해야-함"><span class="anchor"></span></a></h3>
+<p><strong>핵심</strong>: prefetch와 useQuery에서 동일한 쿼리 객체(queryKey + queryFn)를 사용해야 캐시 미스가 발생하지 않습니다.</p>
+<p><strong>문제 상황</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// ❌ 잘못된 예: prefetch와 useQuery에서 다른 방식으로 정의</span>
+</span><span class="code-line"><span class="token comment">// prefetch에서</span>
+</span><span class="code-line"><span class="token keyword">await</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">  queryFn<span class="token operator">:</span> fetchProducts<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// useQuery에서 (쿼리 키나 함수가 조금이라도 다르면 캐시 미스!)</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+</span><span class="code-line">  queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 동일하지만</span>
+</span><span class="code-line">  <span class="token function-variable function">queryFn</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">fetchProducts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 화살표 함수로 감싸면 다른 함수로 인식!</span>
+</span><span class="code-line"><span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></code></pre>
+<p><strong>해결 방법</strong>:</p>
+<pre class="language-typescript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-typescript code-highlight"><span class="code-line"><span class="token comment">// ✅ 올바른 예: 쿼리 객체를 묶어서 재사용</span>
+</span><span class="code-line"><span class="token keyword">const</span> productsQuery <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  queryKey<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'products'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+</span><span class="code-line">  queryFn<span class="token operator">:</span> fetchProducts<span class="token punctuation">,</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// prefetch에서</span>
+</span><span class="code-line"><span class="token keyword">await</span> queryClient<span class="token punctuation">.</span><span class="token function">prefetchQuery</span><span class="token punctuation">(</span>productsQuery<span class="token punctuation">)</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token comment">// useQuery에서 (동일한 객체 사용)</span>
+</span><span class="code-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> data <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useQuery</span><span class="token punctuation">(</span>productsQuery<span class="token punctuation">)</span>
+</span></code></pre>
+<p>이렇게 하면 prefetch에서 준비한 데이터를 useQuery에서 정확히 찾을 수 있어 캐시 히트가 보장됩니다.</p>
+<h3 id="3-쿼리-키와-함수를-먼저-관리하고-prefetchusequery에서-사용하는-구조가-효과적">3. 쿼리 키와 함수를 먼저 관리하고 prefetch/useQuery에서 사용하는 구조가 효과적<a aria-hidden="true" tabindex="-1" href="#3-쿼리-키와-함수를-먼저-관리하고-prefetchusequery에서-사용하는-구조가-효과적"><span class="anchor"></span></a></h3>
+<p>쿼리 키와 queryFn을 먼저 묶어서 관리하고, prefetch와 useQuery에서 동일한 쿼리 객체를 사용하면 캐시 일관성이 보장됩니다. 이렇게 하면 각 레이어의 책임이 명확해지고 재사용성이 높아집니다.</p>
+<h3 id="4-모듈-독립성을-위해-내부에서-처리">4. 모듈 독립성을 위해 내부에서 처리<a aria-hidden="true" tabindex="-1" href="#4-모듈-독립성을-위해-내부에서-처리"><span class="anchor"></span></a></h3>
+<p>모듈이 필요한 데이터를 내부에서 가져오도록 하면, 사용처의 디펜던시를 제거할 수 있고 모듈 독립성이 향상됩니다.</p>
+<h3 id="5-타입-안전성을-유지해야-함">5. 타입 안전성을 유지해야 함<a aria-hidden="true" tabindex="-1" href="#5-타입-안전성을-유지해야-함"><span class="anchor"></span></a></h3>
+<p>React Query의 타입을 활용하여 타입 안전성을 유지하는 것이 중요합니다. <code class="inline-code">useQuery</code>의 제네릭 타입을 명시적으로 지정하고, 쿼리 키를 <code class="inline-code">as const</code>로 정의하면 타입 체크가 강화됩니다.</p>
+<h3 id="6-캐싱-전략을-신중하게-설계해야-함">6. 캐싱 전략을 신중하게 설계해야 함<a aria-hidden="true" tabindex="-1" href="#6-캐싱-전략을-신중하게-설계해야-함"><span class="anchor"></span></a></h3>
+<p><code class="inline-code">staleTime</code>, <code class="inline-code">cacheTime</code> 등을 적절히 설정하여 불필요한 API 호출을 방지하고, 사용자 경험을 향상시켜야 합니다. prefetch와 useQuery에서 동일한 쿼리 객체를 사용하면 캐시 히트가 보장되어 SSR 데이터를 효율적으로 활용할 수 있습니다.</p>
+<hr>
+<h2 id="-결론">🎯 결론<a aria-hidden="true" tabindex="-1" href="#-결론"><span class="anchor"></span></a></h2>
+<p>React Query 레이어 구축을 통해 다음과 같은 성과를 달성했습니다:</p>
+<ol>
+<li>✅ <strong>Props Drilling 완전 제거</strong>: 컴포넌트가 필요한 데이터를 직접 가져옴</li>
+<li>✅ <strong>캐시 미스 방지</strong>: prefetch와 useQuery에서 동일한 쿼리 객체 사용으로 캐시 히트 보장</li>
+<li>✅ <strong>SSR/CSR 환경 통합</strong>: 동일한 코드로 두 환경 모두 지원</li>
+<li>✅ <strong>모듈 독립성 확보</strong>: 사용처 react-query 디펜던시 제거</li>
+<li>✅ <strong>코드 가독성 향상</strong>: 중간 컴포넌트의 불필요한 props 전달 제거</li>
+<li>✅ <strong>유지보수성 향상</strong>: 환경 전환 시 코드 수정 최소화, 쿼리 객체 변경 시 한 곳만 수정</li>
+</ol>
+<p>이번 작업을 통해 대규모 모노레포에서의 상태 관리와 데이터 페칭 아키텍처 설계 경험을 쌓았고, React Query의 prefetch, 하이드레이트, 캐싱 전략, 쿼리 키와 queryFn을 함께 묶어서 사용하는 패턴 등을 실무에 적용할 수 있었습니다.</p>
+<hr>
+<h2 id="-참고-자료">📚 참고 자료<a aria-hidden="true" tabindex="-1" href="#-참고-자료"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://tanstack.com/query/latest">TanStack Query Documentation</a></li>
+<li><a href="https://nextjs.org/docs/app/building-your-application/data-fetching">Next.js Data Fetching</a></li>
+<li><a href="https://tanstack.com/query/latest/docs/react/guides/ssr">React Query SSR Guide</a></li>
+</ul>2:["$","$L9",null,{"post":{"slug":"/develop/React Query 개선","frontmatter":{"title":"React Query 개선","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["React-Query","Next.js","SSR","Props-Drilling","아키텍처","모노레포"],"draft":false},"content":"$a","html":"$b","excerpt":"> Next.js 기반의 대규모 모노레포에서 React Query 레이어를 구축하여 props drilling을 제거하고 SSR/CSR 환경을 통합 처리한 경험을 공유합니다. Provider level에서 하이드레이트 대응으로 사용처의 react-query 디펜던시를 제거했습니다.  ## 📊 프로젝트 개요  ### 배경  - **프레임워크**: Next"},"previousPost":{"slug":"/develop/개발 프로세스 자동화 구축","frontmatter":{"title":"개발 프로세스 자동화 구축","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["자동화","GitHub-Actions","JIRA","CI/CD","개발프로세스","대시보드","DevOps"],"draft":false}},"nextPost":{"slug":"/develop/Next.js 빌드 최적화","frontmatter":{"title":"Next.js 빌드 최적화","date":"2025-12-28T00:00:00.000Z","category":"develop","tags":["Next.js","빌드최적화","Webpack","CI/CD","성능최적화"],"draft":false}}}]
+8:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"React Query 개선"}],["$","meta","3",{"name":"description","content":"> Next.js 기반의 대규모 모노레포에서 React Query 레이어를 구축하여 props drilling을 제거하고 SSR/CSR 환경을 통합 처리한 경험을 공유합니다. Provider level에서 하이드레이트 대응으로 사용처의 react-query 디펜던시를 제거했습니다.  ## 📊 프로젝트 개요  ### 배경  - **프레임워크**: Next"}]]
+1:null

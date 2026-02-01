@@ -1,0 +1,360 @@
+3:I[808,[],""]
+6:I[6217,[],""]
+7:I[5217,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ServiceWorkerCleanup"]
+8:I[6484,["3185","static/chunks/app/layout-3ad8bb7cb2292578.js"],"ThemeProvider"]
+4:["category","react","d"]
+5:["slug","react-hook","c"]
+0:["static-build-id",[[["",{"children":[["category","react","d"],{"children":[["slug","react-hook","c"],{"children":["__PAGE__?{\"category\":\"react\",\"slug\":[\"react-hook\"]}",{}]}]}]},"$undefined","$undefined",true],["",{"children":[["category","react","d"],{"children":[["slug","react-hook","c"],{"children":["__PAGE__",{},[["$L1","$L2",null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children","$5","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","$4","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc8bb31cb71603b2.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"ko","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap","rel":"stylesheet"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Catamaran:wght@800&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"icon","type":"image/png","href":"/favicon2.png"}],["$","link",null,{"rel":"shortcut icon","href":"/favicon2.png"}],["$","link",null,{"rel":"apple-touch-icon","href":"/favicon2.png"}],["$","script",null,{"id":"ads","async":true,"src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(adsbygoogle=window.adsbygoogle||[]).requestNonPersonalizedAds=1;"}}]]}],["$","body",null,{"children":[["$","noscript",null,{"children":"You need to enable JavaScript to run this app."}],["$","$L7",null,{}],["$","$L8",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}]]}]]}]],null],null],["$L9",null]]]]
+a:I[5553,["9243","static/chunks/9243-972bdccd4ceb11ae.js","5800","static/chunks/5800-4312aed1aa8a4305.js","549","static/chunks/549-2babc012700e23ed.js","4853","static/chunks/4853-73ca7990eb89674b.js","8936","static/chunks/app/%5Bcategory%5D/%5B...slug%5D/page-6aac7cf9456deffb.js"],"BlogPostPageClient"]
+b:T264f,
+## Hook가 React 버전 16.8에 새로 추가되었습니다.
+
+- Hook를 이용하여 Class를 작성할 필요 없이 상태 값과 여러 React의 기능을 사용할 수 있습니다.
+- 하지만 React에서 Class를 제거할 계획은 없습니다.
+- Hook은 알고 있는 React 컨셉을 대체하지 않습니다. 대신에, Hook는 props, state, context, refs, 그리고 lifecycle와 같은 React 개념에 좀 더 직관적인 API를 제공합니다. 또한 Hook는 이 개념들을 엮기 위해 새로운 강력한 방법을 제공합니다.
+
+### [기본 Hook](https://ko.reactjs.org/docs/hooks-reference.html#basic-hooks)
+
+- [useState](https://ko.reactjs.org/docs/hooks-reference.html#usestate)
+- [useEffect](https://ko.reactjs.org/docs/hooks-reference.html#useeffect)
+- [useContext](https://ko.reactjs.org/docs/hooks-reference.html#usecontext)
+
+### [추가 Hooks](https://ko.reactjs.org/docs/hooks-reference.html#additional-hooks)
+
+- [useReducer](https://ko.reactjs.org/docs/hooks-reference.html#usereducer)
+- [useCallback](https://ko.reactjs.org/docs/hooks-reference.html#usecallback)
+- [useMemo](https://ko.reactjs.org/docs/hooks-reference.html#usememo)
+- [useRef](https://ko.reactjs.org/docs/hooks-reference.html#useref)
+- [useImperativeHandle](https://ko.reactjs.org/docs/hooks-reference.html#useimperativehandle)
+- [useLayoutEffect](https://ko.reactjs.org/docs/hooks-reference.html#uselayouteffect)
+- [useDebugValue](https://ko.reactjs.org/docs/hooks-reference.html#usedebugvalue)
+
+## Hook을 개발하게 된 동기
+
+### 컴포넌트 사이에서 상태와 관련된 로직을 재사용 하기 어렵습니다.
+
+- 이것을 해결하기 위해 render props 그리고 고차 컴포넌트와 같은 패턴을 사용해야 합니다. 그러나 이런 패턴을 사용할 때 컴포넌트를 재구성해야 하며 코드를 추적하기 어렵게 만듭니다. 또한 “래퍼 지옥(wrapper hell)“을 볼 가능성이 높습니다.
+  Hook를 사용하면 컴포넌트로부터 상태 관련 로직을 추상화할 수 있습니다. 이것은 독립적인 테스트와 재사용이 가능합니다. Hook는 계층 변화 없이 상태 관련 로직을 재사용할 수 있도록 도와줍니다.
+
+### 복잡한 컴포넌트들은 이해하기 어렵습니다.
+
+- 생명주기 메서드를 기반으로 쪼개는 데 초점을 맞추기 보다는, Hook를 통해 로직에 기반을 둔 작은 함수로 컴포넌트를 나눌 수 있습니다. 조금 더 예측 가능하도록 하기 위해 리듀서를 활용해 컴포넌트의 지역 상태 값을 관리하도록 할 수 있습니다.
+
+### Class은 사람과 기계를 혼동시킵니다.
+
+- Class가 코드의 재사용성과 코드 구성을 좀 더 어렵게 만들 뿐만 아니라, React를 배우는데 큰 진입장벽이 될 수 있습니다.
+  Javascript에서 어떻게 this가 작동하는지 알아야만 했고, 대부분의 다른 언어와는 다르게 작동합니다. 이벤트 핸들러가 등록되는 방법을 기억해야만 합니다.
+- 리액트측에서 최근 Prepack를 사용한 컴포넌트 folding에 대해서 실험해왔고, 긍정적인 결과를 보았습니다. 그러나, Class 컴포넌트가 이러한 최적화를 더 느린 경로로 되돌리는 의도하지 않은 패턴을 장려할 수 있다는 것을 발견했습니다. Class는 최근 사용되는 도구에도 많은 문제를 일으킵니다. 예를 들어 Class는 잘 축소되지 않고, 핫 리로딩을 깨지기 쉽고 신뢰할 수 없게 만듭니다. React 코드가 최적화 가능한 경로에서 유지될 가능성이 더 높은 API를 제공하고 싶어 합니다.
+- 개념적으로 React 컴포넌트는 항상 함수에 더 가깝습니다. Hook는 React의 정신을 희생하지 않고 함수를 받아들입니다. Hook는 명령형 코드로 해결책을 찾을 수 있게 해주며 복잡한 함수형 또는 반응형 프로그래밍 기술을 배우도록 요구하지 않습니다.
+
+## 점진적 적용 전략
+
+- 결정적으로, Hook는 존재하는 코드와 함께 나란히 작동함으로써 점진적으로 적용할 수 있습니다.
+- Hook로 이동을 서두를 필요는 없습니다.
+- 이미 존재하며 복잡한 Class 컴포넌트들에 대한 “큰 리팩토링”을 피하기를 권장합니다. 우리의 경험을 토대로, 새롭고 중요하지 않은 컴포넌트들 안에서 Hook를 사용하는 것이 최고의 연습입니다. 그리고 모든 팀원이 Hook에 대해 안정감을 느끼는지 확인하는 게 좋습니다.
+- 리액트 측은 현재 존재하고 있는 모든 Class 사례을 변경하고 싶지만, 미래에도 계속 Class 컴포넌트들을 지원할 예정입니다. 페이스북에서 수만 개의 Class 컴포넌트들을 작성했으며, 그들을 재작성할 계획이 전혀 없습니다. 대신에, 새로운 코드에서 기존 코드와 나란히 Hook를 사용할 계획입니다.
+
+## Hook 사용 규칙
+
+- 최상위(at the top level)에서만 Hook을 호출해야 합니다. 반복문, 조건문, 중첩된 함수 내에서 Hook을 실행하지 마세요.
+- React 함수 컴포넌트 내에서만 Hook을 호출해야 합니다. 일반 JavaScript 함수에서는 Hook을 호출해서는 안 됩니다. (Hook을 호출할 수 있는 곳이 딱 한 군데 더 있습니다. 바로 직접 작성한 custom Hook 내입니다.
+
+## 나만의 Hook 만들기
+
+- 개발을 하다 보면 가끔 상태 관련 로직을 컴포넌트 간에 재사용하고 싶은 경우가 생깁니다. 이 문제를 해결하기 위한 전통적인 방법이 두 가지 있었는데, higher-order components와 render props가 바로 그것입니다. Custom Hook은 이들 둘과는 달리 컴포넌트 트리에 새 컴포넌트를 추가하지 않고도 이것을 가능하게 해줍니다.
+- Custom Hook은 기능이라기보다는 컨벤션(convention)에 가깝습니다. 이름이 ”use“로 시작하고, 안에서 다른 Hook을 호출한다면 그 함수를 custom Hook이라고 부를 수 있습니다. useSomething이라는 네이밍 컨벤션은 linter 플러그인이 Hook을 인식하고 버그를 찾을 수 있게 해줍니다.
+- Custom Hook의 예제들을 볼 수 있는 GitHub이 있습니다.
+
+## Component의 변화
+
+### 기본
+
+```javascript
+import React, { Component } from 'react';
+
+export default class test extends Component {
+  constructor(props) {
+    super(props);
+    state = {
+      count: 0,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    count = this.state.count + 1;
+    this.setState({ count });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.onClick}>UP</button>
+      </div>
+    );
+  }
+}
+```
+
+### arrow function
+
+```javascript
+import React, { Component } from 'react';
+
+export default class test extends Component {
+  constructor(props) {
+    super(props);
+    state = {
+      count: 0,
+    };
+  }
+
+  onClick = () => {
+    count = this.state.count + 1;
+    this.setState({ count });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.onClick}>UP</button>
+      </div>
+    );
+  }
+}
+```
+
+### Class Field
+
+```javascript
+import React, { Component } from 'react';
+
+export default class test extends Component {
+  state = {
+    count: 0,
+  };
+
+  onClick = () => {
+    count = this.state.count + 1;
+    this.setState({ count });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.onClick}>UP</button>
+      </div>
+    );
+  }
+}
+```
+
+### hooks
+
+```javascript
+import React, { useState } from 'react';
+
+export default function test() {
+  const [count, setCount] = useState(0);
+  const onClick = () => {
+    setCount(count + 1);
+  };
+  return (
+    <div>
+      <button onClick={onClick}>UP</button>
+    </div>
+  );
+}
+```
+
+## 개인적인 Hook의 장점
+
+- 코드가 간결해집니다.
+- state를 사용하는 곳과 가까이 둘 수 있습니다.
+- Container와 Presenter를 굳이 나누지 않아도 될 것 같습니다. 하지만 이 부분에 대해서는 아직 확신이 없습니다.
+- class를 사용할 경우 class 문법 자체의 어려움이 있습니다. 실제 자바스크립트는 Java의 class와는 다르며 syntax sugar입니다.
+- class는 메소드를 어떤식으로 선언 하였는지 클래스필드를 사용하는지에 따라 사용법이 조금씩 다르기 때문에 혼란을 야기할 수 있습니다.
+- Class Component와 Function Component를 혼재하지 않고 Function Component만으로 React Application을 만들 수 있습니다.
+- state별로 lifecycle을 관리 할 수 있다. 하나의 함수에서 관리하던 것을 목적에 맞게 분리해서 사용할 수 있습니다. 화면 단위가 아닌 데이터 단위로 lifecycle을 관리 할 수 있습니다.
+- EventListener나 Interval과 같이 componentDidMount와 componentWillUnmount에서 분리해서 관리 했던 것을 한곳에서 관리 할 수 있습니다.
+- componentDidMount와 componentDidUpdate에서 분리해서 관리하던 것을 한곳에서 관리 할 수 있습니다.
+- render에 영향을 받지 않는 변수는 useRef를 통해서 만들어 사용 할 수 있습니다.(장점이라기 보단 단점을 보완하는 것 같습니다).
+- useCallback과 useMemo를 사용해서 최적화를 할 수 있습니다(장점이라기 보단 단점을 보완하는 것 같습니다).
+- TypeScript 사용 시 State Interface를 만들지 않아도 됩니다(단점이 될 수도 있을 것 같습니다).
+- Custom Hook을 이용해 HOC 패턴을 피할 수 있습니다.
+- ContextAPI와 useReducer를 활용해서 Redux의 역할을 조금은 대신 할 수 있습니다.
+- [hook을 활용한 예제](https://github.com/Yuni-Q/hook)
+
+## 참조
+
+- [React 공식문서](https://ko.reactjs.org/docs/hooks-intro.html)
+c:T6ecf,<h2 id="hook가-react-버전-168에-새로-추가되었습니다">Hook가 React 버전 16.8에 새로 추가되었습니다.<a aria-hidden="true" tabindex="-1" href="#hook가-react-버전-168에-새로-추가되었습니다"><span class="anchor"></span></a></h2>
+<ul>
+<li>Hook를 이용하여 Class를 작성할 필요 없이 상태 값과 여러 React의 기능을 사용할 수 있습니다.</li>
+<li>하지만 React에서 Class를 제거할 계획은 없습니다.</li>
+<li>Hook은 알고 있는 React 컨셉을 대체하지 않습니다. 대신에, Hook는 props, state, context, refs, 그리고 lifecycle와 같은 React 개념에 좀 더 직관적인 API를 제공합니다. 또한 Hook는 이 개념들을 엮기 위해 새로운 강력한 방법을 제공합니다.</li>
+</ul>
+<h3 id="기본-hook"><a href="https://ko.reactjs.org/docs/hooks-reference.html#basic-hooks">기본 Hook</a><a aria-hidden="true" tabindex="-1" href="#기본-hook"><span class="anchor"></span></a></h3>
+<ul>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usestate">useState</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#useeffect">useEffect</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usecontext">useContext</a></li>
+</ul>
+<h3 id="추가-hooks"><a href="https://ko.reactjs.org/docs/hooks-reference.html#additional-hooks">추가 Hooks</a><a aria-hidden="true" tabindex="-1" href="#추가-hooks"><span class="anchor"></span></a></h3>
+<ul>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usereducer">useReducer</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usecallback">useCallback</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usememo">useMemo</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#useref">useRef</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#useimperativehandle">useImperativeHandle</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#uselayouteffect">useLayoutEffect</a></li>
+<li><a href="https://ko.reactjs.org/docs/hooks-reference.html#usedebugvalue">useDebugValue</a></li>
+</ul>
+<h2 id="hook을-개발하게-된-동기">Hook을 개발하게 된 동기<a aria-hidden="true" tabindex="-1" href="#hook을-개발하게-된-동기"><span class="anchor"></span></a></h2>
+<h3 id="컴포넌트-사이에서-상태와-관련된-로직을-재사용-하기-어렵습니다">컴포넌트 사이에서 상태와 관련된 로직을 재사용 하기 어렵습니다.<a aria-hidden="true" tabindex="-1" href="#컴포넌트-사이에서-상태와-관련된-로직을-재사용-하기-어렵습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>이것을 해결하기 위해 render props 그리고 고차 컴포넌트와 같은 패턴을 사용해야 합니다. 그러나 이런 패턴을 사용할 때 컴포넌트를 재구성해야 하며 코드를 추적하기 어렵게 만듭니다. 또한 “래퍼 지옥(wrapper hell)“을 볼 가능성이 높습니다.
+Hook를 사용하면 컴포넌트로부터 상태 관련 로직을 추상화할 수 있습니다. 이것은 독립적인 테스트와 재사용이 가능합니다. Hook는 계층 변화 없이 상태 관련 로직을 재사용할 수 있도록 도와줍니다.</li>
+</ul>
+<h3 id="복잡한-컴포넌트들은-이해하기-어렵습니다">복잡한 컴포넌트들은 이해하기 어렵습니다.<a aria-hidden="true" tabindex="-1" href="#복잡한-컴포넌트들은-이해하기-어렵습니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>생명주기 메서드를 기반으로 쪼개는 데 초점을 맞추기 보다는, Hook를 통해 로직에 기반을 둔 작은 함수로 컴포넌트를 나눌 수 있습니다. 조금 더 예측 가능하도록 하기 위해 리듀서를 활용해 컴포넌트의 지역 상태 값을 관리하도록 할 수 있습니다.</li>
+</ul>
+<h3 id="class은-사람과-기계를-혼동시킵니다">Class은 사람과 기계를 혼동시킵니다.<a aria-hidden="true" tabindex="-1" href="#class은-사람과-기계를-혼동시킵니다"><span class="anchor"></span></a></h3>
+<ul>
+<li>Class가 코드의 재사용성과 코드 구성을 좀 더 어렵게 만들 뿐만 아니라, React를 배우는데 큰 진입장벽이 될 수 있습니다.
+Javascript에서 어떻게 this가 작동하는지 알아야만 했고, 대부분의 다른 언어와는 다르게 작동합니다. 이벤트 핸들러가 등록되는 방법을 기억해야만 합니다.</li>
+<li>리액트측에서 최근 Prepack를 사용한 컴포넌트 folding에 대해서 실험해왔고, 긍정적인 결과를 보았습니다. 그러나, Class 컴포넌트가 이러한 최적화를 더 느린 경로로 되돌리는 의도하지 않은 패턴을 장려할 수 있다는 것을 발견했습니다. Class는 최근 사용되는 도구에도 많은 문제를 일으킵니다. 예를 들어 Class는 잘 축소되지 않고, 핫 리로딩을 깨지기 쉽고 신뢰할 수 없게 만듭니다. React 코드가 최적화 가능한 경로에서 유지될 가능성이 더 높은 API를 제공하고 싶어 합니다.</li>
+<li>개념적으로 React 컴포넌트는 항상 함수에 더 가깝습니다. Hook는 React의 정신을 희생하지 않고 함수를 받아들입니다. Hook는 명령형 코드로 해결책을 찾을 수 있게 해주며 복잡한 함수형 또는 반응형 프로그래밍 기술을 배우도록 요구하지 않습니다.</li>
+</ul>
+<h2 id="점진적-적용-전략">점진적 적용 전략<a aria-hidden="true" tabindex="-1" href="#점진적-적용-전략"><span class="anchor"></span></a></h2>
+<ul>
+<li>결정적으로, Hook는 존재하는 코드와 함께 나란히 작동함으로써 점진적으로 적용할 수 있습니다.</li>
+<li>Hook로 이동을 서두를 필요는 없습니다.</li>
+<li>이미 존재하며 복잡한 Class 컴포넌트들에 대한 “큰 리팩토링”을 피하기를 권장합니다. 우리의 경험을 토대로, 새롭고 중요하지 않은 컴포넌트들 안에서 Hook를 사용하는 것이 최고의 연습입니다. 그리고 모든 팀원이 Hook에 대해 안정감을 느끼는지 확인하는 게 좋습니다.</li>
+<li>리액트 측은 현재 존재하고 있는 모든 Class 사례을 변경하고 싶지만, 미래에도 계속 Class 컴포넌트들을 지원할 예정입니다. 페이스북에서 수만 개의 Class 컴포넌트들을 작성했으며, 그들을 재작성할 계획이 전혀 없습니다. 대신에, 새로운 코드에서 기존 코드와 나란히 Hook를 사용할 계획입니다.</li>
+</ul>
+<h2 id="hook-사용-규칙">Hook 사용 규칙<a aria-hidden="true" tabindex="-1" href="#hook-사용-규칙"><span class="anchor"></span></a></h2>
+<ul>
+<li>최상위(at the top level)에서만 Hook을 호출해야 합니다. 반복문, 조건문, 중첩된 함수 내에서 Hook을 실행하지 마세요.</li>
+<li>React 함수 컴포넌트 내에서만 Hook을 호출해야 합니다. 일반 JavaScript 함수에서는 Hook을 호출해서는 안 됩니다. (Hook을 호출할 수 있는 곳이 딱 한 군데 더 있습니다. 바로 직접 작성한 custom Hook 내입니다.</li>
+</ul>
+<h2 id="나만의-hook-만들기">나만의 Hook 만들기<a aria-hidden="true" tabindex="-1" href="#나만의-hook-만들기"><span class="anchor"></span></a></h2>
+<ul>
+<li>개발을 하다 보면 가끔 상태 관련 로직을 컴포넌트 간에 재사용하고 싶은 경우가 생깁니다. 이 문제를 해결하기 위한 전통적인 방법이 두 가지 있었는데, higher-order components와 render props가 바로 그것입니다. Custom Hook은 이들 둘과는 달리 컴포넌트 트리에 새 컴포넌트를 추가하지 않고도 이것을 가능하게 해줍니다.</li>
+<li>Custom Hook은 기능이라기보다는 컨벤션(convention)에 가깝습니다. 이름이 ”use“로 시작하고, 안에서 다른 Hook을 호출한다면 그 함수를 custom Hook이라고 부를 수 있습니다. useSomething이라는 네이밍 컨벤션은 linter 플러그인이 Hook을 인식하고 버그를 찾을 수 있게 해줍니다.</li>
+<li>Custom Hook의 예제들을 볼 수 있는 GitHub이 있습니다.</li>
+</ul>
+<h2 id="component의-변화">Component의 변화<a aria-hidden="true" tabindex="-1" href="#component의-변화"><span class="anchor"></span></a></h2>
+<h3 id="기본">기본<a aria-hidden="true" tabindex="-1" href="#기본"><span class="anchor"></span></a></h3>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">test</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    state <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onClick</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">onClick</span><span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    count <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">count</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">        <span class="token operator">&#x3C;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onClick</span><span class="token punctuation">}</span><span class="token operator">></span><span class="token constant">UP</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>button<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="arrow-function">arrow function<a aria-hidden="true" tabindex="-1" href="#arrow-function"><span class="anchor"></span></a></h3>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">test</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">    state <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">      <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    count <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">count</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">        <span class="token operator">&#x3C;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onClick</span><span class="token punctuation">}</span><span class="token operator">></span><span class="token constant">UP</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>button<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="class-field">Class Field<a aria-hidden="true" tabindex="-1" href="#class-field"><span class="anchor"></span></a></h3>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">test</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  state <span class="token operator">=</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token literal-property property">count</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    count <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">count</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+</span><span class="code-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> count <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">        <span class="token operator">&#x3C;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onClick</span><span class="token punctuation">}</span><span class="token operator">></span><span class="token constant">UP</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>button<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h3 id="hooks">hooks<a aria-hidden="true" tabindex="-1" href="#hooks"><span class="anchor"></span></a></h3>
+<pre class="language-javascript optimized-code-block" style="max-height: 600px; overflow-y: auto;"><code class="language-javascript code-highlight"><span class="code-line"><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">React</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useState <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
+</span><span class="code-line">
+</span><span class="code-line"><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> setCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token keyword">const</span> <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+</span><span class="code-line">    <span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span><span class="code-line">  <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span>div<span class="token operator">></span>
+</span><span class="code-line">      <span class="token operator">&#x3C;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span><span class="token operator">></span><span class="token constant">UP</span><span class="token operator">&#x3C;</span><span class="token operator">/</span>button<span class="token operator">></span>
+</span><span class="code-line">    <span class="token operator">&#x3C;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</span><span class="code-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span><span class="code-line"><span class="token punctuation">}</span>
+</span></code></pre>
+<h2 id="개인적인-hook의-장점">개인적인 Hook의 장점<a aria-hidden="true" tabindex="-1" href="#개인적인-hook의-장점"><span class="anchor"></span></a></h2>
+<ul>
+<li>코드가 간결해집니다.</li>
+<li>state를 사용하는 곳과 가까이 둘 수 있습니다.</li>
+<li>Container와 Presenter를 굳이 나누지 않아도 될 것 같습니다. 하지만 이 부분에 대해서는 아직 확신이 없습니다.</li>
+<li>class를 사용할 경우 class 문법 자체의 어려움이 있습니다. 실제 자바스크립트는 Java의 class와는 다르며 syntax sugar입니다.</li>
+<li>class는 메소드를 어떤식으로 선언 하였는지 클래스필드를 사용하는지에 따라 사용법이 조금씩 다르기 때문에 혼란을 야기할 수 있습니다.</li>
+<li>Class Component와 Function Component를 혼재하지 않고 Function Component만으로 React Application을 만들 수 있습니다.</li>
+<li>state별로 lifecycle을 관리 할 수 있다. 하나의 함수에서 관리하던 것을 목적에 맞게 분리해서 사용할 수 있습니다. 화면 단위가 아닌 데이터 단위로 lifecycle을 관리 할 수 있습니다.</li>
+<li>EventListener나 Interval과 같이 componentDidMount와 componentWillUnmount에서 분리해서 관리 했던 것을 한곳에서 관리 할 수 있습니다.</li>
+<li>componentDidMount와 componentDidUpdate에서 분리해서 관리하던 것을 한곳에서 관리 할 수 있습니다.</li>
+<li>render에 영향을 받지 않는 변수는 useRef를 통해서 만들어 사용 할 수 있습니다.(장점이라기 보단 단점을 보완하는 것 같습니다).</li>
+<li>useCallback과 useMemo를 사용해서 최적화를 할 수 있습니다(장점이라기 보단 단점을 보완하는 것 같습니다).</li>
+<li>TypeScript 사용 시 State Interface를 만들지 않아도 됩니다(단점이 될 수도 있을 것 같습니다).</li>
+<li>Custom Hook을 이용해 HOC 패턴을 피할 수 있습니다.</li>
+<li>ContextAPI와 useReducer를 활용해서 Redux의 역할을 조금은 대신 할 수 있습니다.</li>
+<li><a href="https://github.com/Yuni-Q/hook">hook을 활용한 예제</a></li>
+</ul>
+<h2 id="참조">참조<a aria-hidden="true" tabindex="-1" href="#참조"><span class="anchor"></span></a></h2>
+<ul>
+<li><a href="https://ko.reactjs.org/docs/hooks-intro.html">React 공식문서</a></li>
+</ul>2:["$","$La",null,{"post":{"slug":"/react/react-hook","frontmatter":{"title":"React Hook","date":"2020-02-02T23:02:54.000Z","category":"react","draft":false},"content":"$b","html":"$c","excerpt":"## Hook가 React 버전 16.8에 새로 추가되었습니다.  - Hook를 이용하여 Class를 작성할 필요 없이 상태 값과 여러 React의 기능을 사용할 수 있습니다. - 하지만 React에서 Class를 제거할 계획은 없습니다. - Hook은 알고 있는 React 컨셉을 대체하지 않습니다. 대신에, Hook는 props, state, conte"},"previousPost":{"slug":"/react/퍼센트-원-그리기","frontmatter":{"title":"퍼센트 원 그리기","date":"2020-01-19T13:01:42.000Z","category":"react","draft":false}},"nextPost":{"slug":"/react/function-component-type","frontmatter":{"title":"function component type","date":"2020-02-10T12:03:06.000Z","category":"react","draft":false}}}]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"React Hook"}],["$","meta","3",{"name":"description","content":"## Hook가 React 버전 16.8에 새로 추가되었습니다.  - Hook를 이용하여 Class를 작성할 필요 없이 상태 값과 여러 React의 기능을 사용할 수 있습니다. - 하지만 React에서 Class를 제거할 계획은 없습니다. - Hook은 알고 있는 React 컨셉을 대체하지 않습니다. 대신에, Hook는 props, state, conte"}]]
+1:null
