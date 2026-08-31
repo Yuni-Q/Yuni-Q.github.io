@@ -1,0 +1,1 @@
+__d(function(g,r,i,a,m,e,d){Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"ArchitectureModule",{enumerable:!0,get:function(){return r(d[0]).ArchitectureModule}}),Object.defineProperty(e,"createArchitectureServices",{enumerable:!0,get:function(){return r(d[0]).createArchitectureServices}}),r(d[1])},6781,[6631,4578]);
